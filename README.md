@@ -73,3 +73,6 @@ The repository contains the Android source, prepared assets, tests, recovery scr
 The original games, artwork, fonts, music and characters belong to their respective creators and rights holders. This is an unofficial fan reconstruction. Thanks to [Ghidra](https://github.com/NationalSecurityAgency/ghidra), [LibreShockwave](https://github.com/bmdragos/LibreShockwave), and [shockwave-extractor](https://github.com/bmdragos/shockwave-extractor) for the archaeology tools; the adapted extractor's license is included with its source.
 
 Bring nostalgia. Bring bug reports. Please keep Jill out of the walls. 🧁
+
+
+This Readme was written by Codex :)
