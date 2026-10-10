@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+<RenderBackground x="163" y="20" scale_x="0.75" scale_y="0.75" music="music/mapscreen.ogg">
+	<Image guid="background" img="IMAGE_SHOPSCREEN_BK_CAREER" x="0" y="0" />	
+	<Image guid="background_upgr" img="IMAGE_SHOPSCREEN_BK_UPGR" x="24" y="217" />	
+	<Image guid="sign" img="IMAGE_ROTATED_ARROW" wc="1" hc="13" />	
+	<Window guid="description" x="262" y="518" w="500" h="70" spacing="-5" />
+	<Window guid="name" x="33" y="233" w="174" h="50" spacing="-5" />
+	<Window guid="price" text="Price: $" x="33" y="440" w="174" h="50" spacing="1" />
+	<Window guid="lives" text="Lives: " x="33" y="55" w="174" h="50" spacing="1" />
+	<Window guid="count" text="Points: " x="33" y="85" w="174" h="50" spacing="1" />
+	<Window guid="money" text="Money: $" x="33" y="115" w="174" h="50" spacing="1" />	
+	<Button guid="finish" text="Finish" x="22" y="551" w="200" h="42" img="IMAGE_SHOPSCREEN_BUTTON_BUY" img_over="IMAGE_SHOPSCREEN_BUTTON_BUY_OVER" img_dis="IMAGE_SHOPSCREEN_BUTTON_BUY_DIS" />
+	<Button guid="buy" text="Buy" x="22" y="505" w="200" h="42" img="IMAGE_SHOPSCREEN_BUTTON_BUY" img_over="IMAGE_SHOPSCREEN_BUTTON_BUY_OVER" img_dis="IMAGE_SHOPSCREEN_BUTTON_BUY_DIS" />
+</RenderBackground>
+
+
+
+
+</root>

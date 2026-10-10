@@ -1,0 +1,4 @@
+Signer #1 certificate DN: CN=Cake Mania Android
+Signer #1 certificate SHA-256 digest: 289f7a4a6afef4c6f82959ce1eb136dff81daa1118aeffecf07da5d024a42623
+Signer #1 certificate SHA-1 digest: 517623c50a7030abb429b7a1bc28859e025bdb7a
+Signer #1 certificate MD5 digest: beb01e90496f52d8c60f024dd5d32f47

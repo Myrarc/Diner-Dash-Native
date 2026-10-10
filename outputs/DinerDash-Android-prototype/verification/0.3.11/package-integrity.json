@@ -1,0 +1,15 @@
+{
+  "version": "0.3.11",
+  "version_code": 14,
+  "bytes": 34597962,
+  "apk_sha256": "56a6a4bffdb2f8238e289ce0cb096f07f3ad500f9a97ff1d184a36a508fd036b",
+  "installed_apk_bytes_match": true,
+  "asset_resource_entries_unchanged": 1993,
+  "only_changed_production_java": [
+    "src/local/dinerdash/prototype/GameEngine.java"
+  ],
+  "signature_verified": true,
+  "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf",
+  "crc_verified": true,
+  "preference_files_byte_identical": 11
+}

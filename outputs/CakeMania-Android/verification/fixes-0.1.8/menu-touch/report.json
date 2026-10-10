@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "apk_sha256": "042f8a56b137d4c6c94e2a683c11194d10153d91db3de7a933eed25bbce9a43b",
+  "android_api": "30",
+  "display": "Physical size: 1080x2280",
+  "canvas": [
+    2280,
+    1080
+  ],
+  "qa_level_used": false,
+  "actual_android_taps": true,
+  "checks": [
+    "Normal cold launch: six nonzero touch targets, including Profiles, match the menu controls",
+    "High Scores opens and returns through touch",
+    "Options SeekBars accept real swipes, toggles work, and volume values persist after leaving and reopening",
+    "Help opens, advances, and returns through touch",
+    "Profiles create/select through real input and keep tutorial completion isolated per profile",
+    "Choose Month opens the map with all 48 level targets and returns through Back",
+    "Continue Career, intro, game, bottom Menu, and Main Menu respond",
+    "Menu touch targets survive background/foreground",
+    "Exit closes the activity",
+    "A second normal cold launch still accepts Play"
+  ]
+}

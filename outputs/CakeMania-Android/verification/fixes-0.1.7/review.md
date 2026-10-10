@@ -1,0 +1,5 @@
+The old APK reproduces the reported empty notebook after the opening comics: its tutorial Level has null StartScreen. Native 00455fb0 opens the map; 00469810/0041f580 select practice, and first-practice completion 0041f740/0041f290 creates the real January level via 0041ba80. Only these two Activity transitions changed; original fonts, text, gameplay and asset bytes are unchanged.
+
+The added Activity fixture first attempted several native Button taps in one UI-thread block. Android posts those Button clicks; assertions now wait for the UI queue between taps. Its initial tutorial event-zero expectation was corrected to the first authored click gate (index 3), since TutorialController.start() immediately applies the initial text and arrow. These were test-fixture corrections, with no added production changes.
+
+The advanced tutorial continues through the existing port flow. Its native intermediate shop remains a recorded fidelity gap. Windows runtime and physical-device comparison were not run.

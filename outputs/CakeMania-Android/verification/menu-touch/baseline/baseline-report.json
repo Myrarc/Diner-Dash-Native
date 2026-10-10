@@ -1,0 +1,24 @@
+{
+  "apk_version": "0.1.0",
+  "apk_sha256": "7c4595e352c5a4b29ed927b77942c9b9eba7d23162c1eba010eaf6ad6ee1dbf7",
+  "normal_launcher_entry": true,
+  "qa_level_used": false,
+  "expected": [
+    "Play",
+    "High Scores",
+    "Options",
+    "Help",
+    "Exit"
+  ],
+  "actual_clickable_controls": [],
+  "reproduced": true,
+  "cause": "Overlay buttons added during GameView.onSizeChanged inside parent layout; all five native buttons laid out with zero width and height.",
+  "after_real_taps_clickable_controls": [],
+  "evidence": [
+    "baseline-menu.xml",
+    "baseline-after-taps.xml",
+    "baseline-view-hierarchy.txt",
+    "baseline-menu.png",
+    "baseline-after-taps.png"
+  ]
+}

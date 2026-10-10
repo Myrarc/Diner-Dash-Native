@@ -1,0 +1,98 @@
+[
+  {
+    "action": "phone coffee locked",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY"
+  },
+  {
+    "action": "phone chair preview",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag 0 preview 0. Table 1: EMPTY. Table 2: EMPTY"
+  },
+  {
+    "action": "phone invalid drop",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY"
+  },
+  {
+    "action": "phone valid drop",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 2. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: READY. Table 2: EMPTY"
+  },
+  {
+    "action": "phone take order",
+    "state": "Restaurant. Shift 1. Score 20. Waiting parties: 2. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Carrying ticket T1. Drag -1 preview -1. Table 1: ORDERED. Table 2: EMPTY"
+  },
+  {
+    "action": "phone cooked order",
+    "state": "Restaurant. Shift 1. Score 20. Waiting parties: 2. Food ready: 1. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: ORDERED. Table 2: EMPTY"
+  },
+  {
+    "action": "phone tray pickup",
+    "state": "Restaurant. Shift 1. Score 20. Waiting parties: 2. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Carrying food T1. Drag -1 preview -1. Table 1: ORDERED. Table 2: EMPTY"
+  },
+  {
+    "action": "phone food delivered",
+    "state": "Restaurant. Shift 1. Score 50. Waiting parties: 2. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EATING. Table 2: EMPTY"
+  },
+  {
+    "action": "phone coffee preparing",
+    "state": "Restaurant. Shift 5. Score 0. Waiting parties: 1. Food ready: 0. Coffee preparing. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+  },
+  {
+    "action": "phone coffee ready",
+    "state": "Restaurant. Shift 5. Score 0. Waiting parties: 2. Food ready: 0. Coffee ready. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+  },
+  {
+    "action": "phone coffee picked",
+    "state": "Restaurant. Shift 5. Score 0. Waiting parties: 3. Food ready: 0. Coffee preparing. Order wheel idle. Flo destination: -99. Carrying drink. Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+  },
+  {
+    "action": "phone coffee refreshed",
+    "state": "Restaurant. Shift 5. Score 0. Waiting parties: 3. Food ready: 0. Coffee ready. Order wheel idle. Flo destination: -99. Carrying drink. Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+  },
+  {
+    "action": "tablet coffee locked",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY"
+  },
+  {
+    "action": "tablet chair preview",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag 0 preview 0. Table 1: EMPTY. Table 2: EMPTY"
+  },
+  {
+    "action": "tablet invalid drop",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY"
+  },
+  {
+    "action": "tablet valid drop",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 2. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: READY. Table 2: EMPTY"
+  },
+  {
+    "action": "tablet take order",
+    "state": "Restaurant. Shift 1. Score 20. Waiting parties: 2. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Carrying ticket T1. Drag -1 preview -1. Table 1: ORDERED. Table 2: EMPTY"
+  },
+  {
+    "action": "tablet cooked order",
+    "state": "Restaurant. Shift 1. Score 20. Waiting parties: 2. Food ready: 1. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: ORDERED. Table 2: EMPTY"
+  },
+  {
+    "action": "tablet tray pickup",
+    "state": "Restaurant. Shift 1. Score 20. Waiting parties: 2. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Carrying food T1. Drag -1 preview -1. Table 1: ORDERED. Table 2: EMPTY"
+  },
+  {
+    "action": "tablet food delivered",
+    "state": "Restaurant. Shift 1. Score 50. Waiting parties: 2. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EATING. Table 2: EMPTY"
+  },
+  {
+    "action": "tablet coffee preparing",
+    "state": "Restaurant. Shift 5. Score 0. Waiting parties: 1. Food ready: 0. Coffee preparing. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+  },
+  {
+    "action": "tablet coffee ready",
+    "state": "Restaurant. Shift 5. Score 0. Waiting parties: 2. Food ready: 0. Coffee ready. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+  },
+  {
+    "action": "tablet coffee picked",
+    "state": "Restaurant. Shift 5. Score 0. Waiting parties: 3. Food ready: 0. Coffee preparing. Order wheel idle. Flo destination: -99. Carrying drink. Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+  },
+  {
+    "action": "tablet coffee refreshed",
+    "state": "Restaurant. Shift 5. Score 0. Waiting parties: 3. Food ready: 0. Coffee ready. Order wheel idle. Flo destination: -99. Carrying drink. Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+  }
+]

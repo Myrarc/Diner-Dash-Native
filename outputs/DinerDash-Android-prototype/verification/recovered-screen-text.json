@@ -1,0 +1,632 @@
+{
+  "source": "reconstructed/gfx/gfx.screens.cst, OLE cast-owned XMED chunks",
+  "limits": "Recovered text and referenced font names; exact run styling and legacy font outlines remain unresolved.",
+  "members": [
+    {
+      "member": "button_txt",
+      "text": "lock all",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "9a3e2b4a4bcee2a595f3b2fbe78dba27eca2d45e71c0526745a39dc2406a1fe0"
+    },
+    {
+      "member": "career_title",
+      "text": "CAREER MODE",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "207eadc2410ba8a42f6c893a5cb302595d8765d9349835c20d76572d98c71f56"
+    },
+    {
+      "member": "closingtime_txt",
+      "text": "CLOSING TIME...",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "a1f937818b16b35078fc3ea74c6dad8f8161050d0d8adcd1fe8344547c4bfd1d"
+    },
+    {
+      "member": "dd_TM",
+      "text": "TM",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *"
+      ],
+      "xmed_sha256": "6b1f5c6a0570e32d01870975b83a0b90980fd5a0d445116fbc9f1f393e99e1d1"
+    },
+    {
+      "member": "endless_title",
+      "text": "ENDLESS MODE",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "73b545b4284dfe695d398cf262a0936465c6b4622dcad8697d45d73541e2eb3d"
+    },
+    {
+      "member": "endlevel_btn_txt",
+      "text": "OK",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "b272c6cbe6774d9e08c875b3f4dc36779ddbe9a733db9128546f238d88cef28a"
+    },
+    {
+      "member": "endlevel_lvlscore",
+      "text": "20,000",
+      "referenced_fonts": [
+        "Arial",
+        "Daniel *",
+        "Daniel Black *"
+      ],
+      "xmed_sha256": "76bca48b62603c212e15b2b8b14cd27bf9ba572641d83c6d36afd714ce9019c4"
+    },
+    {
+      "member": "endlevel_lvltext",
+      "text": "1-10",
+      "referenced_fonts": [
+        "Arial",
+        "Daniel Black *"
+      ],
+      "xmed_sha256": "43bb1309d411dbfcd380046af8bc0fc5b5845d73fd8c24d5eacc5e3948675ac2"
+    },
+    {
+      "member": "endlevel_tbls",
+      "text": "0",
+      "referenced_fonts": [
+        "Arial",
+        "Daniel *",
+        "Daniel Black *",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "349163abc321ba2c470a10d8c7a604937003848d011964133c98d1acae4c07de"
+    },
+    {
+      "member": "endlevel_tbls_lost",
+      "text": "0",
+      "referenced_fonts": [
+        "Arial",
+        "Daniel *",
+        "Daniel Black *",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "7ac8a7193fc07a5e50e88c3ac7a54dfc8126259017cfd92251bd1e1e8fc1f408"
+    },
+    {
+      "member": "endlevel_totalscore",
+      "text": "20,000",
+      "referenced_fonts": [
+        "Arial",
+        "Daniel Black *"
+      ],
+      "xmed_sha256": "aeb103be46e62d1c06f5dd9060c5cdc19bd1c07b8b09a61993669d83449321ab"
+    },
+    {
+      "member": "endlevel_txt",
+      "text": "Terrific! That's all we needed to open our second restaurant. Come on!",
+      "referenced_fonts": [
+        "Arial",
+        "Daniel *"
+      ],
+      "xmed_sha256": "ce908d6c7cd3691afa3ba6b77bb017c02b08c798b1c0ea8d058079dd2262d792"
+    },
+    {
+      "member": "endshop_inven_txt",
+      "text": "Ultra DrinkMaster Max Pro",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "8be95e6a5531abb972bdc2e8d1e0a067d4286a0d93e679fce23b0ff3047457ba"
+    },
+    {
+      "member": "endshop_inven_txt_2",
+      "text": "Oven X-treme",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "5f31936a3d5b6e933b19b7e5a9b79a62084f64235c6356518a5d7b8c51d9dadf"
+    },
+    {
+      "member": "endshop_inven_txt_3",
+      "text": "Mercury Air Racers",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "d9e39f68fc8150e72fd79f728b06d04229c60134d1a918424828569603fcd204"
+    },
+    {
+      "member": "endshop_inven_txt_4",
+      "text": "Podium",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "0d5ae64f261debdf8e530e6005d56f0dac6015a1cac67c685c769f3d8284eb1f"
+    },
+    {
+      "member": "endshop_inven_txt_5",
+      "text": "Apprentice Juggler",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "5af9b332bcf77fa89dc3d648ac80d8c3f3661144a82d0a94cf63bd5dd2dbdda0"
+    },
+    {
+      "member": "endshop_inven_txt_6",
+      "text": "Surround Sound System",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "e7ff32b03f5cf9385794d20cc482c9e58aa462d86fc4b3eb5a7a121be0fb3af1"
+    },
+    {
+      "member": "endshop_upgrade_name",
+      "text": "new table",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "3b076b901629eff5e5985589877fcbe2c2c87c428a39cccc912e1b5c8baba64a"
+    },
+    {
+      "member": "endshop_upgrade_name_2",
+      "text": "Podium",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "909a3d723c10b06e60abe5f033389af0a9e21d2fdc83160c2aeebab0a73fd995"
+    },
+    {
+      "member": "endshop_upgrade_name_3",
+      "text": "Super Oven X-treme",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "0597a0d4bcf7317df3ee9623b9767789eb60c364f9b7346941a52c5bfd52fa21"
+    },
+    {
+      "member": "gamepaused_tag",
+      "text": "( If you quit, you may resume later \rat the start of this level )",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "2d96b48e1270b4a5615b5e40dde75347b840812ebd0bdd3bff962b46ba538765"
+    },
+    {
+      "member": "gamepaused_txt",
+      "text": "game paused",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "0aa64a9d07fbacd2da07a549157802406729ff4dbefd156c40835259d47d2142"
+    },
+    {
+      "member": "hs_career_lbl",
+      "text": "Flo's career",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "2cb8a32372b382631d31b467ae17927cfc33b2c0c6452a5911bdc5ae1b1745ad"
+    },
+    {
+      "member": "hs_name_1",
+      "text": "1. Margaret",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "9a8986dfe28ff853ba51377bdb408e1e39ab050c0843c0ccb14587a0855c3fbd"
+    },
+    {
+      "member": "hs_name_10",
+      "text": "10. Wu",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "07c6da7708f64f51bdac365b183f4dcd8970c4bf52d9b75d556ea1f6a8356b4c"
+    },
+    {
+      "member": "hs_name_2",
+      "text": "2. Indra",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "8de5ccd5f86e98f0647ff64bf76bfcbc1973accd58a11a7d4934a1487f77a8dd"
+    },
+    {
+      "member": "hs_name_3",
+      "text": "3. Jorge",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "29649b3c53e96f35f73e80eab4f1b499ef90116025cecded90a1acf72fff2466"
+    },
+    {
+      "member": "hs_name_4",
+      "text": "4. Tamesha",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "b07eaaac874d66b80fc060a858930bbb90d3c443d511b192e58ac1961597c703"
+    },
+    {
+      "member": "hs_name_5",
+      "text": "5. asdf",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "aac7d3d7be315ab708fc74f30a1ff914930e695cce83d86f55ec9a2c8b510ee3"
+    },
+    {
+      "member": "hs_name_6",
+      "text": "6. Aziz",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "bcdfd150fc02f26a250ba04aee3efc758ab52f37a655e387b81179a61ed4e96d"
+    },
+    {
+      "member": "hs_name_7",
+      "text": "7. Jack",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "eecaf8180cefce47d96497ea32df9d6ca550274043185ff684f172f97dd3a9e0"
+    },
+    {
+      "member": "hs_name_8",
+      "text": "8. Aiden",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "d0086bbbf8fd77dfb242815977e71534dfe25d0ca6a248daaf4af41fda31dfab"
+    },
+    {
+      "member": "hs_name_9",
+      "text": "9. Milagros",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "a1de677a5b5f99a73f4aaea22d68a4977234a22c2a5b6c1f29d623d3c9d9436d"
+    },
+    {
+      "member": "hs_score_1",
+      "text": "20000",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "01cb07b705905b0a48524f30cf0812006d9b49bdfbb8c155cce09edf055cd54f"
+    },
+    {
+      "member": "hs_score_10",
+      "text": "2000",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "572e528dfdff6df35d36f3164664fa150879ceb939549dfc23f3a9988f03dbcf"
+    },
+    {
+      "member": "hs_score_2",
+      "text": "15000",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "1b6b59bc54263044e319125a0cf630e817573171b29f17a3d00b1d4fffc553a3"
+    },
+    {
+      "member": "hs_score_3",
+      "text": "10000",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "9cb7005a5564dedbc8af9f1bdaa235e961e6cf8b1a94910f426fcd3380d2e8e0"
+    },
+    {
+      "member": "hs_score_4",
+      "text": "7500",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "34be04e9c3516c87ad67166457f53425571430f077393119a34f0b7910f2837f"
+    },
+    {
+      "member": "hs_score_5",
+      "text": "7000",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "b073d2d299b5c6545c19d6722db799250af461a462ad1b970a5edc7cc9eff4c5"
+    },
+    {
+      "member": "hs_score_6",
+      "text": "6000",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "f365c340ddcc70feedc9dc611c13fc24bb1a07c502cec5574f6a54d1f4d55974"
+    },
+    {
+      "member": "hs_score_7",
+      "text": "5000",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "e4c87d39a3e596b4f132283fb6db2c438fea9699b54c77c750e3e26131471da3"
+    },
+    {
+      "member": "hs_score_8",
+      "text": "4000",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "65a5928ac44b348669fb24a7fb81983bf9e9c98540c1ebb1a6e8257a39382687"
+    },
+    {
+      "member": "hs_score_9",
+      "text": "3000",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "52ce52b4b9c5473da70f060a256f14b48fa8d9615f0a5428e9136baa9d091f2e"
+    },
+    {
+      "member": "interface_goal_lbl",
+      "text": "GOAL",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "c3b38eda4017dec27b9a3b5cf18d3b3a6315e28e96c3607fcc9f6a005342a915"
+    },
+    {
+      "member": "interface_goal_txt",
+      "text": "GOAL: 400",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "4fb8471dc9bf231c46dcce0abee31077dc06fa5287d0e0f09a3ac70ba90b9201"
+    },
+    {
+      "member": "interface_score_lbl",
+      "text": "SCORE",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "f616d910c1061391dccc58c70cf7cc15f73b255974af5d1092168a155131f5a9"
+    },
+    {
+      "member": "interface_score_txt",
+      "text": "0",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "783a8fcf6162fff0b9cf66caa4299343a8ad372ae2ada8039633cf26de89c02b"
+    },
+    {
+      "member": "legaltext_short_version",
+      "text": "Copyright 2004, PlayFirst, Inc. All Rights Reserved.",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *"
+      ],
+      "xmed_sha256": "4933dbdf09f70d955383a9c098ffea6a6e73dde0fac0253312c290bdd38f5d63"
+    },
+    {
+      "member": "level_txt",
+      "text": "1",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *"
+      ],
+      "xmed_sha256": "052b82351c7437d5520ebf555b812aa5383357354dfaa7ba239e735a0456d8a2"
+    },
+    {
+      "member": "levelbutton_txt",
+      "text": "level 3",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "4e22db2b85f45f3bc0098bb891a2ed0578c0832fa3c356565baaad0fd52f86f9"
+    },
+    {
+      "member": "login_name_",
+      "text": "[New Player]",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "568ae74586d85df1e2b531f8504dc22ba2c83dead38c3df9cf03f7fd7a967c22"
+    },
+    {
+      "member": "login_name_1",
+      "text": "asdf",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "9fce336d699f9ac2270170bb80098f3dfd4e6357f144aefcf1a552a2180555e9"
+    },
+    {
+      "member": "lunch_title",
+      "text": "LUNCH",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "cbbb5b4633a5d1b75a92fe317eba5c326b83fe361dd02224be3b1df8f6c2cbc1"
+    },
+    {
+      "member": "menu_currentUser_lbl",
+      "text": "CURRENT USER: asdfasdfasdf",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "5d8c54dc8f2209b134a144b2da9f6dad88166989746b5a108cb01760764a2b58"
+    },
+    {
+      "member": "menu_player_name",
+      "text": "asdf",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "9b97f78227e1986764d968ce7369f1e268bb4c931cc2c8304e322bb0f7167d0a"
+    },
+    {
+      "member": "newgame_txt",
+      "text": "new game",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "f0cc288cbf99a5f6b901c06f7ca77a238ec05bc2fef37aca120b1f2ec09f5429"
+    },
+    {
+      "member": "noquit_txt",
+      "text": "NO",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "4aeac79d9d6ddccd21b848f49fa44153e2b29d60fcfc1f171c2d778fbe5fe401"
+    },
+    {
+      "member": "opt_music_lbl",
+      "text": "MUSIC",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "5ae5a849166637ece15b444f67dbf18a30bd2476d0e7d0ac4ee658fd43bc1b29"
+    },
+    {
+      "member": "opt_slash",
+      "text": "/",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "f38c403bdfc593206326b92130c89f2cbcbabddb7fdee520c141f055b88adc3b"
+    },
+    {
+      "member": "plswait_txt",
+      "text": "PLEASE WAIT\r   loading...",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "a81b698a549b13a43d4a7348faeee92952519eb09baaf5b191ff9c006f4a75ce"
+    },
+    {
+      "member": "quit_txt",
+      "text": "Are you sure you want to quit?",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "0473fd5d01482d1b7d9e14c90792fe60a6c599df61a939ca169626edd8f161d7"
+    },
+    {
+      "member": "quitgamebutton_txt",
+      "text": "quit game",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "5ae26ce6181a6188e5da563ab716e265898b3b3b64775a61d36156c2197a4db1"
+    },
+    {
+      "member": "restart_txt",
+      "text": "restart level",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "4b9c46a6f71d302217e85a6c4e58daa1ef88869a7cf5e0428f56e597f7804fe9"
+    },
+    {
+      "member": "skiplevel_txt",
+      "text": "skip level",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "48859cc25c134d42371c8f53816c0142edb4b0852c2a4e3bd9f47c68e5599a94"
+    },
+    {
+      "member": "skiplvl_txt",
+      "text": "skip level",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "e88e49d0623118346b5be51f0b38ebcf853f05ef27c79dc7a8778dd71599e8b5"
+    },
+    {
+      "member": "stage_txt",
+      "text": "Chez Flo's",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "c682bbad03cd4ef344595c712dfe9c5b2c9e9b27ded7d6a7b75d85d69c938afb"
+    },
+    {
+      "member": "startlvl_text",
+      "text": "Welcome to my first diner! Only a couple of tables to start, but that's enough to get us going. Let's see if me can learn the basics with some standard customers.",
+      "referenced_fonts": [
+        "Arial",
+        "Mr.B *"
+      ],
+      "xmed_sha256": "3c0ec847874dabc8bc75d49ec58ee5a3dfa67350a261684c94007a9e714ee001"
+    },
+    {
+      "member": "version_number_txt",
+      "text": "v1.0",
+      "referenced_fonts": [
+        "Arial",
+        "Komika Axis *"
+      ],
+      "xmed_sha256": "0ac4f1ef2b5e9db1c718fb50aff73c2e1cf1e212e13e3e61488cac4cf26546dc"
+    },
+    {
+      "member": "yesquit_txt",
+      "text": "YES",
+      "referenced_fonts": [
+        "Arial"
+      ],
+      "xmed_sha256": "3c6ac6b3d92af7dfc996b52f18303679e5d9269f079d32133eaeee6f15354d8c"
+    }
+  ]
+}

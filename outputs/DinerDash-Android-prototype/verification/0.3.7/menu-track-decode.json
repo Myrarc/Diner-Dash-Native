@@ -1,0 +1,116 @@
+[
+  {
+    "path": "sounds/sfx/707_music_h1.mp3",
+    "sha256": "093059b81a78e06f9cecfe1436560d7d7cb90907b02d68c48af5020ed9cdd8a8",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "16000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.016333"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "sounds/sfx/712_music_h6.mp3",
+    "sha256": "d1d3226eaafa5e61fa22da501d59cfc4bb623d71b46b4c191ed755aff5a3d76f",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "16000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.016333"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "sounds/sfx/708_music_h2.mp3",
+    "sha256": "f502e4f077ff3adb382b84fa7e8e8406105012baa0eaeb5a7a3bc2caf7e635a6",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "16000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.016333"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "sounds/sfx/709_music_h3.mp3",
+    "sha256": "018bbb27c1e63629059a6c4cfb7f292163ce1427ac89adea955aa7c6118a57ef",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "16000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.016333"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "sounds/sfx/710_music_h4.mp3",
+    "sha256": "8ec3e85291ea7cd33950736984505cc6167efa2b2e3df73fc1cf4b9d17cd42d6",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "16000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.016333"
+      }
+    },
+    "decode_exit": 0
+  },
+  {
+    "path": "sounds/sfx/711_music_h5.mp3",
+    "sha256": "c2f8a331531badf2d3ee28f89f9750552d1189fa5f83a0c6aef7d84d3900bceb",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "16000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "duration": "6.016333"
+      }
+    },
+    "decode_exit": 0
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "version": "0.3.1",
+  "scope": "Continue/chef clock reset and stopped front-facing Flo; deeper mechanics source audit",
+  "apk_sha256": "935d28b808fd9955d49869ad601d0c504b78358817790cf676a0a0d691be7f6f",
+  "model_tests": {
+    "engine": 35,
+    "fidelity": 332,
+    "full_game": 2989,
+    "zero_travel_bot_goals": 46,
+    "career_shifts": 50,
+    "table_to_wheel_routes": 308
+  },
+  "installed_canvas_checks": 28,
+  "installed_activity_checks": 32,
+  "result_fixtures": [
+    "1-1 -> 1-2",
+    "1-10 -> 2-1",
+    "5-9 -> 5-10",
+    "retry 1-5"
+  ],
+  "real_emulator_touch": {
+    "apk_sha256": "935d28b808fd9955d49869ad601d0c504b78358817790cf676a0a0d691be7f6f",
+    "checkpoints": [
+      {
+        "action": "Naturally complete 1-1",
+        "screen": "endlevel"
+      },
+      {
+        "action": "Real tap Continue",
+        "screen": "startlevel"
+      },
+      {
+        "action": "Next shift playable",
+        "state": "Restaurant. Shift 2. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+      }
+    ],
+    "crash_buffer": "no fatal exceptions"
+  },
+  "screenshots_inspected": 3,
+  "package_integrity": {
+    "version": "0.3.1",
+    "apk_sha256": "935d28b808fd9955d49869ad601d0c504b78358817790cf676a0a0d691be7f6f",
+    "packaged_media_verified": 1960,
+    "sounds_stored_uncompressed": 62,
+    "zip_crc": "pass",
+    "signature_verified": true
+  },
+  "mechanics_audit": {
+    "report": "verification/mechanics-audit.md",
+    "source_contract_differences": 15,
+    "matching_controls": 8,
+    "windows_runtime_executed": false
+  },
+  "physical_device": false,
+  "audible_playback_verified": false,
+  "full_campaign_human_playthrough": false,
+  "independent_visual_review_repeated": false,
+  "previous_release_evidence": "verification/0.3.0-verification.json",
+  "current_evidence": "verification/0.3.1/",
+  "notes": [
+    "Earlier first-party-only original queue claim corrected from reachable handlers.",
+    "Synthetic result test initially failed due to unlaid test View size; fixture corrected, final 32 checks pass.",
+    "Real touch script initially used an incorrect bus-cart coordinate; corrected from recovered layout, full service and transition completed.",
+    "Mechanics probe differences remain outstanding and are not passing parity tests."
+  ]
+}

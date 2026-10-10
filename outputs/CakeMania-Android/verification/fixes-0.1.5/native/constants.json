@@ -1,0 +1,66 @@
+{
+  "constants": {
+    "0x581610": {
+      "float": 6.283199787139893,
+      "double": 201326624.3927
+    },
+    "0x586ba8": {
+      "float": 3.811648098561283e-24,
+      "double": 0.349
+    },
+    "0x586bb0": {
+      "float": 0.0,
+      "double": 4294967296.0
+    },
+    "0x586bb8": {
+      "float": 3.811648098561283e-24,
+      "double": 0.1745
+    },
+    "0x585fa0": {
+      "float": 15.0,
+      "double": 524288.1278076172
+    },
+    "0x581420": {
+      "float": 0.5,
+      "double": 3.153639232263257e+161
+    },
+    "0x58160c": {
+      "float": -0.5
+    },
+    "0x581614": {
+      "float": 21.0
+    },
+    "0x581618": {
+      "float": 0.3499999940395355
+    },
+    "0x581474": {
+      "float": 0.699999988079071
+    }
+  },
+  "resources": {
+    "0x5b9f20": {
+      "id": "IMAGE_CLOCK_RULER",
+      "enum": "0x1b4"
+    },
+    "0x5b9e04": {
+      "id": "IMAGE_CLOCK",
+      "enum": "0x230"
+    },
+    "0x5b9618": {
+      "id": "IMAGE_CLICKED",
+      "enum": "0x231"
+    },
+    "0x5b9f40": {
+      "id": "IMAGE_READYCIRCLE",
+      "enum": "0x243"
+    },
+    "0x5b97e4": {
+      "id": "IMAGE_CUST_PUFF_HAPPY",
+      "enum": "0x25f"
+    },
+    "0x5b9a2c": {
+      "id": "IMAGE_CUST_PUFF_ANGRY",
+      "enum": "0x260"
+    }
+  }
+}

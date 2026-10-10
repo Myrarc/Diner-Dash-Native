@@ -1,0 +1,158 @@
+[
+  {
+    "name": "699_music_c1",
+    "samples": 101376,
+    "leading_below_16": 1172,
+    "trailing_below_16": 3256
+  },
+  {
+    "name": "700_music_c2",
+    "samples": 101376,
+    "leading_below_16": 1131,
+    "trailing_below_16": 3193
+  },
+  {
+    "name": "701_music_c3",
+    "samples": 101376,
+    "leading_below_16": 1131,
+    "trailing_below_16": 3226
+  },
+  {
+    "name": "702_music_c4",
+    "samples": 101376,
+    "leading_below_16": 1184,
+    "trailing_below_16": 3679
+  },
+  {
+    "name": "703_music_c5",
+    "samples": 101376,
+    "leading_below_16": 1134,
+    "trailing_below_16": 3328
+  },
+  {
+    "name": "704_music_c6",
+    "samples": 101376,
+    "leading_below_16": 1165,
+    "trailing_below_16": 3263
+  },
+  {
+    "name": "705_music_c7",
+    "samples": 101376,
+    "leading_below_16": 1168,
+    "trailing_below_16": 3298
+  },
+  {
+    "name": "706_music_c8",
+    "samples": 54144,
+    "leading_below_16": 1158,
+    "trailing_below_16": 3830
+  },
+  {
+    "name": "707_music_h1",
+    "samples": 96768,
+    "leading_below_16": 1214,
+    "trailing_below_16": 4762
+  },
+  {
+    "name": "708_music_h2",
+    "samples": 96768,
+    "leading_below_16": 1231,
+    "trailing_below_16": 4462
+  },
+  {
+    "name": "709_music_h3",
+    "samples": 96768,
+    "leading_below_16": 1209,
+    "trailing_below_16": 4400
+  },
+  {
+    "name": "710_music_h4",
+    "samples": 96768,
+    "leading_below_16": 1132,
+    "trailing_below_16": 4406
+  },
+  {
+    "name": "711_music_h5",
+    "samples": 96768,
+    "leading_below_16": 1191,
+    "trailing_below_16": 4472
+  },
+  {
+    "name": "712_music_h6",
+    "samples": 96768,
+    "leading_below_16": 1198,
+    "trailing_below_16": 4392
+  },
+  {
+    "name": "713_music_i1",
+    "samples": 101376,
+    "leading_below_16": 1181,
+    "trailing_below_16": 3240
+  },
+  {
+    "name": "714_music_i2",
+    "samples": 101376,
+    "leading_below_16": 1181,
+    "trailing_below_16": 3248
+  },
+  {
+    "name": "715_music_i3",
+    "samples": 101376,
+    "leading_below_16": 1194,
+    "trailing_below_16": 3230
+  },
+  {
+    "name": "716_music_i4",
+    "samples": 101376,
+    "leading_below_16": 1181,
+    "trailing_below_16": 3323
+  },
+  {
+    "name": "717_music_i5",
+    "samples": 101376,
+    "leading_below_16": 1193,
+    "trailing_below_16": 3310
+  },
+  {
+    "name": "718_music_i6",
+    "samples": 101376,
+    "leading_below_16": 1200,
+    "trailing_below_16": 3287
+  },
+  {
+    "name": "719_music_j1",
+    "samples": 101376,
+    "leading_below_16": 1190,
+    "trailing_below_16": 3767
+  },
+  {
+    "name": "720_music_j2",
+    "samples": 101376,
+    "leading_below_16": 1168,
+    "trailing_below_16": 3261
+  },
+  {
+    "name": "721_music_j3",
+    "samples": 101376,
+    "leading_below_16": 1189,
+    "trailing_below_16": 3291
+  },
+  {
+    "name": "722_music_j4",
+    "samples": 101376,
+    "leading_below_16": 1194,
+    "trailing_below_16": 3696
+  },
+  {
+    "name": "723_music_j5",
+    "samples": 101376,
+    "leading_below_16": 1190,
+    "trailing_below_16": 3363
+  },
+  {
+    "name": "724_music_j6",
+    "samples": 101376,
+    "leading_below_16": 1179,
+    "trailing_below_16": 3694
+  }
+]

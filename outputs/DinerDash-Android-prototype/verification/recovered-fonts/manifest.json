@@ -1,0 +1,31 @@
+{
+  "source": "reconstructed/ext/main.cst, cast-owned XMED chunks identified as font in specificData",
+  "status": "Historical payloads were extracted with an incorrect extra eight-byte offset. Corrected PFR payloads and validated TTF conversions are now available in the separate DinerDash-recovered-fonts comparison bundle; Android integration remains pending.",
+  "fonts": [
+    {
+      "payload": "Daniel__.XMED.bin",
+      "bytes": 33294,
+      "sha256": "39a4ab7fc1d94cb6f8f1bf5c549c5d14bd0f6a08e02bd1ffd554c1c6b74ae682",
+      "specific_font_definition_hex": "00000004666f6e74000000200000000100000020800000000000000044616e69656c202a0044616e69656c00"
+    },
+    {
+      "payload": "Komika_Axis__.XMED.bin",
+      "bytes": 27611,
+      "sha256": "93d1bbf05fa9aed0e5e695e6d9bb4288e424d9d922c9dd6ee634f5b2a0d5239b",
+      "specific_font_definition_hex": "00000004666f6e740000002a000000010000002a80000000000000004b6f6d696b612041786973202a004b6f6d696b61204178697300"
+    },
+    {
+      "payload": "Mr.B__.XMED.bin",
+      "bytes": 52242,
+      "sha256": "5c3742124ae23e69ad54d6d0e6379434cba034d332f3631dbaafd323d2af8d6d",
+      "specific_font_definition_hex": "00000004666f6e740000001c000000010000001c80000000000000004d722e42202a004d722e4200"
+    },
+    {
+      "payload": "Daniel_Black__.XMED.bin",
+      "bytes": 56939,
+      "sha256": "5eab40d03436a8fea27ac7e22e18500e463f334b77cca6a949b632987eb4590f",
+      "specific_font_definition_hex": "00000004666f6e740000002c000000010000002c800000000000000044616e69656c20426c61636b202a0044616e69656c20426c61636b00"
+    }
+  ],
+  "corrected_recovery": "../../../DinerDash-recovered-fonts/manifest.json"
+}

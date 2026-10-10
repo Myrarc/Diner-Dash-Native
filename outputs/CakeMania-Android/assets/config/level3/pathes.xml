@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Nodes count="20">
+	<Point id="0" x="322" y="490" />
+	<Point id="1" x="440" y="490" />
+	<Point id="2" x="540" y="490" />
+	<Point id="3" x="665" y="490" />
+	<Point id="4" x="635" y="395" />
+	<Point id="5" x="615" y="330" />
+	<Point id="6" x="595" y="287" />
+	<Point id="7" x="500" y="287" />
+	<Point id="8" x="390" y="287" />
+	<Point id="9" x="278" y="287" />
+	<Point id="10" x="292" y="350" />
+	<Point id="11" x="304" y="410" />
+	<Point id="12" x="386" y="445" />
+	<Point id="13" x="490" y="445" />
+	<Point id="14" x="570" y="445" />
+	<Point id="15" x="555" y="385" />
+	<Point id="16" x="535" y="320" />
+	<Point id="17" x="460" y="320" />
+	<Point id="18" x="360" y="320" />
+	<Point id="19" x="355" y="385" />
+</Nodes>
+<Connections>
+	<Connection id="0" data="1,11,12" />
+	<Connection id="1" data="0,2,12,13" />
+	<Connection id="2" data="1,3,13,14" />
+	<Connection id="3" data="2,4,14" />
+	<Connection id="4" data="3,5,14,15" />
+	<Connection id="5" data="4,6,15,16" />
+	<Connection id="6" data="5,7,16" />
+	<Connection id="7" data="6,8,16,17" />
+	<Connection id="8" data="7,9,17,18" />
+	<Connection id="9" data="8,10,18" />
+	<Connection id="10" data="9,11,18,19" />
+	<Connection id="11" data="0,10,12,19" />
+	<Connection id="12" data="0,1,11,13,19" />
+	<Connection id="13" data="1,2,12,14" />
+	<Connection id="14" data="2,3,4,13,15" />
+	<Connection id="15" data="4,5,14,16" />
+	<Connection id="16" data="5,6,7,15,17" />
+	<Connection id="17" data="7,8,16,18" />
+	<Connection id="18" data="8,9,10,17,19" />
+	<Connection id="19" data="10,11,12,18" />
+</Connections>
+<CustomerPath>
+	<Point x="127" y="572" x_money="216" y_money="461" />
+	<Point x="121" y="484" x_money="199" y_money="381" />
+	<Point x="113" y="408" x_money="191" y_money="311" />
+	<Point x="106" y="324" x_money="184" y_money="246" />
+	<Point x="91" y="259" x_money="180" y_money="181" />
+</CustomerPath></root>

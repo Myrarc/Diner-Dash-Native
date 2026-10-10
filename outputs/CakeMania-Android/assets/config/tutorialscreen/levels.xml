@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+<Levels>
+	<Level id="0" seq="TutorialScreen/sequence0.xml" />
+	<Level id="10" seq="TutorialScreen/sequence10.xml" />
+</Levels></root>

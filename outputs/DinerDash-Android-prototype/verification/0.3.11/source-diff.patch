@@ -1,0 +1,65 @@
+--- work/patience-audit/baseline/src/local/dinerdash/prototype/GameEngine.java	2026-10-08 21:21:39
++++ outputs/DinerDash-Android-prototype/src/local/dinerdash/prototype/GameEngine.java	2026-10-09 00:42:44
+@@ -61,7 +61,8 @@
+         public long age,moodAge,cookingUntil,cookingOrder,stateDuration,snackAt=-1,resumeDuration,waitingSince,drinkUntil,moodChangedAt=-1;
+         public String wantedSnack;
+         public boolean foodReady,foodPickedUp;
+-        Party(int id,Arrival a) { this.id=id;colors=a.colors.clone();profile=a.profile;tutorial=a.tutorial; }
++        public double timeMultiplier=1,happyInterval,madInterval;
++        Party(int id,Arrival a) { this.id=id;colors=a.colors.clone();profile=a.profile;tutorial=a.tutorial;happyInterval=Math.max(profile.minimum[0],profile.happy[0]);madInterval=Math.max(profile.minimum[0],profile.mad[0]); }
+     }
+     public static final class Item {
+         public final ItemType type;public final int party;public final int mood;
+@@ -173,7 +174,10 @@
+     public void tick(long delta){
+         if(paused||ended||delta<=0)return;time+=delta;
+         if(level.endless){
+-            while(time>=nextRamp){timeMultiplier=Math.max(level.minMultiplier,timeMultiplier-level.decrease);nextRamp+=level.rampMS;}
++            while(time>=nextRamp){timeMultiplier=Math.max(level.minMultiplier,timeMultiplier-level.decrease);nextRamp+=level.rampMS;
++                // Original ramps update queued groups' state objects, never active timers or seated groups.
++                for(Party p:parties)if(p.state==State.WAITING)p.timeMultiplier=timeMultiplier;
++            }
+             if(time>=nextRandomAt){Arrival a=randomArrival();addParty(a);nextRandomAt=time+Math.max(1,a.time);}
+         }else while(nextArrival<level.arrivals.size()&&level.arrivals.get(nextArrival).time<=time)addParty(level.arrivals.get(nextArrival++));
+         if(level.drinks!=null&&!drinkReady&&time>=drinkReadyAt)drinkReady=true;
+@@ -201,7 +205,7 @@
+             case LEAVING:case DITCHING:
+                 if(p.age>=1500){Table t=level.tables.get(p.table);t.party=null;setState(p,State.GONE);if(t.barStart>=0&&!t.dirty){syncBar(t);t.active=false;}}break;
+             case WAITING:case READY:case ORDERED:case CHECK:case SNACK:
+-                if(!p.tutorial){p.moodAge+=delta;if(p.moodAge>=timer(p,p.profile.mad[p.state.ordinal()])){mood(p,-1);if(p.mood==0)abandon(p);else if(p.state==State.SNACK)resumeSnack(p,false);}}break;
++                if(!p.tutorial){p.moodAge+=delta;if(p.moodAge>=p.madInterval){mood(p,-1);if(p.mood==0)abandon(p);else if(p.state==State.SNACK)resumeSnack(p,false);}}break;
+             default:break;
+             }
+         }
+@@ -213,7 +217,7 @@
+         for(Iterator<Popup> i=popups.iterator();i.hasNext();){Popup p=i.next();p.remaining-=delta;if(p.remaining<=0)i.remove();}
+         checkClosing();
+     }
+-    private void addParty(Arrival a){Party p=new Party(partySequence++,a);p.waitingSince=time;parties.add(p);sound("sfx_party_arrive_1_snd");}
++    private void addParty(Arrival a){Party p=new Party(partySequence++,a);p.timeMultiplier=timeMultiplier;p.waitingSince=time;setState(p,State.WAITING);parties.add(p);sound("sfx_party_arrive_1_snd");}
+     private Arrival randomArrival(){
+         Sublevel s=level.sublevels.get(Math.min(sublevel,level.sublevels.size())-1);int total=0;for(GroupChoice g:s.groups)total+=g.weight;
+         int choice=random.nextInt(Math.max(1,total));GroupChoice chosen=s.groups.get(0);
+@@ -222,17 +226,20 @@
+         for(int i=0;i<size;i++)colors[i]=p.graphic.equals("critic")?-1:s.colors[random.nextInt(s.colors.length)];
+         return new Arrival(chosen.delay,colors,chosen.type);
+     }
+-    private long timer(Party p,long base){double patience=p.state==State.WAITING?waitingPatience:(p.state==State.READY||p.state==State.ORDERED||p.state==State.CHECK||p.state==State.SNACK?seatedPatience:1);return Math.max(p.profile.minimum[p.state.ordinal()],(long)(base*timeMultiplier*patience));}
++    private double interval(Party p,long base){double patience=p.state==State.WAITING?waitingPatience:(p.state==State.READY||p.state==State.ORDERED||p.state==State.CHECK||p.state==State.SNACK?seatedPatience:1);return Math.max(p.profile.minimum[p.state.ordinal()],base*p.timeMultiplier*patience);}
++    private long timer(Party p,long base){return (long)Math.ceil(interval(p,base));}
+     private void setState(Party p,State state){
+         if(p.table>=0){Table t=level.tables.get(p.table);if(t.barStart>=0){if(p.state==State.ORDERED&&state!=State.ORDERED&&t.orderLabel!=null){barLetters.add(t.orderLabel);t.orderLabel=null;}if(state==State.ORDERED&&t.orderLabel==null)t.orderLabel=barLetters.remove();}}
+         p.state=state;p.age=0;p.moodAge=0;p.snackAt=-1;if(state==State.LEAVING||state==State.DITCHING||state==State.GONE)killFood(p);if(state==State.GONE)return;p.stateDuration=timer(p,p.profile.duration[state.ordinal()]);
++        // State entry starts mood_timer with fixed happy/mad thresholds; mood changes only reset elapsed time.
++        p.happyInterval=interval(p,p.profile.happy[state.ordinal()]);p.madInterval=interval(p,p.profile.mad[state.ordinal()]);
+         if(state==State.SCORING)p.stateDuration=timer(p,Math.max(1000,p.profile.duration[state.ordinal()]));
+         if(state==State.EATING){level.tables.get(p.table).dirty=true;}
+         if((state==State.DECIDING||state==State.EATING)&&level.snacks.length>0&&p.stateDuration>=2000&&random.nextInt(100)+1<level.snackPercent){int raw=p.profile.duration[state.ordinal()];p.snackAt=2000+random.nextInt(Math.max(1,raw-2000))+1;}
+     }
+     private void resumeSnack(Party p,boolean fast){if(fast)fastService(p);State resume=p.previous;long remaining=p.resumeDuration;p.wantedSnack=null;setState(p,resume);p.snackAt=-1;p.stateDuration=remaining;}
+     private void mood(Party p,int d){int before=p.mood;p.mood=Math.max(p.id==heldParty&&p.state==State.WAITING?1:0,Math.min(10,p.mood+d));p.moodAge=0;if(p.mood!=before){p.moodBefore=before;p.moodChangedAt=time;}}
+-    private void fastService(Party p){if(!p.tutorial&&p.age<timer(p,p.profile.happy[p.state.ordinal()]))mood(p,p.profile.timeMood);}
++    private void fastService(Party p){if(!p.tutorial&&p.age<p.happyInterval)mood(p,p.profile.timeMood);}
+     private void abandon(Party p){
+         abandoned++;addScore(-p.profile.penalty,p.table);killFood(p);
+         for(Iterator<Item> i=hands.iterator();i.hasNext();)if(i.next().party==p.id)i.remove();

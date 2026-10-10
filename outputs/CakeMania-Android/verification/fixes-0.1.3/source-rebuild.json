@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "source_files": 9,
+  "apk_sha256": "aa141dfcbaa4826e5713236f58f50421b17ce45616b83beacddd51554feb17b3",
+  "classes_dex_sha256": "f371f0a2932d161e7449311accfe38fd3d74e423aa774adf116fc82e713bc990",
+  "second_independent_compilation_byte_identical": true
+}

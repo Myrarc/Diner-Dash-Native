@@ -1,0 +1,15 @@
+{
+  "json_parse": "pass",
+  "canonical_sections": "pass",
+  "declared_color_references": "pass",
+  "component_token_properties": "pass",
+  "source_and_asset_paths": "pass",
+  "component_preview_states": "pass",
+  "yaml_parser": "pass: macOS Ruby Psych safe_load",
+  "documenter_role": "fresh substitute wrote both files before usage-limit failure; parent verified structure inline",
+  "not_canonized": [
+    "Android casual, condensed and theme-default faces: preserved original Director font payloads have not been decoded, so these fallback outlines remain a fidelity defect.",
+    "The temporary native player-name EditText is an input bridge, not the game visual language.",
+    "The superseded 0.2.0 native toolbar, waiting/station cards, 1000\u00d7600 board and pinch/pan rules are not current system rules."
+  ]
+}

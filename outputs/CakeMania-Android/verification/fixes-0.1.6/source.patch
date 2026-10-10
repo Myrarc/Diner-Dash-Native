@@ -1,0 +1,80 @@
+--- 0.1.5/src/local/cakemania/GameEngine.java
++++ 0.1.6/src/local/cakemania/GameEngine.java
+@@ -52,6 +52,11 @@
+         /** Native visual state is independent from the logical service state. */
+         public int visualState,visualFrame;
+         public float visualElapsed;
++        /** Authored customer motion (Cupid's hover), shared by drawing and input. */
++        public float hoverX,hoverY;
++        private final float[][] hoverCurve;
++        private final float hoverPeriod,hoverLength;
++        private float hoverTime;
+         /** Remaining frame in the native five-frame happy/angry puff, or -1 when idle. */
+         public int departureFrame=-1;
+         /** Queue position captured when the body disappears; the puff does not follow compaction. */
+@@ -65,14 +70,26 @@
+         private boolean lostPenaltyCharged;
+         Customer(int serial,int slot,Node profile,Node arrival){this.serial=serial;this.slot=slot;this.profile=profile;this.arrival=arrival;
+             // 0x00414d80 / 0x00412970: retain the partial heart interval in seconds.
+-            int patience=profile.i("patience",20);remainingPatience=(profile.i("start_hearts",3)+1)*(patience==0?100:patience)-.01f;updateHearts();}
++            int patience=profile.i("patience",20);remainingPatience=(profile.i("start_hearts",3)+1)*(patience==0?100:patience)-.01f;updateHearts();
++            Node animation=profile.first("Animation");hoverPeriod=animation==null?0:animation.f("time",0);String[] points=animation==null?new String[0]:animation.s("curve").split(";");hoverCurve=new float[points.length][2];float length=0;
++            for(int i=0;i<points.length;i++){int[] point=ints(points[i]);hoverCurve[i][0]=point[0];hoverCurve[i][1]=point[1];if(i>0)length+=(float)Math.hypot(hoverCurve[i][0]-hoverCurve[i-1][0],hoverCurve[i][1]-hoverCurve[i-1][1]);}
++            hoverLength=length;advanceHover(0);}
+         private void updateHearts(){int patience=profile.i("patience",20);hearts=Math.min(profile.i("max_hearts",5),patience==0?profile.i("start_hearts",3):(int)(remainingPatience/patience));}
+         private void addHearts(int count,boolean cookie){int patience=profile.i("patience",20);if(patience==0)return;remainingPatience=Math.min(remainingPatience+count*patience,(profile.i("max_hearts",5)+1)*patience-(cookie?0:.01f));updateHearts();}
+         public int payment(){updateHearts();return cakePrice+hearts*profile.i("tip",1);}
+         public void setVisual(int state){if(visualState!=state){visualState=state;visualFrame=0;visualElapsed=0;}}
+         private Node visualImage(){String id=visualState==1?"ID_MENU":visualState==2?"ID_HAPPY":visualState==3?"ID_BORED":visualState==4?"ID_EATING":"ID_NORMAL";for(Node n:profile.children)if(n.tag.equals("Image")&&n.s("id").equals(id))return n;return null;}
++        private void advanceHover(float dt){
++            if(hoverPeriod<=0||hoverCurve.length<2)return;
++            hoverTime+=dt;if(hoverTime>hoverPeriod)hoverTime=0;
++            // 0040b140 folds the second half of the period, then squares time.
++            float t=hoverTime>=hoverPeriod*.5f?hoverTime-hoverPeriod:hoverTime,distance=t*t*hoverLength/(hoverPeriod*hoverPeriod*.25f);
++            hoverX=hoverY=0;
++            for(int i=1;i<hoverCurve.length;i++){float[] from=hoverCurve[i-1],to=hoverCurve[i];float length=(float)Math.hypot(to[0]-from[0],to[1]-from[1]);if(distance<=length&&length>0){float phase=distance/length;hoverX=from[0]+(to[0]-from[0])*phase;hoverY=from[1]+(to[1]-from[1])*phase;return;}distance-=length;}
++        }
+         public void advanceVisual(float dt){
+-            if(dt<=0)return;Node image=visualImage();if(image==null)return;Node sequence=image.first("Sequence");if(sequence==null)return;int[] frames=ints(sequence.s("frames"));if(frames.length==0)return;
++            // The departure puff retains the last visible customer position.
++            if(dt<=0)return;if(spriteVisible())advanceHover(dt);Node image=visualImage();if(image==null)return;Node sequence=image.first("Sequence");if(sequence==null)return;int[] frames=ints(sequence.s("frames"));if(frames.length==0)return;
+             float interval=.1f;for(Node timing:image.children)if(timing.tag.equals("Timing")){int start=timing.i("framestart",0),end=timing.i("frameend",frames.length);if(start<=visualFrame&&visualFrame<end){float duration=timing.f("time",0);interval=duration/(end>start?end-start:1);if(interval<=0)interval=.1f;break;}}
+             visualElapsed+=dt;if(visualElapsed>interval){visualElapsed=0;visualFrame++;if(visualFrame>=frames.length){if(visualState==1||visualState==0){visualFrame=0;}else{visualState=0;visualFrame=0;}}}
+         }
+--- 0.1.5/src/local/cakemania/GameView.java
++++ 0.1.6/src/local/cakemania/GameView.java
+@@ -280,14 +280,16 @@
+     private int cookieStockCount(Station s){int count=0;for(boolean present:s.cookieStock)if(present)count++;return count;}
+     private static int optionalInt(Object target,String name,int fallback){try{java.lang.reflect.Field f=target.getClass().getField(name);Object value=f.get(target);return value instanceof Number?((Number)value).intValue():fallback;}catch(Exception ignored){return fallback;}}
+     private Node customerImage(Customer customer){String state=customer.visualState==1?"ID_MENU":customer.visualState==2?"ID_HAPPY":customer.visualState==3?"ID_BORED":customer.visualState==4?"ID_EATING":customer.state==CustomerState.READING?"ID_MENU":customer.state==CustomerState.HAPPY||customer.state==CustomerState.CASH?"ID_HAPPY":customer.hearts==1?"ID_BORED":"ID_NORMAL";for(Node n:customer.profile.children)if(n.s("id").equals(state))return n;throw new IllegalStateException("Missing customer animation "+state);}
+-    private Bitmap customerFrame(Customer customer,Node image){int[] order=ints(image.first("Sequence").s("frames"));return assets.frame(image.s("img"),image.i("cols",1),image.i("rows",1),order[Math.floorMod(customer.visualFrame,Math.max(1,order.length))]);}
++    // 00410fe0 reverses the sequence; 0040d370 reverses its index again, then
++    // converts the authored bottom-first pose number to a physical sheet row.
++    private Bitmap customerFrame(Customer customer,Node image){int[] order=ints(image.first("Sequence").s("frames"));return assets.frame(image.s("img"),image.i("cols",1),image.i("rows",1),image.i("rows",1)-1-order[Math.floorMod(customer.visualFrame,Math.max(1,order.length))]);}
+     private RectF customerSpriteBounds(Customer customer,Node image,Bitmap frame){return customerSpriteBounds(customer,image,frame,customer.slot);}
+-    private RectF customerSpriteBounds(Customer customer,Node image,Bitmap frame,int slot){Node point=activity.game.customerPoints.get(slot);float projection=image.f("scale",1),x=point.f("x",130)-frame.getWidth()*projection/2+image.f("xdec",0),y=point.f("y",500)-frame.getHeight()*projection+image.f("ydec",0);return new RectF(x,y,x+frame.getWidth()*projection,y+frame.getHeight()*projection);}
++    private RectF customerSpriteBounds(Customer customer,Node image,Bitmap frame,int slot){Node point=activity.game.customerPoints.get(slot);float projection=image.f("scale",1);int x=(int)(point.f("x",130)-frame.getWidth()*projection/2+customer.hoverX+image.f("xdec",0)),y=(int)(point.f("y",500)-frame.getHeight()*projection-customer.hoverY+image.f("ydec",0));return new RectF(x,y,x+(int)(frame.getWidth()*projection),y+(int)(frame.getHeight()*projection));}
+     private RectF customerOrderBounds(Customer customer){Node p=activity.game.customerPoints.get(customer.slot);float x=p.f("x_money",230),y=p.f("y_money",500);return customer.state==CustomerState.CASH?new RectF(x-4,y-25,x+46,y+25):new RectF(x-23,y-83,x+71,y);}
+-    private void addCustomerControl(Customer customer){if(customer.state==CustomerState.LEAVING||customer.cashCollected)return;Node image=customerImage(customer);RectF r=customer.state==CustomerState.CASH?customerOrderBounds(customer):customerSpriteBounds(customer,image,customerFrame(customer,image));if(customer.spriteVisible())r.union(customerOrderBounds(customer));control("customer:"+customer.serial,customer.profile.s("name")+", "+customer.state+", "+customer.hearts+" hearts",r.left,r.top,r.width(),r.height());}
++    private void addCustomerControl(Customer customer){if(customer.state==CustomerState.LEAVING||customer.cashCollected)return;Node image=customerImage(customer);RectF r=customer.state==CustomerState.CASH?customerOrderBounds(customer):customerSpriteBounds(customer,image,customerFrame(customer,image));if(customer.state==CustomerState.ORDER)r.union(customerOrderBounds(customer));control("customer:"+customer.serial,customer.profile.s("name")+", "+customer.state+", "+customer.hearts+" hearts",r.left,r.top,r.width(),r.height());}
+     public boolean hitsCustomer(Customer customer,float x,float y){
+         if(customer.state==CustomerState.LEAVING||customer.cashCollected)return false;
+-        if(customerOrderBounds(customer).contains(x,y))return true;
++        if((customer.state==CustomerState.ORDER||customer.state==CustomerState.CASH)&&customerOrderBounds(customer).contains(x,y))return true;
+         if(!customer.spriteVisible())return false;
+         // 0040b2e0 uses the normal sprite rectangle, including transparent
+         // pixels. Keep the target stable when a temporary animation changes.
+@@ -315,9 +317,11 @@
+     private void drawOrder(Canvas c,Customer customer){GameEngine g=activity.game;Node p=g.customerPoints.get(customer.slot);float x=p.f("x_money",230),y=p.f("y_money",500);
+         if(customer.state==CustomerState.CASH){if(!customer.cashCollected)assets.draw(c,(int)(g.elapsed/.35f)%2==0?"IMAGE_MONEY":"IMAGE_MONEY_FL",(int)(x-4),(int)(y-25),40,40);return;}
+         if(customer.state==CustomerState.LEAVING||customer.state==CustomerState.HAPPY)return;
+-        for(int i=0;i<customer.profile.i("max_hearts",5);i++){paint.setAlpha(customer.hearts>=i+1?255:65);c.drawBitmap(assets.image("IMAGE_HEART"),null,new RectF(x-20+i*15,y-83,x-5+i*15,y-70),paint);}paint.setAlpha(255);
++        // 0040d9d0 computes queue depth by integer division; 0040d370 and
++        // 0040b790 place intrinsic, overlapping hearts on the customer's left.
++        int depthStep=(g.customerPoints.get(0).i("x_money",230)-g.customerPoints.get(g.customerPoints.size()-1).i("x_money",230))/g.customerPoints.size();
++        for(int i=0;i<customer.hearts;i++)c.drawBitmap(assets.image("IMAGE_HEART"),(int)((customer.hearts-i+1)*20*(double)(1f/3f)+30-depthStep*customer.slot),(int)(y-30),paint);
+         if(customer.state==CustomerState.ORDER){panel(c,x-23,y-66,94,65,0xebffffef);cake(c,customer.order,x+24,y-13,.43f);}
+-        else if(customer.state==CustomerState.WAIT_MENU){panel(c,x-20,y-55,80,40,0xd8ffffef);text(c,"Menu?",x-12,y-47,21,0xff5c2b35);}
+     }
+     private float jillPhase;
+     private float jillFrameClock;

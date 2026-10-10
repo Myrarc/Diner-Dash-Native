@@ -1,0 +1,15 @@
+{
+  "scope": "Independent test reviewer re-ran first four host probes and checked their native expectation branches. Parent added/executed geometry probe afterward.",
+  "parity_mismatches_reproduced_independently": 4,
+  "production_changes": false,
+  "windows_execution": false,
+  "physical_device_test": false,
+  "correction_applied": "Projection hundredths scaling is in the caller, not the numeric helper; exact Windows output rounding remains unknown.",
+  "parent_raw_validation": {
+    "005813e0_double": 0.01,
+    "005813e8_double": 0.5,
+    "005813f0_double": 100.0,
+    "005813f8_float": 600.0,
+    "005813fc_float": -0.0016666667070239782
+  }
+}

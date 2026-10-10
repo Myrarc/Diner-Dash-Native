@@ -1,0 +1,127 @@
+{
+  "version": "0.3.0",
+  "scope": "Original-layout rebuild, animation/state/input/collision/receipt corrections",
+  "career_shifts": 50,
+  "career_scheduled_parties": 1067,
+  "endless_maps": 15,
+  "media": {
+    "images": 1898,
+    "sounds": 62,
+    "layouts": 162,
+    "configs": 206
+  },
+  "model_tests": {
+    "engine": 35,
+    "fidelity": 329,
+    "full_game": 2989,
+    "zero_travel_bot_goals": 46,
+    "zero_travel_bot_is_device_e2e": false,
+    "table_to_wheel_routes_without_furniture_clipping": 308
+  },
+  "installed_canvas_tests": {
+    "checks": 27,
+    "test": "AndroidAnimationTest",
+    "passes": [
+      "six distinct stopped carrying poses",
+      "actual carry animation names for every direction and both hand counts",
+      "idle enters after waiting",
+      "item pickup cancels idle",
+      "chef frames advance while cooking",
+      "chef fades out after orders",
+      "first named cast member lookup",
+      "satisfied and starting-mood guests draw original smiling sprite",
+      "low mood retains angry standing sprite",
+      "synthetic GameView touch selects and seats second party while first remains waiting"
+    ]
+  },
+  "emulator_touch_tests": {
+    "status": "passed",
+    "platform": "API30 ARM64 emulator",
+    "physical_device": false,
+    "windows_runtime_comparison": false,
+    "asserted_checkpoints": 28,
+    "phone_capture_pixels": [
+      2160,
+      1080
+    ],
+    "tablet_capture_pixels": [
+      2160,
+      1600
+    ],
+    "tablet_is_simulated_size_on_same_emulator": true,
+    "tested": [
+      "drag held/preview",
+      "invalid drop return",
+      "valid seat",
+      "take order",
+      "independent numbered meal pickup",
+      "food delivered",
+      "coffee locked in shift 1-1",
+      "coffee prepare/ready/pickup/refresh",
+      "real DOWN/MOVE/UP seats second waiting party on phone and tablet"
+    ],
+    "screenshots": "verification/screenshots",
+    "state_capture": "Real touch input; game paused only while reading freshly dumped accessibility state. Old XML is removed before each dump and dump success is required.",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "base_service_checkpoints": 24,
+    "guest_bypass_checkpoints": 4
+  },
+  "coffee_career_unlock": "1-5",
+  "package_integrity": {
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "packaged_media_verified": 1960,
+    "sounds_stored_uncompressed": 62,
+    "zip_crc": "pass",
+    "original_files_unchanged": 58,
+    "version": "0.3.0"
+  },
+  "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf",
+  "known_limits": [
+    "four unresolved original fonts; native text",
+    "weighted A* not ported",
+    "Director tutorial and complete timeline not executed",
+    "some cinematic/progression/game-over behavior incomplete",
+    "food variety deterministic",
+    "physical device and audible playback untested",
+    "score submission skips original name-confirmation screen",
+    "zero-life run retained until New Game; original resumes saved advancement point"
+  ],
+  "visual_review": {
+    "status": "complete for seven scored corrections",
+    "scope": "previous seven material fixes; typography remains partially unresolved",
+    "full_review": "verification/correction-review-valid.md",
+    "fresh_design_record": "DESIGN.md and .impeccable/design.json",
+    "roles": "degraded reviewer/documenter substitutes; documenter wrote files then hit account limit, parent validated inline",
+    "disposition": "fix",
+    "final_verdict": "verification/final-verdict.md",
+    "resolved": "reported controls, receipt readability/bounds, progression defects and design persistence",
+    "remaining": "original dynamic font outlines and metrics; exact 1:1 runtime equivalence unverified",
+    "final_extra_guest_scope": "six later guest captures and four real touch checkpoints were parent-tested and not inspected by the finish reviewer"
+  },
+  "historical_evidence": "verification/historical-0.2.0 is superseded evidence, not certification of 0.3.0",
+  "runtime_log": {
+    "Diner_Dash_fatal_exception_blocks": 0,
+    "audible_playback_tested": false,
+    "final_crash_buffer": "verification/final-crash-buffer.log",
+    "final_crash_buffer_fatal_exceptions": 0
+  },
+  "installed_progress_tests": {
+    "checks": 18,
+    "test": "AndroidProgressTest",
+    "fixtures": "synthetic saves and completed/failed results, exercised through installed Activity",
+    "saves_restored": true,
+    "naturally_played_completion": false,
+    "passes": [
+      "selected-player legacy save migration",
+      "independent player progress",
+      "ordinary versus expert marker data",
+      "final life reaches zero and ends run",
+      "new game resets lives and run score while retaining earned stars",
+      "four global named top-ten score categories",
+      "original ON/OFF white-alpha preservation"
+    ]
+  },
+  "intentional_deviations": [
+    "User-requested selection of any visible waiting party; original allows first party only"
+  ]
+}

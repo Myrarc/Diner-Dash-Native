@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+
+
+<Levels>
+	<Level id="0" min_time_toarrive="1" max_time_toarrive="40" max_on_level="3">
+		<Customer guid="business2" decor="3,100;" time="1" />
+                <Customer guid="delivery2" time="10" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+
+                <Customer guid="delivery2" time="10" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+
+                <Customer guid="business2" decor="3,100;" time="10" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+                <Customer guid="delivery2" time="10" />
+
+                <Customer guid="business2" decor="3,100;" time="10" />
+                <Customer guid="delivery2" time="10" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+
+
+	</Level>
+	<Level id="1" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+                <Customer guid="business2" decor="3,100;" time="1" />
+                <Customer guid="cupid2" decor="7,100;" time="10" />
+                <Customer guid="cupid2" decor="7,100;" time="10" />
+
+                <Customer guid="cupid2" decor="7,100;" time="10" />
+                <Customer guid="cupid2" decor="7,100;" time="10" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+
+                <Customer guid="cupid2" decor="7,100;" time="10" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+                <Customer guid="cupid2" decor="7,100;" time="10" />
+
+                <Customer guid="cupid2" decor="7,100;" time="10" />
+                <Customer guid="cupid2" decor="7,100;" time="10" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+                <Customer guid="cupid2" decor="7,100;" time="10" />
+
+	</Level>
+	<Level id="2" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+                <Customer guid="granny2" time="1" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+                <Customer guid="granny2" time="10" />
+                <Customer guid="granny2" time="10" />
+
+                <Customer guid="granny2" time="10" />
+                <Customer guid="granny2" time="10" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+                <Customer guid="granny2" time="10" />
+
+                <Customer guid="granny2" time="10" />
+                <Customer guid="business2" decor="3,100;" time="10" />
+                <Customer guid="granny2" time="10" />
+
+	</Level>
+	<Level id="3" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+                <Customer guid="granny2" time="1" />
+                <Customer guid="rabbit2" decor="7,100;" time="10" />
+                <Customer guid="granny2" time="10" />
+                <Customer guid="granny2" time="10" />
+
+                <Customer guid="rabbit2" decor="7,100;" time="10" />
+                <Customer guid="granny2" time="10" />
+                <Customer guid="granny2" time="10" />
+                <Customer guid="granny2" time="10" />
+
+                <Customer guid="rabbit2" decor="7,100;" time="10" />
+                <Customer guid="granny2" time="10" />
+                <Customer guid="rabbit2" decor="7,100;" time="10" />
+                <Customer guid="granny2" time="10" />
+
+                <Customer guid="rabbit2" decor="7,100;" time="10" />
+
+
+	</Level>
+	<Level id="4" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+
+               <Customer guid="woman2" decor="0,100;" time="1" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="woman2" decor="0,100;" time="10" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="woman2" decor="0,100;" time="10" />
+
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="woman2" decor="0,100;" time="10" />
+               <Customer guid="woman2" decor="0,100;" time="10" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="woman2" decor="0,100;" time="10" />
+
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="woman2" decor="0,100;" time="10" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="woman2" decor="0,100;" time="10" />
+               <Customer guid="woman2" decor="0,100;" time="10" />
+
+	</Level>
+	<Level id="5" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+
+               <Customer guid="santa2" decor="7,100;" time="1" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="cupid2" decor="7,100;" time="10" />
+               <Customer guid="rabbit2" decor="7,100;" time="10" />
+               <Customer guid="dracula2" decor="2,100;" time="10" />
+
+               <Customer guid="santa2" decor="7,100;" time="10" />
+               <Customer guid="cupid2" decor="7,100;" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="rabbit2" decor="7,100;" time="10" />
+               <Customer guid="dracula2" decor="2,100;" time="10" />
+
+               <Customer guid="cupid2" decor="7,100;" time="10" />
+               <Customer guid="rabbit2" decor="7,100;" time="10" />
+               <Customer guid="dracula2" decor="2,100;" time="10" />
+               <Customer guid="santa2" decor="7,100;" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+
+               <Customer guid="dracula2" decor="2,100;" time="10" />
+               <Customer guid="santa2" decor="7,100;" time="10" />
+               <Customer guid="rabbit2" decor="7,100;" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="cupid2" decor="7,100;" time="10" />
+
+	</Level>
+	<Level id="6" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+
+               <Customer guid="santa2" decor="7,100;" time="1" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+
+               <Customer guid="granny2" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="santa2" decor="7,100;" time="10" />
+               <Customer guid="granny2" time="10" />
+
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="santa2" decor="7,100;" time="10" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+
+               <Customer guid="santa2" decor="7,100;" time="10" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="santa2" decor="7,100;" time="10" />
+
+	</Level>
+        <Level id="7" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+
+               <Customer guid="boy2" decor="6,100;" time="1" />
+               <Customer guid="business2" decor="3,100;" time="5" />
+               <Customer guid="delivery2" time="5" />
+               <Customer guid="business2" decor="3,100;" time="5" />
+               <Customer guid="boy2" decor="6,100;" time="5" />
+
+               <Customer guid="boy2" decor="6,100;" time="20" />
+               <Customer guid="business2" decor="3,100;" time="5" />
+               <Customer guid="business2" decor="3,100;" time="5" />
+               <Customer guid="granny2" time="5" />
+               <Customer guid="boy2" decor="6,100;" time="5" />
+
+               <Customer guid="business2" decor="3,100;" time="20" />
+               <Customer guid="business2" decor="3,100;" time="5" />
+               <Customer guid="boy2" decor="6,100;" time="5" />
+               <Customer guid="delivery2" decor="6,100;" time="5" />
+               <Customer guid="boy2" decor="6,100;" time="5" />
+
+               <Customer guid="business2" decor="3,100;" time="20" />
+               <Customer guid="business2" decor="3,100;" time="5" />
+               <Customer guid="boy2" decor="6,100;" time="5" />
+               <Customer guid="granny2" decor="6,100;" time="5" />
+               <Customer guid="boy2" decor="6,100;" time="5" />
+
+	</Level>
+	<Level id="8" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+
+               <Customer guid="critic2" decor="2,100;" time="1" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="critic2" decor="2,100;" time="10" />
+
+               <Customer guid="critic2" decor="2,100;" time="30" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="critic2" decor="2,100;" time="10" />
+
+               <Customer guid="critic2" decor="2,100;" time="30" />
+               <Customer guid="critic2" decor="2,100;" time="10" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+
+               <Customer guid="critic2" decor="2,100;" time="30" />
+               <Customer guid="delivery2" time="10" />
+               <Customer guid="critic2" decor="2,100;" time="10" />
+               <Customer guid="delivery2" time="10" />
+
+        </Level>
+	<Level id="9" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+
+               <Customer guid="dracula2" decor="2,100;" time="1" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="dracula2" decor="2,100;" time="10" />
+
+               <Customer guid="dracula2" decor="2,100;" time="20" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="dracula2" decor="2,100;" time="10" />
+               <Customer guid="granny2" time="10" />
+
+               <Customer guid="dracula2" decor="2,100;" time="20" />
+               <Customer guid="dracula2" decor="2,100;" time="10" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="granny2" time="10" />
+
+
+               <Customer guid="dracula2" decor="2,100;" time="20" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="dracula2" decor="2,100;" time="10" />
+
+
+	</Level>
+	<Level id="10" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+
+	       <Customer guid="woman2" decor="0,100;" time="1" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="boy2" decor="6,100;" time="10" />
+               <Customer guid="granny2" time="10" />
+
+               <Customer guid="woman2" decor="0,100;" time="20" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="boy2" decor="6,100;" time="10" />
+
+               <Customer guid="woman2" decor="0,100;" time="20" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="boy2" decor="6,100;" time="10" />
+               <Customer guid="woman2" decor="0,100;" time="10" />
+
+               <Customer guid="woman2" decor="0,100;" time="20" />
+               <Customer guid="granny2" time="10" />
+               <Customer guid="business2" decor="3,100;" time="10" />
+               <Customer guid="boy2" decor="6,100;" time="10" />
+
+        </Level>
+        <Level id="11" min_time_toarrive="1" max_time_toarrive="40" max_on_level="4">
+
+               <Customer guid="santa2" cake="0,100;" decor="7,100;" time="1" />
+               <Customer guid="granny2" cake="0,100;" time="10" />
+               <Customer guid="woman2" cake="0,100;" decor="0,100;" time="10" />
+               <Customer guid="business2" cake="0,100;" decor="3,100;" time="10" />
+               <Customer guid="boy2" cake="0,100;" decor="6,100;" time="10" />
+
+               <Customer guid="santa2" cake="0,100;" decor="7,100;" time="20" />
+               <Customer guid="granny2" cake="0,100;" time="10" />
+               <Customer guid="business2" cake="0,100;" decor="3,100;" time="10" />
+               <Customer guid="boy2" cake="0,100;" decor="6,100;" time="10" />
+               <Customer guid="woman2" cake="0,100;" decor="0,100;" time="10" />
+
+               <Customer guid="santa2" cake="0,100;" decor="7,100;" time="20" />
+               <Customer guid="boy2" cake="0,100;" decor="6,100;" time="10" />
+               <Customer guid="granny2" cake="0,100;" time="10" />
+               <Customer guid="woman2" cake="0,100;" decor="0,100;" time="10" />
+               <Customer guid="business2" cake="0,100;" decor="3,100;" time="10" />
+
+               <Customer guid="santa2" cake="0,100;" decor="7,100;" time="20" />
+               <Customer guid="boy2" cake="0,100;" decor="6,100;" time="10" />
+               <Customer guid="business2" cake="0,100;" decor="3,100;" time="10" />
+               <Customer guid="granny2" cake="0,100;" time="10" />
+
+               <Customer guid="santa2" cake="0,100;" decor="7,100;" time="20" />
+               <Customer guid="woman2" cake="0,100;" decor="0,100;" time="10" />
+               <Customer guid="granny2" cake="0,100;" time="10" />
+               <Customer guid="boy2" cake="0,100;" decor="6,100;" time="10" />
+               <Customer guid="business2" cake="0,100;" decor="3,100;" time="10" />
+
+        </Level>
+</Levels>
+</root>

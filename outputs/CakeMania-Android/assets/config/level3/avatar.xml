@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Avatar speed="2.0" cakelines="9">
+	<Animation image="IMAGE_JILL_NORTH" scale=".9" count="11" render="0" is_vertical="1" id="0" speed="1.8" x_dec="0" y_dec="20" x_cake="122.0" y_cake="150.0f" />
+		<Upgrade idupg="1" id="0" image="IMAGE_JILL_UPGR1_NORTH" scale="1.05" count="11" render="0" is_vertical="1" x_dec="6" y_dec="168" />
+		<Upgrade idupg="2" id="0" image="IMAGE_JILL_UPGR2_NORTH" scale="1" count="11" render="0" is_vertical="1" x_dec="6" y_dec="148" />
+		<Upgrade idupg="3" id="0" image="IMAGE_JILL_UPGR3_NORTH" scale="1" count="11" render="0" is_vertical="1" x_dec="22" y_dec="169" />
+	<Animation image="IMAGE_JILL_SOUTH" scale="1" count="11" render="0" is_vertical="1" id="1" speed="1.8" x_dec="0" y_dec="20" x_cake="23.0" y_cake="130.0f" />
+		<Upgrade idupg="1" id="1" image="IMAGE_JILL_UPGR1_SOUTH" scale="1" count="11" render="0" is_vertical="1" x_dec="14" y_dec="149" />
+		<Upgrade idupg="2" id="1" image="IMAGE_JILL_UPGR2_SOUTH" scale="1" count="11" render="0" is_vertical="1" x_dec="-8" y_dec="136" />
+		<Upgrade idupg="3" id="1" image="IMAGE_JILL_UPGR3_SOUTH" scale="1" count="11" render="0" is_vertical="1" x_dec="14" y_dec="150" />
+	<Animation image="IMAGE_JILL_WEST" scale=".9" count="12" render="0" is_vertical="1" id="2" speed="1.8" x_dec="0" y_dec="20" x_cake="65.0" y_cake="150.0f" />
+		<Upgrade idupg="1" id="2" image="IMAGE_JILL_UPGR1_WEST" scale="1" count="12" render="0" is_vertical="1" x_dec="3" y_dec="163" />
+		<Upgrade idupg="2" id="2" image="IMAGE_JILL_UPGR2_WEST" scale="1" count="12" render="0" is_vertical="1" x_dec="3" y_dec="143" />
+		<Upgrade idupg="3" id="2" image="IMAGE_JILL_UPGR3_WEST" scale="1" count="12" render="0" is_vertical="1" x_dec="3" y_dec="163" />
+	<Animation image="IMAGE_JILL_EAST" scale=".9" count="12" render="0" is_vertical="1" id="3" speed="1.8" x_dec="0" y_dec="20" x_cake="78.0" y_cake="160.0f" />
+		<Upgrade idupg="1" id="3" image="IMAGE_JILL_UPGR1_EAST" scale="1" count="12" render="0" is_vertical="1" x_dec="3" y_dec="164" />
+		<Upgrade idupg="2" id="3" image="IMAGE_JILL_UPGR2_EAST" scale="1.05" count="12" render="0" is_vertical="1" x_dec="-5" y_dec="142" />
+		<Upgrade idupg="3" id="3" image="IMAGE_JILL_UPGR3_EAST" scale="1" count="12" render="0" is_vertical="1" x_dec="3" y_dec="163" />
+	<Animation image="IMAGE_JILL_SOUTH_WEST" scale=".9" count="10" render="0" is_vertical="1" id="4" speed="1.8" x_dec="0" y_dec="20" x_cake="60.0" y_cake="145.0f" />
+		<Upgrade idupg="1" id="4" image="IMAGE_JILL_UPGR1_SOUTH_WEST" scale="1" count="10" render="0" is_vertical="1" x_dec="3" y_dec="163" />
+		<Upgrade idupg="2" id="4" image="IMAGE_JILL_UPGR2_SOUTH_WEST" scale="1.05" count="10" render="0" is_vertical="1" x_dec="-2" y_dec="144" />
+		<Upgrade idupg="3" id="4" image="IMAGE_JILL_UPGR3_SOUTH_WEST" scale="1" count="10" render="0" is_vertical="1" x_dec="3" y_dec="163" />
+	<Animation image="IMAGE_JILL_SOUTH_EAST" scale=".9" count="10" render="0" is_vertical="1" id="5" speed="1.8" x_dec="0" y_dec="20" x_cake="20.0" y_cake="165.0f" />
+		<Upgrade idupg="1" id="5" image="IMAGE_JILL_UPGR1_SOUTH_EAST" scale="1" count="10" render="0" is_vertical="1" x_dec="4" y_dec="165" />
+		<Upgrade idupg="2" id="5" image="IMAGE_JILL_UPGR2_SOUTH_EAST" scale="1.05" count="10" render="0" is_vertical="1" x_dec="-15" y_dec="148" />
+		<Upgrade idupg="3" id="5" image="IMAGE_JILL_UPGR3_SOUTH_EAST" scale="1" count="10" render="0" is_vertical="1" x_dec="4" y_dec="166" />
+	<Animation image="IMAGE_JILL_NORTH_WEST" scale=".9" count="12" render="0" is_vertical="1" id="6" speed="1.8" x_dec="0" y_dec="20" x_cake="170.0" y_cake="140.0f" />
+		<Upgrade idupg="1" id="6" image="IMAGE_JILL_UPGR1_NORTH_WEST" scale="1" count="12" render="0" is_vertical="1" x_dec="2" y_dec="153" />
+		<Upgrade idupg="2" id="6" image="IMAGE_JILL_UPGR2_NORTH_WEST" scale="1.05" count="12" render="0" is_vertical="1" x_dec="-1" y_dec="135" />
+		<Upgrade idupg="3" id="6" image="IMAGE_JILL_UPGR3_NORTH_WEST" scale="1" count="12" render="0" is_vertical="1" x_dec="2" y_dec="153" />
+	<Animation image="IMAGE_JILL_NORTH_EAST" scale=".9" count="12" render="0" is_vertical="1" id="7" speed="1.8" x_dec="0" y_dec="20" x_cake="150.0" y_cake="145.0f" />
+		<Upgrade idupg="1" id="7" image="IMAGE_JILL_UPGR1_NORTH_EAST" scale="1" count="12" render="0" is_vertical="1" x_dec="2" y_dec="155" />
+		<Upgrade idupg="2" id="7" image="IMAGE_JILL_UPGR2_NORTH_EAST" scale="1.05" count="12" render="0" is_vertical="1" x_dec="-2" y_dec="137" />
+		<Upgrade idupg="3" id="7" image="IMAGE_JILL_UPGR3_NORTH_EAST" scale="1" count="12" render="0" is_vertical="1" x_dec="0" y_dec="155" />
+	<Animation image="IMAGE_JILL_NONE" scale="1" count="57" render="0" is_vertical="1" id="8" speed="0.15" x_dec="0" y_dec="20" x_cake="20.0" y_cake="100.0f" />
+		<Upgrade idupg="1" id="8" image="IMAGE_JILL_UPGR1_NONE" scale="1" count="57" render="0" is_vertical="1" x_dec="10" y_dec="174" />
+		<Upgrade idupg="2" id="8" image="IMAGE_JILL_UPGR2_NONE" scale="1" count="57" render="0" is_vertical="1" x_dec="-7" y_dec="158" />
+		<Upgrade idupg="3" id="8" image="IMAGE_JILL_UPGR3_NONE" scale="1" count="57" render="0" is_vertical="1" x_dec="9" y_dec="176" />
+	<Animation image="IMAGE_JILL_NORTH_CAKE" scale=".9" count="11" render="0" is_vertical="1" id="9" speed="1.8" x_dec="0" y_dec="20" x_cake="90.0" y_cake="70.0f" />
+		<Upgrade idupg="1" id="9" image="IMAGE_JILL_UPGR1_NORTH" scale="1" count="11" render="0" is_vertical="1" x_dec="6" y_dec="168" />
+		<Upgrade idupg="2" id="9" image="IMAGE_JILL_UPGR2_NORTH" scale="1" count="11" render="0" is_vertical="1" x_dec="6" y_dec="148" />
+		<Upgrade idupg="3" id="9" image="IMAGE_JILL_UPGR3_NORTH" scale="1" count="11" render="0" is_vertical="1" x_dec="22" y_dec="169" />
+	<Animation image="IMAGE_JILL_SOUTH_CAKE" scale="1" count="11" render="0" is_vertical="1" id="10" speed="1.8" x_dec="0" y_dec="20" x_cake="14.0" y_cake="76.0f" />
+		<Upgrade idupg="1" id="10" image="IMAGE_JILL_UPGR1_SOUTH" scale="1.1" count="11" render="0" is_vertical="1" x_dec="24" y_dec="149" />
+		<Upgrade idupg="2" id="10" image="IMAGE_JILL_UPGR2_SOUTH" scale="1.1" count="11" render="0" is_vertical="1" x_dec="-1" y_dec="134" />
+		<Upgrade idupg="3" id="10" image="IMAGE_JILL_UPGR3_SOUTH" scale="1.1" count="11" render="0" is_vertical="1" x_dec="22" y_dec="148" />
+	<Animation image="IMAGE_JILL_WEST_CAKE" scale=".9" count="12" render="1" is_vertical="1" id="11" speed="1.8" x_dec="0" y_dec="20" x_cake="38.0" y_cake="68.0f" />
+		<Upgrade idupg="1" id="11" image="IMAGE_JILL_UPGR1_WEST" scale="1" count="12" render="0" is_vertical="1" x_dec="4" y_dec="166" />
+		<Upgrade idupg="2" id="11" image="IMAGE_JILL_UPGR2_WEST" scale="1" count="12" render="0" is_vertical="1" x_dec="4" y_dec="145" />
+		<Upgrade idupg="3" id="11" image="IMAGE_JILL_UPGR3_WEST" scale="1" count="12" render="0" is_vertical="1" x_dec="3" y_dec="167" />
+	<Animation image="IMAGE_JILL_EAST_CAKE" scale=".9" count="12" render="0" is_vertical="1" id="12" speed="1.8" x_dec="0" y_dec="20" x_cake="46.0" y_cake="94.0f" />
+		<Upgrade idupg="1" id="12" image="IMAGE_JILL_UPGR1_EAST" scale="1" count="12" render="0" is_vertical="1" x_dec="3" y_dec="166" />
+		<Upgrade idupg="2" id="12" image="IMAGE_JILL_UPGR2_EAST" scale="1.05" count="12" render="0" is_vertical="1" x_dec="-5" y_dec="142" />
+		<Upgrade idupg="3" id="12" image="IMAGE_JILL_UPGR3_EAST" scale="1" count="12" render="0" is_vertical="1" x_dec="3" y_dec="167" />
+	<Animation image="IMAGE_JILL_SOUTH_WEST_CAKE" scale=".9" count="10" render="0" is_vertical="1" id="13" speed="1.8" x_dec="0" y_dec="20" x_cake="25.0" y_cake="85.0f" />
+		<Upgrade idupg="1" id="13" image="IMAGE_JILL_UPGR1_SOUTH_WEST" scale="1" count="10" render="0" is_vertical="1" x_dec="3" y_dec="166" />
+		<Upgrade idupg="2" id="13" image="IMAGE_JILL_UPGR2_SOUTH_WEST" scale="1.05" count="10" render="0" is_vertical="1" x_dec="-2" y_dec="147" />
+		<Upgrade idupg="3" id="13" image="IMAGE_JILL_UPGR3_SOUTH_WEST" scale="1" count="10" render="0" is_vertical="1" x_dec="4" y_dec="167" />
+	<Animation image="IMAGE_JILL_SOUTH_EAST_CAKE" scale=".9" count="10" render="0" is_vertical="1" id="14" speed="1.8" x_dec="0" y_dec="20" x_cake="7.0" y_cake="82.0f" />
+		<Upgrade idupg="1" id="14" image="IMAGE_JILL_UPGR1_SOUTH_EAST" scale="1" count="10" render="0" is_vertical="1" x_dec="16" y_dec="165" />
+		<Upgrade idupg="2" id="14" image="IMAGE_JILL_UPGR2_SOUTH_EAST" scale="1.05" count="10" render="0" is_vertical="1" x_dec="-5" y_dec="148" />
+		<Upgrade idupg="3" id="14" image="IMAGE_JILL_UPGR3_SOUTH_EAST" scale="1" count="10" render="0" is_vertical="1" x_dec="4" y_dec="166" />
+	<Animation image="IMAGE_JILL_NORTH_WEST_CAKE" scale=".9" count="12" render="1" is_vertical="1" id="15" speed="1.8" x_dec="0" y_dec="20" x_cake="105.0" y_cake="62.0f" />
+		<Upgrade idupg="1" id="15" image="IMAGE_JILL_UPGR1_NORTH_WEST" scale="1" count="12" render="0" is_vertical="1" x_dec="2" y_dec="153" />
+		<Upgrade idupg="2" id="15" image="IMAGE_JILL_UPGR2_NORTH_WEST" scale="1.05" count="12" render="0" is_vertical="1" x_dec="0" y_dec="135" />
+		<Upgrade idupg="3" id="15" image="IMAGE_JILL_UPGR3_NORTH_WEST" scale="1" count="12" render="0" is_vertical="1" x_dec="2" y_dec="153" />
+	<Animation image="IMAGE_JILL_NORTH_EAST_CAKE" scale=".9" count="12" render="0" is_vertical="1" id="16" speed="1.8" x_dec="0" y_dec="20" x_cake="98.0" y_cake="70.0f" />
+		<Upgrade idupg="1" id="16" image="IMAGE_JILL_UPGR1_NORTH_EAST" scale="1" count="12" render="0" is_vertical="1" x_dec="4" y_dec="155" />
+		<Upgrade idupg="2" id="16" image="IMAGE_JILL_UPGR2_NORTH_EAST" scale="1.05" count="12" render="0" is_vertical="1" x_dec="0" y_dec="137" />
+		<Upgrade idupg="3" id="16" image="IMAGE_JILL_UPGR3_NORTH_EAST" scale="1" count="12" render="0" is_vertical="1" x_dec="2" y_dec="155" />
+	<Animation image="IMAGE_JILL_NONE_CAKE" scale="1" count="40" render="0" is_vertical="1" id="17" speed="0.25" x_dec="1" y_dec="14" x_cake="10.0" y_cake="67.0f" />
+		<Upgrade idupg="1" id="17" image="IMAGE_JILL_UPGR1_NONE_CAKE" scale="1.1" count="40" render="0" is_vertical="1" x_dec="18" y_dec="175" />
+		<Upgrade idupg="2" id="17" image="IMAGE_JILL_UPGR2_NONE_CAKE" scale="1" count="40" render="0" is_vertical="1" x_dec="2" y_dec="160" />
+		<Upgrade idupg="3" id="17" image="IMAGE_JILL_UPGR3_NONE_CAKE" scale="1" count="40" render="0" is_vertical="1" x_dec="17" y_dec="175" />
+</Avatar>
+</root>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Screens button_text_back="Back" button_text_prev="Previous" button_text_next="Next" music="music/mainmenu.ogg">
+	<Screen>
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="250" y="50" w="250" h="200" font="FONT_DEFAULT" size="1" text="Help1" />
+	</Screen>
+	<Screen>
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="250" y="50" w="250" h="200" font="FONT_DEFAULT" size="1" text="Help2" />
+	</Screen>
+	<Screen>
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="250" y="50" w="250" h="200" font="FONT_DEFAULT" size="1" text="Help3" />
+	</Screen>
+</Screens></root>

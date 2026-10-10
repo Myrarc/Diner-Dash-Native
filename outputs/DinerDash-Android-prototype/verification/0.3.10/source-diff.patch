@@ -1,0 +1,56 @@
+--- 0.3.9/src/local/dinerdash/prototype/SpriteRenderer.java
++++ 0.3.10/src/local/dinerdash/prototype/SpriteRenderer.java
+@@ -134,7 +134,8 @@
+     public int selected(GameEngine g,int target){int n=g.currentTarget==target?1:0;for(Integer t:g.destinations)if(t==target)n++;return Math.min(3,n);}
+     public boolean hasFood(GameEngine g,int id){for(GameEngine.Item i:g.hands)if(i.type==GameEngine.ItemType.FOOD&&i.party==id)return true;return false;}
+     public void hearts(Canvas c,int mood,float x,float y){for(int i=mood;i>=1;i--)image(c,"gfx.people","heart",x-26+52-i*5-2+3,y,false);}
+-    public void standing(Canvas c,GameEngine.Party p,float x,float y,int picked){JSONObject layout=assets.layout("waitgroup");c.save();c.translate(x,y);for(int i=0;i<p.colors.length;i++){JSONObject f=AssetStore.frame(AssetStore.child(layout,"body_"+(i+1)),null,0,1);String name="standing_"+p.profile.graphic+"_"+(i==picked?4:Math.max(1,Math.min(3,(int)(p.mood/3.3)+1)));frame(c,f,"gfx.people."+colorName(p.colors[i]),name);}JSONObject f=AssetStore.frame(AssetStore.child(layout,"heartrow"),null,0,1);hearts(c,p.mood,AssetStore.value(f,"loc",0,0),AssetStore.value(f,"loc",1,0));c.restore();}
++    // Director integer(float) rounds; six-heart arrivals must use the smiling standing pose.
++    public void standing(Canvas c,GameEngine.Party p,float x,float y,int picked){JSONObject layout=assets.layout("waitgroup");c.save();c.translate(x,y);for(int i=0;i<p.colors.length;i++){JSONObject f=AssetStore.frame(AssetStore.child(layout,"body_"+(i+1)),null,0,1);String name="standing_"+p.profile.graphic+"_"+(i==picked?4:Math.max(1,Math.min(3,(int)Math.round(p.mood/3.3)+1)));frame(c,f,"gfx.people."+colorName(p.colors[i]),name);}JSONObject f=AssetStore.frame(AssetStore.child(layout,"heartrow"),null,0,1);hearts(c,p.mood,AssetStore.value(f,"loc",0,0),AssetStore.value(f,"loc",1,0));c.restore();}
+     public void chef(Canvas c,GameEngine g){if(chefGame!=g){chefGame=g;chefCooking=false;chefAlpha=0;chefFrom=0;chefChanged=g.time;chefCycle=g.time;}boolean cooking=false;for(GameEngine.Party p:g.parties)if(p.cookingUntil>0&&g.time<p.cookingUntil)cooking=true;
+         if(chefCooking!=cooking){chefCooking=cooking;chefFrom=chefAlpha;chefChanged=g.time;if(cooking)startChef(g.time);}
+         float fraction=Math.min(1,(g.time-chefChanged)/(float)(cooking?400:750));chefAlpha=chefFrom+((cooking?1:0)-chefFrom)*fraction;if(chefAlpha<=0)return;
+--- 0.3.9/tests/AndroidAnimationTest.java
++++ 0.3.10/tests/AndroidAnimationTest.java
+@@ -59,7 +59,7 @@
+         GameEngine nextShift=new GameEngine(LevelData.get(2),1);Bitmap nextChef=Bitmap.createBitmap(800,600,Bitmap.Config.ARGB_8888);r.chef(new Canvas(nextChef),nextShift);check(hash(nextChef)==hash(blank),"Continuing after cooking must reset the chef's fade and timeline before the next shift's clock starts at zero");
+         check(poses.size()==2,"Stopped carrying must use a front-facing pose for either one or two items, regardless of approach direction");
+         GameEngine.Party guest=new GameEngine.Party(0,new GameEngine.Arrival(0,new int[]{0},true));guest.mood=10;Bitmap expected=Bitmap.createBitmap(140,180,Bitmap.Config.ARGB_8888);Canvas ec=new Canvas(expected);ec.translate(5,20);r.frame(ec,AssetStore.frame(AssetStore.child(a.layout("waitgroup"),"body_1"),null,0,1),"gfx.people.red","standing_young_female_3");int smile=hash(Bitmap.createBitmap(expected,0,35,140,140));
+-        check(hash(standing(r,guest))==smile,"Full hearts must draw the original smiling guest sprite");guest.mood=6;Bitmap neutral=Bitmap.createBitmap(140,180,Bitmap.Config.ARGB_8888);Canvas nc=new Canvas(neutral);nc.translate(5,20);r.frame(nc,AssetStore.frame(AssetStore.child(a.layout("waitgroup"),"body_1"),null,0,1),"gfx.people.red","standing_young_female_2");check(hash(standing(r,guest))==hash(Bitmap.createBitmap(neutral,0,35,140,140)),"Starting satisfaction must use the neutral sprite at the recovered floor threshold");guest.mood=1;check(hash(standing(r,guest))!=smile,"A nearly depleted party must still draw its angry sprite");
++        check(hash(standing(r,guest))==smile,"Full hearts must draw the original smiling guest sprite");guest.mood=6;check(hash(standing(r,guest))==smile,"New arrivals at six hearts must smile, matching the original rounded standing-pose threshold");guest.mood=1;check(hash(standing(r,guest))!=smile,"A nearly depleted party must still draw its angry sprite");
+         final GameEngine selectable=new GameEngine(LevelData.get(1),1);selectable.paused=false;selectable.tick(25000);final GameAudio audio=new GameAudio(getTargetContext(),a);
+         runOnMainSync(()->{try{GameView v=new GameView(getTargetContext(),selectable,new GameView.Listener(){public void update(GameEngine g){}public void finished(GameEngine g){}public void pauseGame(){}public void shop(){}},a,audio);v.layout(0,0,800,600);touch(v,MotionEvent.ACTION_DOWN,20,400);check(selectable.selectedParty==1,"Touching the exposed second waiting party must select it even while the first party waits");touch(v,MotionEvent.ACTION_MOVE,GameView.gx(5),GameView.gy(6));touch(v,MotionEvent.ACTION_UP,GameView.gx(5),GameView.gy(6));check(selectable.party(1).table==0&&selectable.party(0).state==GameEngine.State.WAITING,"Dragging party two must seat that party and leave party one in line");check(selectable.heldParty==-1,"Seating must release drag protection immediately");
+             GameEngine held=new GameEngine(LevelData.get(2),1);held.paused=false;held.tick(1);held.party(0).mood=1;
+--- 0.3.9/tests/AndroidBugRegressionTest.java
++++ 0.3.10/tests/AndroidBugRegressionTest.java
+@@ -25,8 +25,9 @@
+     private JSONObject layout(GameEngine.Party p){return assets.layout(p.profile.graphic.equals("critic")?"critic":p.profile.graphic+"_blue");}
+     private void personReference(Canvas c,GameEngine.Party p,JSONObject frame,boolean legs){String graphic=p.profile.graphic,color=p.colors[0]<0?"none":"blue";JSONObject points=assets.layouts.optJSONObject("sitter_regpoints");c.save();c.translate(120,150);if(legs)sprites.image(c,"gfx.people."+color,graphic+"_legs",0,0,false);c.translate(-AssetStore.value(points,graphic,0,25),-AssetStore.value(points,graphic,1,85));body(c,frame,first(AssetStore.child(layout(p),"body")));c.restore();}
+     private void standing(){
+-        int[] moods={1,3,6,7,10},states={1,1,2,3,3};
+-        for(String profile:new String[]{"default","old_male","business_female","boy","man","critic"})for(int i=0;i<moods.length;i++){GameEngine.Party p=guest(profile);p.mood=moods[i];Bitmap actual=bitmap(),expected=bitmap();sprites.standing(new Canvas(actual),p,45,25,-1);Canvas c=new Canvas(expected);c.translate(45,25);JSONObject group=assets.layout("waitgroup"),f=first(AssetStore.child(group,"body_1"));sprites.frame(c,f,"gfx.people."+(p.colors[0]<0?"none":"blue"),"standing_"+p.profile.graphic+"_"+states[i]);f=first(AssetStore.child(group,"heartrow"));sprites.hearts(c,p.mood,AssetStore.value(f,"loc",0,0),AssetStore.value(f,"loc",1,0));check(actual.sameAs(expected),profile+" mood "+moods[i]+" must use original standing face "+states[i]);actual.recycle();expected.recycle();}
++        // Explicit original poses: Director integer(float) rounds. New arrivals must smile at six hearts.
++        int[] moods={6,1,2,3,4,5,6,7,8,9,10},states={3,1,2,2,2,3,3,3,3,3,3};
++        for(String profile:new String[]{"default","old_male","business_female","boy","man","critic"})for(int i=0;i<moods.length;i++){GameEngine.Party p=guest(profile);if(i==0)check(p.mood==6,profile+" must arrive with six hearts");else p.mood=moods[i];Bitmap actual=bitmap(),expected=bitmap();sprites.standing(new Canvas(actual),p,45,25,-1);Canvas c=new Canvas(expected);c.translate(45,25);JSONObject group=assets.layout("waitgroup"),f=first(AssetStore.child(group,"body_1"));sprites.frame(c,f,"gfx.people."+(p.colors[0]<0?"none":"blue"),"standing_"+p.profile.graphic+"_"+states[i]);f=first(AssetStore.child(group,"heartrow"));sprites.hearts(c,p.mood,AssetStore.value(f,"loc",0,0),AssetStore.value(f,"loc",1,0));check(actual.sameAs(expected),profile+" mood "+moods[i]+" must use original standing face "+states[i]);if(i==0)save(actual,"arrival-"+profile);actual.recycle();expected.recycle();}
+     }
+     private void departures(){
+         for(String profile:new String[]{"default","old_male","business_female","boy","man","critic"})for(GameEngine.State state:new GameEngine.State[]{GameEngine.State.LEAVING,GameEngine.State.DITCHING})for(long age:new long[]{0,749,750,1499,1500}){
+--- 0.3.9/AndroidManifest.xml
++++ 0.3.10/AndroidManifest.xml
+@@ -1,4 +1,4 @@
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="local.dinerdash.prototype" android:versionCode="12" android:versionName="0.3.9">
++<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="local.dinerdash.prototype" android:versionCode="13" android:versionName="0.3.10">
+     <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="36" />
+     <application android:label="Diner Dash" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:allowBackup="false" android:supportsRtl="true" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher">
+         <activity android:name=".MainActivity" android:exported="true" android:screenOrientation="sensorLandscape" android:configChanges="orientation|screenSize|keyboardHidden">
+--- 0.3.9/build.py
++++ 0.3.10/build.py
+@@ -56,7 +56,7 @@
+ run([tools / 'apksigner', 'verify', '--verbose', '--print-certs', apk])
+ run([tools / 'aapt', 'dump', 'badging', apk])
+ shutil.copy2(build / 'build.log', root / 'build.log')
+-summary = {'package': 'local.dinerdash.prototype', 'version': '0.3.9', 'min_sdk': 23,
++summary = {'package': 'local.dinerdash.prototype', 'version': '0.3.10', 'min_sdk': 23,
+            'target_sdk': 36, 'bytes': apk.stat().st_size,
+            'apk_sha256': hashlib.sha256(apk.read_bytes()).hexdigest(),
+            'signature_verified': True, 'signing': 'local prototype key, not a Play release',

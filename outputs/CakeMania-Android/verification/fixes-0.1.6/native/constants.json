@@ -1,0 +1,49 @@
+{
+  "original_binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+  "values": {
+    "0x5813e0": {
+      "type": "double",
+      "value": 0.01
+    },
+    "0x5813e8": {
+      "type": "double",
+      "value": 0.5
+    },
+    "0x5813f0": {
+      "type": "double",
+      "value": 100.0
+    },
+    "0x5813f8": {
+      "type": "float",
+      "value": 600.0
+    },
+    "0x5813fc": {
+      "type": "float",
+      "value": -0.0016666667070239782
+    },
+    "0x58141c": {
+      "type": "float",
+      "value": 0.10000000149011612
+    },
+    "0x581420": {
+      "type": "float",
+      "value": 0.5
+    },
+    "0x58163c": {
+      "type": "float",
+      "value": 0.25
+    },
+    "0x5814a4": {
+      "type": "float",
+      "value": 1.0
+    },
+    "0x581640": {
+      "type": "float",
+      "value": 0.3333333432674408
+    },
+    "0x581644": {
+      "type": "float",
+      "value": 30.0
+    }
+  }
+}

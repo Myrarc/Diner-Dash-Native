@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "apk_sha256": "7c4595e352c5a4b29ed927b77942c9b9eba7d23162c1eba010eaf6ad6ee1dbf7",
+  "checks": [
+    "Pause freezes game time; Resume restores play",
+    "Background/foreground excludes background time",
+    "Music toggle stops and restarts playback",
+    "Process restart and Continue Career retain February, bank, and display case",
+    "New career displays all three original opening comics and starts January",
+    "Help pages and high scores open and return to menu",
+    "Beach, Circus, and Casino layouts plus every gameplay music selection boot without errors"
+  ],
+  "layouts": [
+    {
+      "level": 13,
+      "music": "music/1.ogg",
+      "customers": 1,
+      "stations": 12
+    },
+    {
+      "level": 14,
+      "music": "music/2.ogg",
+      "customers": 1,
+      "stations": 12
+    },
+    {
+      "level": 15,
+      "music": "music/b.ogg",
+      "customers": 1,
+      "stations": 12
+    },
+    {
+      "level": 16,
+      "music": "music/c.ogg",
+      "customers": 1,
+      "stations": 12
+    },
+    {
+      "level": 25,
+      "music": "music/1.ogg",
+      "customers": 1,
+      "stations": 12
+    },
+    {
+      "level": 37,
+      "music": "music/1.ogg",
+      "customers": 1,
+      "stations": 12
+    },
+    {
+      "level": 48,
+      "music": "music/c.ogg",
+      "customers": 4,
+      "stations": 12
+    }
+  ],
+  "audio_listened": false
+}

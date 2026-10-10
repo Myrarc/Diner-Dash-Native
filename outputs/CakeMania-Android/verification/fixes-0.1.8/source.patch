@@ -1,0 +1,53 @@
+--- 0.1.7/src/local/cakemania/GameView.java
++++ 0.1.8/src/local/cakemania/GameView.java
+@@ -24,6 +24,7 @@
+     private final Paint paint=new Paint(Paint.ANTI_ALIAS_FLAG|Paint.FILTER_BITMAP_FLAG);
+     private final List<Node> mapPoints=new ArrayList<>();
+     private final Node shopLayout;
++    private static final float MENU_X=310,MENU_Y=16;
+     public float scale=1,ox,oy,clock;
+     public final List<Control> controls=new ArrayList<>();
+     public GameView(Context context,MainActivity activity,AssetStore assets){super(context);this.activity=activity;this.assets=assets;try{Node points=activity.data.readConfig("mapscreen/pathes.xml").first("Nodes");if(points!=null)mapPoints.addAll(points.children);shopLayout=activity.data.readConfig("shopcareerscreen/shop_env.xml").first("RenderBackground");}catch(Exception error){throw new IllegalStateException("Missing authored screen layout",error);}setBackgroundColor(Color.BLACK);setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_NO);}
+@@ -37,9 +38,14 @@
+     private void panel(Canvas c,float x,float y,float w,float h,int color){paint.setColor(color);c.drawRoundRect(new RectF(x,y,x+w,y+h),12,12,paint);}
+     private void button(Canvas c,Control b){assets.draw(c,"IMAGE_BUTTON_MMENU_NORMAL",b.x,b.y,b.w,b.h);float size=Math.min(25,25*(b.w-20)/Math.max(1,assets.font("EclatICG16").width(b.label,25)));center(c,b.label,b.x+b.w/2,b.y+(b.h-size)/2,size,0xffffedb4);}
+     private void control(String key,String text,float x,float y,float w,float h){controls.add(new Control(key,text,x,y,w,h));}
++    private void menuControls(String prefix,String[] labels){
++        Bitmap header=assets.image("IMAGE_BUTTON_MMENU_LAYER0"),row=assets.image("IMAGE_BUTTON_MMENU_LAYER1"),button=assets.image("IMAGE_BUTTON_MMENU_NORMAL");
++        float x=MENU_X+(header.getWidth()-button.getWidth())/2f,y=MENU_Y+header.getHeight()+(row.getHeight()-button.getHeight())/2f;
++        for(int i=0;i<labels.length;i++)control(prefix+i,labels[i],x,y+i*row.getHeight(),button.getWidth(),button.getHeight());
++    }
+     public void rebuildControls(){controls.clear();String screen=activity.screen;GameEngine g=activity.game;
+-        if(screen.equals("menu")){String[] labels={"Play","High Scores","Options","Help","Exit","Profiles"};for(int i=0;i<labels.length;i++)control("menu"+i,labels[i],391,186+i*51,318,39);}
+-        else if(screen.equals("playmenu")){String[] labels={"Start New Game","Continue Career","Choose Month","Back"};for(int i=0;i<labels.length;i++)control("play"+i,labels[i],391,210+i*56,318,44);}
++        if(screen.equals("menu"))menuControls("menu",new String[]{"Play","High Scores","Options","Help","Exit","Profiles"});
++        else if(screen.equals("playmenu"))menuControls("play",new String[]{"Start New Game","Continue Career","Choose Month","Back"});
+         else if(screen.equals("profiles")){for(int i=0;i<activity.profileIds.size();i++)control("profile:"+activity.profileIds.get(i),activity.profileName(activity.profileIds.get(i)),290,150+i*44,320,36);if(activity.profileIds.size()<6)control("profile:new","New Player",290,430,320,38);control("profile:back","Back",290,480,320,38);}
+         else if(screen.equals("map")){for(int n=1;n<=48;n++){Node point=mapPointForLevel(n);if(point!=null)control("map:level:"+n,""+n,point.f("x",0)-22,point.f("y",0)-19,44,39);}control("map:back","Back",30,548,190,40);}
+         else if(screen.equals("endless")){for(int i=0;i<4;i++)control("endless:bakery:"+i,"Bakery "+(i+1),250,135+i*48,300,38);String[] d={"Easy","Medium","Hard"};for(int i=0;i<3;i++)control("endless:difficulty:"+d[i].toLowerCase(Locale.US),d[i],250,345+i*40,300,32);control("endless:start","Play Endless",250,470,300,40);control("endless:back","Back",30,530,180,40);}
+@@ -90,9 +96,8 @@
+         for(Control b:controls)if(!screen.equals("game")&&!screen.equals("shop")&&!screen.equals("map")&&!((screen.equals("options"))&&(b.key.equals("musicSlider")||b.key.equals("soundSlider"))))button(c,b);
+         c.restore();
+     }
+-    private void drawMenu(Canvas c){assets.draw(c,"IMAGE_BGR0",0,0,800,600);assets.draw(c,"IMAGE_MMENU_JILL",62,62,272,526);float y=16;assets.draw(c,"IMAGE_BUTTON_MMENU_LAYER0",310,y);y+=168;int count=activity.screen.equals("menu")?5:4;for(int i=0;i<count;i++){assets.draw(c,i%2==0?"IMAGE_BUTTON_MMENU_LAYER1":"IMAGE_BUTTON_MMENU_LAYER2",310,y);y+=47;}assets.draw(c,"IMAGE_BUTTON_MMENU_LAYER3",310,y);
+-        for(int i=1;i<=4;i++){Bitmap f=assets.frame("IMAGE_MMENU_FIRE"+i,10,1,(int)(clock/0.07f));float[] x={83,129,345,379},yy={10,20,25,10};c.drawBitmap(f,310+x[i-1],16+yy[i-1],paint);}
+-        if(activity.screen.equals("playmenu"))center(c,"Career",550,172,29,0xff772236);
++    private void drawMenu(Canvas c){assets.draw(c,"IMAGE_BGR0",0,0,800,600);assets.draw(c,"IMAGE_MMENU_JILL",62,62,272,526);float y=MENU_Y;assets.draw(c,"IMAGE_BUTTON_MMENU_LAYER0",MENU_X,y);y+=assets.image("IMAGE_BUTTON_MMENU_LAYER0").getHeight();int count=activity.screen.equals("menu")?6:4;for(int i=0;i<count;i++){String row=i%2==0?"IMAGE_BUTTON_MMENU_LAYER1":"IMAGE_BUTTON_MMENU_LAYER2";assets.draw(c,row,MENU_X,y);y+=assets.image(row).getHeight();}assets.draw(c,"IMAGE_BUTTON_MMENU_LAYER3",MENU_X,y);
++        for(int i=1;i<=4;i++){Bitmap f=assets.frame("IMAGE_MMENU_FIRE"+i,10,1,(int)(clock/0.07f));float[] x={83,129,345,379},yy={10,20,25,10};c.drawBitmap(f,MENU_X+x[i-1],MENU_Y+yy[i-1],paint);}
+     }
+     private void drawProfiles(Canvas c){center(c,"Select Player",400,112,38,0xff712f37);for(int i=0;i<activity.profileIds.size();i++){String id=activity.profileIds.get(i);float y=176+i*44;text(c,activity.activeProfileId.equals(id)?">":"",245,y,24,0xff712f37);text(c,activity.profileName(id),280,y,22,0xff512432);}}
+     private void drawEndless(Canvas c){center(c,"Endless Play",400,105,38,0xff712f37);text(c,"Bakery",255,145,20,0xff512432);text(c,"Difficulty: "+activity.endlessDifficulty,255,330,20,0xff512432);}
+--- 0.1.7/src/local/cakemania/MainActivity.java
++++ 0.1.8/src/local/cakemania/MainActivity.java
+@@ -162,7 +162,10 @@
+         if(screen.equals("map")){if(key.equals("map:back")){menu();return;}if(key.startsWith("map:level:")){int n=Integer.parseInt(key.substring(10));if(n<=unlocked)start(n);return;}}
+         if(screen.equals("endless")){if(key.equals("endless:back")){menu();return;}if(key.startsWith("endless:bakery:")){chooseEndlessBakery(Integer.parseInt(key.substring(15)));return;}if(key.startsWith("endless:difficulty:")){chooseEndlessDifficulty(key.substring(19));return;}if(key.equals("endless:start")){startEndless();return;}}
+         if(screen.equals("playmenu")){switch(key){case "play0":if(unlocked>1)new AlertDialog.Builder(this).setTitle("Start a new career?").setMessage("This resets the saved career and upgrades on this device.").setPositiveButton("Start",(d,w)->newCareer()).setNegativeButton("Cancel",null).show();else newCareer();break;case "play1":start(Math.max(1,Math.min(48,saved.getInt("current",1))));break;case "play2":openMap();break;case "play3":menu();break;}return;}
+-        if(screen.equals("story")&&key.equals("next")){storyPage++;if(storyPage>=storyImages.size())openMap();else show("story");return;}
++        if(screen.equals("story")&&key.equals("next")){storyPage++;if(storyPage>=storyImages.size()){
++            if(tutorialSequenceId==0&&tutorial!=null){audio.music("music/c.ogg");show("game");}
++            else openMap();
++        }else show("story");return;}
+         if(screen.equals("intro")&&key.equals("start")){show("game");return;}
+         if(screen.equals("game")){if(key.startsWith("tutorial:")){dispatchTutorialControl(key);return;}if(key.equals("pause")){show("pause");return;}if(key.equals("cancel")){game.clearQueue();return;}
+             if(key.startsWith("form:")){String[] target=key.split(":");Station s=game.station(target[1]);if(s!=null&&s.form(Integer.parseInt(target[2]))!=null)game.enqueue(s,Integer.parseInt(target[2]));return;}

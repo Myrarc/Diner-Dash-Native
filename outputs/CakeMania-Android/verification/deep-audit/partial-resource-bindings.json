@@ -1,0 +1,1577 @@
+{
+  "scope": "Conservative partial assembly extraction; not full function review",
+  "bindings": [
+    {
+      "global": "005b9b58",
+      "resource": "IMAGE_ARROW",
+      "push": "004293dd",
+      "store": "00429413"
+    },
+    {
+      "global": "005b9e38",
+      "resource": "IMAGE_BAKERGOAL",
+      "push": "00429439",
+      "store": "00429467"
+    },
+    {
+      "global": "005b9640",
+      "resource": "IMAGE_BEGINSCREEN",
+      "push": "00429487",
+      "store": "004294b5"
+    },
+    {
+      "global": "005b9cac",
+      "resource": "IMAGE_BOX_BOTTOM",
+      "push": "004294d4",
+      "store": "00429502"
+    },
+    {
+      "global": "005b9d20",
+      "resource": "IMAGE_BOX_TOP",
+      "push": "0042951b",
+      "store": "0042954a"
+    },
+    {
+      "global": "005b97bc",
+      "resource": "IMAGE_BUSINESSMAN",
+      "push": "00429569",
+      "store": "004295a1"
+    },
+    {
+      "global": "005ba038",
+      "resource": "IMAGE_BUSINESSMAN_BORED",
+      "push": "004295c0",
+      "store": "004295f8"
+    },
+    {
+      "global": "005b9624",
+      "resource": "IMAGE_BUSINESSMAN_BORED_LEVEL2",
+      "push": "00429617",
+      "store": "0042964f"
+    },
+    {
+      "global": "005b9ca8",
+      "resource": "IMAGE_BUSINESSMAN_EAT",
+      "push": "0042966e",
+      "store": "004296a6"
+    },
+    {
+      "global": "005b99a8",
+      "resource": "IMAGE_BUSINESSMAN_EAT_LEVEL2",
+      "push": "004296c5",
+      "store": "004296fd"
+    },
+    {
+      "global": "005b9c1c",
+      "resource": "IMAGE_BUSINESSMAN_HAPPY",
+      "push": "0042971c",
+      "store": "00429754"
+    },
+    {
+      "global": "005b9e20",
+      "resource": "IMAGE_BUSINESSMAN_HAPPY_LEVEL2",
+      "push": "00429773",
+      "store": "004297ab"
+    },
+    {
+      "global": "005b9d60",
+      "resource": "IMAGE_BUSINESSMAN_LEVEL2",
+      "push": "004297ca",
+      "store": "00429802"
+    },
+    {
+      "global": "005b9b84",
+      "resource": "IMAGE_BUSINESSMAN_MENU",
+      "push": "00429821",
+      "store": "00429859"
+    },
+    {
+      "global": "005b9fd0",
+      "resource": "IMAGE_BUSINESSMAN_MENU_LEVEL2",
+      "push": "00429878",
+      "store": "004298b0"
+    },
+    {
+      "global": "005b9c44",
+      "resource": "IMAGE_BUTTON_CIRCLE",
+      "push": "004298cf",
+      "store": "00429907"
+    },
+    {
+      "global": "005b9a60",
+      "resource": "IMAGE_BUTTON_CIRCLE_HL",
+      "push": "00429926",
+      "store": "0042995e"
+    },
+    {
+      "global": "005b9eec",
+      "resource": "IMAGE_BUTTON_EGG",
+      "push": "0042997d",
+      "store": "004299b5"
+    },
+    {
+      "global": "005b9678",
+      "resource": "IMAGE_BUTTON_EGG_HL",
+      "push": "004299d4",
+      "store": "00429a0c"
+    },
+    {
+      "global": "005b9a9c",
+      "resource": "IMAGE_BUTTON_HEART",
+      "push": "00429a2b",
+      "store": "00429a63"
+    },
+    {
+      "global": "005b9730",
+      "resource": "IMAGE_BUTTON_HEART_HL",
+      "push": "00429a82",
+      "store": "00429aba"
+    },
+    {
+      "global": "005b9dac",
+      "resource": "IMAGE_BUTTON_MENU",
+      "push": "00429ad9",
+      "store": "00429b11"
+    },
+    {
+      "global": "005b99ac",
+      "resource": "IMAGE_BUTTON_MENU_HL",
+      "push": "00429b30",
+      "store": "00429b68"
+    },
+    {
+      "global": "005ba044",
+      "resource": "IMAGE_BUTTON_MMENU_NORMAL",
+      "push": "00429b87",
+      "store": "00429bbf"
+    },
+    {
+      "global": "005b9a88",
+      "resource": "IMAGE_BUTTON_MMENU_OVER",
+      "push": "00429bde",
+      "store": "00429c16"
+    },
+    {
+      "global": "005b9900",
+      "resource": "IMAGE_BUTTON_MM_USER",
+      "push": "00429c35",
+      "store": "00429c6d"
+    },
+    {
+      "global": "005b9d10",
+      "resource": "IMAGE_BUTTON_MM_USER_HL",
+      "push": "00429c8c",
+      "store": "00429cc4"
+    },
+    {
+      "global": "005b9bb4",
+      "resource": "IMAGE_BUTTON_PUMPKIN",
+      "push": "00429ce3",
+      "store": "00429d1b"
+    },
+    {
+      "global": "005b9fec",
+      "resource": "IMAGE_BUTTON_PUMPKIN_HL",
+      "push": "00429d3a",
+      "store": "00429d72"
+    },
+    {
+      "global": "005b9f30",
+      "resource": "IMAGE_BUTTON_SQUARE",
+      "push": "00429d91",
+      "store": "00429dc9"
+    },
+    {
+      "global": "005b991c",
+      "resource": "IMAGE_BUTTON_SQUARE_HL",
+      "push": "00429de8",
+      "store": "00429e20"
+    },
+    {
+      "global": "005b9e70",
+      "resource": "IMAGE_BUTTON_STAR",
+      "push": "00429e3f",
+      "store": "00429e77"
+    },
+    {
+      "global": "005b9840",
+      "resource": "IMAGE_BUTTON_STAR_HL",
+      "push": "00429e96",
+      "store": "00429ece"
+    },
+    {
+      "global": "005b9658",
+      "resource": "IMAGE_BUTTON_TREE",
+      "push": "00429eed",
+      "store": "00429f25"
+    },
+    {
+      "global": "005b966c",
+      "resource": "IMAGE_BUTTON_TREE_HL",
+      "push": "00429f44",
+      "store": "00429f7c"
+    },
+    {
+      "global": "005b96a0",
+      "resource": "IMAGE_BUTTON_TRIA",
+      "push": "00429f9b",
+      "store": "00429fd3"
+    },
+    {
+      "global": "005b9dec",
+      "resource": "IMAGE_BUTTON_TRIA_HL",
+      "push": "00429ff2",
+      "store": "0042a02a"
+    },
+    {
+      "global": "005b9e44",
+      "resource": "IMAGE_CAKEOVEN",
+      "push": "0042a049",
+      "store": "0042a081"
+    },
+    {
+      "global": "005b9aec",
+      "resource": "IMAGE_CAKEOVEN_DOOR",
+      "push": "0042a0a0",
+      "store": "0042a0d8"
+    },
+    {
+      "global": "005b97b4",
+      "resource": "IMAGE_CAKEOVEN_FLAME",
+      "push": "0042a0f7",
+      "store": "0042a12f"
+    },
+    {
+      "global": "005b9b30",
+      "resource": "IMAGE_CAKEOVEN_LEVEL1",
+      "push": "0042a14e",
+      "store": "0042a186"
+    },
+    {
+      "global": "005b9e18",
+      "resource": "IMAGE_CAKEOVEN_LEVEL1_DOOR",
+      "push": "0042a1a5",
+      "store": "0042a1dd"
+    },
+    {
+      "global": "005b9c50",
+      "resource": "IMAGE_CAKEOVEN_LEVEL1_OPEN",
+      "push": "0042a1fc",
+      "store": "0042a234"
+    },
+    {
+      "global": "005b9720",
+      "resource": "IMAGE_CAKEOVEN_LEVEL1_TRASH",
+      "push": "0042a253",
+      "store": "0042a28b"
+    },
+    {
+      "global": "005b9f98",
+      "resource": "IMAGE_CAKEOVEN_LEVEL1_WORK",
+      "push": "0042a2aa",
+      "store": "0042a2e2"
+    },
+    {
+      "global": "005b9e68",
+      "resource": "IMAGE_CAKEOVEN_LEVEL2",
+      "push": "0042a301",
+      "store": "0042a339"
+    },
+    {
+      "global": "005b9fc0",
+      "resource": "IMAGE_CAKEOVEN_LEVEL2_DOOR",
+      "push": "0042a358",
+      "store": "0042a390"
+    },
+    {
+      "global": "005b9794",
+      "resource": "IMAGE_CAKEOVEN_LEVEL2_OPEN",
+      "push": "0042a3af",
+      "store": "0042a3e7"
+    },
+    {
+      "global": "005b9fb0",
+      "resource": "IMAGE_CAKEOVEN_LEVEL2_TRASH",
+      "push": "0042a406",
+      "store": "0042a43e"
+    },
+    {
+      "global": "005b9b0c",
+      "resource": "IMAGE_CAKEOVEN_LEVEL2_WORK",
+      "push": "0042a45d",
+      "store": "0042a495"
+    },
+    {
+      "global": "005b969c",
+      "resource": "IMAGE_CAKEOVEN_LEVEL3",
+      "push": "0042a4b4",
+      "store": "0042a4ec"
+    },
+    {
+      "global": "005b9738",
+      "resource": "IMAGE_CAKEOVEN_LEVEL3_DOOR",
+      "push": "0042a50b",
+      "store": "0042a543"
+    },
+    {
+      "global": "005b971c",
+      "resource": "IMAGE_CAKEOVEN_LEVEL3_OPEN",
+      "push": "0042a562",
+      "store": "0042a59a"
+    },
+    {
+      "global": "005b9c70",
+      "resource": "IMAGE_CAKEOVEN_LEVEL3_TRASH",
+      "push": "0042a5b9",
+      "store": "0042a5f1"
+    },
+    {
+      "global": "005b986c",
+      "resource": "IMAGE_CAKEOVEN_LEVEL3_WORK",
+      "push": "0042a610",
+      "store": "0042a648"
+    },
+    {
+      "global": "005b9eb4",
+      "resource": "IMAGE_CAKEOVEN_OPEN",
+      "push": "0042a667",
+      "store": "0042a69f"
+    },
+    {
+      "global": "005b9f94",
+      "resource": "IMAGE_CAKEOVEN_TRASH",
+      "push": "0042a6be",
+      "store": "0042a6f6"
+    },
+    {
+      "global": "005b9c08",
+      "resource": "IMAGE_CAKEOVEN_TRAY",
+      "push": "0042a715",
+      "store": "0042a74d"
+    },
+    {
+      "global": "005b9940",
+      "resource": "IMAGE_CAKEOVEN_UPGR1",
+      "push": "0042a76c",
+      "store": "0042a7a4"
+    },
+    {
+      "global": "005b9a58",
+      "resource": "IMAGE_CAKEOVEN_UPGR2",
+      "push": "0042a7c3",
+      "store": "0042a7fb"
+    },
+    {
+      "global": "005b9868",
+      "resource": "IMAGE_CAKEOVEN_UPGR3",
+      "push": "0042a81a",
+      "store": "0042a852"
+    },
+    {
+      "global": "005b9d70",
+      "resource": "IMAGE_CAKEOVEN_WORK",
+      "push": "0042a871",
+      "store": "0042a8a9"
+    },
+    {
+      "global": "005b9974",
+      "resource": "IMAGE_CAKETRAY",
+      "push": "0042a8c8",
+      "store": "0042a900"
+    },
+    {
+      "global": "005b9f80",
+      "resource": "IMAGE_CAKE_BASE_CIRCLE_1",
+      "push": "0042a91f",
+      "store": "0042a957"
+    },
+    {
+      "global": "005b9e98",
+      "resource": "IMAGE_CAKE_BASE_CIRCLE_SM_1",
+      "push": "0042a976",
+      "store": "0042a9ae"
+    },
+    {
+      "global": "005b977c",
+      "resource": "IMAGE_CAKE_BASE_EGG_1",
+      "push": "0042a9cd",
+      "store": "0042aa05"
+    },
+    {
+      "global": "005b998c",
+      "resource": "IMAGE_CAKE_BASE_EGG_SM_1",
+      "push": "0042aa24",
+      "store": "0042aa5c"
+    },
+    {
+      "global": "005b9b1c",
+      "resource": "IMAGE_CAKE_BASE_HEART_1",
+      "push": "0042aa7b",
+      "store": "0042aab3"
+    },
+    {
+      "global": "005b9f28",
+      "resource": "IMAGE_CAKE_BASE_HEART_SM_1",
+      "push": "0042aad2",
+      "store": "0042ab0a"
+    },
+    {
+      "global": "005b9a28",
+      "resource": "IMAGE_CAKE_BASE_PUMPKIN_1",
+      "push": "0042ab29",
+      "store": "0042ab61"
+    },
+    {
+      "global": "005b984c",
+      "resource": "IMAGE_CAKE_BASE_PUMPKIN_SM_1",
+      "push": "0042ab80",
+      "store": "0042abb8"
+    },
+    {
+      "global": "005b9f00",
+      "resource": "IMAGE_CAKE_BASE_RECT_1",
+      "push": "0042abd7",
+      "store": "0042ac0f"
+    },
+    {
+      "global": "005b9fac",
+      "resource": "IMAGE_CAKE_BASE_RECT_SM_1",
+      "push": "0042ac2e",
+      "store": "0042ac66"
+    },
+    {
+      "global": "005b9a40",
+      "resource": "IMAGE_CAKE_BASE_STAR_1",
+      "push": "0042ac85",
+      "store": "0042acbd"
+    },
+    {
+      "global": "005b9f10",
+      "resource": "IMAGE_CAKE_BASE_STAR_SM_1",
+      "push": "0042acdc",
+      "store": "0042ad14"
+    },
+    {
+      "global": "005b9f5c",
+      "resource": "IMAGE_CAKE_BASE_TREE_1",
+      "push": "0042ad33",
+      "store": "0042ad6b"
+    },
+    {
+      "global": "005b99e8",
+      "resource": "IMAGE_CAKE_BASE_TREE_SM_1",
+      "push": "0042ad8a",
+      "store": "0042adc2"
+    },
+    {
+      "global": "005b9d6c",
+      "resource": "IMAGE_CAKE_BASE_TRIA_1",
+      "push": "0042ade1",
+      "store": "0042ae19"
+    },
+    {
+      "global": "005b9a10",
+      "resource": "IMAGE_CAKE_DEC_CIRCLE_4",
+      "push": "0042af2e",
+      "store": "0042af51"
+    },
+    {
+      "global": "005b9668",
+      "resource": "IMAGE_CAKE_DEC_CIRCLE_SM_1",
+      "push": "0042b046",
+      "store": "0042b069"
+    },
+    {
+      "global": "005b9708",
+      "resource": "IMAGE_CAKE_DEC_RECT_6",
+      "push": "0042bd9e",
+      "store": "0042bdc0"
+    },
+    {
+      "global": "005b9aac",
+      "resource": "IMAGE_CAKE_DEC_RECT_SM_3",
+      "push": "0042beb6",
+      "store": "0042bed8"
+    },
+    {
+      "global": "005b9a90",
+      "resource": "IMAGE_CAKE_DEC_RECT_SM_8",
+      "push": "0042bfce",
+      "store": "0042bff0"
+    },
+    {
+      "global": "005b9d00",
+      "resource": "IMAGE_CAKE_DEC_STAR_5",
+      "push": "0042c0e6",
+      "store": "0042c109"
+    },
+    {
+      "global": "005b9670",
+      "resource": "IMAGE_CAKE_DEC_STAR_SM_2",
+      "push": "0042c1fe",
+      "store": "0042c221"
+    },
+    {
+      "global": "005b9ed8",
+      "resource": "IMAGE_CAKE_FROST_HEART_SM_3",
+      "push": "0042cf56",
+      "store": "0042cf78"
+    },
+    {
+      "global": "005b9e88",
+      "resource": "IMAGE_CAKE_FROST_PUMPKIN_4",
+      "push": "0042d06e",
+      "store": "0042d090"
+    },
+    {
+      "global": "005b9898",
+      "resource": "IMAGE_CAKE_FROST_RECT_1",
+      "push": "0042d186",
+      "store": "0042d1a8"
+    },
+    {
+      "global": "005b961c",
+      "resource": "IMAGE_CAKE_FROST_RECT_SM_2",
+      "push": "0042d29e",
+      "store": "0042d2c1"
+    },
+    {
+      "global": "005b963c",
+      "resource": "IMAGE_CAKE_FROST_STAR_3",
+      "push": "0042d3b6",
+      "store": "0042d3d9"
+    },
+    {
+      "global": "005b9a78",
+      "resource": "IMAGE_DCASE_UPGR",
+      "push": "0042e1b3",
+      "store": "0042e1d8"
+    },
+    {
+      "global": "005b9688",
+      "resource": "IMAGE_DECORATION_BUTTON_SHIP",
+      "push": "0042e2da",
+      "store": "0042e2ff"
+    },
+    {
+      "global": "005b9af4",
+      "resource": "IMAGE_DECORATION_LEVEL1",
+      "push": "0042e401",
+      "store": "0042e426"
+    },
+    {
+      "global": "005b9b00",
+      "resource": "IMAGE_DECORATOR_UPGR3",
+      "push": "0042e528",
+      "store": "0042e54e"
+    },
+    {
+      "global": "005ba008",
+      "resource": "IMAGE_DEC_3",
+      "push": "0042e64f",
+      "store": "0042e675"
+    },
+    {
+      "global": "005b96d0",
+      "resource": "IMAGE_GRANNY_HAPPY_LEVEL2",
+      "push": "0042f45e",
+      "store": "0042f483"
+    },
+    {
+      "global": "005b98ec",
+      "resource": "IMAGE_HEART_FLY_IN",
+      "push": "0042f585",
+      "store": "0042f5aa"
+    },
+    {
+      "global": "005b9b88",
+      "resource": "IMAGE_HUD_STAR",
+      "push": "0042f6ac",
+      "store": "0042f6d1"
+    },
+    {
+      "global": "005b979c",
+      "resource": "IMAGE_JILL_FIRE1",
+      "push": "0042f7d3",
+      "store": "0042f7f9"
+    },
+    {
+      "global": "005b9874",
+      "resource": "IMAGE_JILL_NORTH",
+      "push": "0042f8bf",
+      "store": "0042f8ea"
+    },
+    {
+      "global": "005b96a8",
+      "resource": "IMAGE_JILL_NORTH_CAKE",
+      "push": "0042f8f7",
+      "store": "0042f922"
+    },
+    {
+      "global": "005b9f88",
+      "resource": "IMAGE_JILL_NORTH_EAST",
+      "push": "0042f92f",
+      "store": "0042f95a"
+    },
+    {
+      "global": "005b96ec",
+      "resource": "IMAGE_JILL_NORTH_EAST_CAKE",
+      "push": "0042f967",
+      "store": "0042f992"
+    },
+    {
+      "global": "005b9a30",
+      "resource": "IMAGE_JILL_NORTH_WEST",
+      "push": "0042f99f",
+      "store": "0042f9ca"
+    },
+    {
+      "global": "005b9f2c",
+      "resource": "IMAGE_JILL_NORTH_WEST_CAKE",
+      "push": "0042f9d7",
+      "store": "0042fa02"
+    },
+    {
+      "global": "005b9684",
+      "resource": "IMAGE_JILL_SOUTH",
+      "push": "0042fa0f",
+      "store": "0042fa3a"
+    },
+    {
+      "global": "005b9880",
+      "resource": "IMAGE_JILL_SOUTH_CAKE",
+      "push": "0042fa47",
+      "store": "0042fa72"
+    },
+    {
+      "global": "005b9c24",
+      "resource": "IMAGE_JILL_SOUTH_EAST",
+      "push": "0042fa7f",
+      "store": "0042faaa"
+    },
+    {
+      "global": "005b983c",
+      "resource": "IMAGE_JILL_SOUTH_EAST_CAKE",
+      "push": "0042fab7",
+      "store": "0042fae2"
+    },
+    {
+      "global": "005b9908",
+      "resource": "IMAGE_JILL_SOUTH_WEST",
+      "push": "0042faef",
+      "store": "0042fb1a"
+    },
+    {
+      "global": "005b9d2c",
+      "resource": "IMAGE_JILL_SOUTH_WEST_CAKE",
+      "push": "0042fb27",
+      "store": "0042fb52"
+    },
+    {
+      "global": "005b9930",
+      "resource": "IMAGE_JILL_UPGR1",
+      "push": "0042fb5f",
+      "store": "0042fb8a"
+    },
+    {
+      "global": "005b9ff8",
+      "resource": "IMAGE_JILL_UPGR1_EAST",
+      "push": "0042fb97",
+      "store": "0042fbbc"
+    },
+    {
+      "global": "005b9f44",
+      "resource": "IMAGE_JILL_UPGR1_NONE",
+      "push": "0042fbcf",
+      "store": "0042fbfa"
+    },
+    {
+      "global": "005b9f4c",
+      "resource": "IMAGE_JILL_UPGR1_NONE_CAKE",
+      "push": "0042fc07",
+      "store": "0042fc32"
+    },
+    {
+      "global": "005b9d44",
+      "resource": "IMAGE_JILL_UPGR1_NORTH",
+      "push": "0042fc3f",
+      "store": "0042fc6a"
+    },
+    {
+      "global": "005b9b6c",
+      "resource": "IMAGE_JILL_UPGR1_NORTH_EAST",
+      "push": "0042fc77",
+      "store": "0042fca2"
+    },
+    {
+      "global": "005b9d14",
+      "resource": "IMAGE_JILL_UPGR1_NORTH_WEST",
+      "push": "0042fcaf",
+      "store": "0042fcda"
+    },
+    {
+      "global": "005ba048",
+      "resource": "IMAGE_JILL_UPGR1_SOUTH",
+      "push": "0042fce7",
+      "store": "0042fd12"
+    },
+    {
+      "global": "005b9770",
+      "resource": "IMAGE_JILL_UPGR1_SOUTH_EAST",
+      "push": "0042fd1f",
+      "store": "0042fd4a"
+    },
+    {
+      "global": "005b9bb0",
+      "resource": "IMAGE_JILL_UPGR1_SOUTH_WEST",
+      "push": "0042fd57",
+      "store": "0042fd82"
+    },
+    {
+      "global": "005b9cec",
+      "resource": "IMAGE_JILL_UPGR1_WEST",
+      "push": "0042fd8f",
+      "store": "0042fdba"
+    },
+    {
+      "global": "005b99d8",
+      "resource": "IMAGE_JILL_UPGR2",
+      "push": "0042fdc7",
+      "store": "0042fdf2"
+    },
+    {
+      "global": "005b9994",
+      "resource": "IMAGE_JILL_UPGR2_EAST",
+      "push": "0042fdff",
+      "store": "0042fe2a"
+    },
+    {
+      "global": "005b9df4",
+      "resource": "IMAGE_JILL_UPGR2_NONE",
+      "push": "0042fe37",
+      "store": "0042fe62"
+    },
+    {
+      "global": "005b9a4c",
+      "resource": "IMAGE_JILL_UPGR2_NONE_CAKE",
+      "push": "0042fe6f",
+      "store": "0042fe9a"
+    },
+    {
+      "global": "005b98e0",
+      "resource": "IMAGE_JILL_UPGR2_NORTH",
+      "push": "0042fea7",
+      "store": "0042fed2"
+    },
+    {
+      "global": "005b9e54",
+      "resource": "IMAGE_JILL_UPGR2_NORTH_EAST",
+      "push": "0042fedf",
+      "store": "0042ff0a"
+    },
+    {
+      "global": "005b9814",
+      "resource": "IMAGE_JILL_UPGR2_NORTH_WEST",
+      "push": "0042ff17",
+      "store": "0042ff42"
+    },
+    {
+      "global": "005b9e08",
+      "resource": "IMAGE_JILL_UPGR2_SOUTH",
+      "push": "0042ff4f",
+      "store": "0042ff7a"
+    },
+    {
+      "global": "005b9878",
+      "resource": "IMAGE_JILL_UPGR2_SOUTH_EAST",
+      "push": "0042ff87",
+      "store": "0042ffb2"
+    },
+    {
+      "global": "005b9eb0",
+      "resource": "IMAGE_JILL_UPGR2_SOUTH_WEST",
+      "push": "0042ffbf",
+      "store": "0042ffea"
+    },
+    {
+      "global": "005b9da0",
+      "resource": "IMAGE_JILL_UPGR2_WEST",
+      "push": "0042fff7",
+      "store": "00430022"
+    },
+    {
+      "global": "005b985c",
+      "resource": "IMAGE_JILL_UPGR3",
+      "push": "0043002f",
+      "store": "0043005a"
+    },
+    {
+      "global": "005b9b14",
+      "resource": "IMAGE_JILL_UPGR3_EAST",
+      "push": "00430067",
+      "store": "00430092"
+    },
+    {
+      "global": "005b99ec",
+      "resource": "IMAGE_JILL_UPGR3_NONE",
+      "push": "0043009f",
+      "store": "004300c4"
+    },
+    {
+      "global": "005b9f70",
+      "resource": "IMAGE_JILL_UPGR3_NONE_CAKE",
+      "push": "004300d7",
+      "store": "00430102"
+    },
+    {
+      "global": "005b9ce8",
+      "resource": "IMAGE_JILL_UPGR3_NORTH",
+      "push": "0043010f",
+      "store": "0043013a"
+    },
+    {
+      "global": "005b9e60",
+      "resource": "IMAGE_JILL_UPGR3_NORTH_EAST",
+      "push": "00430147",
+      "store": "00430172"
+    },
+    {
+      "global": "005b97a8",
+      "resource": "IMAGE_JILL_UPGR3_NORTH_WEST",
+      "push": "0043017f",
+      "store": "004301aa"
+    },
+    {
+      "global": "005b98c0",
+      "resource": "IMAGE_JILL_UPGR3_SOUTH",
+      "push": "004301b7",
+      "store": "004301e2"
+    },
+    {
+      "global": "005b9978",
+      "resource": "IMAGE_JILL_UPGR3_SOUTH_EAST",
+      "push": "004301ef",
+      "store": "0043021a"
+    },
+    {
+      "global": "005b9e80",
+      "resource": "IMAGE_JILL_UPGR3_SOUTH_WEST",
+      "push": "00430227",
+      "store": "00430252"
+    },
+    {
+      "global": "005b9fe0",
+      "resource": "IMAGE_JILL_UPGR3_WEST",
+      "push": "0043025f",
+      "store": "0043028a"
+    },
+    {
+      "global": "005b9604",
+      "resource": "IMAGE_JILL_WEST",
+      "push": "00430297",
+      "store": "004302c2"
+    },
+    {
+      "global": "005b9c4c",
+      "resource": "IMAGE_JILL_WEST_CAKE",
+      "push": "004302cf",
+      "store": "004302fa"
+    },
+    {
+      "global": "005b9ae0",
+      "resource": "IMAGE_LITTLE_BOY",
+      "push": "00430307",
+      "store": "00430332"
+    },
+    {
+      "global": "005b9c5c",
+      "resource": "IMAGE_LITTLE_BOY_BORED",
+      "push": "0043033f",
+      "store": "0043036a"
+    },
+    {
+      "global": "005b9c58",
+      "resource": "IMAGE_LITTLE_BOY_EAT",
+      "push": "00430377",
+      "store": "004303a2"
+    },
+    {
+      "global": "005b9934",
+      "resource": "IMAGE_LITTLE_BOY_HAPPY",
+      "push": "004303af",
+      "store": "004303da"
+    },
+    {
+      "global": "005b9bd4",
+      "resource": "IMAGE_LITTLE_BOY_MENU",
+      "push": "004303e7",
+      "store": "00430412"
+    },
+    {
+      "global": "005b9a48",
+      "resource": "IMAGE_LIVE_STAR",
+      "push": "0043041f",
+      "store": "0043044a"
+    },
+    {
+      "global": "005b9820",
+      "resource": "IMAGE_MAPSCREEN_BK_LEVEL1",
+      "push": "00430457",
+      "store": "00430482"
+    },
+    {
+      "global": "005ba054",
+      "resource": "IMAGE_MAPSCREEN_BK_LEVEL2",
+      "push": "0043048f",
+      "store": "004304ba"
+    },
+    {
+      "global": "005b9e1c",
+      "resource": "IMAGE_MAPSCREEN_BK_LEVEL3",
+      "push": "004304c7",
+      "store": "004304f2"
+    },
+    {
+      "global": "005b9a70",
+      "resource": "IMAGE_MAPSCREEN_BK_LEVEL4",
+      "push": "004304ff",
+      "store": "0043052a"
+    },
+    {
+      "global": "005b9d40",
+      "resource": "IMAGE_MAPSCREEN_BUTTON",
+      "push": "00430537",
+      "store": "00430562"
+    },
+    {
+      "global": "005b9f9c",
+      "resource": "IMAGE_MAPSCREEN_BUTTON_OVER",
+      "push": "0043056f",
+      "store": "0043059a"
+    },
+    {
+      "global": "005b97f4",
+      "resource": "IMAGE_MAPSCREEN_RING_HL_L1",
+      "push": "004305a7",
+      "store": "004305d2"
+    },
+    {
+      "global": "005b9c0c",
+      "resource": "IMAGE_MAPSCREEN_RING_HL_L2",
+      "push": "004305df",
+      "store": "0043060a"
+    },
+    {
+      "global": "005ba050",
+      "resource": "IMAGE_MAPSCREEN_RING_HL_L3",
+      "push": "00430617",
+      "store": "00430642"
+    },
+    {
+      "global": "005b9960",
+      "resource": "IMAGE_MAPSCREEN_RING_HL_L4",
+      "push": "0043064f",
+      "store": "0043067a"
+    },
+    {
+      "global": "005b9b20",
+      "resource": "IMAGE_MAPSCREEN_RING_L1",
+      "push": "00430687",
+      "store": "004306b2"
+    },
+    {
+      "global": "005b98ac",
+      "resource": "IMAGE_MAPSCREEN_RING_L2",
+      "push": "004306bf",
+      "store": "004306ea"
+    },
+    {
+      "global": "005b9644",
+      "resource": "IMAGE_MAPSCREEN_RING_L3",
+      "push": "004306f7",
+      "store": "0043071c"
+    },
+    {
+      "global": "005b9cd0",
+      "resource": "IMAGE_MAPSCREEN_RING_L4",
+      "push": "0043072f",
+      "store": "0043075a"
+    },
+    {
+      "global": "005b9e8c",
+      "resource": "IMAGE_MONEY",
+      "push": "00430767",
+      "store": "00430792"
+    },
+    {
+      "global": "005b9660",
+      "resource": "IMAGE_MONEY_FL",
+      "push": "0043079f",
+      "store": "004307ca"
+    },
+    {
+      "global": "005b9c00",
+      "resource": "IMAGE_MONEY_PUFF",
+      "push": "004307d7",
+      "store": "00430802"
+    },
+    {
+      "global": "005b9c74",
+      "resource": "IMAGE_RABBIT",
+      "push": "0043080f",
+      "store": "0043083a"
+    },
+    {
+      "global": "005b9a24",
+      "resource": "IMAGE_RABBIT_BORED",
+      "push": "00430847",
+      "store": "00430872"
+    },
+    {
+      "global": "005b9d90",
+      "resource": "IMAGE_RABBIT_EAT",
+      "push": "0043087f",
+      "store": "004308aa"
+    },
+    {
+      "global": "005b96c0",
+      "resource": "IMAGE_RABBIT_HAPPY",
+      "push": "004308b7",
+      "store": "004308e2"
+    },
+    {
+      "global": "005b9f68",
+      "resource": "IMAGE_RABBIT_MENU",
+      "push": "004308ef",
+      "store": "0043091a"
+    },
+    {
+      "global": "005b9f40",
+      "resource": "IMAGE_READYCIRCLE",
+      "push": "00430927",
+      "store": "00430952"
+    },
+    {
+      "global": "005b96e4",
+      "resource": "IMAGE_RECTANGLE",
+      "push": "0043095f",
+      "store": "0043098a"
+    },
+    {
+      "global": "005b9adc",
+      "resource": "IMAGE_ROTATED_ARROW",
+      "push": "00430997",
+      "store": "004309c2"
+    },
+    {
+      "global": "005b9ccc",
+      "resource": "IMAGE_SANTA",
+      "push": "004309cf",
+      "store": "004309fa"
+    },
+    {
+      "global": "005b9bd0",
+      "resource": "IMAGE_SANTA_BORED",
+      "push": "00430a07",
+      "store": "00430a32"
+    },
+    {
+      "global": "005b99c4",
+      "resource": "IMAGE_SANTA_EAT",
+      "push": "00430a3f",
+      "store": "00430a6a"
+    },
+    {
+      "global": "005b98f8",
+      "resource": "IMAGE_SANTA_HAPPY",
+      "push": "00430a77",
+      "store": "00430aa2"
+    },
+    {
+      "global": "005b96f4",
+      "resource": "IMAGE_SANTA_MENU",
+      "push": "00430aaf",
+      "store": "00430ada"
+    },
+    {
+      "global": "005b98a0",
+      "resource": "IMAGE_SHOPSCREEN_BK_CAREER",
+      "push": "00430ae7",
+      "store": "00430b12"
+    },
+    {
+      "global": "005b9ac4",
+      "resource": "IMAGE_SHOPSCREEN_BK_UPGR",
+      "push": "00430b1f",
+      "store": "00430b4a"
+    },
+    {
+      "global": "005b9b68",
+      "resource": "IMAGE_SHOPSCREEN_BUTTON_BUY",
+      "push": "00430b57",
+      "store": "00430b82"
+    },
+    {
+      "global": "005b9da4",
+      "resource": "IMAGE_SHOPSCREEN_BUTTON_BUY_DIS",
+      "push": "00430b8f",
+      "store": "00430bba"
+    },
+    {
+      "global": "005b97c4",
+      "resource": "IMAGE_SHOPSCREEN_BUTTON_BUY_OVER",
+      "push": "00430bc7",
+      "store": "00430bf2"
+    },
+    {
+      "global": "005b9dfc",
+      "resource": "IMAGE_SHOPSCREEN_DIALOG",
+      "push": "00430bff",
+      "store": "00430c2a"
+    },
+    {
+      "global": "005b9798",
+      "resource": "IMAGE_SHOPSCREEN_SUN1",
+      "push": "00430c37",
+      "store": "00430c62"
+    },
+    {
+      "global": "005b99a4",
+      "resource": "IMAGE_SHOPSCREEN_SUN2",
+      "push": "00430c6f",
+      "store": "00430c9a"
+    },
+    {
+      "global": "005b9a8c",
+      "resource": "IMAGE_SHOPSCREEN_SUN_JILL",
+      "push": "00430ca7",
+      "store": "00430cd2"
+    },
+    {
+      "global": "005b9abc",
+      "resource": "IMAGE_SLIDER_THUMB",
+      "push": "00430cdf",
+      "store": "00430d0a"
+    },
+    {
+      "global": "005b9b64",
+      "resource": "IMAGE_SLIDER_TRACK",
+      "push": "00430d17",
+      "store": "00430d42"
+    },
+    {
+      "global": "005b97c0",
+      "resource": "IMAGE_TRASH",
+      "push": "00430d4f",
+      "store": "00430d74"
+    },
+    {
+      "global": "005b9854",
+      "resource": "IMAGE_TRASH_DIR",
+      "push": "00430d87",
+      "store": "00430db2"
+    },
+    {
+      "global": "005b96a4",
+      "resource": "IMAGE_TVBUTTON_DOWN",
+      "push": "00430dbf",
+      "store": "00430dea"
+    },
+    {
+      "global": "005b9800",
+      "resource": "IMAGE_TVBUTTON_OVER",
+      "push": "00430df7",
+      "store": "00430e22"
+    },
+    {
+      "global": "005b9cf4",
+      "resource": "IMAGE_TVSET",
+      "push": "00430e2f",
+      "store": "00430e5a"
+    },
+    {
+      "global": "005b9e50",
+      "resource": "IMAGE_TVSET_BEACH",
+      "push": "00430e67",
+      "store": "00430e92"
+    },
+    {
+      "global": "005b9980",
+      "resource": "IMAGE_TVSET_CASINO",
+      "push": "00430e9f",
+      "store": "00430eca"
+    },
+    {
+      "global": "005b96cc",
+      "resource": "IMAGE_TVSET_UPGR",
+      "push": "00430ed7",
+      "store": "00430f02"
+    },
+    {
+      "global": "005b988c",
+      "resource": "IMAGE_TV_ANIMALS",
+      "push": "00430f0f",
+      "store": "00430f3a"
+    },
+    {
+      "global": "005b98f4",
+      "resource": "IMAGE_TV_CARTOON",
+      "push": "00430f47",
+      "store": "00430f72"
+    },
+    {
+      "global": "005b9f90",
+      "resource": "IMAGE_TV_FOOD",
+      "push": "00430f7f",
+      "store": "00430faa"
+    },
+    {
+      "global": "005b9600",
+      "resource": "IMAGE_TV_NEWS",
+      "push": "00430fb7",
+      "store": "00430fe2"
+    },
+    {
+      "global": "005b9bac",
+      "resource": "IMAGE_TV_NOISE",
+      "push": "00430fef",
+      "store": "0043101a"
+    },
+    {
+      "global": "005b9d78",
+      "resource": "IMAGE_TV_SPORT",
+      "push": "00431027",
+      "store": "00431052"
+    },
+    {
+      "global": "005b9680",
+      "resource": "IMAGE_WOMAN",
+      "push": "0043105f",
+      "store": "0043108a"
+    },
+    {
+      "global": "005b9764",
+      "resource": "IMAGE_WOMAN_BORED",
+      "push": "00431097",
+      "store": "004310c2"
+    },
+    {
+      "global": "005b9628",
+      "resource": "IMAGE_WOMAN_BORED_LEVEL2",
+      "push": "004310cf",
+      "store": "004310fa"
+    },
+    {
+      "global": "005b9df0",
+      "resource": "IMAGE_WOMAN_EAT",
+      "push": "00431107",
+      "store": "00431132"
+    },
+    {
+      "global": "005b9cdc",
+      "resource": "IMAGE_WOMAN_EAT_LEVEL2",
+      "push": "0043113f",
+      "store": "0043116a"
+    },
+    {
+      "global": "005b99c0",
+      "resource": "IMAGE_WOMAN_HAPPY",
+      "push": "00431177",
+      "store": "004311a2"
+    },
+    {
+      "global": "005b9d74",
+      "resource": "IMAGE_WOMAN_HAPPY_LEVEL2",
+      "push": "004311af",
+      "store": "004311da"
+    },
+    {
+      "global": "005b9d98",
+      "resource": "IMAGE_WOMAN_LEVEL2",
+      "push": "004311e7",
+      "store": "00431212"
+    },
+    {
+      "global": "005b9c7c",
+      "resource": "IMAGE_WOMAN_MENU",
+      "push": "0043121f",
+      "store": "0043124a"
+    },
+    {
+      "global": "005b9ac0",
+      "resource": "IMAGE_WOMAN_MENU_LEVEL2",
+      "push": "00431257",
+      "store": "0043127c"
+    },
+    {
+      "global": "005b97f0",
+      "resource": "SOUND_BAKERGOALREACHED",
+      "push": "0043128f",
+      "store": "004312ba"
+    },
+    {
+      "global": "005b9ec0",
+      "resource": "SOUND_CAKEOVEN_DOOROPEN",
+      "push": "004312c7",
+      "store": "004312f2"
+    },
+    {
+      "global": "005b9918",
+      "resource": "SOUND_CAKEOVEN_WORK",
+      "push": "004312ff",
+      "store": "0043132a"
+    },
+    {
+      "global": "005b9af0",
+      "resource": "SOUND_CASH",
+      "push": "00431337",
+      "store": "00431362"
+    },
+    {
+      "global": "005b98bc",
+      "resource": "SOUND_CLOSED",
+      "push": "0043136f",
+      "store": "0043139a"
+    },
+    {
+      "global": "005b9e9c",
+      "resource": "SOUND_COOKIE_DOOROPEN",
+      "push": "004313a7",
+      "store": "004313d2"
+    },
+    {
+      "global": "005b9c48",
+      "resource": "SOUND_COOKIE_READY",
+      "push": "004313df",
+      "store": "0043140a"
+    },
+    {
+      "global": "005b9bfc",
+      "resource": "SOUND_COOKIE_START",
+      "push": "00431417",
+      "store": "00431442"
+    },
+    {
+      "global": "005b96bc",
+      "resource": "SOUND_CUSTOMER_ANGRY",
+      "push": "0043144f",
+      "store": "0043147a"
+    },
+    {
+      "global": "005b9eac",
+      "resource": "SOUND_CUSTOMER_ARRIVES",
+      "push": "00431487",
+      "store": "004314b2"
+    },
+    {
+      "global": "005b9744",
+      "resource": "SOUND_CUSTOMER_EAT",
+      "push": "004314bf",
+      "store": "004314ea"
+    },
+    {
+      "global": "005b9740",
+      "resource": "SOUND_CUSTOMER_HAPPY",
+      "push": "004314f7",
+      "store": "00431522"
+    },
+    {
+      "global": "005b9c80",
+      "resource": "SOUND_CUSTOMER_HAPPYLEAVING",
+      "push": "0043152f",
+      "store": "0043155a"
+    },
+    {
+      "global": "005b9d38",
+      "resource": "SOUND_CUSTOMER_LOST",
+      "push": "00431567",
+      "store": "00431592"
+    },
+    {
+      "global": "005b9990",
+      "resource": "SOUND_CUSTOMER_UNHAPPY",
+      "push": "0043159f",
+      "store": "004315ca"
+    },
+    {
+      "global": "005b9f34",
+      "resource": "SOUND_DECORATOR",
+      "push": "004315d7",
+      "store": "00431602"
+    },
+    {
+      "global": "005b9ee0",
+      "resource": "SOUND_DECORATOR_BIG",
+      "push": "0043160f",
+      "store": "0043163a"
+    },
+    {
+      "global": "005b9860",
+      "resource": "SOUND_DECORATOR_SMALL",
+      "push": "00431647",
+      "store": "00431672"
+    },
+    {
+      "global": "005b9838",
+      "resource": "SOUND_FROSTER",
+      "push": "0043167f",
+      "store": "004316aa"
+    },
+    {
+      "global": "005b9760",
+      "resource": "SOUND_FROSTER_BEGIN",
+      "push": "004316b7",
+      "store": "004316e2"
+    },
+    {
+      "global": "005b9620",
+      "resource": "SOUND_FROSTER_END",
+      "push": "004316ef",
+      "store": "0043171a"
+    },
+    {
+      "global": "005b9d8c",
+      "resource": "SOUND_FROSTER_SPRAY",
+      "push": "00431727",
+      "store": "00431752"
+    },
+    {
+      "global": "005b99e0",
+      "resource": "SOUND_GCAKEREADY",
+      "push": "0043175f",
+      "store": "0043178a"
+    },
+    {
+      "global": "005b9b3c",
+      "resource": "SOUND_HIGHLIGHT",
+      "push": "00431797",
+      "store": "004317c2"
+    },
+    {
+      "global": "005b9a68",
+      "resource": "SOUND_LEVEL_BUY",
+      "push": "004317cf",
+      "store": "004317fa"
+    },
+    {
+      "global": "005b9a04",
+      "resource": "SOUND_LEVEL_FINISH",
+      "push": "00431807",
+      "store": "00431832"
+    },
+    {
+      "global": "005b9f3c",
+      "resource": "SOUND_LOSELIFE",
+      "push": "0043183f",
+      "store": "0043186a"
+    },
+    {
+      "global": "005b9ab8",
+      "resource": "SOUND_PAPER",
+      "push": "00431877",
+      "store": "004318a2"
+    },
+    {
+      "global": "005b9e4c",
+      "resource": "SOUND_PICKUP",
+      "push": "004318af",
+      "store": "004318d4"
+    },
+    {
+      "global": "005b9958",
+      "resource": "SOUND_PLACEDOWN",
+      "push": "004318e7",
+      "store": "00431912"
+    },
+    {
+      "global": "005b9bcc",
+      "resource": "SOUND_POP",
+      "push": "0043191f",
+      "store": "0043194a"
+    },
+    {
+      "global": "005b9b60",
+      "resource": "SOUND_REVEALBEACH",
+      "push": "00431957",
+      "store": "00431982"
+    },
+    {
+      "global": "005b9bb8",
+      "resource": "SOUND_REVEALCASINO",
+      "push": "0043198f",
+      "store": "004319ba"
+    },
+    {
+      "global": "005b9a20",
+      "resource": "SOUND_REVEALCIRCUS",
+      "push": "004319c7",
+      "store": "004319f2"
+    },
+    {
+      "global": "005b9e48",
+      "resource": "SOUND_SELECT",
+      "push": "004319ff",
+      "store": "00431a2a"
+    },
+    {
+      "global": "005b9b4c",
+      "resource": "SOUND_THUNDER",
+      "push": "00431a37",
+      "store": "00431a62"
+    },
+    {
+      "global": "005b996c",
+      "resource": "SOUND_TIMER",
+      "push": "00431a6f",
+      "store": "00431a9a"
+    },
+    {
+      "global": "005b9d88",
+      "resource": "SOUND_TRASH",
+      "push": "00431aa7",
+      "store": "00431ad2"
+    },
+    {
+      "global": "005b99b0",
+      "resource": "SOUND_TV_CARTOON",
+      "push": "00431adf",
+      "store": "00431b0a"
+    },
+    {
+      "global": "005b9c64",
+      "resource": "SOUND_TV_FOOD",
+      "push": "00431b17",
+      "store": "00431b42"
+    },
+    {
+      "global": "005b98a8",
+      "resource": "SOUND_TV_NEWS",
+      "push": "00431b4f",
+      "store": "00431b7a"
+    },
+    {
+      "global": "005b98dc",
+      "resource": "SOUND_TV_NOISE",
+      "push": "00431b87",
+      "store": "00431bb2"
+    },
+    {
+      "global": "005b9954",
+      "resource": "SOUND_WINLEVEL",
+      "push": "00431bbf",
+      "store": "00431bea"
+    },
+    {
+      "global": "005b9bc8",
+      "resource": "SOUND_WRAP",
+      "push": "00431bf7",
+      "store": "00431c22"
+    },
+    {
+      "global": "005b9870",
+      "resource": "SOUND_WRONG_CAKE",
+      "push": "00431c2f",
+      "store": "00431c5a"
+    }
+  ]
+}

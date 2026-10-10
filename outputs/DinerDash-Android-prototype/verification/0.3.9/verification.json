@@ -1,0 +1,116 @@
+{
+  "version": "0.3.9",
+  "scope": "Gameplay, rendering, input, menus and save bug audit; music comparison paused",
+  "apk_sha256": "5ce7776cbe848dc37cd32e0d91559568995b4fe355df87e752339c59d111b114",
+  "previous_apk_sha256": "de2b98781ef15be1bd1dd4287b19cb3f6eea2a607bc30c20a77f7a2afb6d6c67",
+  "fixes": [
+    "Five default expert goals follow twice the minimum goal",
+    "Endless drinks require an upgrade; drink/podium destinations use recovered stage metadata",
+    "Guest standing satisfaction uses original floor thresholds",
+    "Guest exits use authored frame counts at 750 ms and missing body animation IDs retain the prior/terminal pose",
+    "Cart fill state counts successful visits and follows its original overlapping reset timer",
+    "Chez Flo food flags/numbers use chez while trays use chezflos",
+    "Cancelled multi-touch gestures cannot queue a release action",
+    "Foreground frame stalls advance elapsed simulation time in steps instead of losing time",
+    "Shop item_desc is not parsed as a purchase button; empty inventory allows Continue",
+    "Final shift replay retains pre-final resume total while preserving final best/expert score",
+    "Cancel/Back discard profile input and restore the active selection; normalized duplicate names are rejected"
+  ],
+  "model_suites": {
+    "GameEngineTest": 35,
+    "MechanicsTest": 53,
+    "FidelityTest": 332,
+    "FullGameTest": 2989,
+    "DataRegressionTest": 65,
+    "MovementRegressionTest": 37436
+  },
+  "model_checks": 40910,
+  "furniture_routes": 12477,
+  "all_65_maps_and_endless_purchased_tables_stations_covered": true,
+  "installed_suites": {
+    "AndroidAnimationTest": 80,
+    "AndroidProgressTest": 58,
+    "AndroidGuestTest": 226,
+    "AndroidSpriteAuditTest": 233,
+    "AndroidAudioTest": 94,
+    "AndroidBugRegressionTest": 106
+  },
+  "installed_checks": 797,
+  "installed_suites_passed": 6,
+  "baseline_regressions": {
+    "data_checks": 65,
+    "data_failures": 50,
+    "installed_bug_checks": 101,
+    "installed_bug_failures": 39,
+    "isolated_progress_cases_failed": [
+      "shop",
+      "final",
+      "cancel",
+      "duplicate"
+    ],
+    "shop_crash": "NumberFormatException parsing item_desc"
+  },
+  "real_touch_qa": {
+    "apk_sha256": "5ce7776cbe848dc37cd32e0d91559568995b4fe355df87e752339c59d111b114",
+    "natural_level_1_1_completed": true,
+    "continue_tapped": true,
+    "level_1_2_playable": true,
+    "fatal_exception": false,
+    "full_campaign_playthrough": false
+  },
+  "model_full_game": {
+    "career_schedules_closed": 50,
+    "career_parties": 1067,
+    "tables": 308,
+    "zero_travel_bot_goals": 43,
+    "real_difficulty_verified": false
+  },
+  "sprite_captures_inspected": [
+    "bug-boy-leaving-frame2.png",
+    "bug-chez-tray.png",
+    "bug-cart-full.png",
+    "phone-level-1-2-play.png"
+  ],
+  "package_integrity": {
+    "apk_sha256": "5ce7776cbe848dc37cd32e0d91559568995b4fe355df87e752339c59d111b114",
+    "bytes": 34597962,
+    "version": "0.3.9",
+    "version_code": 12,
+    "original_media_hashes_verified": 1960,
+    "original_assets_resources_unchanged": true,
+    "uncompressed_mp3": 62,
+    "uncompressed_derived_music_wav": 26,
+    "crc_verified": true,
+    "signature_verified": true,
+    "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf",
+    "installed_apk_bytes_match": true
+  },
+  "audio_logic_and_all_original_assets_resources_unchanged": true,
+  "instrumentation_fixture_saves_restored": true,
+  "ordinary_touch_emulator_save_restored": false,
+  "ordinary_touch_save_note": "The pre-touch run-as snapshot returned an error because the release APK is not debuggable. It was detected as invalid; no guessed restore was made. The touch run advanced only the isolated emulator test save. A valid post-touch snapshot was then captured using emulator adb root.",
+  "physical_device_tested": false,
+  "windows_runtime_executed": false,
+  "music_reference_comparison": "paused at user request",
+  "tests_skipped": [],
+  "remaining_gaps": [
+    "Overflow arrivals are hidden WAITING entries rather than original NEW entries; podium can boost hidden parties",
+    "Original timer multiplier ownership and quick-seating ambiguity",
+    "BFS route choices differ from weighted A* and original tie-breaking",
+    "Full state-dependent tutorial/closing flow",
+    "Embedded font conversion and restaurant/Goddess/ending cinematics",
+    "The previously reported disappearing free-hand action queue was not reproduced in a valid mixed queue; original cancellation on invalid actions remains",
+    "Long foreground stall Android performance beyond the 500 ms regression is unverified"
+  ],
+  "evidence": "verification/0.3.9/",
+  "production_source_hashes": {
+    "src/local/dinerdash/prototype/AssetStore.java": "822d2446f94b76fc9b0a62194b967c36a09a084f7c2269e5b177d8b9109f54b7",
+    "src/local/dinerdash/prototype/GameAudio.java": "5c1ad05181f91f822a59d1ecc8399695a76fa571c823e2d42bf8a11c505cc488",
+    "src/local/dinerdash/prototype/GameEngine.java": "4f6957ea01014a782b52fd5cc7bef8dfaffed2793498bd9c3168c4d00912739d",
+    "src/local/dinerdash/prototype/GameView.java": "bd49cb49ec5596e3421b7d779e7c6b99314ed45d60cf057bf610de7cd246ce25",
+    "src/local/dinerdash/prototype/LevelData.java": "a03fe46f9e9675e60391cbb5dd67dffedabb651ae599b02aff86dbb4e298db56",
+    "src/local/dinerdash/prototype/MainActivity.java": "90083c4051c1c63f2fa19ce2b59ee6ade49c56a77eaabe1ea157ef49df0cae3e",
+    "src/local/dinerdash/prototype/MenuView.java": "16e6986cf7a3d1beceea292f3ccc99bfa1835a5bf28161d1f30e2101452e3de8",
+    "src/local/dinerdash/prototype/SpriteRenderer.java": "18f0e329e50b350796af8fbe702822db39a692e2afe6473e0df67c9f992c07ff"
+  }
+}

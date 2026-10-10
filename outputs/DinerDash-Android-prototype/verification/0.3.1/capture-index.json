@@ -1,0 +1,29 @@
+[
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/outputs/DinerDash-Android-prototype/verification/0.3.1/phone-level-1-1-result.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "apk_sha256": "935d28b808fd9955d49869ad601d0c504b78358817790cf676a0a0d691be7f6f",
+    "fixture": "Real emulator touch completion/Continue; synthetic Activity capture for additional transition"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/outputs/DinerDash-Android-prototype/verification/0.3.1/phone-level-1-2-intro.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "apk_sha256": "935d28b808fd9955d49869ad601d0c504b78358817790cf676a0a0d691be7f6f",
+    "fixture": "Real emulator touch completion/Continue; synthetic Activity capture for additional transition"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/outputs/DinerDash-Android-prototype/verification/0.3.1/phone-level-1-2-play.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "apk_sha256": "935d28b808fd9955d49869ad601d0c504b78358817790cf676a0a0d691be7f6f",
+    "fixture": "Real emulator touch completion/Continue; synthetic Activity capture for additional transition"
+  }
+]

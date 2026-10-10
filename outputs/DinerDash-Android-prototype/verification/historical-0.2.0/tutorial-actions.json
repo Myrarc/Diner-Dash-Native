@@ -1,0 +1,140 @@
+[
+  {
+    "turn": 0,
+    "action": "service READY T1",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: READY. Table 2: EMPTY",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nGuests seated. Wait for their order."
+  },
+  {
+    "turn": 1,
+    "action": "kitchen",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: ORDERED. Table 2: EMPTY",
+    "status": "Carrying ticket T1 \u00b7 Queued 0\nOrder taken. Visit Kitchen to start cooking."
+  },
+  {
+    "turn": 5,
+    "action": "kitchen",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 1. Flo destination: -99. Table 1: ORDERED. Table 2: EMPTY",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nOrders dropped off / ready meals collected."
+  },
+  {
+    "turn": 6,
+    "action": "deliver food T1",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: ORDERED. Table 2: EMPTY",
+    "status": "Carrying food T1 \u00b7 Queued 0\nOrders dropped off / ready meals collected."
+  },
+  {
+    "turn": 8,
+    "action": "seat T2",
+    "state": "Restaurant. Waiting parties: 2. Food ready: 0. Flo destination: -99. Table 1: EATING. Table 2: EMPTY",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nFood served."
+  },
+  {
+    "turn": 9,
+    "action": "service CHECK T1",
+    "state": "Restaurant. Waiting parties: 1. Food ready: 0. Flo destination: -99. Table 1: CHECK. Table 2: DECIDING",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nGuests seated. Wait for their order."
+  },
+  {
+    "turn": 10,
+    "action": "service LEAVING T1",
+    "state": "Restaurant. Waiting parties: 1. Food ready: 0. Flo destination: -99. Table 1: LEAVING. Table 2: READY",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nBill delivered. Clear the dishes."
+  },
+  {
+    "turn": 11,
+    "action": "drop dishes",
+    "state": "Restaurant. Waiting parties: 1. Food ready: 0. Flo destination: -99. Table 1: EMPTY. Table 2: READY",
+    "status": "Carrying dishes \u00b7 Queued 0\nDishes collected. Drop them off at Dishes."
+  },
+  {
+    "turn": 12,
+    "action": "seat T1",
+    "state": "Restaurant. Waiting parties: 1. Food ready: 0. Flo destination: -99. Table 1: EMPTY. Table 2: READY",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nDishes dropped off."
+  },
+  {
+    "turn": 13,
+    "action": "service READY T2",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: DECIDING. Table 2: READY",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nGuests seated. Wait for their order."
+  },
+  {
+    "turn": 14,
+    "action": "kitchen",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: READY. Table 2: ORDERED",
+    "status": "Carrying ticket T2 \u00b7 Queued 0\nOrder taken. Visit Kitchen to start cooking."
+  },
+  {
+    "turn": 15,
+    "action": "service READY T1",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: READY. Table 2: ORDERED",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nOrders dropped off / ready meals collected."
+  },
+  {
+    "turn": 16,
+    "action": "kitchen",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: ORDERED. Table 2: ORDERED",
+    "status": "Carrying ticket T1 \u00b7 Queued 0\nOrder taken. Visit Kitchen to start cooking."
+  },
+  {
+    "turn": 17,
+    "action": "kitchen",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 1. Flo destination: -99. Table 1: ORDERED. Table 2: ORDERED",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nOrders dropped off / ready meals collected."
+  },
+  {
+    "turn": 18,
+    "action": "deliver food T2",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: ORDERED. Table 2: ORDERED",
+    "status": "Carrying food T2 \u00b7 Queued 0\nOrders dropped off / ready meals collected."
+  },
+  {
+    "turn": 19,
+    "action": "kitchen",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 1. Flo destination: -99. Table 1: ORDERED. Table 2: EATING",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nFood served."
+  },
+  {
+    "turn": 20,
+    "action": "deliver food T1",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: ORDERED. Table 2: EATING",
+    "status": "Carrying food T1 \u00b7 Queued 0\nOrders dropped off / ready meals collected."
+  },
+  {
+    "turn": 21,
+    "action": "service CHECK T2",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: EATING. Table 2: CHECK",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nFood served."
+  },
+  {
+    "turn": 22,
+    "action": "service CHECK T1",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: CHECK. Table 2: LEAVING",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nBill delivered. Clear the dishes."
+  },
+  {
+    "turn": 23,
+    "action": "service LEAVING T1",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: LEAVING. Table 2: DIRTY",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nBill delivered. Clear the dishes."
+  },
+  {
+    "turn": 24,
+    "action": "drop dishes",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: EMPTY. Table 2: DIRTY",
+    "status": "Carrying dishes \u00b7 Queued 0\nDishes collected. Drop them off at Dishes."
+  },
+  {
+    "turn": 25,
+    "action": "service DIRTY T2",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: EMPTY. Table 2: DIRTY",
+    "status": "Hands free (2 slots) \u00b7 Queued 0\nDishes dropped off."
+  },
+  {
+    "turn": 26,
+    "action": "drop dishes",
+    "state": "Restaurant. Waiting parties: 0. Food ready: 0. Flo destination: -99. Table 1: EMPTY. Table 2: EMPTY",
+    "status": "Carrying dishes \u00b7 Queued 0\nDishes collected. Drop them off at Dishes."
+  }
+]

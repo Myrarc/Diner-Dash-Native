@@ -1,0 +1,10 @@
+{
+  "version": "0.3.2",
+  "version_code": 5,
+  "apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+  "packaged_media_verified": 1960,
+  "sounds_stored_uncompressed": 62,
+  "zip_crc": "pass",
+  "signature_verified": true,
+  "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf"
+}

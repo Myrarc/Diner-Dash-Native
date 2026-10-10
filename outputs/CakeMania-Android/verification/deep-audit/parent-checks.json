@@ -1,0 +1,25 @@
+{
+  "baseline_apk_sha256": "ebbe1484864a44a3387603fa687ab73d8d8296846959dd5e72df8db02a92b674",
+  "source_and_compiler_output_binding_verified": true,
+  "checks": [
+    {
+      "topic": "Math.floorMod Android23 compatibility candidate",
+      "result": "Not a defect in the compiled APK",
+      "evidence": "Local Android API history marks floorMod since24, but D8 replaces the source call with AssetStore$$ExternalSyntheticBackport0.m using integer remainder. No direct platform floorMod invocation remains."
+    },
+    {
+      "topic": "Two unavailable pseudocode exports",
+      "result": "Explicit gaps retained with assembly fallback",
+      "addresses": [
+        "004293b0",
+        "0056404d"
+      ],
+      "evidence": "004293b0 is a34781-byte resource-binding function referencing573resourceIDs;0056404d is453bytes of floating-point helper assembly. Neither was counted as valid pseudocode."
+    },
+    {
+      "topic": "Per-month cake config file dependency candidate",
+      "result": "Unresolved; not a proven missing file-loading behavior",
+      "evidence": "Leveldefs reference name_xml_cakes, but only MainConfig/cakes.xml exists in supplied recovered configs. The field use/fallback and active-equipment query must be traced before proposing a loader."
+    }
+  ]
+}

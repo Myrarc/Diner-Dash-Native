@@ -1,0 +1,18 @@
+{
+  "apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+  "checkpoints": [
+    {
+      "action": "Naturally complete 1-1",
+      "screen": "endlevel"
+    },
+    {
+      "action": "Real tap Continue",
+      "screen": "startlevel"
+    },
+    {
+      "action": "Next shift playable",
+      "state": "Restaurant. Shift 2. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+    }
+  ],
+  "crash_buffer": "no fatal exceptions"
+}

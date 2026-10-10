@@ -1,0 +1,930 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Customers>
+	
+	<HeartAnimation id="in" img="IMAGE_HEART_IN" count="14" x="-8" y="-11" />
+	<HeartAnimation id="out" img="IMAGE_HEART_OUT" count="10" x="-6" y="-6" />
+	<HeartAnimation id="flyin" img="IMAGE_HEART_FLY_IN" count="11" x="-20" y="-19" />
+	<HeartAnimation id="flyout" img="IMAGE_HEART_FLY_OUT" count="12" x="-17" y="-16" />
+	<HeartAnimation id="heart" img="IMAGE_HEART" count="1" x="0" y="0" />
+	
+        <Customer id="0" guid="boy" name="Little Boy" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="18" tip="1" cookie="5" max_layers="2" tv="cartoon,1;" xtrahearts="santa,1;dracula,-1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="6" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY" scale="1">
+			<Sequence frames="0,0,0,1,1,2,2,3,3,3,4,4,5,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="3.2" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_MENU" scale="1">
+			<Sequence frames="0,0,1,1,2,2,3,3" />
+			<Timing framestart="0" frameend="7" time="2.2" />
+		</Image>
+
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_HAPPY" scale="1">
+			<Sequence frames="0,1,2,3,4,4,2,1,0" />
+			<Timing framestart="0" frameend="8" time="1.8" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_EAT" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,5" />
+			<Timing framestart="0" frameend="7" time="2.0" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="7" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_BORED" scale="1">
+			<Sequence frames="0,1,1,1,2,3,4,5,6,5,2,3,4,1" />
+			<Timing framestart="0" frameend="13" time="2.5" />
+		</Image>
+	</Customer>
+	<Customer id="20" guid="boy2" name="Little Boy2" start_hearts="2" max_hearts="5" menu="5" menu_hearts="1" patience="15" tip="1" cookie="5" max_layers="3" tv="cartoon,1;" xtrahearts="santa2,1;dracula2,-1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="6" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY" scale="1">
+			<Sequence frames="0,0,0,1,1,2,2,3,3,3,4,4,5,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="3.2" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_MENU" scale="1">
+			<Sequence frames="0,0,1,1,2,2,3,3" />
+			<Timing framestart="0" frameend="7" time="2.2" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_HAPPY" scale="1">
+			<Sequence frames="0,1,2,3,4,4,2,1,0" />
+			<Timing framestart="0" frameend="8" time="1.8" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_EAT" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,5" />
+			<Timing framestart="0" frameend="7" time="2.0" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="7" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_BORED" scale="1">
+			<Sequence frames="0,1,1,1,2,3,4,5,6,5,2,3,4,1" />
+			<Timing framestart="0" frameend="13" time="2.5" />
+		</Image>
+	</Customer>
+	<Customer id="30" guid="boy3" name="Little Boy3" start_hearts="2" max_hearts="5" menu="5" menu_hearts="1" patience="12" tip="1" cookie="5" max_layers="3" tv="cartoon,1;" xtrahearts="santa3,1;dracula3,-1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="6" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY" scale="1">
+			<Sequence frames="0,0,0,1,1,2,2,3,3,3,4,4,5,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="3.2" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_MENU" scale="1">
+			<Sequence frames="0,0,1,1,2,2,3,3" />
+			<Timing framestart="0" frameend="7" time="2.2" />
+		</Image>
+
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_HAPPY" scale="1">
+			<Sequence frames="0,1,2,3,4,4,2,1,0" />
+			<Timing framestart="0" frameend="8" time="1.8" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_EAT" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,5" />
+			<Timing framestart="0" frameend="7" time="2.0" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="7" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_BORED" scale="1">
+			<Sequence frames="0,1,1,1,2,3,4,5,6,5,2,3,4,1" />
+			<Timing framestart="0" frameend="13" time="2.5" />
+		</Image>
+	</Customer>
+	<Customer id="40" guid="boy4" name="Little Boy4" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="8" tip="1" cookie="5" max_layers="3" tv="cartoon,1;" xtrahearts="santa4,1;dracula4,-1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="6" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY" scale="1">
+			<Sequence frames="0,0,0,1,1,2,2,3,3,3,4,4,5,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="3.2" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_MENU" scale="1">
+			<Sequence frames="0,0,1,1,2,2,3,3" />
+			<Timing framestart="0" frameend="7" time="2.2" />
+		</Image>
+
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_HAPPY" scale="1">
+			<Sequence frames="0,1,2,3,4,4,2,1,0" />
+			<Timing framestart="0" frameend="8" time="1.8" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_EAT" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,5" />
+			<Timing framestart="0" frameend="7" time="2.0" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="7" xdec="0" ydec="0" img="IMAGE_LITTLE_BOY_BORED" scale="1">
+			<Sequence frames="0,1,1,1,2,3,4,5,6,5,2,3,4,1" />
+			<Timing framestart="0" frameend="13" time="2.5" />
+		</Image>
+	</Customer>
+  <Customer id="1" guid="business" name="Business Man" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="20" tip="5" cookie="2" max_layers="3" xtrahearts="santa,1;dracula,-1;" tv="news,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="7" xdec="6" ydec="0" img="IMAGE_BUSINESSMAN" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,4,4,5,6,4,4,4,5,6,4,3,0" />
+			<Timing framestart="0" frameend="18" time="2.2" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="6" xdec="-4" ydec="0" img="IMAGE_BUSINESSMAN_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,3,4,5,5,5" />
+			<Timing framestart="0" frameend="10" time=".8" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="7" xdec="-12" ydec="0" img="IMAGE_BUSINESSMAN_HAPPY" scale="1">
+			<Sequence frames="0,1,2,3,4,4,5,5,5,6,2" />
+			<Timing framestart="0" frameend="10" time="1.3" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="5" xdec="-13" ydec="0" img="IMAGE_BUSINESSMAN_EAT" scale="1">
+			<Sequence frames="0,0,1,1,1,2,3,4,4,0" />
+			<Timing framestart="0" frameend="9" time="1.2" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="7" xdec="-2" ydec="0" img="IMAGE_BUSINESSMAN_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,4,4,4,4,4,4,5,6,6,6,6,1,0" />
+			<Timing framestart="0" frameend="19" time="1.8" />
+		</Image>
+	</Customer>
+	<Customer id="21" guid="business2" name="VacationBusinessLevel2" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="20" tip="5" cookie="2" max_layers="3" xtrahearts="santa2,-1;dracula2,1;" tv="news,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="7" xdec="-6" ydec="0" img="IMAGE_BUSINESSMAN_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,4,4,5,6,4,4,5,6,4,3,0" />
+			<Timing framestart="0" frameend="17" time="3.2" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="5" xdec="0" ydec="0" img="IMAGE_BUSINESSMAN_MENU_LEVEL2" scale="1">
+			<Sequence frames="0,0,0,0,1,1,2,2,2,2,3,4,0" />
+			<Timing framestart="0" frameend="12" time="2.2" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-5" ydec="0" img="IMAGE_BUSINESSMAN_HAPPY_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,5,5,5,1,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="3.2" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="-6" ydec="0" img="IMAGE_BUSINESSMAN_EAT_LEVEL2" scale="1">
+			<Sequence frames="0,1,1,2,3,4,5,5,5,5,5,5" />
+			<Timing framestart="0" frameend="11" time="2.2" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="5" xdec="1" ydec="0" img="IMAGE_BUSINESSMAN_BORED_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,2,2,2,3,4,3,4,3,4,3,2,1,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="25" time="3.4" />
+		</Image>
+	</Customer>
+	<Customer id="31" guid="business3" name="Business3" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="12" tip="5" cookie="2" max_layers="4" xtrahearts="santa3,1;dracula3,-1;" tv="news,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="7" xdec="6" ydec="0" img="IMAGE_BUSINESSMAN" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,4,4,5,6,4,4,4,5,6,4,3,0" />
+			<Timing framestart="0" frameend="18" time="2.2" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="6" xdec="-4" ydec="0" img="IMAGE_BUSINESSMAN_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,3,4,5,5,5" />
+			<Timing framestart="0" frameend="10" time=".8" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="7" xdec="-12" ydec="0" img="IMAGE_BUSINESSMAN_HAPPY" scale="1">
+			<Sequence frames="0,1,2,3,4,4,5,5,5,6,2" />
+			<Timing framestart="0" frameend="10" time="1.3" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="5" xdec="-13" ydec="0" img="IMAGE_BUSINESSMAN_EAT" scale="1">
+			<Sequence frames="0,0,1,1,1,2,3,4,4,0" />
+			<Timing framestart="0" frameend="9" time="1.2" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="7" xdec="-2" ydec="0" img="IMAGE_BUSINESSMAN_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,4,4,4,4,4,4,5,6,6,6,6,1,0" />
+			<Timing framestart="0" frameend="19" time="1.8" />
+		</Image>
+	</Customer>
+        <Customer id="41" guid="business4" name="VacationBusiness4" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="10" tip="5" cookie="2" max_layers="5" xtrahearts="santa4,1;dracula4,-1;" tv="news,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="7" xdec="-6" ydec="0" img="IMAGE_BUSINESSMAN_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,4,4,5,6,4,4,5,6,4,3,0" />
+			<Timing framestart="0" frameend="17" time="3.2" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="5" xdec="0" ydec="0" img="IMAGE_BUSINESSMAN_MENU_LEVEL2" scale="1">
+			<Sequence frames="0,0,0,0,1,1,2,2,2,2,3,4,0" />
+			<Timing framestart="0" frameend="12" time="2.2" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-5" ydec="0" img="IMAGE_BUSINESSMAN_HAPPY_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,5,5,5,1,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="3.2" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="-6" ydec="0" img="IMAGE_BUSINESSMAN_EAT_LEVEL2" scale="1">
+			<Sequence frames="0,1,1,2,3,4,5,5,5,5,5,5" />
+			<Timing framestart="0" frameend="11" time="2.2" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="5" xdec="1" ydec="0" img="IMAGE_BUSINESSMAN_BORED_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,2,2,2,3,4,3,4,3,4,3,2,1,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="25" time="3.4" />
+		</Image>
+	</Customer>
+	<Customer id="2" guid="granny" name="Granny" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="30" tip="2" cookie="2" max_layers="3" xtrahearts="santa,1;dracula,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Message xtime="atstart" />
+		<Image id="ID_NORMAL" cols="1" rows="8" xdec="-3" ydec="0" img="IMAGE_GRANNY" scale="1">
+			<Sequence frames="0,0,1,1,2,2,3,3,3,0,0,2,2,4,5,6,6,7" />
+			<Timing framestart="0" frameend="17" time="1.4" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="-5" ydec="0" img="IMAGE_GRANNY_MENU" scale="1">
+			<Sequence frames="0,0,1,1,2,2,3,3" />
+			<Timing framestart="0" frameend="7" time=".7" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-33" ydec="0" img="IMAGE_GRANNY_HAPPY" scale="1">
+			<Sequence frames="0,0,0,0,0,1,1,1,1,2,2,3,3,3,3,4,4,4,5,5,5,5,5" />
+			<Timing framestart="0" frameend="22" time=".8" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="10" xdec="-7" ydec="0" img="IMAGE_GRANNY_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,4,5,6,7,8,9,0" />
+			<Timing framestart="0" frameend="14" time="2.4" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="4" xdec="2" ydec="0" img="IMAGE_GRANNY_BORED" scale="1">
+			<Sequence frames="0,1,2,2,3,3,3,3,3,3,3,3,3,3,3,3,2,2" />
+			<Timing framestart="0" frameend="17" time="2.1" />
+		</Image>
+	</Customer>
+	<Customer id="22" guid="granny2" name="VacationGranny2" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="20" tip="2" cookie="2" max_layers="4" tv="food,1;" xtrahearts="santa2,1;dracula2,-1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Message xtime="atstart" />
+		<Image id="ID_NORMAL" cols="1" rows="8" xdec="-1" ydec="0" img="IMAGE_GRANNY_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,2,3,3,4,4,4,0,1,2,2,3,5,6,6,7" />
+			<Timing framestart="0" frameend="17" time="4" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="7" xdec="-5" ydec="0" img="IMAGE_GRANNY_MENU_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6" />
+			<Timing framestart="0" frameend="4" time="2" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="-11" ydec="0" img="IMAGE_GRANNY_HAPPY_LEVEL2" scale="1">
+			<Sequence frames="0,0,0,0,0,1,1,1,1,2,2,3,3,3,3,4,4,4,0,0,0,0,0" />
+			<Timing framestart="0" frameend="22" time="4" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="9" xdec="-5" ydec="0" img="IMAGE_GRANNY_EAT_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,7,8,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="14" time="3" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="5" xdec="-1" ydec="0" img="IMAGE_GRANNY_BORED_LEVEL2" scale="1">
+			<Sequence frames="0,2,3,4,4,4,4,4,4,4,4,2,2,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="21" time="3" />
+		</Image>
+	</Customer>
+        <Customer id="32" guid="granny3" name="Granny3" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="20" tip="2" cookie="2" max_layers="5" xtrahearts="santa3,1;dracula3,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Message xtime="atstart" />
+		<Image id="ID_NORMAL" cols="1" rows="8" xdec="-3" ydec="0" img="IMAGE_GRANNY" scale="1">
+			<Sequence frames="0,0,1,1,2,2,3,3,3,0,0,2,2,4,5,6,6,7" />
+			<Timing framestart="0" frameend="17" time="1.4" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="-5" ydec="0" img="IMAGE_GRANNY_MENU" scale="1">
+			<Sequence frames="0,0,1,1,2,2,3,3" />
+			<Timing framestart="0" frameend="7" time=".7" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-33" ydec="0" img="IMAGE_GRANNY_HAPPY" scale="1">
+			<Sequence frames="0,0,0,0,0,1,1,1,1,2,2,3,3,3,3,4,4,4,5,5,5,5,5" />
+			<Timing framestart="0" frameend="22" time=".8" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="10" xdec="-7" ydec="0" img="IMAGE_GRANNY_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,4,5,6,7,8,9,0" />
+			<Timing framestart="0" frameend="14" time="2.4" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="4" xdec="2" ydec="0" img="IMAGE_GRANNY_BORED" scale="1">
+			<Sequence frames="0,1,2,2,3,3,3,3,3,3,3,3,3,3,3,3,2,2" />
+			<Timing framestart="0" frameend="17" time="2.1" />
+		</Image>
+	</Customer>
+	<Customer id="42" guid="granny4" name="VacationGranny4" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="11" tip="2" cookie="2" max_layers="5" tv="food,1;" xtrahearts="santa4,1;dracula4,-1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Message xtime="atstart" />
+		<Image id="ID_NORMAL" cols="1" rows="8" xdec="-1" ydec="0" img="IMAGE_GRANNY_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,2,3,3,4,4,4,0,1,2,2,3,5,6,6,7" />
+			<Timing framestart="0" frameend="17" time="4" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="7" xdec="-5" ydec="0" img="IMAGE_GRANNY_MENU_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6" />
+			<Timing framestart="0" frameend="4" time="2" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="-11" ydec="0" img="IMAGE_GRANNY_HAPPY_LEVEL2" scale="1">
+			<Sequence frames="0,0,0,0,0,1,1,1,1,2,2,3,3,3,3,4,4,4,0,0,0,0,0" />
+			<Timing framestart="0" frameend="22" time="4" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="9" xdec="-5" ydec="0" img="IMAGE_GRANNY_EAT_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,7,8,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="14" time="3" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="5" xdec="-1" ydec="0" img="IMAGE_GRANNY_BORED_LEVEL2" scale="1">
+			<Sequence frames="0,2,3,4,4,4,4,4,4,4,4,2,2,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="21" time="3" />
+		</Image>
+	</Customer>
+        <Customer id="3" guid="woman" name="Woman" start_hearts="4" max_hearts="5" menu="5" menu_hearts="1" patience="25" tip="2" cookie="2" max_layers="3" xtrahearts="santa,1;dracula,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Message xtime="10" />
+		<Image id="ID_NORMAL" cols="1" rows="7" xdec="0" ydec="0" img="IMAGE_WOMAN" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,6,6,5,4,3,2,1,0,0,0,0" />
+			<Timing framestart="0" frameend="17" time="1.4" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="5" xdec="-7" ydec="0" img="IMAGE_WOMAN_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,3,1,4,0,0,0,0" />
+			<Timing framestart="0" frameend="12" time="1.4" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-4" ydec="0" img="IMAGE_WOMAN_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,4,4,4,5,0,0,0,0,0" />
+			<Timing framestart="0" frameend="13" time="1.4" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="-4" ydec="0" img="IMAGE_WOMAN_EAT" scale="1">
+			<Sequence frames="0,1,2,2,3,3,4,5,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="17" time="1.4" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_WOMAN_BORED" scale="1">
+			<Sequence frames="0,1,2,3,2,3,2,3,2,3,1,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="16" time="1.4" />
+		</Image>
+	</Customer>
+	<Customer id="23" guid="woman2" name="womanbride2" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="15" tip="2" cookie="2" max_layers="5" tv="food,1;" xtrahearts="santa2,1;dracula2,-1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Message xtime="10" />
+		<Image id="ID_NORMAL" cols="1" rows="8" xdec="-15" ydec="0" img="IMAGE_WOMAN_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,7,7,7,7,7,7,6,5,4,3,2,1,0" />
+			<Timing framestart="0" frameend="19" time="2.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="3" xdec="-15" ydec="0" img="IMAGE_WOMAN_MENU_LEVEL2" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,1,0,0,0,0" />
+			<Timing framestart="0" frameend="11" time="1" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-15" ydec="0" img="IMAGE_WOMAN_HAPPY_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,2,3,4,4,4,5,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="1.5" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="8" xdec="-15" ydec="0" img="IMAGE_WOMAN_EAT_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,2,3,4,5,6,7,7,7,7,7,7,7,7" />
+			<Timing framestart="0" frameend="15" time="2.8" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="5" xdec="-15" ydec="0" img="IMAGE_WOMAN_BORED_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,3,4,3,4,3,4,2,1,0" />
+			<Timing framestart="0" frameend="13" time="2" />
+		</Image>
+	</Customer>
+        <Customer id="33" guid="woman3" name="Woman3" start_hearts="4" max_hearts="5" menu="5" menu_hearts="1" patience="15" tip="2" cookie="2" max_layers="4" xtrahearts="santa3,1;dracula3,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Message xtime="10" />
+		<Image id="ID_NORMAL" cols="1" rows="7" xdec="0" ydec="0" img="IMAGE_WOMAN" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,6,6,5,4,3,2,1,0,0,0,0" />
+			<Timing framestart="0" frameend="17" time="1.4" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="5" xdec="-7" ydec="0" img="IMAGE_WOMAN_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,3,1,4,0,0,0,0" />
+			<Timing framestart="0" frameend="12" time="1.4" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-4" ydec="0" img="IMAGE_WOMAN_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,4,4,4,5,0,0,0,0,0" />
+			<Timing framestart="0" frameend="13" time="1.4" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="-4" ydec="0" img="IMAGE_WOMAN_EAT" scale="1">
+			<Sequence frames="0,1,2,2,3,3,4,5,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="17" time="1.4" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_WOMAN_BORED" scale="1">
+			<Sequence frames="0,1,2,3,2,3,2,3,2,3,1,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="16" time="1.4" />
+		</Image>
+	</Customer>
+        <Customer id="43" guid="woman4" name="Womanbride4" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="10" tip="2" cookie="2" max_layers="5" tv="food,1;" xtrahearts="santa4,1;dracula4,-1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Message xtime="10" />
+		<Image id="ID_NORMAL" cols="1" rows="8" xdec="-15" ydec="0" img="IMAGE_WOMAN_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,7,7,7,7,7,7,6,5,4,3,2,1,0" />
+			<Timing framestart="0" frameend="19" time="2.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="3" xdec="-15" ydec="0" img="IMAGE_WOMAN_MENU_LEVEL2" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,1,0,0,0,0" />
+			<Timing framestart="0" frameend="11" time="1" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-15" ydec="0" img="IMAGE_WOMAN_HAPPY_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,2,3,4,4,4,5,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="1.5" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="8" xdec="-15" ydec="0" img="IMAGE_WOMAN_EAT_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,2,3,4,5,6,7,7,7,7,7,7,7,7" />
+			<Timing framestart="0" frameend="15" time="2.8" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="5" xdec="-15" ydec="0" img="IMAGE_WOMAN_BORED_LEVEL2" scale="1">
+			<Sequence frames="0,1,2,3,4,3,4,3,4,3,4,2,1,0" />
+			<Timing framestart="0" frameend="13" time="2" />
+		</Image>
+	</Customer>
+	<Customer id="4" guid="delivery" name="DeliveryMan" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="25" tip="1" cookie="1" max_layers="2" xtrahearts="santa,1;dracula,-1;" tv="news,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="2" ydec="0" img="IMAGE_DELIVERYMAN" scale="1">
+			<Sequence frames="0,1,2,3,3,3,3,3,3,3,3,3,4,0,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="24" time="3.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="3" xdec="11" ydec="0" img="IMAGE_DELIVERYMAN_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,2,2" />
+			<Timing framestart="0" frameend="7" time="0.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="7" xdec="20" ydec="0" img="IMAGE_DELIVERYMAN_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,3,4,5,6,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="1.6" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="5" ydec="0" img="IMAGE_DELIVERYMAN_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,4,5" />
+			<Timing framestart="0" frameend="9" time="1.2" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="8" xdec="7" ydec="0" img="IMAGE_DELIVERYMAN_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,2,1,2,2,2,2,2,1,2,2,2,2,3,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,4,6,7,1" />
+			<Timing framestart="0" frameend="39" time="3.3" />
+		</Image>
+	</Customer>
+	<Customer id="24" guid="delivery2" name="DeliveryMan2" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="20" tip="1" cookie="1" max_layers="2" xtrahearts="santa2,1;dracula2,-1;" tv="news,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="2" ydec="0" img="IMAGE_DELIVERYMAN" scale="1">
+			<Sequence frames="0,1,2,3,3,3,3,3,3,3,3,3,4,0,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="24" time="3.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="3" xdec="11" ydec="0" img="IMAGE_DELIVERYMAN_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,2,2" />
+			<Timing framestart="0" frameend="7" time="0.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="7" xdec="20" ydec="0" img="IMAGE_DELIVERYMAN_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,3,4,5,6,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="1.6" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="5" ydec="0" img="IMAGE_DELIVERYMAN_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,4,5" />
+			<Timing framestart="0" frameend="9" time="1.2" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="8" xdec="7" ydec="0" img="IMAGE_DELIVERYMAN_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,2,1,2,2,2,2,2,1,2,2,2,2,3,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,4,6,7,1" />
+			<Timing framestart="0" frameend="39" time="3.3" />
+		</Image>
+	</Customer>
+        <Customer id="34" guid="delivery3" name="DeliveryMan3" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="16" tip="1" cookie="1" max_layers="3" xtrahearts="santa3,1;dracula3,-1;" tv="news,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="2" ydec="0" img="IMAGE_DELIVERYMAN" scale="1">
+			<Sequence frames="0,1,2,3,3,3,3,3,3,3,3,3,4,0,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="24" time="3.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="3" xdec="11" ydec="0" img="IMAGE_DELIVERYMAN_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,2,2" />
+			<Timing framestart="0" frameend="7" time="0.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="7" xdec="20" ydec="0" img="IMAGE_DELIVERYMAN_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,3,4,5,6,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="1.6" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="5" ydec="0" img="IMAGE_DELIVERYMAN_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,4,5" />
+			<Timing framestart="0" frameend="9" time="1.2" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="8" xdec="7" ydec="0" img="IMAGE_DELIVERYMAN_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,2,1,2,2,2,2,2,1,2,2,2,2,3,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,4,6,7,1" />
+			<Timing framestart="0" frameend="39" time="3.3" />
+		</Image>
+	</Customer>
+        <Customer id="44" guid="delivery4" name="DeliveryMan4" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="12" tip="1" cookie="1" max_layers="3" xtrahearts="santa4,1;dracula4,-1;" tv="news,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="2" ydec="0" img="IMAGE_DELIVERYMAN" scale="1">
+			<Sequence frames="0,1,2,3,3,3,3,3,3,3,3,3,4,0,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="24" time="3.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="3" xdec="11" ydec="0" img="IMAGE_DELIVERYMAN_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,2,2" />
+			<Timing framestart="0" frameend="7" time="0.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="7" xdec="20" ydec="0" img="IMAGE_DELIVERYMAN_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,3,4,5,6,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="1.6" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="5" ydec="0" img="IMAGE_DELIVERYMAN_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,4,5" />
+			<Timing framestart="0" frameend="9" time="1.2" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="8" xdec="7" ydec="0" img="IMAGE_DELIVERYMAN_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,2,1,2,2,2,2,2,1,2,2,2,2,3,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,4,6,7,1" />
+			<Timing framestart="0" frameend="39" time="3.3" />
+		</Image>
+	</Customer>
+        <Customer id="5" guid="tutor" name="Tutorial" start_hearts="2" max_hearts="5" menu="1" menu_hearts="1" patience="0" tip="0" cookie="0" max_layers="3" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="2" ydec="0" img="IMAGE_DELIVERYMAN" scale="1">
+			<Sequence frames="0,1,2,3,3,3,3,3,3,3,3,3,4,0,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="24" time="3.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="3" xdec="11" ydec="0" img="IMAGE_DELIVERYMAN_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,2,2" />
+			<Timing framestart="0" frameend="7" time="0.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="7" xdec="20" ydec="0" img="IMAGE_DELIVERYMAN_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,3,4,5,6,0,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="19" time="1.6" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="6" xdec="5" ydec="0" img="IMAGE_DELIVERYMAN_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,4,5" />
+			<Timing framestart="0" frameend="9" time="1.2" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="8" xdec="7" ydec="0" img="IMAGE_DELIVERYMAN_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,2,1,2,2,2,2,2,1,2,2,2,2,3,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,4,5,5,4,6,7,1" />
+			<Timing framestart="0" frameend="39" time="3.3" />
+		</Image>
+	</Customer>
+	<Customer id="6" guid="critic" name="FoodCritic" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="20" tip="1" cookie="1" max_layers="5" xtrahearts="santa,1;dracula,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="6" xdec="2" ydec="0" img="IMAGE_CRITIC" scale="1">
+			<Sequence frames="0,1,2,3,3,4,5,4,4,5,4,5,4,4,2,1,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="23" time="3.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_CRITIC_MENU" scale="1">
+			<Sequence frames="0,1,2,2,3,3,3,3,2,1,0,0" />
+			<Timing framestart="0" frameend="16" time="2.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_CRITIC_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,3,2,2,3,3,2,2,3,3,2,2,3,3,2,2,1,0" />
+			<Timing framestart="0" frameend="21" time="2.3" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="7" xdec="-3" ydec="0" img="IMAGE_CRITIC_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,1,2,3,4,4,5,6" />
+			<Timing framestart="0" frameend="12" time="1.5" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="8" xdec="-1" ydec="0" img="IMAGE_CRITIC_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,4,5,6,6,5,4,4,7,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="22" time="2.2" />
+		</Image>
+	</Customer>
+	<Customer id="26" guid="critic2" name="FoodCritic2" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="15" tip="1" cookie="1" max_layers="5" xtrahearts="santa2,1;dracula2,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="6" xdec="2" ydec="0" img="IMAGE_CRITIC" scale="1">
+			<Sequence frames="0,1,2,3,3,4,5,4,4,5,4,5,4,4,2,1,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="23" time="3.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_CRITIC_MENU" scale="1">
+			<Sequence frames="0,1,2,2,3,3,3,3,2,1,0,0" />
+			<Timing framestart="0" frameend="16" time="2.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_CRITIC_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,3,2,2,3,3,2,2,3,3,2,2,3,3,2,2,1,0" />
+			<Timing framestart="0" frameend="21" time="2.3" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="7" xdec="-3" ydec="0" img="IMAGE_CRITIC_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,1,2,3,4,4,5,6" />
+			<Timing framestart="0" frameend="12" time="1.5" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="8" xdec="-1" ydec="0" img="IMAGE_CRITIC_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,4,5,6,6,5,4,4,7,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="22" time="2.2" />
+		</Image>
+	</Customer>
+	<Customer id="36" guid="critic3" name="FoodCritic3" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="12" tip="1" cookie="1" max_layers="5" xtrahearts="santa3,1;dracula3,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="6" xdec="2" ydec="0" img="IMAGE_CRITIC" scale="1">
+			<Sequence frames="0,1,2,3,3,4,5,4,4,5,4,5,4,4,2,1,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="23" time="3.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_CRITIC_MENU" scale="1">
+			<Sequence frames="0,1,2,2,3,3,3,3,2,1,0,0" />
+			<Timing framestart="0" frameend="16" time="2.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_CRITIC_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,3,2,2,3,3,2,2,3,3,2,2,3,3,2,2,1,0" />
+			<Timing framestart="0" frameend="21" time="2.3" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="7" xdec="-3" ydec="0" img="IMAGE_CRITIC_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,1,2,3,4,4,5,6" />
+			<Timing framestart="0" frameend="12" time="1.5" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="8" xdec="-1" ydec="0" img="IMAGE_CRITIC_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,4,5,6,6,5,4,4,7,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="22" time="2.2" />
+		</Image>
+	</Customer>
+	<Customer id="46" guid="critic4" name="FoodCritic4" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="10" tip="1" cookie="1" max_layers="5" xtrahearts="santa4,1;dracula4,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="6" xdec="2" ydec="0" img="IMAGE_CRITIC" scale="1">
+			<Sequence frames="0,1,2,3,3,4,5,4,4,5,4,5,4,4,2,1,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="23" time="3.1" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_CRITIC_MENU" scale="1">
+			<Sequence frames="0,1,2,2,3,3,3,3,2,1,0,0" />
+			<Timing framestart="0" frameend="16" time="2.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="4" xdec="0" ydec="0" img="IMAGE_CRITIC_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,3,3,2,2,3,3,2,2,3,3,2,2,3,3,2,2,1,0" />
+			<Timing framestart="0" frameend="21" time="2.3" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="7" xdec="-3" ydec="0" img="IMAGE_CRITIC_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,1,2,3,4,4,5,6" />
+			<Timing framestart="0" frameend="12" time="1.5" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="8" xdec="-1" ydec="0" img="IMAGE_CRITIC_BORED" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,4,5,6,6,5,4,4,7,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="22" time="2.2" />
+		</Image>
+	</Customer>
+        <Customer id="7" guid="cupid" name="Cupidon" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="20" tip="1" cookie="1" max_layers="3" xtrahearts="santa,1;dracula,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Animation time="3" curve="0,40;0,50;" />
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="-5" ydec="0" img="IMAGE_CUPID" scale="1">
+			<Sequence frames="0,1,0,1,0,1,0,2,3,4,3,2,0" />
+			<Timing framestart="0" frameend="12" time="2.0" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="11" xdec="4" ydec="0" img="IMAGE_CUPID_MENU" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,6,5,6,5,6,5,6,5,6,7,8,1,2,9,10,9,10,9,10" />
+			<Timing framestart="0" frameend="26" time="3.2" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="12" xdec="-4" ydec="0" img="IMAGE_CUPID_HAPPY" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,7,8,9,10,11" />
+			<Timing framestart="0" frameend="12" time="1.6" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="11" xdec="0" ydec="0" img="IMAGE_CUPID_EAT" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,7,8,5,6,7,8,5,6,9,10" />
+			<Timing framestart="0" frameend="17" time="2.3" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="6" xdec="-7" ydec="0" img="IMAGE_CUPID_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,3,4,3,4,3,4,5,1,0" />
+			<Timing framestart="0" frameend="13" time="2.1" />
+		</Image>
+	</Customer>
+	<Customer id="27" guid="cupid2" name="Cupidon2" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="15" tip="1" cookie="1" max_layers="3" xtrahearts="santa2,1;dracula2,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Animation time="3" curve="0,40;0,50;" />
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="-5" ydec="0" img="IMAGE_CUPID" scale="1">
+			<Sequence frames="0,1,0,1,0,1,0,2,3,4,3,2,0" />
+			<Timing framestart="0" frameend="12" time="2.0" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="11" xdec="4" ydec="0" img="IMAGE_CUPID_MENU" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,6,5,6,5,6,5,6,5,6,7,8,1,2,9,10,9,10,9,10" />
+			<Timing framestart="0" frameend="26" time="3.2" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="12" xdec="-4" ydec="0" img="IMAGE_CUPID_HAPPY" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,7,8,9,10,11" />
+			<Timing framestart="0" frameend="12" time="1.6" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="11" xdec="0" ydec="0" img="IMAGE_CUPID_EAT" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,7,8,5,6,7,8,5,6,9,10" />
+			<Timing framestart="0" frameend="17" time="2.3" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="6" xdec="-7" ydec="0" img="IMAGE_CUPID_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,3,4,3,4,3,4,5,1,0" />
+			<Timing framestart="0" frameend="13" time="2.1" />
+		</Image>
+	</Customer>
+	<Customer id="37" guid="cupid3" name="Cupidon3" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="10" tip="1" cookie="1" max_layers="3" xtrahearts="santa3,1;dracula3,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Animation time="3" curve="0,40;0,50;" />
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="-5" ydec="0" img="IMAGE_CUPID" scale="1">
+			<Sequence frames="0,1,0,1,0,1,0,2,3,4,3,2,0" />
+			<Timing framestart="0" frameend="12" time="2.0" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="11" xdec="4" ydec="0" img="IMAGE_CUPID_MENU" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,6,5,6,5,6,5,6,5,6,7,8,1,2,9,10,9,10,9,10" />
+			<Timing framestart="0" frameend="26" time="3.2" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="12" xdec="-4" ydec="0" img="IMAGE_CUPID_HAPPY" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,7,8,9,10,11" />
+			<Timing framestart="0" frameend="12" time="1.6" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="11" xdec="0" ydec="0" img="IMAGE_CUPID_EAT" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,7,8,5,6,7,8,5,6,9,10" />
+			<Timing framestart="0" frameend="17" time="2.3" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="6" xdec="-7" ydec="0" img="IMAGE_CUPID_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,3,4,3,4,3,4,5,1,0" />
+			<Timing framestart="0" frameend="13" time="2.1" />
+		</Image>
+	</Customer>
+	<Customer id="47" guid="cupid4" name="Cupidon4" start_hearts="3" max_hearts="5" menu="5" menu_hearts="1" patience="7" tip="1" cookie="1" max_layers="3" xtrahearts="santa4,1;dracula4,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Animation time="3" curve="0,40;0,50;" />
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="-5" ydec="0" img="IMAGE_CUPID" scale="1">
+			<Sequence frames="0,1,0,1,0,1,0,2,3,4,3,2,0" />
+			<Timing framestart="0" frameend="12" time="2.0" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="11" xdec="4" ydec="0" img="IMAGE_CUPID_MENU" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,6,5,6,5,6,5,6,5,6,7,8,1,2,9,10,9,10,9,10" />
+			<Timing framestart="0" frameend="26" time="3.2" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="12" xdec="-4" ydec="0" img="IMAGE_CUPID_HAPPY" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,7,8,9,10,11" />
+			<Timing framestart="0" frameend="12" time="1.6" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="11" xdec="0" ydec="0" img="IMAGE_CUPID_EAT" scale="1">
+			<Sequence frames="0,1,2,3,4,5,6,5,7,8,5,6,7,8,5,6,9,10" />
+			<Timing framestart="0" frameend="17" time="2.3" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="6" xdec="-7" ydec="0" img="IMAGE_CUPID_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,3,4,3,4,3,4,5,1,0" />
+			<Timing framestart="0" frameend="13" time="2.1" />
+		</Image>
+	</Customer>
+	<Customer id="8" guid="santa" name="Santa" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="30" tip="2" cookie="2" max_layers="5" xtrahearts="santa,1;dracula,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="8" xdec="-3" ydec="0" img="IMAGE_SANTA" scale="1">
+			<Sequence frames="0,0,0,1,2,2,2,3,3,4,4,5,6,1,7,7,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="25" time="2.3" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="9" xdec="-7" ydec="0" img="IMAGE_SANTA_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,2,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,6,7,8,8,8,8,8,8,8,8,8,8,8,8,8" />
+			<Timing framestart="0" frameend="39" time="2.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="-1" ydec="0" img="IMAGE_SANTA_HAPPY" scale="1">
+			<Sequence frames="0,0,1,1,2,3,4,2,2,2,3,4,4,4,3,2,2,2,3,4,4,4,3,2,2,2,1,0" />
+			<Timing framestart="0" frameend="27" time="1.7" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="7" xdec="-3" ydec="0" img="IMAGE_SANTA_EAT" scale="1">
+			<Sequence frames="0,0,1,1,1,2,2,2,3,4,5,6" />
+			<Timing framestart="0" frameend="11" time="1.6" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="5" xdec="5" ydec="0" img="IMAGE_SANTA_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,3,2,2,2,2,3,4,4,4,4,3,2,2,2,2,3,4,4,4,4,3,2,2,2,2,1,0" />
+			<Timing framestart="0" frameend="33" time="2.2" />
+		</Image>
+	</Customer>
+	<Customer id="28" guid="santa2" name="Santa2" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="25" tip="2" cookie="2" max_layers="3" xtrahearts="santa2,1;dracula2,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="8" xdec="-3" ydec="0" img="IMAGE_SANTA" scale="1">
+			<Sequence frames="0,0,0,1,2,2,2,3,3,4,4,5,6,1,7,7,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="25" time="2.3" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="9" xdec="-7" ydec="0" img="IMAGE_SANTA_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,2,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,6,7,8,8,8,8,8,8,8,8,8,8,8,8,8" />
+			<Timing framestart="0" frameend="39" time="2.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="-1" ydec="0" img="IMAGE_SANTA_HAPPY" scale="1">
+			<Sequence frames="0,0,1,1,2,3,4,2,2,2,3,4,4,4,3,2,2,2,3,4,4,4,3,2,2,2,1,0" />
+			<Timing framestart="0" frameend="27" time="1.7" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="7" xdec="-3" ydec="0" img="IMAGE_SANTA_EAT" scale="1">
+			<Sequence frames="0,0,1,1,1,2,2,2,3,4,5,6" />
+			<Timing framestart="0" frameend="11" time="1.6" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="5" xdec="5" ydec="0" img="IMAGE_SANTA_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,3,2,2,2,2,3,4,4,4,4,3,2,2,2,2,3,4,4,4,4,3,2,2,2,2,1,0" />
+			<Timing framestart="0" frameend="33" time="2.2" />
+		</Image>
+	</Customer>
+	<Customer id="38" guid="santa3" name="Santa3" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="20" tip="2" cookie="2" max_layers="3" xtrahearts="santa3,1;dracula3,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="8" xdec="-3" ydec="0" img="IMAGE_SANTA" scale="1">
+			<Sequence frames="0,0,0,1,2,2,2,3,3,4,4,5,6,1,7,7,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="25" time="2.3" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="9" xdec="-7" ydec="0" img="IMAGE_SANTA_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,2,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,6,7,8,8,8,8,8,8,8,8,8,8,8,8,8" />
+			<Timing framestart="0" frameend="39" time="2.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="-1" ydec="0" img="IMAGE_SANTA_HAPPY" scale="1">
+			<Sequence frames="0,0,1,1,2,3,4,2,2,2,3,4,4,4,3,2,2,2,3,4,4,4,3,2,2,2,1,0" />
+			<Timing framestart="0" frameend="27" time="1.7" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="7" xdec="-3" ydec="0" img="IMAGE_SANTA_EAT" scale="1">
+			<Sequence frames="0,0,1,1,1,2,2,2,3,4,5,6" />
+			<Timing framestart="0" frameend="11" time="1.6" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="5" xdec="5" ydec="0" img="IMAGE_SANTA_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,3,2,2,2,2,3,4,4,4,4,3,2,2,2,2,3,4,4,4,4,3,2,2,2,2,1,0" />
+			<Timing framestart="0" frameend="33" time="2.2" />
+		</Image>
+	</Customer>
+	<Customer id="48" guid="santa4" name="Santa4" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="15" tip="2" cookie="2" max_layers="5" xtrahearts="santa4,1;dracula4,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="8" xdec="-3" ydec="0" img="IMAGE_SANTA" scale="1">
+			<Sequence frames="0,0,0,1,2,2,2,3,3,4,4,5,6,1,7,7,0,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="25" time="2.3" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="9" xdec="-7" ydec="0" img="IMAGE_SANTA_MENU" scale="1">
+			<Sequence frames="0,1,2,2,2,2,2,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,5,6,7,8,8,8,8,8,8,8,8,8,8,8,8,8" />
+			<Timing framestart="0" frameend="39" time="2.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="-1" ydec="0" img="IMAGE_SANTA_HAPPY" scale="1">
+			<Sequence frames="0,0,1,1,2,3,4,2,2,2,3,4,4,4,3,2,2,2,3,4,4,4,3,2,2,2,1,0" />
+			<Timing framestart="0" frameend="27" time="1.7" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="7" xdec="-3" ydec="0" img="IMAGE_SANTA_EAT" scale="1">
+			<Sequence frames="0,0,1,1,1,2,2,2,3,4,5,6" />
+			<Timing framestart="0" frameend="11" time="1.6" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="5" xdec="5" ydec="0" img="IMAGE_SANTA_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,3,2,2,2,2,3,4,4,4,4,3,2,2,2,2,3,4,4,4,4,3,2,2,2,2,1,0" />
+			<Timing framestart="0" frameend="33" time="2.2" />
+		</Image>
+	</Customer>
+	<Customer id="9" guid="dracula" name="Dracula" start_hearts="4" max_hearts="5" menu="5" menu_hearts="1" patience="30" tip="1" cookie="1" max_layers="3" xtrahearts="santa,1;dracula,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="3" xdec="0" ydec="0" img="IMAGE_DRACULA" scale="1">
+			<Sequence frames="0,0,1,1,2,2,2,2,2,2,2,2,2,2,2,1,1,0" />
+			<Timing framestart="0" frameend="17" time="1.9" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="-11" ydec="0" img="IMAGE_DRACULA_MENU" scale="1">
+			<Sequence frames="0,1,2,3,3,3,3,3,3,3,3,3,2,1,0" />
+			<Timing framestart="0" frameend="14" time="1.9" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="10" ydec="0" img="IMAGE_DRACULA_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,4,4,4,4,1,0" />
+			<Timing framestart="0" frameend="12" time="3.8" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="9" xdec="-2" ydec="5" img="IMAGE_DRACULA_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,3,3,3,3,4,5,6,6,6,7,8" />
+			<Timing framestart="0" frameend="18" time="1.5" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="10" xdec="0" ydec="0" img="IMAGE_DRACULA_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,5,6,7,8,9,0" />
+			<Timing framestart="0" frameend="12" time="2.2" />
+		</Image>
+	</Customer>
+	<Customer id="29" guid="dracula2" name="Dracula2" start_hearts="4" max_hearts="5" menu="5" menu_hearts="1" patience="25" tip="1" cookie="1" max_layers="5" xtrahearts="santa2,1;dracula2,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="3" xdec="0" ydec="0" img="IMAGE_DRACULA" scale="1">
+			<Sequence frames="0,0,1,1,2,2,2,2,2,2,2,2,2,2,2,1,1,0" />
+			<Timing framestart="0" frameend="17" time="1.9" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="-11" ydec="0" img="IMAGE_DRACULA_MENU" scale="1">
+			<Sequence frames="0,1,2,3,3,3,3,3,3,3,3,3,2,1,0" />
+			<Timing framestart="0" frameend="14" time="1.9" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="10" ydec="0" img="IMAGE_DRACULA_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,4,4,4,4,1,0" />
+			<Timing framestart="0" frameend="12" time="3.8" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="9" xdec="-2" ydec="5" img="IMAGE_DRACULA_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,3,3,3,3,4,5,6,6,6,7,8" />
+			<Timing framestart="0" frameend="18" time="1.5" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="10" xdec="0" ydec="0" img="IMAGE_DRACULA_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,5,6,7,8,9,0" />
+			<Timing framestart="0" frameend="12" time="2.2" />
+		</Image>
+	</Customer>
+	<Customer id="39" guid="dracula3" name="Dracula3" start_hearts="4" max_hearts="5" menu="5" menu_hearts="1" patience="20" tip="1" cookie="1" max_layers="5" xtrahearts="santa3,1;dracula3,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="3" xdec="0" ydec="0" img="IMAGE_DRACULA" scale="1">
+			<Sequence frames="0,0,1,1,2,2,2,2,2,2,2,2,2,2,2,1,1,0" />
+			<Timing framestart="0" frameend="17" time="1.9" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="-11" ydec="0" img="IMAGE_DRACULA_MENU" scale="1">
+			<Sequence frames="0,1,2,3,3,3,3,3,3,3,3,3,2,1,0" />
+			<Timing framestart="0" frameend="14" time="1.9" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="10" ydec="0" img="IMAGE_DRACULA_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,4,4,4,4,1,0" />
+			<Timing framestart="0" frameend="12" time="3.8" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="9" xdec="-2" ydec="5" img="IMAGE_DRACULA_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,3,3,3,3,4,5,6,6,6,7,8" />
+			<Timing framestart="0" frameend="18" time="1.5" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="10" xdec="0" ydec="0" img="IMAGE_DRACULA_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,5,6,7,8,9,0" />
+			<Timing framestart="0" frameend="12" time="2.2" />
+		</Image>
+	</Customer>
+	<Customer id="49" guid="dracula4" name="Dracula4" start_hearts="4" max_hearts="5" menu="5" menu_hearts="1" patience="15" tip="1" cookie="1" max_layers="5" xtrahearts="santa4,1;dracula4,-1;" tv="food,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="3" xdec="0" ydec="0" img="IMAGE_DRACULA" scale="1">
+			<Sequence frames="0,0,1,1,2,2,2,2,2,2,2,2,2,2,2,1,1,0" />
+			<Timing framestart="0" frameend="17" time="1.9" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="4" xdec="-11" ydec="0" img="IMAGE_DRACULA_MENU" scale="1">
+			<Sequence frames="0,1,2,3,3,3,3,3,3,3,3,3,2,1,0" />
+			<Timing framestart="0" frameend="14" time="1.9" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="5" xdec="10" ydec="0" img="IMAGE_DRACULA_HAPPY" scale="1">
+			<Sequence frames="0,1,2,2,2,3,4,4,4,4,4,1,0" />
+			<Timing framestart="0" frameend="12" time="3.8" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="9" xdec="-2" ydec="5" img="IMAGE_DRACULA_EAT" scale="1">
+			<Sequence frames="0,1,1,1,1,1,2,3,3,3,3,3,4,5,6,6,6,7,8" />
+			<Timing framestart="0" frameend="18" time="1.5" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="10" xdec="0" ydec="0" img="IMAGE_DRACULA_BORED" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,5,6,7,8,9,0" />
+			<Timing framestart="0" frameend="12" time="2.2" />
+		</Image>
+	</Customer>
+        <Customer id="50" guid="rabbit" name="Rabbit" start_hearts="4" max_hearts="5" menu="5" menu_hearts="1" patience="20" tip="1" cookie="1" max_layers="3" xtrahearts="santa,1;dracula,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="0" ydec="0" img="IMAGE_RABBIT" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,4,4,4,4,4,4,4,4,3,2,1,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="26" time="3.0" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="7" xdec="9" ydec="0" img="IMAGE_RABBIT_MENU" scale="1">
+			<Sequence frames="0,1,1,2,3,4,5,5,5,5,5,5,5,5,6,3,2,1,1,0" />
+			<Timing framestart="0" frameend="19" time="1.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-2" ydec="0" img="IMAGE_RABBIT_HAPPY" scale="1">
+			<Sequence frames="0,0,0,0,1,2,3,4,5,3,4,5,3,4,5,3,4,5,3,1,0" />
+			<Timing framestart="0" frameend="20" time="2.0" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="8" xdec="-2" ydec="0" img="IMAGE_RABBIT_EAT" scale="1">
+			<Sequence frames="0,0,0,0,0,0,1,2,2,3,4,5,5,5,5,5,5,5,5,5,6,7" />
+			<Timing framestart="0" frameend="21" time="1.8" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="7" xdec="-6" ydec="0" img="IMAGE_RABBIT_BORED" scale="1">
+			<Sequence frames="0,1,2,3,3,4,3,4,3,3,5,6,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="16" time="2.0" />
+		</Image>
+	</Customer>
+        <Customer id="51" guid="rabbit2" name="Rabbit2" start_hearts="4" max_hearts="5" menu="5" menu_hearts="1" patience="15" tip="1" cookie="1" max_layers="3" xtrahearts="santa2,1;dracula2,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="0" ydec="0" img="IMAGE_RABBIT" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,4,4,4,4,4,4,4,4,3,2,1,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="26" time="3.0" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="7" xdec="9" ydec="0" img="IMAGE_RABBIT_MENU" scale="1">
+			<Sequence frames="0,1,1,2,3,4,5,5,5,5,5,5,5,5,6,3,2,1,1,0" />
+			<Timing framestart="0" frameend="19" time="1.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-2" ydec="0" img="IMAGE_RABBIT_HAPPY" scale="1">
+			<Sequence frames="0,0,0,0,1,2,3,4,5,3,4,5,3,4,5,3,4,5,3,1,0" />
+			<Timing framestart="0" frameend="20" time="2.0" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="8" xdec="-2" ydec="0" img="IMAGE_RABBIT_EAT" scale="1">
+			<Sequence frames="0,0,0,0,0,0,1,2,2,3,4,5,5,5,5,5,5,5,5,5,6,7" />
+			<Timing framestart="0" frameend="21" time="1.8" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="7" xdec="-6" ydec="0" img="IMAGE_RABBIT_BORED" scale="1">
+			<Sequence frames="0,1,2,3,3,4,3,4,3,3,5,6,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="16" time="2.0" />
+		</Image>
+	</Customer>
+	<Customer id="52" guid="rabbit3" name="Rabbit3" start_hearts="5" max_hearts="5" menu="5" menu_hearts="1" patience="10" tip="1" cookie="1" max_layers="3" xtrahearts="santa3,1;dracula3,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="0" ydec="0" img="IMAGE_RABBIT" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,4,4,4,4,4,4,4,4,3,2,1,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="26" time="3.0" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="7" xdec="9" ydec="0" img="IMAGE_RABBIT_MENU" scale="1">
+			<Sequence frames="0,1,1,2,3,4,5,5,5,5,5,5,5,5,6,3,2,1,1,0" />
+			<Timing framestart="0" frameend="19" time="1.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-2" ydec="0" img="IMAGE_RABBIT_HAPPY" scale="1">
+			<Sequence frames="0,0,0,0,1,2,3,4,5,3,4,5,3,4,5,3,4,5,3,1,0" />
+			<Timing framestart="0" frameend="20" time="2.0" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="8" xdec="-2" ydec="0" img="IMAGE_RABBIT_EAT" scale="1">
+			<Sequence frames="0,0,0,0,0,0,1,2,2,3,4,5,5,5,5,5,5,5,5,5,6,7" />
+			<Timing framestart="0" frameend="21" time="1.8" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="7" xdec="-6" ydec="0" img="IMAGE_RABBIT_BORED" scale="1">
+			<Sequence frames="0,1,2,3,3,4,3,4,3,3,5,6,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="16" time="2.0" />
+		</Image>
+	</Customer>
+	<Customer id="53" guid="rabbit4" name="Rabbit4" start_hearts="4" max_hearts="5" menu="5" menu_hearts="1" patience="7" tip="1" cookie="1" max_layers="3" xtrahearts="santa4,1;dracula4,-1;" tv="cartoon,1;" sound_angry="SOUND_CUSTOMER_ANGRY" sound_happy="SOUND_CUSTOMER_HAPPY">
+		<Image id="ID_NORMAL" cols="1" rows="5" xdec="0" ydec="0" img="IMAGE_RABBIT" scale="1">
+			<Sequence frames="0,1,2,3,4,4,4,4,4,4,4,4,4,4,4,3,2,1,0,0,0,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="26" time="3.0" />
+		</Image>
+		<Image id="ID_MENU" cols="1" rows="7" xdec="9" ydec="0" img="IMAGE_RABBIT_MENU" scale="1">
+			<Sequence frames="0,1,1,2,3,4,5,5,5,5,5,5,5,5,6,3,2,1,1,0" />
+			<Timing framestart="0" frameend="19" time="1.6" />
+		</Image>
+		<Image id="ID_HAPPY" cols="1" rows="6" xdec="-2" ydec="0" img="IMAGE_RABBIT_HAPPY" scale="1">
+			<Sequence frames="0,0,0,0,1,2,3,4,5,3,4,5,3,4,5,3,4,5,3,1,0" />
+			<Timing framestart="0" frameend="20" time="2.0" />
+		</Image>
+		<Image id="ID_EATING" cols="1" rows="8" xdec="-2" ydec="0" img="IMAGE_RABBIT_EAT" scale="1">
+			<Sequence frames="0,0,0,0,0,0,1,2,2,3,4,5,5,5,5,5,5,5,5,5,6,7" />
+			<Timing framestart="0" frameend="21" time="1.8" />
+		</Image>
+		<Image id="ID_BORED" cols="1" rows="7" xdec="-6" ydec="0" img="IMAGE_RABBIT_BORED" scale="1">
+			<Sequence frames="0,1,2,3,3,4,3,4,3,3,5,6,0,0,0,0,0,0" />
+			<Timing framestart="0" frameend="16" time="2.0" />
+		</Image>
+	</Customer>
+</Customers>
+</root>

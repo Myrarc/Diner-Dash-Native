@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Nodes count="52">
+	<Point id="0" x="91" y="159" />
+	<Point id="1" x="126" y="168" />
+	<Point id="2" x="160" y="149" />
+	<Point id="3" x="196" y="117" />
+	<Point id="4" x="246" y="93" />
+	<Point id="5" x="301" y="104" />
+	<Point id="6" x="356" y="111" />
+	<Point id="7" x="396" y="117" />
+	<Point id="8" x="444" y="119" />
+	<Point id="9" x="489" y="108" />
+	<Point id="10" x="521" y="87" />
+	<Point id="11" x="562" y="86" />
+		<Point id="12" x="670" y="113" />
+	<Point id="13" x="724" y="165" />
+	<Point id="14" x="687" y="186" />
+	<Point id="15" x="646" y="193" />
+	<Point id="16" x="652" y="230" />
+	<Point id="17" x="622" y="253" />
+	<Point id="18" x="618" y="290" />
+	<Point id="19" x="631" y="324" />
+	<Point id="20" x="668" y="337" />
+	<Point id="21" x="702" y="351" />
+	<Point id="22" x="701" y="382" />
+	<Point id="23" x="667" y="396" />
+	<Point id="24" x="626" y="409" />
+		<Point id="25" x="694" y="475" />
+	<Point id="26" x="664" y="541" />
+	<Point id="27" x="628" y="559" />
+	<Point id="28" x="591" y="565" />
+	<Point id="29" x="555" y="552" />
+	<Point id="30" x="520" y="533" />
+	<Point id="31" x="480" y="535" />
+	<Point id="32" x="444" y="554" />
+	<Point id="33" x="395" y="543" />
+	<Point id="34" x="349" y="540" />
+	<Point id="35" x="295" y="550" />
+	<Point id="36" x="244" y="560" />
+	<Point id="37" x="201" y="556" />
+		<Point id="38" x="140" y="490" />
+	<Point id="39" x="32" y="522" />
+	<Point id="40" x="26" y="485" />
+	<Point id="41" x="26" y="449" />
+	<Point id="42" x="27" y="410" />
+	<Point id="43" x="19" y="376" />
+	<Point id="44" x="41" y="351" />
+	<Point id="45" x="68" y="338" />
+	<Point id="46" x="103" y="322" />
+	<Point id="47" x="139" y="335" />
+	<Point id="48" x="176" y="343" />
+	<Point id="49" x="213" y="333" />
+	<Point id="50" x="247" y="325" />
+		<Point id="51" x="205" y="269" />
+</Nodes>
+<Connections>
+	<Connection id="0" data="1" />
+	<Connection id="1" data="2" />
+	<Connection id="2" data="3" />
+	<Connection id="3" data="4" />
+	<Connection id="4" data="5" />
+	<Connection id="5" data="6" />
+	<Connection id="6" data="7" />
+	<Connection id="7" data="8" />
+	<Connection id="8" data="9" />
+	<Connection id="9" data="10" />
+	<Connection id="10" data="11" />
+	<Connection id="11" data="12" />
+	<Connection id="12" data="13" />
+	<Connection id="13" data="14" />
+	<Connection id="14" data="15" />
+	<Connection id="15" data="16" />
+	<Connection id="16" data="17" />
+	<Connection id="17" data="18" />
+	<Connection id="18" data="19" />
+	<Connection id="19" data="20" />
+	<Connection id="20" data="21" />
+	<Connection id="21" data="22" />
+	<Connection id="22" data="23" />
+	<Connection id="23" data="24" />
+	<Connection id="24" data="25" />
+	<Connection id="25" data="26" />
+	<Connection id="26" data="27" />
+	<Connection id="27" data="28" />
+	<Connection id="28" data="29" />
+	<Connection id="29" data="30" />
+	<Connection id="30" data="31" />
+	<Connection id="31" data="32" />
+	<Connection id="32" data="33" />
+	<Connection id="33" data="34" />
+	<Connection id="34" data="35" />
+	<Connection id="35" data="36" />
+	<Connection id="36" data="37" />
+	<Connection id="37" data="38" />
+	<Connection id="38" data="39" />
+	<Connection id="39" data="40" />
+	<Connection id="40" data="41" />
+	<Connection id="41" data="42" />
+	<Connection id="42" data="43" />
+	<Connection id="43" data="44" />
+	<Connection id="44" data="45" />
+	<Connection id="45" data="46" />
+	<Connection id="46" data="47" />
+	<Connection id="47" data="48" />
+	<Connection id="48" data="49" />
+	<Connection id="49" data="50" />
+	<Connection id="50" data="51" />
+</Connections>
+</root>

@@ -1,0 +1,42 @@
+{
+  "version": "0.3.3",
+  "scope": "Chef animation property filtering and placement",
+  "apk_sha256": "b0f3f4589da42973a630176044733db9c3cb624ff4859efc7a261c67cb9b01a6",
+  "previous_apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+  "original_failure_reproduced": {
+    "apk": "0.3.2",
+    "case": "third frying frame shrinks because per-frame scale is applied",
+    "log": "verification/0.3.3/failing-placement-test-0.3.2.log"
+  },
+  "installed_animation_checks": 80,
+  "chef_placement_checks": 45,
+  "chef_restaurants": 5,
+  "chef_modes": [
+    "fry",
+    "chop"
+  ],
+  "installed_activity_checks": 36,
+  "captures_inspected": "All five room crops in chef-placement-contact-sheet.png",
+  "current_evidence": "verification/0.3.3/",
+  "previous_mechanics_evidence": "verification/0.3.2-verification.json",
+  "model_tests_rerun": false,
+  "production_gameplay_source_changed": false,
+  "package_integrity": {
+    "media_hashes_verified": 1960,
+    "uncompressed_mp3_verified": 62,
+    "signature_verified": true,
+    "crc_verified": true,
+    "version_code": 6
+  },
+  "windows_runtime_executed": false,
+  "physical_device_tested": false,
+  "queue_stall": "Unresolved; cancelled marks confirmed by user, precise failing target unknown",
+  "fonts": "Raw embedded payloads preserved; usable Android typefaces unresolved",
+  "cinematic_transitions": "Restaurant unlock, transformation and ending flows remain unconnected",
+  "notes": [
+    "Pixel reference uses the original loc/member-only animation behavior while preserving initial unit scale.",
+    "Frying and chopping frames tested in all five restaurant anchors against the installed APK.",
+    "Activity/save tests use synthetic fixtures and restore existing saves.",
+    "Existing mechanics model results belong to the preserved 0.3.2 verification; they were not rerun for this renderer-only change."
+  ]
+}

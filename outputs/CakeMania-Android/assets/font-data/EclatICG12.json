@@ -1,0 +1,7426 @@
+{
+  "name": "EclatICG12",
+  "source": "data/images/fonts/EclatICG12.txt",
+  "source_character_decoding": "Windows-1252; ASCII mapping directly preserved",
+  "atlas": "data/images/fonts/_EclatICG12.png",
+  "atlas_size": [
+    2109,
+    19
+  ],
+  "atlas_mode": "RGBA",
+  "metrics": {
+    "Ascent": 15,
+    "AscentPadding": 0,
+    "LineSpacingOffset": 0,
+    "PointSize": 12
+  },
+  "space_advance": 5,
+  "glyphs": [
+    {
+      "char": "A",
+      "codepoint": 65,
+      "advance": 17,
+      "rect": [
+        0,
+        0,
+        17,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "B",
+      "codepoint": 66,
+      "advance": 18,
+      "rect": [
+        18,
+        0,
+        16,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "C",
+      "codepoint": 67,
+      "advance": 14,
+      "rect": [
+        35,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "D",
+      "codepoint": 68,
+      "advance": 19,
+      "rect": [
+        48,
+        0,
+        19,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "E",
+      "codepoint": 69,
+      "advance": 13,
+      "rect": [
+        68,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "F",
+      "codepoint": 70,
+      "advance": 17,
+      "rect": [
+        82,
+        0,
+        17,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "G",
+      "codepoint": 71,
+      "advance": 13,
+      "rect": [
+        100,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "H",
+      "codepoint": 72,
+      "advance": 20,
+      "rect": [
+        114,
+        0,
+        19,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "I",
+      "codepoint": 73,
+      "advance": 12,
+      "rect": [
+        134,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "J",
+      "codepoint": 74,
+      "advance": 11,
+      "rect": [
+        148,
+        0,
+        15,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "K",
+      "codepoint": 75,
+      "advance": 20,
+      "rect": [
+        164,
+        0,
+        18,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "L",
+      "codepoint": 76,
+      "advance": 15,
+      "rect": [
+        183,
+        0,
+        16,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "M",
+      "codepoint": 77,
+      "advance": 22,
+      "rect": [
+        200,
+        0,
+        23,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "N",
+      "codepoint": 78,
+      "advance": 17,
+      "rect": [
+        224,
+        0,
+        20,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "O",
+      "codepoint": 79,
+      "advance": 16,
+      "rect": [
+        245,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "P",
+      "codepoint": 80,
+      "advance": 17,
+      "rect": [
+        260,
+        0,
+        16,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Q",
+      "codepoint": 81,
+      "advance": 17,
+      "rect": [
+        277,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "R",
+      "codepoint": 82,
+      "advance": 20,
+      "rect": [
+        292,
+        0,
+        18,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "S",
+      "codepoint": 83,
+      "advance": 13,
+      "rect": [
+        311,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "T",
+      "codepoint": 84,
+      "advance": 17,
+      "rect": [
+        325,
+        0,
+        17,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "U",
+      "codepoint": 85,
+      "advance": 21,
+      "rect": [
+        343,
+        0,
+        18,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "V",
+      "codepoint": 86,
+      "advance": 16,
+      "rect": [
+        362,
+        0,
+        15,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "W",
+      "codepoint": 87,
+      "advance": 24,
+      "rect": [
+        378,
+        0,
+        23,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "X",
+      "codepoint": 88,
+      "advance": 18,
+      "rect": [
+        402,
+        0,
+        18,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Y",
+      "codepoint": 89,
+      "advance": 18,
+      "rect": [
+        421,
+        0,
+        19,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Z",
+      "codepoint": 90,
+      "advance": 16,
+      "rect": [
+        441,
+        0,
+        16,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "a",
+      "codepoint": 97,
+      "advance": 13,
+      "rect": [
+        458,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "b",
+      "codepoint": 98,
+      "advance": 11,
+      "rect": [
+        471,
+        0,
+        9,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "c",
+      "codepoint": 99,
+      "advance": 11,
+      "rect": [
+        481,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "d",
+      "codepoint": 100,
+      "advance": 13,
+      "rect": [
+        492,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "e",
+      "codepoint": 101,
+      "advance": 11,
+      "rect": [
+        505,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "f",
+      "codepoint": 102,
+      "advance": 8,
+      "rect": [
+        516,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        -1,
+        0
+      ]
+    },
+    {
+      "char": "g",
+      "codepoint": 103,
+      "advance": 11,
+      "rect": [
+        529,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "h",
+      "codepoint": 104,
+      "advance": 12,
+      "rect": [
+        542,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "i",
+      "codepoint": 105,
+      "advance": 7,
+      "rect": [
+        556,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "j",
+      "codepoint": 106,
+      "advance": 9,
+      "rect": [
+        564,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "k",
+      "codepoint": 107,
+      "advance": 12,
+      "rect": [
+        577,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "l",
+      "codepoint": 108,
+      "advance": 8,
+      "rect": [
+        591,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "m",
+      "codepoint": 109,
+      "advance": 17,
+      "rect": [
+        599,
+        0,
+        17,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "n",
+      "codepoint": 110,
+      "advance": 12,
+      "rect": [
+        617,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "o",
+      "codepoint": 111,
+      "advance": 13,
+      "rect": [
+        631,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "p",
+      "codepoint": 112,
+      "advance": 12,
+      "rect": [
+        644,
+        0,
+        15,
+        19
+      ],
+      "offset": [
+        -1,
+        0
+      ]
+    },
+    {
+      "char": "q",
+      "codepoint": 113,
+      "advance": 10,
+      "rect": [
+        660,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "r",
+      "codepoint": 114,
+      "advance": 12,
+      "rect": [
+        672,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "s",
+      "codepoint": 115,
+      "advance": 8,
+      "rect": [
+        685,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "t",
+      "codepoint": 116,
+      "advance": 8,
+      "rect": [
+        693,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "u",
+      "codepoint": 117,
+      "advance": 13,
+      "rect": [
+        701,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "v",
+      "codepoint": 118,
+      "advance": 10,
+      "rect": [
+        714,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "w",
+      "codepoint": 119,
+      "advance": 15,
+      "rect": [
+        725,
+        0,
+        15,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "x",
+      "codepoint": 120,
+      "advance": 13,
+      "rect": [
+        741,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "y",
+      "codepoint": 121,
+      "advance": 10,
+      "rect": [
+        753,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "z",
+      "codepoint": 122,
+      "advance": 11,
+      "rect": [
+        765,
+        0,
+        9,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "0",
+      "codepoint": 48,
+      "advance": 12,
+      "rect": [
+        775,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "1",
+      "codepoint": 49,
+      "advance": 7,
+      "rect": [
+        786,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "2",
+      "codepoint": 50,
+      "advance": 10,
+      "rect": [
+        794,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "3",
+      "codepoint": 51,
+      "advance": 11,
+      "rect": [
+        805,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "4",
+      "codepoint": 52,
+      "advance": 11,
+      "rect": [
+        817,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "5",
+      "codepoint": 53,
+      "advance": 11,
+      "rect": [
+        828,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "6",
+      "codepoint": 54,
+      "advance": 11,
+      "rect": [
+        840,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "7",
+      "codepoint": 55,
+      "advance": 9,
+      "rect": [
+        853,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "8",
+      "codepoint": 56,
+      "advance": 10,
+      "rect": [
+        864,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "9",
+      "codepoint": 57,
+      "advance": 11,
+      "rect": [
+        876,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "~",
+      "codepoint": 126,
+      "advance": 7,
+      "rect": [
+        888,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "`",
+      "codepoint": 96,
+      "advance": 5,
+      "rect": [
+        896,
+        0,
+        4,
+        19
+      ],
+      "offset": [
+        4,
+        0
+      ]
+    },
+    {
+      "char": "!",
+      "codepoint": 33,
+      "advance": 6,
+      "rect": [
+        901,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "@",
+      "codepoint": 64,
+      "advance": 11,
+      "rect": [
+        909,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "#",
+      "codepoint": 35,
+      "advance": 8,
+      "rect": [
+        921,
+        0,
+        9,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "$",
+      "codepoint": 36,
+      "advance": 12,
+      "rect": [
+        931,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "%",
+      "codepoint": 37,
+      "advance": 17,
+      "rect": [
+        944,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "^",
+      "codepoint": 94,
+      "advance": 7,
+      "rect": [
+        959,
+        0,
+        6,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "&",
+      "codepoint": 38,
+      "advance": 0,
+      "rect": [
+        966,
+        0,
+        15,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "*",
+      "codepoint": 42,
+      "advance": 4,
+      "rect": [
+        982,
+        0,
+        4,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "(",
+      "codepoint": 40,
+      "advance": 9,
+      "rect": [
+        987,
+        0,
+        9,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": ")",
+      "codepoint": 41,
+      "advance": 9,
+      "rect": [
+        997,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "-",
+      "codepoint": 45,
+      "advance": 5,
+      "rect": [
+        1008,
+        0,
+        5,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "_",
+      "codepoint": 95,
+      "advance": 6,
+      "rect": [
+        1014,
+        0,
+        5,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "=",
+      "codepoint": 61,
+      "advance": 7,
+      "rect": [
+        1020,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "+",
+      "codepoint": 43,
+      "advance": 6,
+      "rect": [
+        1028,
+        0,
+        6,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "[",
+      "codepoint": 91,
+      "advance": 5,
+      "rect": [
+        1035,
+        0,
+        8,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "{",
+      "codepoint": 123,
+      "advance": 4,
+      "rect": [
+        1044,
+        0,
+        6,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "]",
+      "codepoint": 93,
+      "advance": 5,
+      "rect": [
+        1051,
+        0,
+        8,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "}",
+      "codepoint": 125,
+      "advance": 4,
+      "rect": [
+        1060,
+        0,
+        6,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": ";",
+      "codepoint": 59,
+      "advance": 6,
+      "rect": [
+        1067,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": ":",
+      "codepoint": 58,
+      "advance": 6,
+      "rect": [
+        1075,
+        0,
+        6,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "'",
+      "codepoint": 39,
+      "advance": 3,
+      "rect": [
+        1082,
+        0,
+        4,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "\"",
+      "codepoint": 34,
+      "advance": 5,
+      "rect": [
+        1087,
+        0,
+        6,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": ",",
+      "codepoint": 44,
+      "advance": 6,
+      "rect": [
+        1094,
+        0,
+        5,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "<",
+      "codepoint": 60,
+      "advance": 7,
+      "rect": [
+        1100,
+        0,
+        8,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": ".",
+      "codepoint": 46,
+      "advance": 6,
+      "rect": [
+        1109,
+        0,
+        5,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": ">",
+      "codepoint": 62,
+      "advance": 7,
+      "rect": [
+        1115,
+        0,
+        8,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "/",
+      "codepoint": 47,
+      "advance": 5,
+      "rect": [
+        1124,
+        0,
+        8,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "?",
+      "codepoint": 63,
+      "advance": 14,
+      "rect": [
+        1133,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "¡",
+      "codepoint": 161,
+      "advance": 6,
+      "rect": [
+        1147,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "¢",
+      "codepoint": 162,
+      "advance": 11,
+      "rect": [
+        1155,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "£",
+      "codepoint": 163,
+      "advance": 16,
+      "rect": [
+        1166,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "¥",
+      "codepoint": 165,
+      "advance": 18,
+      "rect": [
+        1181,
+        0,
+        18,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "§",
+      "codepoint": 167,
+      "advance": 6,
+      "rect": [
+        1200,
+        0,
+        8,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "©",
+      "codepoint": 169,
+      "advance": 11,
+      "rect": [
+        1209,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "®",
+      "codepoint": 174,
+      "advance": 11,
+      "rect": [
+        1221,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "¿",
+      "codepoint": 191,
+      "advance": 14,
+      "rect": [
+        1233,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "À",
+      "codepoint": 192,
+      "advance": 17,
+      "rect": [
+        1246,
+        0,
+        17,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Á",
+      "codepoint": 193,
+      "advance": 17,
+      "rect": [
+        1264,
+        0,
+        17,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Â",
+      "codepoint": 194,
+      "advance": 17,
+      "rect": [
+        1282,
+        0,
+        17,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Ã",
+      "codepoint": 195,
+      "advance": 17,
+      "rect": [
+        1300,
+        0,
+        17,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Ä",
+      "codepoint": 196,
+      "advance": 17,
+      "rect": [
+        1318,
+        0,
+        17,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Å",
+      "codepoint": 197,
+      "advance": 17,
+      "rect": [
+        1336,
+        0,
+        17,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Æ",
+      "codepoint": 198,
+      "advance": 22,
+      "rect": [
+        1354,
+        0,
+        23,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "Ç",
+      "codepoint": 199,
+      "advance": 14,
+      "rect": [
+        1378,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "È",
+      "codepoint": 200,
+      "advance": 13,
+      "rect": [
+        1391,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "É",
+      "codepoint": 201,
+      "advance": 13,
+      "rect": [
+        1405,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Ê",
+      "codepoint": 202,
+      "advance": 13,
+      "rect": [
+        1419,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Ë",
+      "codepoint": 203,
+      "advance": 13,
+      "rect": [
+        1433,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Ì",
+      "codepoint": 204,
+      "advance": 12,
+      "rect": [
+        1447,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "Í",
+      "codepoint": 205,
+      "advance": 12,
+      "rect": [
+        1461,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "Î",
+      "codepoint": 206,
+      "advance": 12,
+      "rect": [
+        1475,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "Ï",
+      "codepoint": 207,
+      "advance": 12,
+      "rect": [
+        1490,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "Ð",
+      "codepoint": 208,
+      "advance": 19,
+      "rect": [
+        1505,
+        0,
+        19,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Ñ",
+      "codepoint": 209,
+      "advance": 17,
+      "rect": [
+        1525,
+        0,
+        20,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "Ò",
+      "codepoint": 210,
+      "advance": 16,
+      "rect": [
+        1546,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Ó",
+      "codepoint": 211,
+      "advance": 16,
+      "rect": [
+        1561,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Ô",
+      "codepoint": 212,
+      "advance": 16,
+      "rect": [
+        1576,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Õ",
+      "codepoint": 213,
+      "advance": 16,
+      "rect": [
+        1591,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Ö",
+      "codepoint": 214,
+      "advance": 16,
+      "rect": [
+        1606,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Ø",
+      "codepoint": 216,
+      "advance": 16,
+      "rect": [
+        1621,
+        0,
+        14,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Ù",
+      "codepoint": 217,
+      "advance": 21,
+      "rect": [
+        1636,
+        0,
+        18,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Ú",
+      "codepoint": 218,
+      "advance": 21,
+      "rect": [
+        1655,
+        0,
+        18,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Û",
+      "codepoint": 219,
+      "advance": 21,
+      "rect": [
+        1674,
+        0,
+        18,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Ü",
+      "codepoint": 220,
+      "advance": 21,
+      "rect": [
+        1693,
+        0,
+        18,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "Ý",
+      "codepoint": 221,
+      "advance": 18,
+      "rect": [
+        1712,
+        0,
+        19,
+        19
+      ],
+      "offset": [
+        3,
+        0
+      ]
+    },
+    {
+      "char": "ß",
+      "codepoint": 223,
+      "advance": 11,
+      "rect": [
+        1732,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "char": "à",
+      "codepoint": 224,
+      "advance": 13,
+      "rect": [
+        1745,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "á",
+      "codepoint": 225,
+      "advance": 13,
+      "rect": [
+        1758,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "â",
+      "codepoint": 226,
+      "advance": 13,
+      "rect": [
+        1771,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ã",
+      "codepoint": 227,
+      "advance": 13,
+      "rect": [
+        1784,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ä",
+      "codepoint": 228,
+      "advance": 13,
+      "rect": [
+        1797,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "å",
+      "codepoint": 229,
+      "advance": 13,
+      "rect": [
+        1810,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "æ",
+      "codepoint": 230,
+      "advance": 15,
+      "rect": [
+        1823,
+        0,
+        15,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ç",
+      "codepoint": 231,
+      "advance": 11,
+      "rect": [
+        1839,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "è",
+      "codepoint": 232,
+      "advance": 11,
+      "rect": [
+        1851,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "é",
+      "codepoint": 233,
+      "advance": 11,
+      "rect": [
+        1862,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ê",
+      "codepoint": 234,
+      "advance": 11,
+      "rect": [
+        1873,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ë",
+      "codepoint": 235,
+      "advance": 11,
+      "rect": [
+        1884,
+        0,
+        10,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ì",
+      "codepoint": 236,
+      "advance": 7,
+      "rect": [
+        1895,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "í",
+      "codepoint": 237,
+      "advance": 7,
+      "rect": [
+        1903,
+        0,
+        7,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "î",
+      "codepoint": 238,
+      "advance": 7,
+      "rect": [
+        1911,
+        0,
+        8,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "ï",
+      "codepoint": 239,
+      "advance": 7,
+      "rect": [
+        1920,
+        0,
+        8,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "ð",
+      "codepoint": 240,
+      "advance": 11,
+      "rect": [
+        1929,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ñ",
+      "codepoint": 241,
+      "advance": 12,
+      "rect": [
+        1941,
+        0,
+        13,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "ò",
+      "codepoint": 242,
+      "advance": 13,
+      "rect": [
+        1955,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ó",
+      "codepoint": 243,
+      "advance": 13,
+      "rect": [
+        1968,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ô",
+      "codepoint": 244,
+      "advance": 13,
+      "rect": [
+        1981,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "õ",
+      "codepoint": 245,
+      "advance": 13,
+      "rect": [
+        1994,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ö",
+      "codepoint": 246,
+      "advance": 13,
+      "rect": [
+        2007,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ø",
+      "codepoint": 248,
+      "advance": 13,
+      "rect": [
+        2020,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ù",
+      "codepoint": 249,
+      "advance": 13,
+      "rect": [
+        2033,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ú",
+      "codepoint": 250,
+      "advance": 13,
+      "rect": [
+        2046,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "û",
+      "codepoint": 251,
+      "advance": 13,
+      "rect": [
+        2059,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ü",
+      "codepoint": 252,
+      "advance": 13,
+      "rect": [
+        2072,
+        0,
+        12,
+        19
+      ],
+      "offset": [
+        2,
+        0
+      ]
+    },
+    {
+      "char": "ý",
+      "codepoint": 253,
+      "advance": 10,
+      "rect": [
+        2085,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    },
+    {
+      "char": "ÿ",
+      "codepoint": 255,
+      "advance": 10,
+      "rect": [
+        2097,
+        0,
+        11,
+        19
+      ],
+      "offset": [
+        1,
+        0
+      ]
+    }
+  ],
+  "kerning": [
+    [
+      "AB",
+      -4
+    ],
+    [
+      "AC",
+      -1
+    ],
+    [
+      "AF",
+      -1
+    ],
+    [
+      "AG",
+      -1
+    ],
+    [
+      "AH",
+      -4
+    ],
+    [
+      "AJ",
+      -1
+    ],
+    [
+      "AK",
+      -4
+    ],
+    [
+      "AM",
+      -1
+    ],
+    [
+      "AN",
+      -1
+    ],
+    [
+      "AO",
+      -1
+    ],
+    [
+      "AP",
+      -4
+    ],
+    [
+      "AQ",
+      -1
+    ],
+    [
+      "AR",
+      -4
+    ],
+    [
+      "AT",
+      -1
+    ],
+    [
+      "AU",
+      -4
+    ],
+    [
+      "AV",
+      -4
+    ],
+    [
+      "AW",
+      -4
+    ],
+    [
+      "AX",
+      -1
+    ],
+    [
+      "AY",
+      -4
+    ],
+    [
+      "AZ",
+      -2
+    ],
+    [
+      "Aa",
+      -2
+    ],
+    [
+      "Ab",
+      -2
+    ],
+    [
+      "Ac",
+      -2
+    ],
+    [
+      "Ad",
+      -2
+    ],
+    [
+      "Ae",
+      -2
+    ],
+    [
+      "Af",
+      -2
+    ],
+    [
+      "Ag",
+      -2
+    ],
+    [
+      "Ah",
+      -2
+    ],
+    [
+      "Ai",
+      -2
+    ],
+    [
+      "Aj",
+      -7
+    ],
+    [
+      "Ak",
+      -2
+    ],
+    [
+      "Al",
+      -2
+    ],
+    [
+      "Am",
+      -2
+    ],
+    [
+      "An",
+      -2
+    ],
+    [
+      "Ao",
+      -2
+    ],
+    [
+      "Ap",
+      -2
+    ],
+    [
+      "Aq",
+      -2
+    ],
+    [
+      "Ar",
+      -4
+    ],
+    [
+      "As",
+      -3
+    ],
+    [
+      "At",
+      -2
+    ],
+    [
+      "Au",
+      -2
+    ],
+    [
+      "Av",
+      -2
+    ],
+    [
+      "Aw",
+      -2
+    ],
+    [
+      "Ax",
+      -2
+    ],
+    [
+      "Ay",
+      -2
+    ],
+    [
+      "Az",
+      -2
+    ],
+    [
+      "B.",
+      -2
+    ],
+    [
+      "BB",
+      -1
+    ],
+    [
+      "BC",
+      -1
+    ],
+    [
+      "BF",
+      -1
+    ],
+    [
+      "BG",
+      -1
+    ],
+    [
+      "BH",
+      -1
+    ],
+    [
+      "BJ",
+      -1
+    ],
+    [
+      "BK",
+      -1
+    ],
+    [
+      "BM",
+      -1
+    ],
+    [
+      "BN",
+      -1
+    ],
+    [
+      "BO",
+      -1
+    ],
+    [
+      "BP",
+      -1
+    ],
+    [
+      "BQ",
+      -1
+    ],
+    [
+      "BR",
+      -1
+    ],
+    [
+      "BT",
+      -1
+    ],
+    [
+      "BU",
+      -1
+    ],
+    [
+      "BV",
+      -1
+    ],
+    [
+      "BW",
+      -1
+    ],
+    [
+      "BX",
+      -1
+    ],
+    [
+      "BY",
+      -1
+    ],
+    [
+      "BZ",
+      -1
+    ],
+    [
+      "Bc",
+      -1
+    ],
+    [
+      "Bd",
+      -1
+    ],
+    [
+      "Be",
+      -1
+    ],
+    [
+      "Bg",
+      -1
+    ],
+    [
+      "Bj",
+      -4
+    ],
+    [
+      "Bo",
+      -1
+    ],
+    [
+      "Bq",
+      -1
+    ],
+    [
+      "Bx",
+      -1
+    ],
+    [
+      "CB",
+      -2
+    ],
+    [
+      "CC",
+      -1
+    ],
+    [
+      "CD",
+      -1
+    ],
+    [
+      "CF",
+      -1
+    ],
+    [
+      "CG",
+      -1
+    ],
+    [
+      "CH",
+      -2
+    ],
+    [
+      "CJ",
+      -2
+    ],
+    [
+      "CK",
+      -2
+    ],
+    [
+      "CL",
+      -1
+    ],
+    [
+      "CM",
+      -1
+    ],
+    [
+      "CN",
+      -1
+    ],
+    [
+      "CO",
+      -1
+    ],
+    [
+      "CP",
+      -2
+    ],
+    [
+      "CQ",
+      -1
+    ],
+    [
+      "CR",
+      -2
+    ],
+    [
+      "CT",
+      -1
+    ],
+    [
+      "CU",
+      -2
+    ],
+    [
+      "CV",
+      -2
+    ],
+    [
+      "CW",
+      -2
+    ],
+    [
+      "CX",
+      -1
+    ],
+    [
+      "CY",
+      -2
+    ],
+    [
+      "CZ",
+      -2
+    ],
+    [
+      "Ca",
+      -2
+    ],
+    [
+      "Cb",
+      -2
+    ],
+    [
+      "Cc",
+      -2
+    ],
+    [
+      "Cd",
+      -2
+    ],
+    [
+      "Ce",
+      -2
+    ],
+    [
+      "Cf",
+      -2
+    ],
+    [
+      "Cg",
+      -2
+    ],
+    [
+      "Ch",
+      -2
+    ],
+    [
+      "Ci",
+      -2
+    ],
+    [
+      "Cj",
+      -7
+    ],
+    [
+      "Ck",
+      -2
+    ],
+    [
+      "Cl",
+      -2
+    ],
+    [
+      "Cm",
+      -2
+    ],
+    [
+      "Cn",
+      -2
+    ],
+    [
+      "Co",
+      -2
+    ],
+    [
+      "Cp",
+      -2
+    ],
+    [
+      "Cq",
+      -2
+    ],
+    [
+      "Cr",
+      -4
+    ],
+    [
+      "Cs",
+      -3
+    ],
+    [
+      "Ct",
+      -2
+    ],
+    [
+      "Cu",
+      -2
+    ],
+    [
+      "Cv",
+      -2
+    ],
+    [
+      "Cw",
+      -2
+    ],
+    [
+      "Cx",
+      -2
+    ],
+    [
+      "Cy",
+      -2
+    ],
+    [
+      "Cz",
+      -2
+    ],
+    [
+      "D.",
+      -3
+    ],
+    [
+      "DB",
+      -1
+    ],
+    [
+      "DF",
+      -1
+    ],
+    [
+      "DJ",
+      -1
+    ],
+    [
+      "DK",
+      -1
+    ],
+    [
+      "DL",
+      -1
+    ],
+    [
+      "DM",
+      -1
+    ],
+    [
+      "DP",
+      -1
+    ],
+    [
+      "DT",
+      -1
+    ],
+    [
+      "DU",
+      -1
+    ],
+    [
+      "DV",
+      -1
+    ],
+    [
+      "DW",
+      -1
+    ],
+    [
+      "DX",
+      -1
+    ],
+    [
+      "DY",
+      -1
+    ],
+    [
+      "DZ",
+      -1
+    ],
+    [
+      "Dj",
+      -4
+    ],
+    [
+      "Dr",
+      -1
+    ],
+    [
+      "EB",
+      -2
+    ],
+    [
+      "EC",
+      -1
+    ],
+    [
+      "EF",
+      -1
+    ],
+    [
+      "EG",
+      -1
+    ],
+    [
+      "EH",
+      -2
+    ],
+    [
+      "EJ",
+      -2
+    ],
+    [
+      "EK",
+      -2
+    ],
+    [
+      "EL",
+      -1
+    ],
+    [
+      "EM",
+      -1
+    ],
+    [
+      "EN",
+      -1
+    ],
+    [
+      "EO",
+      -1
+    ],
+    [
+      "EP",
+      -2
+    ],
+    [
+      "EQ",
+      -1
+    ],
+    [
+      "ER",
+      -2
+    ],
+    [
+      "ET",
+      -1
+    ],
+    [
+      "EU",
+      -2
+    ],
+    [
+      "EV",
+      -2
+    ],
+    [
+      "EW",
+      -2
+    ],
+    [
+      "EX",
+      -1
+    ],
+    [
+      "EY",
+      -2
+    ],
+    [
+      "EZ",
+      -2
+    ],
+    [
+      "Ea",
+      -2
+    ],
+    [
+      "Eb",
+      -2
+    ],
+    [
+      "Ec",
+      -2
+    ],
+    [
+      "Ed",
+      -2
+    ],
+    [
+      "Ee",
+      -2
+    ],
+    [
+      "Ef",
+      -2
+    ],
+    [
+      "Eg",
+      -2
+    ],
+    [
+      "Eh",
+      -2
+    ],
+    [
+      "Ei",
+      -2
+    ],
+    [
+      "Ej",
+      -7
+    ],
+    [
+      "Ek",
+      -2
+    ],
+    [
+      "El",
+      -2
+    ],
+    [
+      "Em",
+      -2
+    ],
+    [
+      "En",
+      -2
+    ],
+    [
+      "Eo",
+      -2
+    ],
+    [
+      "Ep",
+      -2
+    ],
+    [
+      "Eq",
+      -2
+    ],
+    [
+      "Er",
+      -4
+    ],
+    [
+      "Es",
+      -3
+    ],
+    [
+      "Et",
+      -2
+    ],
+    [
+      "Eu",
+      -2
+    ],
+    [
+      "Ev",
+      -2
+    ],
+    [
+      "Ew",
+      -2
+    ],
+    [
+      "Ex",
+      -2
+    ],
+    [
+      "Ey",
+      -2
+    ],
+    [
+      "Ez",
+      -2
+    ],
+    [
+      "FB",
+      -1
+    ],
+    [
+      "FC",
+      -1
+    ],
+    [
+      "FD",
+      -1
+    ],
+    [
+      "FE",
+      -2
+    ],
+    [
+      "FG",
+      -1
+    ],
+    [
+      "FI",
+      -2
+    ],
+    [
+      "FJ",
+      -1
+    ],
+    [
+      "FK",
+      -1
+    ],
+    [
+      "FO",
+      -1
+    ],
+    [
+      "FP",
+      -1
+    ],
+    [
+      "FQ",
+      -1
+    ],
+    [
+      "FR",
+      -1
+    ],
+    [
+      "FS",
+      -2
+    ],
+    [
+      "Fa",
+      -3
+    ],
+    [
+      "Fc",
+      -3
+    ],
+    [
+      "Fd",
+      -3
+    ],
+    [
+      "Fe",
+      -3
+    ],
+    [
+      "Ff",
+      -1
+    ],
+    [
+      "Fg",
+      -3
+    ],
+    [
+      "Fj",
+      -4
+    ],
+    [
+      "Fm",
+      -2
+    ],
+    [
+      "Fn",
+      -2
+    ],
+    [
+      "Fo",
+      -3
+    ],
+    [
+      "Fq",
+      -3
+    ],
+    [
+      "Fr",
+      -2
+    ],
+    [
+      "Fs",
+      -3
+    ],
+    [
+      "Fu",
+      -2
+    ],
+    [
+      "Fv",
+      -2
+    ],
+    [
+      "Fw",
+      -2
+    ],
+    [
+      "Fx",
+      -3
+    ],
+    [
+      "Fy",
+      -2
+    ],
+    [
+      "Fz",
+      -3
+    ],
+    [
+      "GF",
+      -1
+    ],
+    [
+      "GT",
+      -1
+    ],
+    [
+      "Gj",
+      -1
+    ],
+    [
+      "Gx",
+      -1
+    ],
+    [
+      "Gz",
+      -1
+    ],
+    [
+      "HB",
+      -3
+    ],
+    [
+      "HC",
+      -1
+    ],
+    [
+      "HF",
+      -1
+    ],
+    [
+      "HG",
+      -1
+    ],
+    [
+      "HH",
+      -2
+    ],
+    [
+      "HJ",
+      -1
+    ],
+    [
+      "HK",
+      -2
+    ],
+    [
+      "HL",
+      -1
+    ],
+    [
+      "HM",
+      -1
+    ],
+    [
+      "HN",
+      -1
+    ],
+    [
+      "HO",
+      -1
+    ],
+    [
+      "HP",
+      -3
+    ],
+    [
+      "HQ",
+      -1
+    ],
+    [
+      "HR",
+      -2
+    ],
+    [
+      "HT",
+      -1
+    ],
+    [
+      "HU",
+      -2
+    ],
+    [
+      "HV",
+      -3
+    ],
+    [
+      "HW",
+      -2
+    ],
+    [
+      "HX",
+      -1
+    ],
+    [
+      "HY",
+      -2
+    ],
+    [
+      "HZ",
+      -2
+    ],
+    [
+      "Ha",
+      -2
+    ],
+    [
+      "Hb",
+      -2
+    ],
+    [
+      "Hc",
+      -2
+    ],
+    [
+      "Hd",
+      -2
+    ],
+    [
+      "He",
+      -2
+    ],
+    [
+      "Hf",
+      -2
+    ],
+    [
+      "Hg",
+      -2
+    ],
+    [
+      "Hh",
+      -2
+    ],
+    [
+      "Hi",
+      -2
+    ],
+    [
+      "Hj",
+      -7
+    ],
+    [
+      "Hk",
+      -2
+    ],
+    [
+      "Hl",
+      -2
+    ],
+    [
+      "Hm",
+      -2
+    ],
+    [
+      "Hn",
+      -2
+    ],
+    [
+      "Ho",
+      -2
+    ],
+    [
+      "Hp",
+      -2
+    ],
+    [
+      "Hq",
+      -2
+    ],
+    [
+      "Hr",
+      -4
+    ],
+    [
+      "Hs",
+      -3
+    ],
+    [
+      "Ht",
+      -2
+    ],
+    [
+      "Hu",
+      -2
+    ],
+    [
+      "Hv",
+      -2
+    ],
+    [
+      "Hw",
+      -2
+    ],
+    [
+      "Hx",
+      -2
+    ],
+    [
+      "Hy",
+      -2
+    ],
+    [
+      "Hz",
+      -2
+    ],
+    [
+      "Ij",
+      -4
+    ],
+    [
+      "Ir",
+      -1
+    ],
+    [
+      "Ix",
+      -1
+    ],
+    [
+      "Iz",
+      -1
+    ],
+    [
+      "KB",
+      -2
+    ],
+    [
+      "KC",
+      -1
+    ],
+    [
+      "KF",
+      -1
+    ],
+    [
+      "KG",
+      -1
+    ],
+    [
+      "KH",
+      -2
+    ],
+    [
+      "KJ",
+      -1
+    ],
+    [
+      "KK",
+      -2
+    ],
+    [
+      "KL",
+      -1
+    ],
+    [
+      "KM",
+      -1
+    ],
+    [
+      "KN",
+      -1
+    ],
+    [
+      "KO",
+      -1
+    ],
+    [
+      "KP",
+      -2
+    ],
+    [
+      "KQ",
+      -1
+    ],
+    [
+      "KR",
+      -2
+    ],
+    [
+      "KT",
+      -1
+    ],
+    [
+      "KU",
+      -2
+    ],
+    [
+      "KV",
+      -2
+    ],
+    [
+      "KW",
+      -2
+    ],
+    [
+      "KX",
+      -1
+    ],
+    [
+      "KY",
+      -2
+    ],
+    [
+      "KZ",
+      -2
+    ],
+    [
+      "Ka",
+      -2
+    ],
+    [
+      "Kb",
+      -2
+    ],
+    [
+      "Kc",
+      -2
+    ],
+    [
+      "Kd",
+      -2
+    ],
+    [
+      "Ke",
+      -2
+    ],
+    [
+      "Kf",
+      -2
+    ],
+    [
+      "Kg",
+      -2
+    ],
+    [
+      "Kh",
+      -2
+    ],
+    [
+      "Ki",
+      -2
+    ],
+    [
+      "Kj",
+      -7
+    ],
+    [
+      "Kk",
+      -2
+    ],
+    [
+      "Kl",
+      -2
+    ],
+    [
+      "Km",
+      -2
+    ],
+    [
+      "Kn",
+      -2
+    ],
+    [
+      "Ko",
+      -2
+    ],
+    [
+      "Kp",
+      -2
+    ],
+    [
+      "Kq",
+      -2
+    ],
+    [
+      "Kr",
+      -4
+    ],
+    [
+      "Ks",
+      -3
+    ],
+    [
+      "Kt",
+      -2
+    ],
+    [
+      "Ku",
+      -2
+    ],
+    [
+      "Kv",
+      -2
+    ],
+    [
+      "Kw",
+      -2
+    ],
+    [
+      "Kx",
+      -2
+    ],
+    [
+      "Ky",
+      -2
+    ],
+    [
+      "Kz",
+      -2
+    ],
+    [
+      "LE",
+      -1
+    ],
+    [
+      "LI",
+      -1
+    ],
+    [
+      "LS",
+      -1
+    ],
+    [
+      "La",
+      -1
+    ],
+    [
+      "Lc",
+      -1
+    ],
+    [
+      "Ld",
+      -1
+    ],
+    [
+      "Le",
+      -1
+    ],
+    [
+      "Lg",
+      -1
+    ],
+    [
+      "Lj",
+      -1
+    ],
+    [
+      "Lo",
+      -1
+    ],
+    [
+      "Lq",
+      -1
+    ],
+    [
+      "Ls",
+      -1
+    ],
+    [
+      "Lx",
+      -1
+    ],
+    [
+      "Lz",
+      -1
+    ],
+    [
+      "MB",
+      -2
+    ],
+    [
+      "MC",
+      -1
+    ],
+    [
+      "MF",
+      -1
+    ],
+    [
+      "MG",
+      -1
+    ],
+    [
+      "MH",
+      -2
+    ],
+    [
+      "MJ",
+      -1
+    ],
+    [
+      "MK",
+      -2
+    ],
+    [
+      "ML",
+      -1
+    ],
+    [
+      "MM",
+      -1
+    ],
+    [
+      "MN",
+      -1
+    ],
+    [
+      "MO",
+      -1
+    ],
+    [
+      "MP",
+      -2
+    ],
+    [
+      "MQ",
+      -1
+    ],
+    [
+      "MR",
+      -2
+    ],
+    [
+      "MT",
+      -1
+    ],
+    [
+      "MU",
+      -2
+    ],
+    [
+      "MV",
+      -2
+    ],
+    [
+      "MW",
+      -2
+    ],
+    [
+      "MX",
+      -1
+    ],
+    [
+      "MY",
+      -2
+    ],
+    [
+      "MZ",
+      -2
+    ],
+    [
+      "Ma",
+      -2
+    ],
+    [
+      "Mb",
+      -2
+    ],
+    [
+      "Mc",
+      -2
+    ],
+    [
+      "Md",
+      -2
+    ],
+    [
+      "Me",
+      -2
+    ],
+    [
+      "Mf",
+      -2
+    ],
+    [
+      "Mg",
+      -2
+    ],
+    [
+      "Mh",
+      -2
+    ],
+    [
+      "Mi",
+      -2
+    ],
+    [
+      "Mj",
+      -7
+    ],
+    [
+      "Mk",
+      -2
+    ],
+    [
+      "Ml",
+      -2
+    ],
+    [
+      "Mm",
+      -2
+    ],
+    [
+      "Mn",
+      -2
+    ],
+    [
+      "Mo",
+      -2
+    ],
+    [
+      "Mp",
+      -2
+    ],
+    [
+      "Mq",
+      -2
+    ],
+    [
+      "Mr",
+      -4
+    ],
+    [
+      "Ms",
+      -3
+    ],
+    [
+      "Mt",
+      -2
+    ],
+    [
+      "Mu",
+      -2
+    ],
+    [
+      "Mv",
+      -2
+    ],
+    [
+      "Mw",
+      -2
+    ],
+    [
+      "Mx",
+      -2
+    ],
+    [
+      "My",
+      -2
+    ],
+    [
+      "Mz",
+      -2
+    ],
+    [
+      "NA",
+      -1
+    ],
+    [
+      "NB",
+      -2
+    ],
+    [
+      "NC",
+      -2
+    ],
+    [
+      "ND",
+      -2
+    ],
+    [
+      "NE",
+      -2
+    ],
+    [
+      "NF",
+      -1
+    ],
+    [
+      "NG",
+      -2
+    ],
+    [
+      "NH",
+      -1
+    ],
+    [
+      "NI",
+      -2
+    ],
+    [
+      "NJ",
+      -1
+    ],
+    [
+      "NK",
+      -1
+    ],
+    [
+      "NL",
+      -2
+    ],
+    [
+      "NM",
+      -1
+    ],
+    [
+      "NN",
+      -1
+    ],
+    [
+      "NO",
+      -2
+    ],
+    [
+      "NP",
+      -2
+    ],
+    [
+      "NQ",
+      -2
+    ],
+    [
+      "NR",
+      -2
+    ],
+    [
+      "NS",
+      -2
+    ],
+    [
+      "NT",
+      -1
+    ],
+    [
+      "NU",
+      -1
+    ],
+    [
+      "NV",
+      -1
+    ],
+    [
+      "NW",
+      -1
+    ],
+    [
+      "NX",
+      -1
+    ],
+    [
+      "NY",
+      -1
+    ],
+    [
+      "NZ",
+      -1
+    ],
+    [
+      "Na",
+      -2
+    ],
+    [
+      "Nc",
+      -2
+    ],
+    [
+      "Nd",
+      -2
+    ],
+    [
+      "Ne",
+      -2
+    ],
+    [
+      "Nf",
+      -1
+    ],
+    [
+      "Ng",
+      -2
+    ],
+    [
+      "Nj",
+      -3
+    ],
+    [
+      "Nm",
+      -2
+    ],
+    [
+      "Nn",
+      -2
+    ],
+    [
+      "No",
+      -2
+    ],
+    [
+      "Np",
+      -2
+    ],
+    [
+      "Nq",
+      -2
+    ],
+    [
+      "Nr",
+      -2
+    ],
+    [
+      "Ns",
+      -2
+    ],
+    [
+      "Nt",
+      -1
+    ],
+    [
+      "Nu",
+      -2
+    ],
+    [
+      "Nv",
+      -2
+    ],
+    [
+      "Nw",
+      -2
+    ],
+    [
+      "Nx",
+      -2
+    ],
+    [
+      "Ny",
+      -2
+    ],
+    [
+      "Nz",
+      -2
+    ],
+    [
+      "OA",
+      -1
+    ],
+    [
+      "OF",
+      -1
+    ],
+    [
+      "OH",
+      -1
+    ],
+    [
+      "OJ",
+      -1
+    ],
+    [
+      "OK",
+      -1
+    ],
+    [
+      "OL",
+      -1
+    ],
+    [
+      "OM",
+      -1
+    ],
+    [
+      "ON",
+      -1
+    ],
+    [
+      "OT",
+      -1
+    ],
+    [
+      "OU",
+      -1
+    ],
+    [
+      "OV",
+      -1
+    ],
+    [
+      "OW",
+      -1
+    ],
+    [
+      "OX",
+      -1
+    ],
+    [
+      "OY",
+      -1
+    ],
+    [
+      "OZ",
+      -1
+    ],
+    [
+      "Oj",
+      -4
+    ],
+    [
+      "Or",
+      -1
+    ],
+    [
+      "PI",
+      -1
+    ],
+    [
+      "PS",
+      -2
+    ],
+    [
+      "Pa",
+      -1
+    ],
+    [
+      "Pc",
+      -1
+    ],
+    [
+      "Pd",
+      -1
+    ],
+    [
+      "Pe",
+      -1
+    ],
+    [
+      "Pg",
+      -1
+    ],
+    [
+      "Pj",
+      -4
+    ],
+    [
+      "Po",
+      -1
+    ],
+    [
+      "Pq",
+      -1
+    ],
+    [
+      "Pr",
+      -1
+    ],
+    [
+      "Ps",
+      -2
+    ],
+    [
+      "Px",
+      -1
+    ],
+    [
+      "Pz",
+      -1
+    ],
+    [
+      "QA",
+      -2
+    ],
+    [
+      "QI",
+      -1
+    ],
+    [
+      "QO",
+      -2
+    ],
+    [
+      "QR",
+      -2
+    ],
+    [
+      "QS",
+      -1
+    ],
+    [
+      "QT",
+      -2
+    ],
+    [
+      "QU",
+      -2
+    ],
+    [
+      "Qa",
+      -1
+    ],
+    [
+      "Qi",
+      -1
+    ],
+    [
+      "Qj",
+      -1
+    ],
+    [
+      "Qo",
+      -1
+    ],
+    [
+      "Qr",
+      -1
+    ],
+    [
+      "Qu",
+      -1
+    ],
+    [
+      "RB",
+      -3
+    ],
+    [
+      "RC",
+      -1
+    ],
+    [
+      "RD",
+      -1
+    ],
+    [
+      "RF",
+      -1
+    ],
+    [
+      "RG",
+      -1
+    ],
+    [
+      "RH",
+      -3
+    ],
+    [
+      "RJ",
+      -1
+    ],
+    [
+      "RK",
+      -3
+    ],
+    [
+      "RL",
+      -1
+    ],
+    [
+      "RM",
+      -1
+    ],
+    [
+      "RN",
+      -1
+    ],
+    [
+      "RO",
+      -1
+    ],
+    [
+      "RP",
+      -3
+    ],
+    [
+      "RQ",
+      -1
+    ],
+    [
+      "RR",
+      -3
+    ],
+    [
+      "RT",
+      -1
+    ],
+    [
+      "RU",
+      -3
+    ],
+    [
+      "RV",
+      -3
+    ],
+    [
+      "RW",
+      -3
+    ],
+    [
+      "RX",
+      -1
+    ],
+    [
+      "RY",
+      -3
+    ],
+    [
+      "RZ",
+      -2
+    ],
+    [
+      "Ra",
+      -2
+    ],
+    [
+      "Rb",
+      -2
+    ],
+    [
+      "Rc",
+      -2
+    ],
+    [
+      "Rd",
+      -2
+    ],
+    [
+      "Re",
+      -2
+    ],
+    [
+      "Rf",
+      -2
+    ],
+    [
+      "Rg",
+      -2
+    ],
+    [
+      "Rh",
+      -2
+    ],
+    [
+      "Ri",
+      -2
+    ],
+    [
+      "Rj",
+      -7
+    ],
+    [
+      "Rk",
+      -2
+    ],
+    [
+      "Rl",
+      -2
+    ],
+    [
+      "Rm",
+      -2
+    ],
+    [
+      "Rn",
+      -2
+    ],
+    [
+      "Ro",
+      -2
+    ],
+    [
+      "Rp",
+      -2
+    ],
+    [
+      "Rq",
+      -2
+    ],
+    [
+      "Rr",
+      -4
+    ],
+    [
+      "Rs",
+      -3
+    ],
+    [
+      "Rt",
+      -2
+    ],
+    [
+      "Ru",
+      -2
+    ],
+    [
+      "Rv",
+      -2
+    ],
+    [
+      "Rw",
+      -2
+    ],
+    [
+      "Rx",
+      -2
+    ],
+    [
+      "Ry",
+      -2
+    ],
+    [
+      "Rz",
+      -2
+    ],
+    [
+      "SB",
+      -1
+    ],
+    [
+      "SC",
+      -1
+    ],
+    [
+      "SF",
+      -1
+    ],
+    [
+      "SG",
+      -1
+    ],
+    [
+      "SH",
+      -1
+    ],
+    [
+      "SJ",
+      -1
+    ],
+    [
+      "SK",
+      -1
+    ],
+    [
+      "SM",
+      -1
+    ],
+    [
+      "SN",
+      -1
+    ],
+    [
+      "SO",
+      -1
+    ],
+    [
+      "SP",
+      -1
+    ],
+    [
+      "SQ",
+      -1
+    ],
+    [
+      "SR",
+      -1
+    ],
+    [
+      "ST",
+      -1
+    ],
+    [
+      "SU",
+      -1
+    ],
+    [
+      "SV",
+      -1
+    ],
+    [
+      "SW",
+      -1
+    ],
+    [
+      "SX",
+      -1
+    ],
+    [
+      "SY",
+      -1
+    ],
+    [
+      "SZ",
+      -1
+    ],
+    [
+      "Sa",
+      -1
+    ],
+    [
+      "Sc",
+      -1
+    ],
+    [
+      "Sd",
+      -1
+    ],
+    [
+      "Se",
+      -1
+    ],
+    [
+      "Sg",
+      -1
+    ],
+    [
+      "Sj",
+      -2
+    ],
+    [
+      "So",
+      -1
+    ],
+    [
+      "Sq",
+      -1
+    ],
+    [
+      "Sx",
+      -1
+    ],
+    [
+      "Sz",
+      -1
+    ],
+    [
+      "TE",
+      -1
+    ],
+    [
+      "TI",
+      -1
+    ],
+    [
+      "TS",
+      -2
+    ],
+    [
+      "Ta",
+      -4
+    ],
+    [
+      "Tc",
+      -4
+    ],
+    [
+      "Td",
+      -4
+    ],
+    [
+      "Te",
+      -4
+    ],
+    [
+      "Tg",
+      -4
+    ],
+    [
+      "Tj",
+      -4
+    ],
+    [
+      "Tm",
+      -3
+    ],
+    [
+      "Tn",
+      -3
+    ],
+    [
+      "To",
+      -4
+    ],
+    [
+      "Tq",
+      -4
+    ],
+    [
+      "Tr",
+      -1
+    ],
+    [
+      "Ts",
+      -3
+    ],
+    [
+      "Tu",
+      -3
+    ],
+    [
+      "Tv",
+      -3
+    ],
+    [
+      "Tw",
+      -3
+    ],
+    [
+      "Tx",
+      -4
+    ],
+    [
+      "Ty",
+      -3
+    ],
+    [
+      "Tz",
+      -4
+    ],
+    [
+      "UB",
+      -2
+    ],
+    [
+      "UC",
+      -1
+    ],
+    [
+      "UF",
+      -1
+    ],
+    [
+      "UG",
+      -1
+    ],
+    [
+      "UH",
+      -2
+    ],
+    [
+      "UJ",
+      -1
+    ],
+    [
+      "UK",
+      -2
+    ],
+    [
+      "UL",
+      -1
+    ],
+    [
+      "UM",
+      -1
+    ],
+    [
+      "UN",
+      -1
+    ],
+    [
+      "UO",
+      -1
+    ],
+    [
+      "UP",
+      -2
+    ],
+    [
+      "UQ",
+      -1
+    ],
+    [
+      "UR",
+      -2
+    ],
+    [
+      "UT",
+      -1
+    ],
+    [
+      "UU",
+      -2
+    ],
+    [
+      "UV",
+      -2
+    ],
+    [
+      "UW",
+      -2
+    ],
+    [
+      "UX",
+      -1
+    ],
+    [
+      "UY",
+      -2
+    ],
+    [
+      "UZ",
+      -2
+    ],
+    [
+      "Ua",
+      -2
+    ],
+    [
+      "Ub",
+      -2
+    ],
+    [
+      "Uc",
+      -2
+    ],
+    [
+      "Ud",
+      -2
+    ],
+    [
+      "Ue",
+      -2
+    ],
+    [
+      "Uf",
+      -2
+    ],
+    [
+      "Ug",
+      -2
+    ],
+    [
+      "Uh",
+      -2
+    ],
+    [
+      "Ui",
+      -2
+    ],
+    [
+      "Uj",
+      -7
+    ],
+    [
+      "Uk",
+      -2
+    ],
+    [
+      "Ul",
+      -2
+    ],
+    [
+      "Um",
+      -2
+    ],
+    [
+      "Un",
+      -2
+    ],
+    [
+      "Uo",
+      -2
+    ],
+    [
+      "Up",
+      -2
+    ],
+    [
+      "Uq",
+      -2
+    ],
+    [
+      "Ur",
+      -4
+    ],
+    [
+      "Us",
+      -3
+    ],
+    [
+      "Ut",
+      -2
+    ],
+    [
+      "Uu",
+      -2
+    ],
+    [
+      "Uv",
+      -2
+    ],
+    [
+      "Uw",
+      -2
+    ],
+    [
+      "Ux",
+      -2
+    ],
+    [
+      "Uy",
+      -2
+    ],
+    [
+      "Uz",
+      -2
+    ],
+    [
+      "VS",
+      -1
+    ],
+    [
+      "Vj",
+      -4
+    ],
+    [
+      "Vr",
+      -1
+    ],
+    [
+      "Vx",
+      -1
+    ],
+    [
+      "Vz",
+      -1
+    ],
+    [
+      "WS",
+      -1
+    ],
+    [
+      "Wf",
+      1
+    ],
+    [
+      "Wj",
+      -4
+    ],
+    [
+      "Wr",
+      -1
+    ],
+    [
+      "Ws",
+      -1
+    ],
+    [
+      "Wx",
+      -1
+    ],
+    [
+      "Wz",
+      -1
+    ],
+    [
+      "XB",
+      -1
+    ],
+    [
+      "XC",
+      -1
+    ],
+    [
+      "XD",
+      -1
+    ],
+    [
+      "XF",
+      -1
+    ],
+    [
+      "XG",
+      -1
+    ],
+    [
+      "XH",
+      -2
+    ],
+    [
+      "XJ",
+      -2
+    ],
+    [
+      "XK",
+      -1
+    ],
+    [
+      "XL",
+      -1
+    ],
+    [
+      "XM",
+      -1
+    ],
+    [
+      "XN",
+      -1
+    ],
+    [
+      "XO",
+      -1
+    ],
+    [
+      "XP",
+      -1
+    ],
+    [
+      "XQ",
+      -1
+    ],
+    [
+      "XR",
+      -2
+    ],
+    [
+      "XU",
+      -2
+    ],
+    [
+      "XV",
+      -1
+    ],
+    [
+      "XW",
+      -2
+    ],
+    [
+      "XX",
+      -1
+    ],
+    [
+      "XY",
+      -2
+    ],
+    [
+      "XZ",
+      -1
+    ],
+    [
+      "Xa",
+      -2
+    ],
+    [
+      "Xb",
+      -2
+    ],
+    [
+      "Xc",
+      -2
+    ],
+    [
+      "Xd",
+      -2
+    ],
+    [
+      "Xe",
+      -2
+    ],
+    [
+      "Xf",
+      -2
+    ],
+    [
+      "Xg",
+      -2
+    ],
+    [
+      "Xh",
+      -2
+    ],
+    [
+      "Xi",
+      -2
+    ],
+    [
+      "Xj",
+      -7
+    ],
+    [
+      "Xk",
+      -2
+    ],
+    [
+      "Xl",
+      -2
+    ],
+    [
+      "Xm",
+      -2
+    ],
+    [
+      "Xn",
+      -2
+    ],
+    [
+      "Xo",
+      -2
+    ],
+    [
+      "Xp",
+      -2
+    ],
+    [
+      "Xq",
+      -2
+    ],
+    [
+      "Xr",
+      -4
+    ],
+    [
+      "Xs",
+      -4
+    ],
+    [
+      "Xt",
+      -2
+    ],
+    [
+      "Xu",
+      -2
+    ],
+    [
+      "Xv",
+      -2
+    ],
+    [
+      "Xw",
+      -2
+    ],
+    [
+      "Xx",
+      -2
+    ],
+    [
+      "Xy",
+      -2
+    ],
+    [
+      "Xz",
+      -3
+    ],
+    [
+      "Yj",
+      -1
+    ],
+    [
+      "ZB",
+      -2
+    ],
+    [
+      "ZC",
+      -2
+    ],
+    [
+      "ZD",
+      -1
+    ],
+    [
+      "ZE",
+      -1
+    ],
+    [
+      "ZF",
+      -1
+    ],
+    [
+      "ZG",
+      -2
+    ],
+    [
+      "ZH",
+      -2
+    ],
+    [
+      "ZI",
+      -1
+    ],
+    [
+      "ZK",
+      -2
+    ],
+    [
+      "ZL",
+      -1
+    ],
+    [
+      "ZM",
+      -1
+    ],
+    [
+      "ZN",
+      -1
+    ],
+    [
+      "ZO",
+      -2
+    ],
+    [
+      "ZP",
+      -2
+    ],
+    [
+      "ZQ",
+      -2
+    ],
+    [
+      "ZR",
+      -2
+    ],
+    [
+      "ZT",
+      -1
+    ],
+    [
+      "ZU",
+      -2
+    ],
+    [
+      "ZV",
+      -2
+    ],
+    [
+      "ZW",
+      -2
+    ],
+    [
+      "ZX",
+      -1
+    ],
+    [
+      "ZY",
+      -2
+    ],
+    [
+      "Za",
+      -1
+    ],
+    [
+      "Zb",
+      -1
+    ],
+    [
+      "Zc",
+      -2
+    ],
+    [
+      "Zd",
+      -1
+    ],
+    [
+      "Ze",
+      -2
+    ],
+    [
+      "Zg",
+      -1
+    ],
+    [
+      "Zi",
+      -1
+    ],
+    [
+      "Zj",
+      -1
+    ],
+    [
+      "Zl",
+      -1
+    ],
+    [
+      "Zo",
+      -1
+    ],
+    [
+      "Zq",
+      -1
+    ],
+    [
+      "Zt",
+      -1
+    ],
+    [
+      "Zu",
+      -1
+    ],
+    [
+      "Zv",
+      -1
+    ],
+    [
+      "Zw",
+      -1
+    ],
+    [
+      "Zx",
+      -2
+    ],
+    [
+      "Zy",
+      -1
+    ],
+    [
+      "Zz",
+      -1
+    ],
+    [
+      "aa",
+      -2
+    ],
+    [
+      "ab",
+      -2
+    ],
+    [
+      "ac",
+      -2
+    ],
+    [
+      "ad",
+      -2
+    ],
+    [
+      "ae",
+      -2
+    ],
+    [
+      "af",
+      -2
+    ],
+    [
+      "ag",
+      -2
+    ],
+    [
+      "ah",
+      -2
+    ],
+    [
+      "ai",
+      -2
+    ],
+    [
+      "aj",
+      -7
+    ],
+    [
+      "ak",
+      -2
+    ],
+    [
+      "al",
+      -2
+    ],
+    [
+      "am",
+      -2
+    ],
+    [
+      "an",
+      -2
+    ],
+    [
+      "ao",
+      -2
+    ],
+    [
+      "ap",
+      -2
+    ],
+    [
+      "aq",
+      -2
+    ],
+    [
+      "ar",
+      -4
+    ],
+    [
+      "as",
+      -3
+    ],
+    [
+      "at",
+      -2
+    ],
+    [
+      "au",
+      -2
+    ],
+    [
+      "av",
+      -2
+    ],
+    [
+      "aw",
+      -2
+    ],
+    [
+      "ax",
+      -2
+    ],
+    [
+      "ay",
+      -2
+    ],
+    [
+      "az",
+      -2
+    ],
+    [
+      "ba",
+      -1
+    ],
+    [
+      "bc",
+      -1
+    ],
+    [
+      "bd",
+      -1
+    ],
+    [
+      "be",
+      -1
+    ],
+    [
+      "bg",
+      -1
+    ],
+    [
+      "bj",
+      -5
+    ],
+    [
+      "bo",
+      -1
+    ],
+    [
+      "br",
+      -1
+    ],
+    [
+      "bx",
+      -2
+    ],
+    [
+      "bz",
+      -3
+    ],
+    [
+      "ca",
+      -2
+    ],
+    [
+      "cb",
+      -2
+    ],
+    [
+      "cc",
+      -2
+    ],
+    [
+      "cd",
+      -2
+    ],
+    [
+      "ce",
+      -2
+    ],
+    [
+      "cf",
+      -2
+    ],
+    [
+      "cg",
+      -2
+    ],
+    [
+      "ch",
+      -2
+    ],
+    [
+      "ci",
+      -2
+    ],
+    [
+      "cj",
+      -7
+    ],
+    [
+      "ck",
+      -2
+    ],
+    [
+      "cl",
+      -2
+    ],
+    [
+      "cm",
+      -2
+    ],
+    [
+      "cn",
+      -2
+    ],
+    [
+      "co",
+      -2
+    ],
+    [
+      "cp",
+      -2
+    ],
+    [
+      "cq",
+      -2
+    ],
+    [
+      "cr",
+      -4
+    ],
+    [
+      "cs",
+      -3
+    ],
+    [
+      "ct",
+      -2
+    ],
+    [
+      "cu",
+      -2
+    ],
+    [
+      "cv",
+      -2
+    ],
+    [
+      "cw",
+      -2
+    ],
+    [
+      "cx",
+      -2
+    ],
+    [
+      "cy",
+      -2
+    ],
+    [
+      "cz",
+      -2
+    ],
+    [
+      "da",
+      -2
+    ],
+    [
+      "db",
+      -2
+    ],
+    [
+      "dc",
+      -2
+    ],
+    [
+      "dd",
+      -2
+    ],
+    [
+      "de",
+      -2
+    ],
+    [
+      "df",
+      -2
+    ],
+    [
+      "dg",
+      -2
+    ],
+    [
+      "dh",
+      -2
+    ],
+    [
+      "di",
+      -2
+    ],
+    [
+      "dj",
+      -7
+    ],
+    [
+      "dk",
+      -2
+    ],
+    [
+      "dl",
+      -2
+    ],
+    [
+      "dm",
+      -2
+    ],
+    [
+      "dn",
+      -2
+    ],
+    [
+      "do",
+      -2
+    ],
+    [
+      "dp",
+      -2
+    ],
+    [
+      "dq",
+      -2
+    ],
+    [
+      "dr",
+      -4
+    ],
+    [
+      "ds",
+      -3
+    ],
+    [
+      "dt",
+      -2
+    ],
+    [
+      "du",
+      -2
+    ],
+    [
+      "dv",
+      -2
+    ],
+    [
+      "dw",
+      -2
+    ],
+    [
+      "dx",
+      -2
+    ],
+    [
+      "dy",
+      -2
+    ],
+    [
+      "dz",
+      -2
+    ],
+    [
+      "ea",
+      -2
+    ],
+    [
+      "eb",
+      -2
+    ],
+    [
+      "ec",
+      -2
+    ],
+    [
+      "ed",
+      -2
+    ],
+    [
+      "ee",
+      -2
+    ],
+    [
+      "ef",
+      -2
+    ],
+    [
+      "eg",
+      -2
+    ],
+    [
+      "eh",
+      -2
+    ],
+    [
+      "ei",
+      -2
+    ],
+    [
+      "ej",
+      -7
+    ],
+    [
+      "ek",
+      -2
+    ],
+    [
+      "el",
+      -2
+    ],
+    [
+      "em",
+      -2
+    ],
+    [
+      "en",
+      -2
+    ],
+    [
+      "eo",
+      -2
+    ],
+    [
+      "ep",
+      -2
+    ],
+    [
+      "eq",
+      -2
+    ],
+    [
+      "er",
+      -4
+    ],
+    [
+      "es",
+      -3
+    ],
+    [
+      "et",
+      -2
+    ],
+    [
+      "eu",
+      -2
+    ],
+    [
+      "ev",
+      -2
+    ],
+    [
+      "ew",
+      -2
+    ],
+    [
+      "ex",
+      -2
+    ],
+    [
+      "ey",
+      -2
+    ],
+    [
+      "ez",
+      -2
+    ],
+    [
+      "fa",
+      -3
+    ],
+    [
+      "fc",
+      -3
+    ],
+    [
+      "fd",
+      -3
+    ],
+    [
+      "fe",
+      -3
+    ],
+    [
+      "fg",
+      -3
+    ],
+    [
+      "fj",
+      -4
+    ],
+    [
+      "fm",
+      -2
+    ],
+    [
+      "fn",
+      -2
+    ],
+    [
+      "fo",
+      -3
+    ],
+    [
+      "fq",
+      -2
+    ],
+    [
+      "fr",
+      -2
+    ],
+    [
+      "fs",
+      -4
+    ],
+    [
+      "fu",
+      -2
+    ],
+    [
+      "fv",
+      -2
+    ],
+    [
+      "fw",
+      -2
+    ],
+    [
+      "fx",
+      -2
+    ],
+    [
+      "fy",
+      -2
+    ],
+    [
+      "fz",
+      -3
+    ],
+    [
+      "gx",
+      -1
+    ],
+    [
+      "gz",
+      -1
+    ],
+    [
+      "ha",
+      -2
+    ],
+    [
+      "hb",
+      -2
+    ],
+    [
+      "hc",
+      -2
+    ],
+    [
+      "hd",
+      -2
+    ],
+    [
+      "he",
+      -2
+    ],
+    [
+      "hf",
+      -2
+    ],
+    [
+      "hg",
+      -2
+    ],
+    [
+      "hh",
+      -2
+    ],
+    [
+      "hi",
+      -2
+    ],
+    [
+      "hj",
+      -7
+    ],
+    [
+      "hk",
+      -2
+    ],
+    [
+      "hl",
+      -2
+    ],
+    [
+      "hm",
+      -2
+    ],
+    [
+      "hn",
+      -2
+    ],
+    [
+      "ho",
+      -2
+    ],
+    [
+      "hp",
+      -2
+    ],
+    [
+      "hq",
+      -2
+    ],
+    [
+      "hr",
+      -4
+    ],
+    [
+      "hs",
+      -3
+    ],
+    [
+      "ht",
+      -2
+    ],
+    [
+      "hu",
+      -2
+    ],
+    [
+      "hv",
+      -2
+    ],
+    [
+      "hw",
+      -2
+    ],
+    [
+      "hx",
+      -2
+    ],
+    [
+      "hy",
+      -2
+    ],
+    [
+      "hz",
+      -2
+    ],
+    [
+      "ia",
+      -2
+    ],
+    [
+      "ib",
+      -2
+    ],
+    [
+      "ic",
+      -2
+    ],
+    [
+      "id",
+      -2
+    ],
+    [
+      "ie",
+      -2
+    ],
+    [
+      "if",
+      -2
+    ],
+    [
+      "ig",
+      -2
+    ],
+    [
+      "ih",
+      -2
+    ],
+    [
+      "ii",
+      -2
+    ],
+    [
+      "ij",
+      -7
+    ],
+    [
+      "ik",
+      -2
+    ],
+    [
+      "il",
+      -2
+    ],
+    [
+      "im",
+      -2
+    ],
+    [
+      "in",
+      -2
+    ],
+    [
+      "io",
+      -2
+    ],
+    [
+      "ip",
+      -2
+    ],
+    [
+      "iq",
+      -2
+    ],
+    [
+      "ir",
+      -4
+    ],
+    [
+      "is",
+      -3
+    ],
+    [
+      "it",
+      -2
+    ],
+    [
+      "iu",
+      -2
+    ],
+    [
+      "iv",
+      -2
+    ],
+    [
+      "iw",
+      -2
+    ],
+    [
+      "ix",
+      -2
+    ],
+    [
+      "iy",
+      -2
+    ],
+    [
+      "iz",
+      -2
+    ],
+    [
+      "jx",
+      -1
+    ],
+    [
+      "jz",
+      -1
+    ],
+    [
+      "ka",
+      -2
+    ],
+    [
+      "kb",
+      -2
+    ],
+    [
+      "kc",
+      -2
+    ],
+    [
+      "kd",
+      -2
+    ],
+    [
+      "ke",
+      -2
+    ],
+    [
+      "kf",
+      -2
+    ],
+    [
+      "kg",
+      -2
+    ],
+    [
+      "kh",
+      -2
+    ],
+    [
+      "ki",
+      -2
+    ],
+    [
+      "kj",
+      -7
+    ],
+    [
+      "kk",
+      -2
+    ],
+    [
+      "kl",
+      -2
+    ],
+    [
+      "km",
+      -2
+    ],
+    [
+      "kn",
+      -2
+    ],
+    [
+      "ko",
+      -2
+    ],
+    [
+      "kp",
+      -2
+    ],
+    [
+      "kq",
+      -2
+    ],
+    [
+      "kr",
+      -4
+    ],
+    [
+      "ks",
+      -3
+    ],
+    [
+      "kt",
+      -2
+    ],
+    [
+      "ku",
+      -2
+    ],
+    [
+      "kv",
+      -2
+    ],
+    [
+      "kw",
+      -2
+    ],
+    [
+      "kx",
+      -2
+    ],
+    [
+      "ky",
+      -2
+    ],
+    [
+      "kz",
+      -2
+    ],
+    [
+      "la",
+      -2
+    ],
+    [
+      "lb",
+      -2
+    ],
+    [
+      "lc",
+      -2
+    ],
+    [
+      "ld",
+      -2
+    ],
+    [
+      "le",
+      -2
+    ],
+    [
+      "lf",
+      -2
+    ],
+    [
+      "lg",
+      -2
+    ],
+    [
+      "lh",
+      -2
+    ],
+    [
+      "li",
+      -2
+    ],
+    [
+      "lj",
+      -7
+    ],
+    [
+      "lk",
+      -2
+    ],
+    [
+      "ll",
+      -2
+    ],
+    [
+      "lm",
+      -2
+    ],
+    [
+      "ln",
+      -2
+    ],
+    [
+      "lo",
+      -2
+    ],
+    [
+      "lp",
+      -2
+    ],
+    [
+      "lq",
+      -2
+    ],
+    [
+      "lr",
+      -4
+    ],
+    [
+      "ls",
+      -3
+    ],
+    [
+      "lt",
+      -2
+    ],
+    [
+      "lu",
+      -2
+    ],
+    [
+      "lv",
+      -2
+    ],
+    [
+      "lw",
+      -2
+    ],
+    [
+      "lx",
+      -2
+    ],
+    [
+      "ly",
+      -2
+    ],
+    [
+      "lz",
+      -2
+    ],
+    [
+      "ma",
+      -2
+    ],
+    [
+      "mb",
+      -2
+    ],
+    [
+      "mc",
+      -2
+    ],
+    [
+      "md",
+      -2
+    ],
+    [
+      "me",
+      -2
+    ],
+    [
+      "mf",
+      -2
+    ],
+    [
+      "mg",
+      -2
+    ],
+    [
+      "mh",
+      -2
+    ],
+    [
+      "mi",
+      -2
+    ],
+    [
+      "mj",
+      -7
+    ],
+    [
+      "mk",
+      -2
+    ],
+    [
+      "ml",
+      -2
+    ],
+    [
+      "mm",
+      -2
+    ],
+    [
+      "mn",
+      -2
+    ],
+    [
+      "mo",
+      -2
+    ],
+    [
+      "mp",
+      -2
+    ],
+    [
+      "mq",
+      -2
+    ],
+    [
+      "mr",
+      -4
+    ],
+    [
+      "ms",
+      -3
+    ],
+    [
+      "mt",
+      -2
+    ],
+    [
+      "mu",
+      -2
+    ],
+    [
+      "mv",
+      -2
+    ],
+    [
+      "mw",
+      -2
+    ],
+    [
+      "mx",
+      -2
+    ],
+    [
+      "my",
+      -2
+    ],
+    [
+      "mz",
+      -2
+    ],
+    [
+      "na",
+      -2
+    ],
+    [
+      "nb",
+      -2
+    ],
+    [
+      "nc",
+      -2
+    ],
+    [
+      "nd",
+      -2
+    ],
+    [
+      "ne",
+      -2
+    ],
+    [
+      "nf",
+      -2
+    ],
+    [
+      "ng",
+      -2
+    ],
+    [
+      "nh",
+      -2
+    ],
+    [
+      "ni",
+      -2
+    ],
+    [
+      "nj",
+      -7
+    ],
+    [
+      "nk",
+      -2
+    ],
+    [
+      "nl",
+      -2
+    ],
+    [
+      "nm",
+      -2
+    ],
+    [
+      "nn",
+      -2
+    ],
+    [
+      "no",
+      -2
+    ],
+    [
+      "np",
+      -2
+    ],
+    [
+      "nq",
+      -2
+    ],
+    [
+      "nr",
+      -4
+    ],
+    [
+      "ns",
+      -3
+    ],
+    [
+      "nt",
+      -2
+    ],
+    [
+      "nu",
+      -2
+    ],
+    [
+      "nv",
+      -2
+    ],
+    [
+      "nw",
+      -2
+    ],
+    [
+      "nx",
+      -2
+    ],
+    [
+      "ny",
+      -2
+    ],
+    [
+      "nz",
+      -2
+    ],
+    [
+      "oa",
+      -2
+    ],
+    [
+      "ob",
+      -2
+    ],
+    [
+      "oc",
+      -2
+    ],
+    [
+      "od",
+      -2
+    ],
+    [
+      "oe",
+      -2
+    ],
+    [
+      "of",
+      -2
+    ],
+    [
+      "og",
+      -2
+    ],
+    [
+      "oh",
+      -2
+    ],
+    [
+      "oi",
+      -2
+    ],
+    [
+      "oj",
+      -7
+    ],
+    [
+      "ok",
+      -2
+    ],
+    [
+      "ol",
+      -2
+    ],
+    [
+      "om",
+      -2
+    ],
+    [
+      "on",
+      -2
+    ],
+    [
+      "oo",
+      -2
+    ],
+    [
+      "op",
+      -2
+    ],
+    [
+      "oq",
+      -2
+    ],
+    [
+      "or",
+      -4
+    ],
+    [
+      "os",
+      -3
+    ],
+    [
+      "ot",
+      -2
+    ],
+    [
+      "ou",
+      -2
+    ],
+    [
+      "ov",
+      -2
+    ],
+    [
+      "ow",
+      -2
+    ],
+    [
+      "ox",
+      -2
+    ],
+    [
+      "oy",
+      -2
+    ],
+    [
+      "oz",
+      -2
+    ],
+    [
+      "pa",
+      -2
+    ],
+    [
+      "pb",
+      -2
+    ],
+    [
+      "pc",
+      -2
+    ],
+    [
+      "pd",
+      -2
+    ],
+    [
+      "pe",
+      -2
+    ],
+    [
+      "pf",
+      -2
+    ],
+    [
+      "pg",
+      -2
+    ],
+    [
+      "ph",
+      -2
+    ],
+    [
+      "pi",
+      -2
+    ],
+    [
+      "pj",
+      -7
+    ],
+    [
+      "pk",
+      -2
+    ],
+    [
+      "pl",
+      -2
+    ],
+    [
+      "pm",
+      -2
+    ],
+    [
+      "pn",
+      -2
+    ],
+    [
+      "po",
+      -2
+    ],
+    [
+      "pp",
+      -2
+    ],
+    [
+      "pq",
+      -2
+    ],
+    [
+      "pr",
+      -4
+    ],
+    [
+      "ps",
+      -3
+    ],
+    [
+      "pt",
+      -2
+    ],
+    [
+      "pu",
+      -2
+    ],
+    [
+      "pv",
+      -2
+    ],
+    [
+      "pw",
+      -2
+    ],
+    [
+      "px",
+      -2
+    ],
+    [
+      "py",
+      -2
+    ],
+    [
+      "pz",
+      -2
+    ],
+    [
+      "qx",
+      -1
+    ],
+    [
+      "qz",
+      -1
+    ],
+    [
+      "ra",
+      -2
+    ],
+    [
+      "rb",
+      -2
+    ],
+    [
+      "rc",
+      -2
+    ],
+    [
+      "rd",
+      -2
+    ],
+    [
+      "re",
+      -2
+    ],
+    [
+      "rf",
+      -2
+    ],
+    [
+      "rg",
+      -2
+    ],
+    [
+      "rh",
+      -2
+    ],
+    [
+      "ri",
+      -2
+    ],
+    [
+      "rj",
+      -7
+    ],
+    [
+      "rk",
+      -2
+    ],
+    [
+      "rl",
+      -2
+    ],
+    [
+      "rm",
+      -2
+    ],
+    [
+      "rn",
+      -2
+    ],
+    [
+      "ro",
+      -2
+    ],
+    [
+      "rp",
+      -2
+    ],
+    [
+      "rq",
+      -2
+    ],
+    [
+      "rr",
+      -4
+    ],
+    [
+      "rs",
+      -3
+    ],
+    [
+      "rt",
+      -2
+    ],
+    [
+      "ru",
+      -2
+    ],
+    [
+      "rv",
+      -2
+    ],
+    [
+      "rw",
+      -2
+    ],
+    [
+      "rx",
+      -2
+    ],
+    [
+      "ry",
+      -2
+    ],
+    [
+      "rz",
+      -2
+    ],
+    [
+      "sa",
+      -1
+    ],
+    [
+      "sb",
+      -1
+    ],
+    [
+      "sc",
+      -1
+    ],
+    [
+      "sd",
+      -1
+    ],
+    [
+      "se",
+      -1
+    ],
+    [
+      "sg",
+      -1
+    ],
+    [
+      "sj",
+      -5
+    ],
+    [
+      "so",
+      -1
+    ],
+    [
+      "sq",
+      -1
+    ],
+    [
+      "sr",
+      -1
+    ],
+    [
+      "sx",
+      -1
+    ],
+    [
+      "sz",
+      -1
+    ],
+    [
+      "ta",
+      -2
+    ],
+    [
+      "tb",
+      -2
+    ],
+    [
+      "tc",
+      -2
+    ],
+    [
+      "td",
+      -2
+    ],
+    [
+      "te",
+      -2
+    ],
+    [
+      "tg",
+      -2
+    ],
+    [
+      "th",
+      -2
+    ],
+    [
+      "ti",
+      -2
+    ],
+    [
+      "tj",
+      -7
+    ],
+    [
+      "tk",
+      -2
+    ],
+    [
+      "tl",
+      -2
+    ],
+    [
+      "tm",
+      -2
+    ],
+    [
+      "tn",
+      -2
+    ],
+    [
+      "to",
+      -2
+    ],
+    [
+      "tp",
+      -2
+    ],
+    [
+      "tq",
+      -2
+    ],
+    [
+      "tr",
+      -4
+    ],
+    [
+      "ts",
+      -3
+    ],
+    [
+      "tu",
+      -2
+    ],
+    [
+      "tv",
+      -2
+    ],
+    [
+      "tw",
+      -2
+    ],
+    [
+      "tx",
+      -2
+    ],
+    [
+      "ty",
+      -2
+    ],
+    [
+      "tz",
+      -2
+    ],
+    [
+      "ua",
+      -2
+    ],
+    [
+      "ub",
+      -2
+    ],
+    [
+      "uc",
+      -2
+    ],
+    [
+      "ud",
+      -2
+    ],
+    [
+      "ue",
+      -2
+    ],
+    [
+      "uf",
+      -2
+    ],
+    [
+      "ug",
+      -2
+    ],
+    [
+      "uh",
+      -2
+    ],
+    [
+      "ui",
+      -2
+    ],
+    [
+      "uj",
+      -7
+    ],
+    [
+      "uk",
+      -2
+    ],
+    [
+      "ul",
+      -2
+    ],
+    [
+      "um",
+      -2
+    ],
+    [
+      "un",
+      -2
+    ],
+    [
+      "uo",
+      -2
+    ],
+    [
+      "up",
+      -2
+    ],
+    [
+      "uq",
+      -2
+    ],
+    [
+      "ur",
+      -4
+    ],
+    [
+      "us",
+      -3
+    ],
+    [
+      "ut",
+      -2
+    ],
+    [
+      "uu",
+      -2
+    ],
+    [
+      "uv",
+      -2
+    ],
+    [
+      "uw",
+      -2
+    ],
+    [
+      "ux",
+      -2
+    ],
+    [
+      "uy",
+      -2
+    ],
+    [
+      "uz",
+      -2
+    ],
+    [
+      "va",
+      -2
+    ],
+    [
+      "vb",
+      -2
+    ],
+    [
+      "vc",
+      -2
+    ],
+    [
+      "vd",
+      -2
+    ],
+    [
+      "ve",
+      -2
+    ],
+    [
+      "vf",
+      -2
+    ],
+    [
+      "vg",
+      -2
+    ],
+    [
+      "vh",
+      -2
+    ],
+    [
+      "vi",
+      -2
+    ],
+    [
+      "vj",
+      -7
+    ],
+    [
+      "vk",
+      -2
+    ],
+    [
+      "vl",
+      -2
+    ],
+    [
+      "vm",
+      -2
+    ],
+    [
+      "vn",
+      -2
+    ],
+    [
+      "vo",
+      -2
+    ],
+    [
+      "vp",
+      -2
+    ],
+    [
+      "vq",
+      -2
+    ],
+    [
+      "vr",
+      -4
+    ],
+    [
+      "vs",
+      -3
+    ],
+    [
+      "vt",
+      -2
+    ],
+    [
+      "vu",
+      -2
+    ],
+    [
+      "vv",
+      -2
+    ],
+    [
+      "vw",
+      -2
+    ],
+    [
+      "vx",
+      -2
+    ],
+    [
+      "vy",
+      -2
+    ],
+    [
+      "vz",
+      -2
+    ],
+    [
+      "wa",
+      -2
+    ],
+    [
+      "wb",
+      -2
+    ],
+    [
+      "wc",
+      -2
+    ],
+    [
+      "wd",
+      -2
+    ],
+    [
+      "we",
+      -2
+    ],
+    [
+      "wf",
+      -2
+    ],
+    [
+      "wg",
+      -2
+    ],
+    [
+      "wh",
+      -2
+    ],
+    [
+      "wi",
+      -2
+    ],
+    [
+      "wj",
+      -7
+    ],
+    [
+      "wk",
+      -2
+    ],
+    [
+      "wl",
+      -2
+    ],
+    [
+      "wm",
+      -2
+    ],
+    [
+      "wn",
+      -2
+    ],
+    [
+      "wo",
+      -2
+    ],
+    [
+      "wp",
+      -2
+    ],
+    [
+      "wq",
+      -2
+    ],
+    [
+      "wr",
+      -4
+    ],
+    [
+      "ws",
+      -3
+    ],
+    [
+      "wt",
+      -2
+    ],
+    [
+      "wu",
+      -2
+    ],
+    [
+      "wv",
+      -2
+    ],
+    [
+      "ww",
+      -2
+    ],
+    [
+      "wx",
+      -2
+    ],
+    [
+      "wy",
+      -2
+    ],
+    [
+      "wz",
+      -2
+    ],
+    [
+      "xa",
+      -2
+    ],
+    [
+      "xb",
+      -2
+    ],
+    [
+      "xc",
+      -2
+    ],
+    [
+      "xd",
+      -2
+    ],
+    [
+      "xe",
+      -2
+    ],
+    [
+      "xg",
+      -2
+    ],
+    [
+      "xh",
+      -2
+    ],
+    [
+      "xi",
+      -2
+    ],
+    [
+      "xj",
+      -7
+    ],
+    [
+      "xk",
+      -2
+    ],
+    [
+      "xl",
+      -2
+    ],
+    [
+      "xm",
+      -2
+    ],
+    [
+      "xn",
+      -2
+    ],
+    [
+      "xo",
+      -2
+    ],
+    [
+      "xp",
+      -2
+    ],
+    [
+      "xq",
+      -2
+    ],
+    [
+      "xr",
+      -4
+    ],
+    [
+      "xs",
+      -3
+    ],
+    [
+      "xu",
+      -2
+    ],
+    [
+      "xv",
+      -2
+    ],
+    [
+      "xw",
+      -2
+    ],
+    [
+      "xx",
+      -2
+    ],
+    [
+      "xy",
+      -2
+    ],
+    [
+      "xz",
+      -2
+    ],
+    [
+      "yx",
+      -1
+    ],
+    [
+      "yz",
+      -1
+    ],
+    [
+      "za",
+      -2
+    ],
+    [
+      "zb",
+      -2
+    ],
+    [
+      "zc",
+      -2
+    ],
+    [
+      "zd",
+      -2
+    ],
+    [
+      "ze",
+      -2
+    ],
+    [
+      "zg",
+      -1
+    ],
+    [
+      "zi",
+      -2
+    ],
+    [
+      "zl",
+      -2
+    ],
+    [
+      "zo",
+      -2
+    ],
+    [
+      "zq",
+      -2
+    ],
+    [
+      "zr",
+      -1
+    ],
+    [
+      "zs",
+      -2
+    ],
+    [
+      "zt",
+      -2
+    ],
+    [
+      "zu",
+      -2
+    ],
+    [
+      "zv",
+      -2
+    ],
+    [
+      "zw",
+      -2
+    ],
+    [
+      "zx",
+      -2
+    ],
+    [
+      "zy",
+      -1
+    ],
+    [
+      "zz",
+      -1
+    ]
+  ]
+}

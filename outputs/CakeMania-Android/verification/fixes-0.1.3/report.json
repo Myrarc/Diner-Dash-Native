@@ -1,0 +1,434 @@
+{
+  "created_utc": "2026-10-10T03:55:35.985530+00:00",
+  "version": "0.1.3",
+  "version_code": 4,
+  "apk_binding": {
+    "package": "local.cakemania",
+    "version": "0.1.3",
+    "min_sdk": 23,
+    "target_sdk": 36,
+    "bytes": 27639977,
+    "apk_sha256": "aa141dfcbaa4826e5713236f58f50421b17ce45616b83beacddd51554feb17b3",
+    "signature_verified": true,
+    "signing": "local prototype key, not a Play release",
+    "source_sha256": {
+      "src/local/cakemania/AssetStore.java": "421878fff1cf16d3efd05c8694c446f8e0aa6a559de00d78608b3b6d8aa2277c",
+      "src/local/cakemania/CareerState.java": "c1b41ec80673c6e50e27b62ae977beed1649a2a1d4153ac5f6d51cf2eb206979",
+      "src/local/cakemania/GameAudio.java": "c459b6ca811c1bc270a62e55059786cef782d5b44115bc2fb699c5639a41261b",
+      "src/local/cakemania/GameData.java": "84a0371d4c6af9c04b24e6ddb0a41c655ead37a73f9ead7a0f115b043e786b96",
+      "src/local/cakemania/GameEngine.java": "d23ec0c1934dd2cecdb62b62882c5522491e7c5bf7cdac9de9683f94d78cffbe",
+      "src/local/cakemania/GameView.java": "362bca30640466ce2a455c7b7debe139a81f384ffc23e62915fbedf910c50d3a",
+      "src/local/cakemania/MainActivity.java": "c9d1ba530c9c79816e6b510c104ed3a9f27c9176b146d10fc5d4a9ffa1b645e8",
+      "src/local/cakemania/SpriteRules.java": "c8fd42fb01462319d2aa30f28f1e97e71fa8763ab615ab2be783af67a4ea02c0",
+      "src/local/cakemania/TutorialController.java": "7a72a193abb60150bfb57235e566fe450583d6204f6359230e4e725e5dcd2680"
+    }
+  },
+  "classes_dex_sha256": "f371f0a2932d161e7449311accfe38fd3d74e423aa774adf116fc82e713bc990",
+  "source_rebuild_bytecode_identical": true,
+  "installed_apk_matches": true,
+  "update_signer_unchanged": true,
+  "apk_asset_files_identical": 838,
+  "host_suites": [
+    {
+      "suite": "GameEngineTest",
+      "passed": true,
+      "log": "host/GameEngineTest.log",
+      "test_sha256": "b1deb907d010d15e511382ddacc58fbafec2a73ba256bd4e28c543334ac60f76"
+    },
+    {
+      "suite": "NativeMechanicsTest",
+      "passed": true,
+      "log": "host/NativeMechanicsTest.log",
+      "test_sha256": "07b4664a2d43721387626edcac168a848d6e9956195150fd529a32229a2a610d"
+    },
+    {
+      "suite": "SpriteRulesTest",
+      "passed": true,
+      "log": "host/SpriteRulesTest.log",
+      "test_sha256": "2a4d8041bb2548151110af148d1e76cb75023470e824a546aa3be8d44cc7776c"
+    },
+    {
+      "suite": "FlowRulesTest",
+      "passed": true,
+      "log": "host/FlowRulesTest.log",
+      "test_sha256": "a3a54e57883944c7fd0b8a53595ee127d0049a42eb5ab58d35ad6c5e805c5962"
+    },
+    {
+      "suite": "CareerStateTest",
+      "passed": true,
+      "log": "host/CareerStateTest.log",
+      "test_sha256": "fdd6e86cd3ea23fa3f7a6441573a45b36ff954f95b0069c7a37fed09bc4ef75f"
+    },
+    {
+      "suite": "ResultAccountingTest",
+      "passed": true,
+      "log": "host/ResultAccountingTest.log",
+      "test_sha256": "3ea7a5ced81ccac967f6f250872e9fc98bc4acbfb2378b7f9eb1e4ff2a8a0a9b"
+    }
+  ],
+  "android_probes": {
+    "passed": true,
+    "apk_sha256": "aa141dfcbaa4826e5713236f58f50421b17ce45616b83beacddd51554feb17b3",
+    "api": 30,
+    "jill_render_cases": 64,
+    "customer_render_cases": 615,
+    "month_text_screens": 144,
+    "activity_result_checks": 22,
+    "bitmap_cache_identity": true,
+    "independent_volume_bounds": true
+  },
+  "month_font_evidence": {
+    "binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+    "startup_function": "0041d290",
+    "scales": {
+      "FONT_DEFAULT": {
+        "address": "00581df8",
+        "scale": 0.949999988079071
+      },
+      "FONT_DIALOG16": {
+        "address": "00581de0",
+        "scale": 0.6666667
+      }
+    },
+    "font_scale_setter": "00493810",
+    "scaled_atlas_and_metrics": "004ab650",
+    "character_width": "0049fc20",
+    "integer_conversion": "00560568",
+    "word_wrap": "004a7230",
+    "line_spacing_getter": "00493560",
+    "XML_text_font_and_size_ignored": true,
+    "rect_height_ignored_by_wrapper": true,
+    "pixel_sampling_equivalence_to_Windows_verified": false,
+    "native_line_metrics": {
+      "FONT_DEFAULT": {
+        "atlas_height": 24,
+        "scaled_height": 22
+      },
+      "FONT_DIALOG16": {
+        "atlas_height": 39,
+        "scaled_height": 26,
+        "success_spacing": 5,
+        "success_line_step": 31
+      }
+    },
+    "field_mapping": {
+      "layer_point_size": "0x12060",
+      "layer_atlas_height": "0x1206c",
+      "layer_glyph_height_fallback": "0x12070",
+      "font_scaled_height": "0x0c",
+      "font_spacing_offset": "0x10"
+    },
+    "metric_mapping_evidence": [
+      "004b71e0",
+      "004b93a0",
+      "004ab650",
+      "00493560"
+    ]
+  },
+  "touch_checks": {
+    "menu-touch": {
+      "passed": true,
+      "report": "menu-touch/report.json"
+    },
+    "tutorial-touch": {
+      "passed": true,
+      "report": "tutorial-touch/report.json"
+    },
+    "machine-touch": {
+      "passed": true,
+      "report": "machine-touch/report.json"
+    }
+  },
+  "asset_checks": {
+    "passed": true,
+    "imported_files_hashed": 838,
+    "resource_files_checked": 663,
+    "images_verified": 608,
+    "customer_animation_sequences_checked": 205,
+    "decoded_pcm_audio_matched_to_originals": 51,
+    "unresolved_references_in_unused_original_screens": {
+      "IMAGE_COMICS_2": [
+        "config/comicsscreen/comics_screen.xml"
+      ],
+      "IMAGE_COMICS_3": [
+        "config/comicsscreen/comics_screen.xml"
+      ],
+      "IMAGE_COMICS_4": [
+        "config/comicsscreen/comics_screen.xml"
+      ],
+      "IMAGE_CREDITS_SCREEN": [
+        "config/creditsscreen/credits_screen.xml"
+      ],
+      "IMAGE_MAPSCREEN_BUTTON_DIS": [
+        "config/mapscreen/map_env.xml"
+      ],
+      "IMAGE_NONE": [
+        "config/mainconfig/levels_text_eng_endless.xml"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "title": "Jill shoe overlay replaces her body",
+      "status": "fixed",
+      "change": "Body and shoe overlays render separately.",
+      "verification": "64 Android direction/carry/shoe cases",
+      "remaining_boundary": "",
+      "native_addresses": [
+        "00402df0"
+      ]
+    },
+    {
+      "id": "F02",
+      "title": "Lives and terminal game-over flow missing",
+      "status": "partial",
+      "change": "Four lives, terminal game-over, once-only bank/points/unlock accounting and persistence.",
+      "verification": "22 real Activity result/persistence checks",
+      "remaining_boundary": "Exact native failed-save order, restart semantics and game-over animation remain untraced.",
+      "native_addresses": [
+        "00422b10",
+        "0041d890"
+      ]
+    },
+    {
+      "id": "F03",
+      "title": "Display-case impulse order selection missing",
+      "status": "partial",
+      "change": "Native display impulse selection copies and reserves an eligible candidate, including duplicate rejection.",
+      "verification": "NativeMechanicsTest",
+      "remaining_boundary": "Native consumption of the source cake after copying remains unknown.",
+      "native_addresses": [
+        "0040feb0"
+      ]
+    },
+    {
+      "id": "F04",
+      "title": "Scripted tutorial flow missing",
+      "status": "partial",
+      "change": "Both supplied scripted practice lessons run in their original room outside the career ledger, preserving the native input-driven gates.",
+      "verification": "FlowRulesTest and both real-touch lessons, with matching delivery and cash checks",
+      "remaining_boundary": "Order selection-index translation is inferred from authored controls; incomplete practice restarts and native mid-lesson resume is unresolved. Like the native code, a gate can advance on a failed early click; the passing player path waits for visible product readiness.",
+      "native_addresses": [
+        "00451c50",
+        "00450f20"
+      ]
+    },
+    {
+      "id": "F05",
+      "title": "Special-customer heart events ignored",
+      "status": "fixed",
+      "change": "Authored start, served and periodic heart events broadcast by source GUID.",
+      "verification": "NativeMechanicsTest and native event routine review",
+      "remaining_boundary": "",
+      "native_addresses": [
+        "00414200",
+        "00412970",
+        "004121b0"
+      ]
+    },
+    {
+      "id": "F06",
+      "title": "Order selection omits missing-candidate weights",
+      "status": "fixed",
+      "change": "Missing-candidate weights use remaining percentage; explicit zero weights and native tail selection are preserved.",
+      "verification": "NativeMechanicsTest and native selection routine review",
+      "remaining_boundary": "",
+      "native_addresses": [
+        "0040f430"
+      ]
+    },
+    {
+      "id": "F07",
+      "title": "Order generation happens before menu activation",
+      "status": "fixed",
+      "change": "Customer order generation begins on menu reading activation.",
+      "verification": "NativeMechanicsTest",
+      "remaining_boundary": "",
+      "native_addresses": [
+        "004163a0"
+      ]
+    },
+    {
+      "id": "F08",
+      "title": "Cupcake refill omits native transition phase",
+      "status": "partial",
+      "change": "Empty microwave starts refill on the following tick, with strict-negative timer and door phases.",
+      "verification": "NativeMechanicsTest exact-zero and phase boundaries",
+      "remaining_boundary": "Initial enabled stock of four remains unproven against the native constructor.",
+      "native_addresses": [
+        "004348d0"
+      ]
+    },
+    {
+      "id": "F09",
+      "title": "Cookie-eating and positive TV visual states missing",
+      "status": "fixed",
+      "change": "Independent normal/menu/happy/bored/eating state transitions and temporary sequence endings.",
+      "verification": "NativeMechanicsTest and 615 real Android customer draws",
+      "remaining_boundary": "",
+      "native_addresses": [
+        "0040a190",
+        "004121b0"
+      ]
+    },
+    {
+      "id": "F10",
+      "title": "Customer timing ranges and sequence endings ignored",
+      "status": "fixed",
+      "change": "All authored timing ranges, default interval, strict one-frame advancement and sequence endings.",
+      "verification": "NativeMechanicsTest and 615 real Android customer draws",
+      "remaining_boundary": "",
+      "native_addresses": [
+        "00410e80",
+        "0040b280",
+        "0040d370"
+      ]
+    },
+    {
+      "id": "F11",
+      "title": "Jill idle/frame direction/rates differ",
+      "status": "fixed",
+      "change": "Asymmetric direction sectors, reverse phase/truncation, two-second idle hold and paused animation.",
+      "verification": "SpriteRulesTest and 64 real Android Jill draws",
+      "remaining_boundary": "",
+      "native_addresses": [
+        "00403460",
+        "004040e0"
+      ]
+    },
+    {
+      "id": "F12",
+      "title": "Jill perspective, carry anchors and render flags differ",
+      "status": "partial",
+      "change": "Native perspective, cake scale, body/shoe offsets and cake behind/front render flags.",
+      "verification": "SpriteRulesTest and visual review of Android matrix",
+      "remaining_boundary": "Exact native child carry anchors, cake composition and Windows FPU/pixel rounding remain unresolved.",
+      "native_addresses": [
+        "00402df0"
+      ]
+    },
+    {
+      "id": "F13",
+      "title": "Oven intermediate visual phases missing",
+      "status": "partial",
+      "change": "Oven intermediate production/door/pickup visual phases are rendered.",
+      "verification": "GameEngineTest and machine touch captures",
+      "remaining_boundary": "Exact native animation positioning and timing have not been compared with Windows execution.",
+      "native_addresses": [
+        "00434020",
+        "00434d30"
+      ]
+    },
+    {
+      "id": "F14",
+      "title": "FormShelf hit routing and independent cookie slots missing",
+      "status": "fixed",
+      "change": "Direct FormShelf selection, independent cookie slots and display shelf routing outside the parent body.",
+      "verification": "NativeMechanicsTest and actual Android shelf input",
+      "remaining_boundary": "",
+      "native_addresses": [
+        "00434480",
+        "00435820",
+        "0044ab40"
+      ]
+    },
+    {
+      "id": "F15",
+      "title": "Named profiles and native save-slot flow missing",
+      "status": "partial",
+      "change": "Up to six named profiles isolate progression, purchases, lives and practice completion; audio settings are shared.",
+      "verification": "CareerStateTest and real-touch profile create/select checks",
+      "remaining_boundary": "Native record layout, save-slot UI and mid-month persistence remain unresolved.",
+      "native_addresses": [
+        "00422670",
+        "004655a0",
+        "00465f90"
+      ]
+    },
+    {
+      "id": "F16",
+      "title": "Native map/comic/results/HUD flow simplified",
+      "status": "partial",
+      "change": "Authored map, result data and HUD labels are translated; intro/result fonts use recovered startup scales, integer metrics and screen spacing, ignoring obsolete XML font/size attributes. Available comics are retained.",
+      "verification": "ResultAccountingTest, 144 Android month text screens, real Activity checks, menu and machine touch",
+      "remaining_boundary": "Other screen font scaling/placement, exact menu/result animations, Windows font resampling, star fan/native clock and missing intermediate comics remain open.",
+      "native_addresses": [
+        "0041c460",
+        "00456610",
+        "00454c50"
+      ]
+    },
+    {
+      "id": "F17",
+      "title": "Endless mode and original volume controls missing",
+      "status": "partial",
+      "change": "Music and SFX levels have independent live sliders and persisted settings.",
+      "verification": "Android volume probe and real-touch sliders",
+      "remaining_boundary": "Endless mode is blocked by missing supplied endless level/customer files.",
+      "native_addresses": [
+        "00465510",
+        "00460970"
+      ]
+    },
+    {
+      "id": "F18",
+      "title": "Native machine and goal sound events missing",
+      "status": "fixed",
+      "change": "Translated oven/cookie/goal/closing sound events and one-shot boundaries.",
+      "verification": "NativeMechanicsTest",
+      "remaining_boundary": "Audible mix and seamless loops have not been listened to or compared.",
+      "native_addresses": [
+        "004348d0",
+        "00436d50",
+        "0044d8f0"
+      ]
+    },
+    {
+      "id": "F19",
+      "title": "Purchased TV position retains stale base geometry",
+      "status": "fixed",
+      "change": "Purchased station definitions refresh active geometry, including TV position.",
+      "verification": "NativeMechanicsTest",
+      "remaining_boundary": "",
+      "native_addresses": [
+        "0043e7d0",
+        "00441840"
+      ]
+    },
+    {
+      "id": "F20",
+      "title": "Equivalent repeated sprite frames use different cache keys",
+      "status": "fixed",
+      "change": "Frame indices normalize before cache keys; loops and reverse frames reuse the same Bitmap.",
+      "verification": "Android bitmap identity probe",
+      "remaining_boundary": "",
+      "native_addresses": []
+    }
+  ],
+  "historical_audit": {
+    "version": "0.1.2",
+    "apk_sha256": "ebbe1484864a44a3387603fa687ab73d8d8296846959dd5e72df8db02a92b674",
+    "modified": false,
+    "path": "../deep-audit/report.json"
+  },
+  "coverage_boundary": "Selected native routines and current Java files; all native functions/branches have not been reviewed.",
+  "whole_game_1_to_1_verified": false,
+  "focused_release_review": "Independent read-only review found no confirmed release-blocking regression in selected result/tutorial/shelf/render/volume flows. This was not a whole-game native audit.",
+  "not_verified": [
+    "Original Windows runtime",
+    "Physical Android hardware",
+    "Other Android API versions",
+    "Audible mixing/loop quality",
+    "Affordable full career and human difficulty"
+  ],
+  "remaining": [
+    "Native movement cadence/start node, corner rounding, free-floor and full queue cancellation",
+    "Native initial cookie stock, display source consumption and exact carry child anchors",
+    "Native failed-save/restart and mid-month/in-progress tutorial persistence",
+    "Closing pending-event and final owned-item shop filtering branches",
+    "Other screen font scaling/placement, Windows font resampling, exact menu/result/game-over animation, clock and star fan",
+    "Missing supplied endless gameplay data, intermediate comic and credits resources"
+  ],
+  "emulator_environment_note": "System UI ANR cleared; API30 immersive accessibility clipping required checking actual native button rectangles. Test harness changes did not alter app controls."
+}

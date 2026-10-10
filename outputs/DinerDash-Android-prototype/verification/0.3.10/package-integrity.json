@@ -1,0 +1,15 @@
+{
+  "version": "0.3.10",
+  "version_code": 13,
+  "bytes": 34597962,
+  "apk_sha256": "df50fe6037f4ad0fc0fc70a19b9621697a12ad86ae05f63600c43a5ba440bb61",
+  "apk_asset_resource_entries_unchanged": 1993,
+  "source_asset_resource_files_unchanged": 1993,
+  "uncompressed_mp3": 62,
+  "uncompressed_derived_music_wav": 26,
+  "crc_verified": true,
+  "production_source_hashes_match_build": true,
+  "signature_verified": true,
+  "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf",
+  "installed_apk_bytes_match": true
+}

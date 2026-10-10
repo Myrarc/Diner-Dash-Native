@@ -1,0 +1,102 @@
+{
+  "version": "0.1.9",
+  "version_code": 10,
+  "created_at": "2026-10-10T10:13:49.701895+00:00",
+  "apk_sha256": "5d5eb08ac342b77c8de3719fdd177fccc4d46a813f0d58fb4c120377b99cdc65",
+  "apk_bytes": 27648169,
+  "source_sha256": {
+    "src/local/cakemania/AssetStore.java": "10fb40a82fb297c243c375f05ae8ca1d33d851853f7fa4c2df9c3779d901ffe4",
+    "src/local/cakemania/CareerState.java": "c1b41ec80673c6e50e27b62ae977beed1649a2a1d4153ac5f6d51cf2eb206979",
+    "src/local/cakemania/GameAudio.java": "c459b6ca811c1bc270a62e55059786cef782d5b44115bc2fb699c5639a41261b",
+    "src/local/cakemania/GameData.java": "ef43599760f0202e36cd1cdba944205b1a92214e1375d3695d37be5b2d90b18f",
+    "src/local/cakemania/GameEngine.java": "14486f313ccf4202f519082308fa8922d870c61fb67931781f4f39ae694e9d1c",
+    "src/local/cakemania/GameView.java": "02cc528d35a809f7f81f9fdad0f496fe7e01616d041ed8a4fd3e6b7ac2ddfc94",
+    "src/local/cakemania/MainActivity.java": "be6be6efca7e80a3e82ba27349e64ce90dcff0487f6d69d6c6c3903295ecdb96",
+    "src/local/cakemania/SpriteRules.java": "f667ef2e0b02c7d3c9852b4f7f12342fad6cc7f8226cc69eaa6df6a82adaf707",
+    "src/local/cakemania/TutorialController.java": "7a72a193abb60150bfb57235e566fe450583d6204f6359230e4e725e5dcd2680"
+  },
+  "cause": "Order bubble color 0xebffffef changed shared bitmap Paint alpha to 235 and did not restore it; cakes and subsequent sprites inherited 92.16 percent opacity.",
+  "fix": "UI panels restore the previous Paint color, including alpha, after drawing. Imported cake textures and their edge transparency remain unchanged.",
+  "baseline": {
+    "installed_apk_sha256": "042f8a56b137d4c6c94e2a683c11194d10153d91db3de7a933eed25bbce9a43b",
+    "expected_alpha": 255,
+    "observed_alpha": 235,
+    "opacity_fraction": 0.9215686274509803,
+    "regression_reproduced": true
+  },
+  "native_assets_evidence": "native-assets.json",
+  "verified_final_apk": {
+    "android_api": 30,
+    "installed_apk_matches": true,
+    "source_matches": true,
+    "android_probes": [
+      "CakeOpacityProbe",
+      "VisualGeometryProbe"
+    ],
+    "cake_opacity_assertions": 28154,
+    "oven_cake_shapes_compared": 8,
+    "exact_native_opaque_texel_shapes": 4,
+    "real_touch_shape_color_pairs": [
+      {
+        "shape": 7,
+        "color": 0,
+        "bake_pickup_frost_pickup_trash": true
+      },
+      {
+        "shape": 1,
+        "color": 3,
+        "bake_pickup_frost_pickup_trash": true
+      },
+      {
+        "shape": 2,
+        "color": 1,
+        "bake_pickup_frost_pickup_trash": true
+      },
+      {
+        "shape": 3,
+        "color": 2,
+        "bake_pickup_frost_pickup_trash": true
+      }
+    ],
+    "menu_handed_before_first_bake": true,
+    "asset_entries_unchanged": 838,
+    "prior_archived_verification_files_unchanged": 684
+  },
+  "personally_inspected_images": [
+    "baseline/room.png",
+    "android/opacity-room.png",
+    "android/visual-oven-states.png",
+    "selection-touch/oven-7-ready.png"
+  ],
+  "image_sha256": {
+    "baseline/room.png": "88fde0ed791d8f8c0c3861a8a7e7ee454d17e70f4b69007facced295196092e7",
+    "android/opacity-room.png": "acf00a3eab20a5e2389ccce09309afdc106d8f1b0efc68217b0b652b725de843",
+    "android/visual-oven-states.png": "fbe4a26c1afa1ccebb239f02261da115c41e59c00938915109d302ec5cbc14e5",
+    "selection-touch/oven-7-ready.png": "aa1f13e747d0901f70da31650378f1fc6fdb85fe3c5283acf8df3ad856296726"
+  },
+  "test_source_sha256": {
+    "CakeOpacityProbe": "03b61dcdf1adf1678aa1f7ea627243e9a90aa74609ab23d9fcb99144978d3e34",
+    "VisualGeometryProbe": "06c374d9d8202ddefabf69fa77c985f403ae364db8117c569632b492089654e7"
+  },
+  "touch_script_sha256": "43507bc289bca4ed650a583953c8b49eaa51debf7678423e5be3ef46fb100ceb",
+  "probe_runner_sha256": "3428d3ddf8b85d92a146230c7679978b4abe4ac375f038c13309ce5d342c9647",
+  "cleanup": {
+    "preferences_restored": true,
+    "display_settings_restored": true,
+    "test_package_removed": true,
+    "generated_qa_files_removed": true,
+    "owned_emulator_stopped": true,
+    "owned_emulator_pid": 5531,
+    "notes": "Only task-owned emulator, instrumentation package and generated QA files were removed; development APK remains installed. Original preference bytes were restored exactly."
+  },
+  "not_repeated": [
+    "Full January/career service and host gameplay simulations",
+    "Menu, story, tutorial, all 41 customer and all 64 Jill direction/carry/shoe matrices",
+    "Audio decoding and audible loop checks"
+  ],
+  "remaining": [
+    "Windows runtime and physical Android comparison",
+    "Existing fidelity ledger gaps, including exact native cake child/shadow composition and oven animation/layer curves"
+  ],
+  "notes": "Bounded shared-Paint state repair. Pixel and actual-input checks use the installed production renderer. Current evidence does not establish full Windows equivalence."
+}

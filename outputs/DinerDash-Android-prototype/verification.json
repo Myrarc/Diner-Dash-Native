@@ -1,0 +1,100 @@
+{
+  "version": "0.3.12",
+  "scope": "Integrate the two approved recovered fonts; exclude Daniel and Daniel Black",
+  "apk_sha256": "78bfef6348d2da35069fc0b2d55e4ea42684b1acbb390a7d1e001b7e8fe2c0c7",
+  "previous_apk_sha256": "56a6a4bffdb2f8238e289ce0cb096f07f3ad500f9a97ff1d184a36a508fd036b",
+  "fonts": {
+    "packaged": [
+      "Komika Axis",
+      "Mr.B"
+    ],
+    "excluded": [
+      "Daniel",
+      "Daniel Black"
+    ],
+    "receipt_family": "Android casual unchanged",
+    "role_assignment": "User-approved reconstruction; only some active original XMED font runs are established",
+    "font_hashes": {
+      "Mr.B.ttf": "05be4a934439ef56d9480c66fd58fc5e022cfc861a41a90fc87403e5ac7e9e7a",
+      "Komika-Axis.ttf": "f1e5b1849eca93fd9efe7fbe16e75cfcb70d8a538acec01cbd625affd2d36e38"
+    }
+  },
+  "installed_suites": {
+    "AndroidAnimationTest": 80,
+    "AndroidProgressTest": 58
+  },
+  "installed_checks": 138,
+  "native_font_probe": {
+    "font_loading_passed": true,
+    "screens_per_viewport": 8,
+    "viewports": [
+      "phone 2280x1080, density 440",
+      "simulated tablet 2560x1600, density 240"
+    ],
+    "fixtures": "Synthetic visual states; real installed Activity/UIAutomation captures",
+    "captures_inspected": 16
+  },
+  "package_integrity": {
+    "version_code": 15,
+    "bytes": 34704599,
+    "signature_verified": true,
+    "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf",
+    "crc_verified": true,
+    "asset_resource_entries_unchanged": 1993,
+    "added_font_entries": 2,
+    "only_changed_production_java": [
+      "src/local/dinerdash/prototype/AssetStore.java",
+      "src/local/dinerdash/prototype/GameView.java",
+      "src/local/dinerdash/prototype/MainActivity.java",
+      "src/local/dinerdash/prototype/MenuView.java"
+    ],
+    "preference_files_restored_byte_identical": 11,
+    "preference_files_unchanged_before_external_restore": 10,
+    "post_fixture_changes": [
+      {
+        "file": "shared_prefs/career.xml",
+        "semantic_changed_keys": []
+      }
+    ],
+    "installed_apk_bytes_match": true,
+    "installed_apk_sha256": "78bfef6348d2da35069fc0b2d55e4ea42684b1acbb390a7d1e001b7e8fe2c0c7",
+    "screen_size_restored": true,
+    "screen_density_restored": true
+  },
+  "production_source_hashes": {
+    "src/local/dinerdash/prototype/AssetStore.java": "2c9f4d8a88331e6a5ccf1a830d5696b44d09f8ae4bfb699308ed4cd65e09f131",
+    "src/local/dinerdash/prototype/GameAudio.java": "5c1ad05181f91f822a59d1ecc8399695a76fa571c823e2d42bf8a11c505cc488",
+    "src/local/dinerdash/prototype/GameEngine.java": "afda8a75eb2bf5049871f7ba90f6162fd70bc08e47d16adad834abbc66cce77d",
+    "src/local/dinerdash/prototype/GameView.java": "a4f3368433c9a859270e9a8836ef87cf6406203535c7c35b05a8cef74392979a",
+    "src/local/dinerdash/prototype/LevelData.java": "a03fe46f9e9675e60391cbb5dd67dffedabb651ae599b02aff86dbb4e298db56",
+    "src/local/dinerdash/prototype/MainActivity.java": "30c723c7a1f9f0e7739152593f7eafa840f9b2ebf7d124cec78ac8dd94ea7d73",
+    "src/local/dinerdash/prototype/MenuView.java": "74f40f7005ad6121931561a3d089bd6a9f3bf19ca4ff6dd4b2a5f3be4b691894",
+    "src/local/dinerdash/prototype/SpriteRenderer.java": "b31d909591473edae7a0e9c8b44e84693cbdede45a61cb18df69aedbb0158c10"
+  },
+  "gameplay_sources_unchanged": true,
+  "audio_source_and_assets_unchanged": true,
+  "physical_device_tested": false,
+  "windows_runtime_executed": false,
+  "full_natural_shift_tested": false,
+  "tests_skipped": [
+    {
+      "suites": [
+        "All pure gameplay model suites",
+        "AndroidPatienceTest",
+        "AndroidGuestTest",
+        "AndroidSpriteAuditTest",
+        "AndroidBugRegressionTest",
+        "AndroidAudioTest"
+      ],
+      "reason": "Font-only callers/assets changed. Animation and installed menu/save checks rerun. Gameplay, SpriteRenderer and audio byte-identical to 0.3.11; historical evidence stays separate."
+    }
+  ],
+  "known_limits": [
+    "Source font-table names do not prove every active original font run",
+    "Exact Windows rasterization and original PFR hinting are unverified",
+    "Existing dark shop/profile text color retained; low contrast remains",
+    "The fixed original Canvas composition does not implement native system text scaling",
+    "Music-reference sequencing comparison remains paused"
+  ],
+  "evidence": "verification/0.3.12/"
+}

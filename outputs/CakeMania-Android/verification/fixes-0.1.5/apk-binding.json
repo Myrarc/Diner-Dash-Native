@@ -1,0 +1,8 @@
+{
+  "apk_sha256": "3a3a48b5086b4f6bf9cc406bd68ebb6ac6f7fffe66f9ecfab59a9b5e67b41ae7",
+  "installed_sha256": "3a3a48b5086b4f6bf9cc406bd68ebb6ac6f7fffe66f9ecfab59a9b5e67b41ae7",
+  "installed_matches": true,
+  "source_metadata_matches": true,
+  "classes_dex_sha256": "7f55845f0cbac70e911825a5d3c4133f1f0b32cdafc7763a41d1244b6c368e96",
+  "api": "30"
+}

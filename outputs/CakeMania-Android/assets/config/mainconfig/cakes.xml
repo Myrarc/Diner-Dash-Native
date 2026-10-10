@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Cakes>
+	<Cake id="0" name="Tree">
+		<CakeBase id="0" image="IMAGE_CAKE_BASE_TREE_1" image_sm="IMAGE_CAKE_BASE_TREE_SM_1" height="22" height_d="0" height_sm="22" height_sm_d="0" />
+		<CakeFrost id="0" image="IMAGE_CAKE_FROST_TREE_1" image_sm="IMAGE_CAKE_FROST_TREE_SM_1" height="15" height_d="10" height_sm="5" height_sm_d="14" />
+		<CakeFrost id="1" image="IMAGE_CAKE_FROST_TREE_2" image_sm="IMAGE_CAKE_FROST_TREE_SM_2" height="15" height_d="10" height_sm="5" height_sm_d="14" />
+		<CakeFrost id="2" image="IMAGE_CAKE_FROST_TREE_3" image_sm="IMAGE_CAKE_FROST_TREE_SM_3" height="15" height_d="10" height_sm="5" height_sm_d="14" />
+		<CakeFrost id="3" image="IMAGE_CAKE_FROST_TREE_4" image_sm="IMAGE_CAKE_FROST_TREE_SM_4" height="15" height_d="10" height_sm="5" height_sm_d="14" />
+		<CakeDecoration id="0" image="IMAGE_CAKE_DEC_TREE_1" image_sm="IMAGE_CAKE_DEC_TREE_SM_1" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="1" image="IMAGE_CAKE_DEC_TREE_2" image_sm="IMAGE_CAKE_DEC_TREE_SM_2" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="2" image="IMAGE_CAKE_DEC_TREE_3" image_sm="IMAGE_CAKE_DEC_TREE_SM_3" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="3" image="IMAGE_CAKE_DEC_TREE_4" image_sm="IMAGE_CAKE_DEC_TREE_SM_4" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="4" image="IMAGE_CAKE_DEC_TREE_5" image_sm="IMAGE_CAKE_DEC_TREE_SM_5" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="5" image="IMAGE_CAKE_DEC_TREE_6" image_sm="IMAGE_CAKE_DEC_TREE_SM_6" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="6" image="IMAGE_CAKE_DEC_TREE_7" image_sm="IMAGE_CAKE_DEC_TREE_SM_7" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="7" image="IMAGE_CAKE_DEC_TREE_8" image_sm="IMAGE_CAKE_DEC_TREE_SM_8" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+	</Cake>
+	<Cake id="1" name="Rect">
+		<CakeBase id="0" image="IMAGE_CAKE_BASE_RECT_1" image_sm="IMAGE_CAKE_BASE_RECT_SM_1" height="32" height_d="0" height_sm="25" height_sm_d="0" />
+		<CakeFrost id="0" image="IMAGE_CAKE_FROST_RECT_1" image_sm="IMAGE_CAKE_FROST_RECT_SM_1" height="15" height_d="18" height_sm="5" height_sm_d="16" />
+		<CakeFrost id="1" image="IMAGE_CAKE_FROST_RECT_2" image_sm="IMAGE_CAKE_FROST_RECT_SM_2" height="15" height_d="18" height_sm="5" height_sm_d="16" />
+		<CakeFrost id="2" image="IMAGE_CAKE_FROST_RECT_3" image_sm="IMAGE_CAKE_FROST_RECT_SM_3" height="15" height_d="18" height_sm="5" height_sm_d="16" />
+		<CakeFrost id="3" image="IMAGE_CAKE_FROST_RECT_4" image_sm="IMAGE_CAKE_FROST_RECT_SM_4" height="15" height_d="18" height_sm="5" height_sm_d="16" />
+		<CakeDecoration id="0" image="IMAGE_CAKE_DEC_RECT_1" image_sm="IMAGE_CAKE_DEC_RECT_SM_1" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="1" image="IMAGE_CAKE_DEC_RECT_2" image_sm="IMAGE_CAKE_DEC_RECT_SM_2" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="2" image="IMAGE_CAKE_DEC_RECT_3" image_sm="IMAGE_CAKE_DEC_RECT_SM_3" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="3" image="IMAGE_CAKE_DEC_RECT_4" image_sm="IMAGE_CAKE_DEC_RECT_SM_4" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="4" image="IMAGE_CAKE_DEC_RECT_5" image_sm="IMAGE_CAKE_DEC_RECT_SM_5" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="5" image="IMAGE_CAKE_DEC_RECT_6" image_sm="IMAGE_CAKE_DEC_RECT_SM_6" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="6" image="IMAGE_CAKE_DEC_RECT_7" image_sm="IMAGE_CAKE_DEC_RECT_SM_7" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="7" image="IMAGE_CAKE_DEC_RECT_8" image_sm="IMAGE_CAKE_DEC_RECT_SM_8" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+	</Cake>
+	<Cake id="2" name="Star">
+		<CakeBase id="0" image="IMAGE_CAKE_BASE_STAR_1" image_sm="IMAGE_CAKE_BASE_STAR_SM_1" height="22" height_d="0" height_sm="20" height_sm_d="0" />
+		<CakeFrost id="0" image="IMAGE_CAKE_FROST_STAR_1" image_sm="IMAGE_CAKE_FROST_STAR_SM_1" height="15" height_d="6" height_sm="5" height_sm_d="10" />
+		<CakeFrost id="1" image="IMAGE_CAKE_FROST_STAR_2" image_sm="IMAGE_CAKE_FROST_STAR_SM_2" height="15" height_d="6" height_sm="5" height_sm_d="10" />
+		<CakeFrost id="2" image="IMAGE_CAKE_FROST_STAR_3" image_sm="IMAGE_CAKE_FROST_STAR_SM_3" height="15" height_d="6" height_sm="5" height_sm_d="10" />
+		<CakeFrost id="3" image="IMAGE_CAKE_FROST_STAR_4" image_sm="IMAGE_CAKE_FROST_STAR_SM_4" height="15" height_d="6" height_sm="5" height_sm_d="10" />
+		<CakeDecoration id="0" image="IMAGE_CAKE_DEC_STAR_1" image_sm="IMAGE_CAKE_DEC_STAR_SM_1" height="0" height_d="23" height_sm="0" height_sm_d="15" />
+		<CakeDecoration id="1" image="IMAGE_CAKE_DEC_STAR_2" image_sm="IMAGE_CAKE_DEC_STAR_SM_2" height="0" height_d="23" height_sm="0" height_sm_d="15" />
+		<CakeDecoration id="2" image="IMAGE_CAKE_DEC_STAR_3" image_sm="IMAGE_CAKE_DEC_STAR_SM_3" height="0" height_d="23" height_sm="0" height_sm_d="15" />
+		<CakeDecoration id="3" image="IMAGE_CAKE_DEC_STAR_4" image_sm="IMAGE_CAKE_DEC_STAR_SM_4" height="0" height_d="23" height_sm="0" height_sm_d="15" />
+		<CakeDecoration id="4" image="IMAGE_CAKE_DEC_STAR_5" image_sm="IMAGE_CAKE_DEC_STAR_SM_5" height="0" height_d="23" height_sm="0" height_sm_d="15" />
+		<CakeDecoration id="5" image="IMAGE_CAKE_DEC_STAR_6" image_sm="IMAGE_CAKE_DEC_STAR_SM_6" height="0" height_d="23" height_sm="0" height_sm_d="15" />
+		<CakeDecoration id="6" image="IMAGE_CAKE_DEC_STAR_7" image_sm="IMAGE_CAKE_DEC_STAR_SM_7" height="0" height_d="23" height_sm="0" height_sm_d="15" />
+		<CakeDecoration id="7" image="IMAGE_CAKE_DEC_STAR_8" image_sm="IMAGE_CAKE_DEC_STAR_SM_8" height="0" height_d="23" height_sm="0" height_sm_d="15" />
+	</Cake>
+	<Cake id="3" name="Circle">
+		<CakeBase id="0" image="IMAGE_CAKE_BASE_CIRCLE_1" image_sm="IMAGE_CAKE_BASE_CIRCLE_SM_1" height="24" height_d="0" height_sm="25" height_sm_d="0" />
+		<CakeFrost id="0" image="IMAGE_CAKE_FROST_CIRCLE_1" image_sm="IMAGE_CAKE_FROST_CIRCLE_SM_1" height="17" height_d="10" height_sm="5" height_sm_d="10" />
+		<CakeFrost id="1" image="IMAGE_CAKE_FROST_CIRCLE_2" image_sm="IMAGE_CAKE_FROST_CIRCLE_SM_2" height="17" height_d="10" height_sm="5" height_sm_d="10" />
+		<CakeFrost id="2" image="IMAGE_CAKE_FROST_CIRCLE_3" image_sm="IMAGE_CAKE_FROST_CIRCLE_SM_3" height="17" height_d="10" height_sm="5" height_sm_d="10" />
+		<CakeFrost id="3" image="IMAGE_CAKE_FROST_CIRCLE_4" image_sm="IMAGE_CAKE_FROST_CIRCLE_SM_4" height="17" height_d="10" height_sm="5" height_sm_d="10" />
+		<CakeDecoration id="0" image="IMAGE_CAKE_DEC_CIRCLE_1" image_sm="IMAGE_CAKE_DEC_CIRCLE_SM_1" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="1" image="IMAGE_CAKE_DEC_CIRCLE_2" image_sm="IMAGE_CAKE_DEC_CIRCLE_SM_2" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="2" image="IMAGE_CAKE_DEC_CIRCLE_3" image_sm="IMAGE_CAKE_DEC_CIRCLE_SM_3" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="3" image="IMAGE_CAKE_DEC_CIRCLE_4" image_sm="IMAGE_CAKE_DEC_CIRCLE_SM_4" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="4" image="IMAGE_CAKE_DEC_CIRCLE_5" image_sm="IMAGE_CAKE_DEC_CIRCLE_SM_5" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="5" image="IMAGE_CAKE_DEC_CIRCLE_6" image_sm="IMAGE_CAKE_DEC_CIRCLE_SM_6" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="6" image="IMAGE_CAKE_DEC_CIRCLE_7" image_sm="IMAGE_CAKE_DEC_CIRCLE_SM_7" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="7" image="IMAGE_CAKE_DEC_CIRCLE_8" image_sm="IMAGE_CAKE_DEC_CIRCLE_SM_8" height="0" height_d="30" height_sm="0" height_sm_d="20" />
+	</Cake>
+	<Cake id="4" name="Egg">
+		<CakeBase id="0" image="IMAGE_CAKE_BASE_EGG_1" image_sm="IMAGE_CAKE_BASE_EGG_SM_1" height="24" height_d="0" height_sm="25" height_sm_d="0" />
+		<CakeFrost id="0" image="IMAGE_CAKE_FROST_EGG_1" image_sm="IMAGE_CAKE_FROST_EGG_SM_1" height="15" height_d="15" height_sm="10" height_sm_d="12" />
+		<CakeFrost id="1" image="IMAGE_CAKE_FROST_EGG_2" image_sm="IMAGE_CAKE_FROST_EGG_SM_2" height="15" height_d="15" height_sm="10" height_sm_d="12" />
+		<CakeFrost id="2" image="IMAGE_CAKE_FROST_EGG_3" image_sm="IMAGE_CAKE_FROST_EGG_SM_3" height="15" height_d="15" height_sm="10" height_sm_d="12" />
+		<CakeFrost id="3" image="IMAGE_CAKE_FROST_EGG_4" image_sm="IMAGE_CAKE_FROST_EGG_SM_4" height="15" height_d="15" height_sm="10" height_sm_d="12" />
+		<CakeDecoration id="0" image="IMAGE_CAKE_DEC_EGG_1" image_sm="IMAGE_CAKE_DEC_EGG_SM_1" height="0" height_d="35" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="1" image="IMAGE_CAKE_DEC_EGG_2" image_sm="IMAGE_CAKE_DEC_EGG_SM_2" height="0" height_d="35" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="2" image="IMAGE_CAKE_DEC_EGG_3" image_sm="IMAGE_CAKE_DEC_EGG_SM_3" height="0" height_d="35" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="3" image="IMAGE_CAKE_DEC_EGG_4" image_sm="IMAGE_CAKE_DEC_EGG_SM_4" height="0" height_d="35" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="4" image="IMAGE_CAKE_DEC_EGG_5" image_sm="IMAGE_CAKE_DEC_EGG_SM_5" height="0" height_d="35" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="5" image="IMAGE_CAKE_DEC_EGG_6" image_sm="IMAGE_CAKE_DEC_EGG_SM_6" height="0" height_d="35" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="6" image="IMAGE_CAKE_DEC_EGG_7" image_sm="IMAGE_CAKE_DEC_EGG_SM_7" height="0" height_d="35" height_sm="0" height_sm_d="20" />
+		<CakeDecoration id="7" image="IMAGE_CAKE_DEC_EGG_8" image_sm="IMAGE_CAKE_DEC_EGG_SM_8" height="0" height_d="35" height_sm="0" height_sm_d="20" />
+	</Cake>
+	<Cake id="5" name="Heart">
+		<CakeBase id="0" image="IMAGE_CAKE_BASE_HEART_1" image_sm="IMAGE_CAKE_BASE_HEART_SM_1" height="30" height_d="0" height_sm="30" height_sm_d="0" />
+		<CakeFrost id="0" image="IMAGE_CAKE_FROST_HEART_1" image_sm="IMAGE_CAKE_FROST_HEART_SM_1" height="17" height_d="18" height_sm="10" height_sm_d="24" />
+		<CakeFrost id="1" image="IMAGE_CAKE_FROST_HEART_2" image_sm="IMAGE_CAKE_FROST_HEART_SM_2" height="17" height_d="18" height_sm="10" height_sm_d="24" />
+		<CakeFrost id="2" image="IMAGE_CAKE_FROST_HEART_3" image_sm="IMAGE_CAKE_FROST_HEART_SM_3" height="17" height_d="18" height_sm="10" height_sm_d="24" />
+		<CakeFrost id="3" image="IMAGE_CAKE_FROST_HEART_4" image_sm="IMAGE_CAKE_FROST_HEART_SM_4" height="17" height_d="18" height_sm="10" height_sm_d="24" />
+		<CakeDecoration id="0" image="IMAGE_CAKE_DEC_HEART_1" image_sm="IMAGE_CAKE_DEC_HEART_SM_1" height="0" height_d="30" height_sm="0" height_sm_d="32" />
+		<CakeDecoration id="1" image="IMAGE_CAKE_DEC_HEART_2" image_sm="IMAGE_CAKE_DEC_HEART_SM_2" height="0" height_d="30" height_sm="0" height_sm_d="32" />
+		<CakeDecoration id="2" image="IMAGE_CAKE_DEC_HEART_3" image_sm="IMAGE_CAKE_DEC_HEART_SM_3" height="0" height_d="30" height_sm="0" height_sm_d="32" />
+		<CakeDecoration id="3" image="IMAGE_CAKE_DEC_HEART_4" image_sm="IMAGE_CAKE_DEC_HEART_SM_4" height="0" height_d="30" height_sm="0" height_sm_d="32" />
+		<CakeDecoration id="4" image="IMAGE_CAKE_DEC_HEART_5" image_sm="IMAGE_CAKE_DEC_HEART_SM_5" height="0" height_d="30" height_sm="0" height_sm_d="32" />
+		<CakeDecoration id="5" image="IMAGE_CAKE_DEC_HEART_6" image_sm="IMAGE_CAKE_DEC_HEART_SM_6" height="0" height_d="30" height_sm="0" height_sm_d="32" />
+		<CakeDecoration id="6" image="IMAGE_CAKE_DEC_HEART_7" image_sm="IMAGE_CAKE_DEC_HEART_SM_7" height="0" height_d="30" height_sm="0" height_sm_d="32" />
+		<CakeDecoration id="7" image="IMAGE_CAKE_DEC_HEART_8" image_sm="IMAGE_CAKE_DEC_HEART_SM_8" height="0" height_d="30" height_sm="0" height_sm_d="32" />
+	</Cake>
+	<Cake id="6" name="Pumpkin">
+		<CakeBase id="0" image="IMAGE_CAKE_BASE_PUMPKIN_1" image_sm="IMAGE_CAKE_BASE_PUMPKIN_SM_1" height="32" height_d="0" height_sm="30" height_sm_d="0" />
+		<CakeFrost id="0" image="IMAGE_CAKE_FROST_PUMPKIN_1" image_sm="IMAGE_CAKE_FROST_PUMPKIN_SM_1" height="17" height_d="18" height_sm="10" height_sm_d="21" />
+		<CakeFrost id="1" image="IMAGE_CAKE_FROST_PUMPKIN_2" image_sm="IMAGE_CAKE_FROST_PUMPKIN_SM_2" height="17" height_d="18" height_sm="10" height_sm_d="21" />
+		<CakeFrost id="2" image="IMAGE_CAKE_FROST_PUMPKIN_3" image_sm="IMAGE_CAKE_FROST_PUMPKIN_SM_3" height="17" height_d="18" height_sm="10" height_sm_d="21" />
+		<CakeFrost id="3" image="IMAGE_CAKE_FROST_PUMPKIN_4" image_sm="IMAGE_CAKE_FROST_PUMPKIN_SM_4" height="17" height_d="18" height_sm="10" height_sm_d="21" />
+		<CakeDecoration id="0" image="IMAGE_CAKE_DEC_PUMPKIN_1" image_sm="IMAGE_CAKE_DEC_PUMPKIN_SM_1" height="0" height_d="30" height_sm="0" height_sm_d="29" />
+		<CakeDecoration id="1" image="IMAGE_CAKE_DEC_PUMPKIN_2" image_sm="IMAGE_CAKE_DEC_PUMPKIN_SM_2" height="0" height_d="30" height_sm="0" height_sm_d="29" />
+		<CakeDecoration id="2" image="IMAGE_CAKE_DEC_PUMPKIN_3" image_sm="IMAGE_CAKE_DEC_PUMPKIN_SM_3" height="0" height_d="30" height_sm="0" height_sm_d="29" />
+		<CakeDecoration id="3" image="IMAGE_CAKE_DEC_PUMPKIN_4" image_sm="IMAGE_CAKE_DEC_PUMPKIN_SM_4" height="0" height_d="30" height_sm="0" height_sm_d="29" />
+		<CakeDecoration id="4" image="IMAGE_CAKE_DEC_PUMPKIN_5" image_sm="IMAGE_CAKE_DEC_PUMPKIN_SM_5" height="0" height_d="30" height_sm="0" height_sm_d="29" />
+		<CakeDecoration id="5" image="IMAGE_CAKE_DEC_PUMPKIN_6" image_sm="IMAGE_CAKE_DEC_PUMPKIN_SM_6" height="0" height_d="30" height_sm="0" height_sm_d="29" />
+		<CakeDecoration id="6" image="IMAGE_CAKE_DEC_PUMPKIN_7" image_sm="IMAGE_CAKE_DEC_PUMPKIN_SM_7" height="0" height_d="30" height_sm="0" height_sm_d="29" />
+		<CakeDecoration id="7" image="IMAGE_CAKE_DEC_PUMPKIN_8" image_sm="IMAGE_CAKE_DEC_PUMPKIN_SM_8" height="0" height_d="30" height_sm="0" height_sm_d="29" />
+	</Cake>
+	<Cake id="7" name="Triangle">
+		<CakeBase id="0" image="IMAGE_CAKE_BASE_TRIA_1" image_sm="IMAGE_CAKE_BASE_TRIA_SM_1" height="24" height_d="0" height_sm="25" height_sm_d="0" />
+		<CakeFrost id="0" image="IMAGE_CAKE_FROST_TRIA_1" image_sm="IMAGE_CAKE_FROST_TRIA_SM_1" height="15" height_d="12" height_sm="8" height_sm_d="17" />
+		<CakeFrost id="1" image="IMAGE_CAKE_FROST_TRIA_2" image_sm="IMAGE_CAKE_FROST_TRIA_SM_2" height="15" height_d="12" height_sm="8" height_sm_d="17" />
+		<CakeFrost id="2" image="IMAGE_CAKE_FROST_TRIA_3" image_sm="IMAGE_CAKE_FROST_TRIA_SM_3" height="15" height_d="12" height_sm="8" height_sm_d="17" />
+		<CakeFrost id="3" image="IMAGE_CAKE_FROST_TRIA_4" image_sm="IMAGE_CAKE_FROST_TRIA_SM_4" height="15" height_d="12" height_sm="8" height_sm_d="17" />
+		<CakeDecoration id="0" image="IMAGE_CAKE_DEC_TRIA_1" image_sm="IMAGE_CAKE_DEC_TRIA_SM_1" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="1" image="IMAGE_CAKE_DEC_TRIA_2" image_sm="IMAGE_CAKE_DEC_TRIA_SM_2" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="2" image="IMAGE_CAKE_DEC_TRIA_3" image_sm="IMAGE_CAKE_DEC_TRIA_SM_3" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="3" image="IMAGE_CAKE_DEC_TRIA_4" image_sm="IMAGE_CAKE_DEC_TRIA_SM_4" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="4" image="IMAGE_CAKE_DEC_TRIA_5" image_sm="IMAGE_CAKE_DEC_TRIA_SM_5" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="5" image="IMAGE_CAKE_DEC_TRIA_6" image_sm="IMAGE_CAKE_DEC_TRIA_SM_6" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="6" image="IMAGE_CAKE_DEC_TRIA_7" image_sm="IMAGE_CAKE_DEC_TRIA_SM_7" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+		<CakeDecoration id="7" image="IMAGE_CAKE_DEC_TRIA_8" image_sm="IMAGE_CAKE_DEC_TRIA_SM_8" height="0" height_d="30" height_sm="0" height_sm_d="25" />
+	</Cake>
+        
+	<Cake id="8" name="Cookie">
+		<CakeCookie id="0" image="IMAGE_COOKIE" />	
+	</Cake>	
+</Cakes></root>

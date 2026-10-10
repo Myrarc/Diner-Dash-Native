@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "imported_files_hashed": 838,
+  "resource_files_checked": 663,
+  "images_verified": 608,
+  "customer_animation_sequences_checked": 205,
+  "decoded_pcm_audio_matched_to_originals": 51,
+  "unresolved_references_in_unused_original_screens": {
+    "IMAGE_COMICS_2": [
+      "config/comicsscreen/comics_screen.xml"
+    ],
+    "IMAGE_COMICS_3": [
+      "config/comicsscreen/comics_screen.xml"
+    ],
+    "IMAGE_COMICS_4": [
+      "config/comicsscreen/comics_screen.xml"
+    ],
+    "IMAGE_CREDITS_SCREEN": [
+      "config/creditsscreen/credits_screen.xml"
+    ],
+    "IMAGE_MAPSCREEN_BUTTON_DIS": [
+      "config/mapscreen/map_env.xml"
+    ],
+    "IMAGE_NONE": [
+      "config/mainconfig/levels_text_eng_endless.xml"
+    ]
+  }
+}

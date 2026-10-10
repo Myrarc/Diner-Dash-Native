@@ -1,0 +1,9 @@
+{
+  "version": "0.3.11",
+  "version_code": 14,
+  "apk": "DinerDash-Android-0.3.11.apk",
+  "bytes": 34597962,
+  "sha256": "56a6a4bffdb2f8238e289ce0cb096f07f3ad500f9a97ff1d184a36a508fd036b",
+  "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf",
+  "verification": "DinerDash-Android-prototype/verification/0.3.11/verification.json"
+}

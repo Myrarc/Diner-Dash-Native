@@ -1,0 +1,52 @@
+{
+  "version": "0.3.7",
+  "scope": "Restore original main-menu BGM playlist",
+  "apk_sha256": "59bd66135e823e09664c856612b19f9702672db0269413628e56493fa4ba99f4",
+  "previous_apk_sha256": "4ac8e63d4bded41789f24b926e8fa55081d09ab941f8a28ac038b55502b3d192",
+  "cause": "music_intro is an XMED text playlist (cast member 346, chunk 747), not a sound member. AssetStore therefore returns null and menuMusic silently returned.",
+  "recovered_playlist": "random 2\rmusic_h1\rmusic_h2\rmusic_h3\rmusic_h4\rmusic_h5\rmusic_h6",
+  "fix": "Randomly choose music_h1 through music_h6, play the chosen clip twice, then choose again via actual MediaPlayer completion callbacks. Respect the existing Music preference. Log missing/failed menu clips and release failed players.",
+  "production_java_changed": [
+    "src/local/dinerdash/prototype/GameAudio.java"
+  ],
+  "gameplay_and_rendering_java_unchanged": true,
+  "resources_and_assets_byte_identical_to_0_3_6": true,
+  "baseline": "0.3.6 fails the main-menu playback assertion: no MediaPlayer running",
+  "installed_audio_checks": 28,
+  "installed_activity_save_checks": 36,
+  "total_checks_this_release": 64,
+  "audio_verified": [
+    "Menu starts an original six-second h clip",
+    "Same clip repeats once then next random clip starts",
+    "Background/resume preserves playback position",
+    "Music OFF/ON persists, including cold launch",
+    "SFX OFF does not mute BGM",
+    "Gameplay replaces menu music; returning restores it",
+    "All six h MP3 files decode with ffmpeg",
+    "Ordinary main-menu launch has an active AudioFlinger track and nonzero output signal"
+  ],
+  "installed_apk_hash_verified": true,
+  "current_evidence": "verification/0.3.7/",
+  "package_integrity": {
+    "media_hashes_verified": 1960,
+    "uncompressed_mp3_verified": 62,
+    "crc_verified": true,
+    "signature_verified": true,
+    "version_code": 10,
+    "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf"
+  },
+  "saves_restored_after_tests": true,
+  "physical_device_tested": false,
+  "audible_output_recorded": false,
+  "windows_runtime_executed": false,
+  "tests_not_rerun": [
+    "Pure gameplay model suites",
+    "Guest, sprite and animation suites"
+  ],
+  "previous_gameplay_and_rendering_evidence": "verification/0.3.6-verification.json",
+  "notes": [
+    "Tests use real installed MediaPlayer decoding, currentPosition and completion callbacks. Playback callbacks are accelerated by seeking close to the end of a clip.",
+    "AudioFlinger confirms rendered nonzero output on the emulator; host/device speaker sound was not listened to or recorded.",
+    "Gameplay music selection/sequencing is unchanged in this release."
+  ]
+}

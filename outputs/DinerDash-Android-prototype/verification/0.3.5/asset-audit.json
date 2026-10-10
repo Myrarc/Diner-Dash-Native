@@ -1,0 +1,634 @@
+{
+  "standing_variant_count": 104,
+  "standing_missing": [],
+  "sitter_frame_reference_count": 441,
+  "sitter_frame_missing": [],
+  "critic_actual_cast": "gfx.people.none",
+  "critic_renderer_0.3.4_cast": "gfx.people",
+  "standing_variants": [
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_young_female_1",
+      "present": true,
+      "path": "images/gfx.people.red/406_standing_young_female_1.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_young_female_2",
+      "present": true,
+      "path": "images/gfx.people.red/405_standing_young_female_2.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_young_female_3",
+      "present": true,
+      "path": "images/gfx.people.red/403_standing_young_female_3.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_young_female_4",
+      "present": true,
+      "path": "images/gfx.people.red/404_standing_young_female_4.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_young_female_1",
+      "present": true,
+      "path": "images/gfx.people.blue/409_standing_young_female_1.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_young_female_2",
+      "present": true,
+      "path": "images/gfx.people.blue/61_standing_young_female_2.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_young_female_3",
+      "present": true,
+      "path": "images/gfx.people.blue/60_standing_young_female_3.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_young_female_4",
+      "present": true,
+      "path": "images/gfx.people.blue/407_standing_young_female_4.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_young_female_1",
+      "present": true,
+      "path": "images/gfx.people.green/623_standing_young_female_1.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_young_female_2",
+      "present": true,
+      "path": "images/gfx.people.green/295_standing_young_female_2.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_young_female_3",
+      "present": true,
+      "path": "images/gfx.people.green/294_standing_young_female_3.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_young_female_4",
+      "present": true,
+      "path": "images/gfx.people.green/621_standing_young_female_4.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_young_female_1",
+      "present": true,
+      "path": "images/gfx.people.orange/317_standing_young_female_1.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_young_female_2",
+      "present": true,
+      "path": "images/gfx.people.orange/678_standing_young_female_2.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_young_female_3",
+      "present": true,
+      "path": "images/gfx.people.orange/679_standing_young_female_3.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_young_female_4",
+      "present": true,
+      "path": "images/gfx.people.orange/315_standing_young_female_4.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_young_female_1",
+      "present": true,
+      "path": "images/gfx.people.purple/623_standing_young_female_1.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_young_female_2",
+      "present": true,
+      "path": "images/gfx.people.purple/295_standing_young_female_2.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_young_female_3",
+      "present": true,
+      "path": "images/gfx.people.purple/294_standing_young_female_3.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_young_female_4",
+      "present": true,
+      "path": "images/gfx.people.purple/621_standing_young_female_4.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_old_male_1",
+      "present": true,
+      "path": "images/gfx.people.red/81_standing_old_male_1.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_old_male_2",
+      "present": true,
+      "path": "images/gfx.people.red/867_standing_old_male_2.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_old_male_3",
+      "present": true,
+      "path": "images/gfx.people.red/79_standing_old_male_3.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_old_male_4",
+      "present": true,
+      "path": "images/gfx.people.red/76_standing_old_male_4.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_old_male_1",
+      "present": true,
+      "path": "images/gfx.people.blue/899_standing_old_male_1.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_old_male_2",
+      "present": true,
+      "path": "images/gfx.people.blue/897_standing_old_male_2.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_old_male_3",
+      "present": true,
+      "path": "images/gfx.people.blue/895_standing_old_male_3.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_old_male_4",
+      "present": true,
+      "path": "images/gfx.people.blue/893_standing_old_male_4.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_old_male_1",
+      "present": true,
+      "path": "images/gfx.people.green/895_standing_old_male_1.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_old_male_2",
+      "present": true,
+      "path": "images/gfx.people.green/893_standing_old_male_2.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_old_male_3",
+      "present": true,
+      "path": "images/gfx.people.green/891_standing_old_male_3.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_old_male_4",
+      "present": true,
+      "path": "images/gfx.people.green/889_standing_old_male_4.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_old_male_1",
+      "present": true,
+      "path": "images/gfx.people.orange/550_standing_old_male_1.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_old_male_2",
+      "present": true,
+      "path": "images/gfx.people.orange/547_standing_old_male_2.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_old_male_3",
+      "present": true,
+      "path": "images/gfx.people.orange/544_standing_old_male_3.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_old_male_4",
+      "present": true,
+      "path": "images/gfx.people.orange/541_standing_old_male_4.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_old_male_1",
+      "present": true,
+      "path": "images/gfx.people.purple/894_standing_old_male_1.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_old_male_2",
+      "present": true,
+      "path": "images/gfx.people.purple/892_standing_old_male_2.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_old_male_3",
+      "present": true,
+      "path": "images/gfx.people.purple/890_standing_old_male_3.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_old_male_4",
+      "present": true,
+      "path": "images/gfx.people.purple/888_standing_old_male_4.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_business_female_1",
+      "present": true,
+      "path": "images/gfx.people.red/495_standing_business_female_1.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_business_female_2",
+      "present": true,
+      "path": "images/gfx.people.red/496_standing_business_female_2.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_business_female_3",
+      "present": true,
+      "path": "images/gfx.people.red/498_standing_business_female_3.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_business_female_4",
+      "present": true,
+      "path": "images/gfx.people.red/497_standing_business_female_4.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_business_female_1",
+      "present": true,
+      "path": "images/gfx.people.blue/52_standing_business_female_1.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_business_female_2",
+      "present": true,
+      "path": "images/gfx.people.blue/403_standing_business_female_2.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_business_female_3",
+      "present": true,
+      "path": "images/gfx.people.blue/49_standing_business_female_3.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_business_female_4",
+      "present": true,
+      "path": "images/gfx.people.blue/48_standing_business_female_4.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_business_female_1",
+      "present": true,
+      "path": "images/gfx.people.green/286_standing_business_female_1.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_business_female_2",
+      "present": true,
+      "path": "images/gfx.people.green/617_standing_business_female_2.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_business_female_3",
+      "present": true,
+      "path": "images/gfx.people.green/283_standing_business_female_3.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_business_female_4",
+      "present": true,
+      "path": "images/gfx.people.green/282_standing_business_female_4.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_business_female_1",
+      "present": true,
+      "path": "images/gfx.people.orange/312_standing_business_female_1.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_business_female_2",
+      "present": true,
+      "path": "images/gfx.people.orange/688_standing_business_female_2.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_business_female_3",
+      "present": true,
+      "path": "images/gfx.people.orange/690_standing_business_female_3.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_business_female_4",
+      "present": true,
+      "path": "images/gfx.people.orange/691_standing_business_female_4.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_business_female_1",
+      "present": true,
+      "path": "images/gfx.people.purple/286_standing_business_female_1.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_business_female_2",
+      "present": true,
+      "path": "images/gfx.people.purple/617_standing_business_female_2.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_business_female_3",
+      "present": true,
+      "path": "images/gfx.people.purple/283_standing_business_female_3.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_business_female_4",
+      "present": true,
+      "path": "images/gfx.people.purple/282_standing_business_female_4.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_boy_1",
+      "present": true,
+      "path": "images/gfx.people.red/535_standing_boy_1.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_boy_2",
+      "present": true,
+      "path": "images/gfx.people.red/530_standing_boy_2.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_boy_3",
+      "present": true,
+      "path": "images/gfx.people.red/522_standing_boy_3.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_boy_4",
+      "present": true,
+      "path": "images/gfx.people.red/438_standing_boy_4.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_boy_1",
+      "present": true,
+      "path": "images/gfx.people.blue/401_standing_boy_1.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_boy_2",
+      "present": true,
+      "path": "images/gfx.people.blue/45_standing_boy_2.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_boy_3",
+      "present": true,
+      "path": "images/gfx.people.blue/44_standing_boy_3.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_boy_4",
+      "present": true,
+      "path": "images/gfx.people.blue/399_standing_boy_4.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_boy_1",
+      "present": true,
+      "path": "images/gfx.people.green/615_standing_boy_1.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_boy_2",
+      "present": true,
+      "path": "images/gfx.people.green/279_standing_boy_2.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_boy_3",
+      "present": true,
+      "path": "images/gfx.people.green/278_standing_boy_3.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_boy_4",
+      "present": true,
+      "path": "images/gfx.people.green/613_standing_boy_4.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_boy_1",
+      "present": true,
+      "path": "images/gfx.people.orange/698_standing_boy_1.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_boy_2",
+      "present": true,
+      "path": "images/gfx.people.orange/699_standing_boy_2.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_boy_3",
+      "present": true,
+      "path": "images/gfx.people.orange/251_standing_boy_3.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_boy_4",
+      "present": true,
+      "path": "images/gfx.people.orange/702_standing_boy_4.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_boy_1",
+      "present": true,
+      "path": "images/gfx.people.purple/275_standing_boy_1.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_boy_2",
+      "present": true,
+      "path": "images/gfx.people.purple/274_standing_boy_2.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_boy_3",
+      "present": true,
+      "path": "images/gfx.people.purple/611_standing_boy_3.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_boy_4",
+      "present": true,
+      "path": "images/gfx.people.purple/271_standing_boy_4.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_man_1",
+      "present": true,
+      "path": "images/gfx.people.red/484_standing_man_1.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_man_2",
+      "present": true,
+      "path": "images/gfx.people.red/483_standing_man_2.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_man_3",
+      "present": true,
+      "path": "images/gfx.people.red/481_standing_man_3.png"
+    },
+    {
+      "cast": "gfx.people.red",
+      "name": "standing_man_4",
+      "present": true,
+      "path": "images/gfx.people.red/482_standing_man_4.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_man_1",
+      "present": true,
+      "path": "images/gfx.people.blue/41_standing_man_1.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_man_2",
+      "present": true,
+      "path": "images/gfx.people.blue/40_standing_man_2.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_man_3",
+      "present": true,
+      "path": "images/gfx.people.blue/397_standing_man_3.png"
+    },
+    {
+      "cast": "gfx.people.blue",
+      "name": "standing_man_4",
+      "present": true,
+      "path": "images/gfx.people.blue/37_standing_man_4.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_man_1",
+      "present": true,
+      "path": "images/gfx.people.green/275_standing_man_1.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_man_2",
+      "present": true,
+      "path": "images/gfx.people.green/274_standing_man_2.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_man_3",
+      "present": true,
+      "path": "images/gfx.people.green/611_standing_man_3.png"
+    },
+    {
+      "cast": "gfx.people.green",
+      "name": "standing_man_4",
+      "present": true,
+      "path": "images/gfx.people.green/271_standing_man_4.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_man_1",
+      "present": true,
+      "path": "images/gfx.people.orange/255_standing_man_1.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_man_2",
+      "present": true,
+      "path": "images/gfx.people.orange/694_standing_man_2.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_man_3",
+      "present": true,
+      "path": "images/gfx.people.orange/695_standing_man_3.png"
+    },
+    {
+      "cast": "gfx.people.orange",
+      "name": "standing_man_4",
+      "present": true,
+      "path": "images/gfx.people.orange/253_standing_man_4.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_man_1",
+      "present": true,
+      "path": "images/gfx.people.purple/615_standing_man_1.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_man_2",
+      "present": true,
+      "path": "images/gfx.people.purple/279_standing_man_2.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_man_3",
+      "present": true,
+      "path": "images/gfx.people.purple/278_standing_man_3.png"
+    },
+    {
+      "cast": "gfx.people.purple",
+      "name": "standing_man_4",
+      "present": true,
+      "path": "images/gfx.people.purple/613_standing_man_4.png"
+    },
+    {
+      "cast": "gfx.people.none",
+      "name": "standing_critic_1",
+      "present": true,
+      "path": "images/gfx.people.none/118_standing_critic_1.png"
+    },
+    {
+      "cast": "gfx.people.none",
+      "name": "standing_critic_2",
+      "present": true,
+      "path": "images/gfx.people.none/121_standing_critic_2.png"
+    },
+    {
+      "cast": "gfx.people.none",
+      "name": "standing_critic_3",
+      "present": true,
+      "path": "images/gfx.people.none/123_standing_critic_3.png"
+    },
+    {
+      "cast": "gfx.people.none",
+      "name": "standing_critic_4",
+      "present": true,
+      "path": "images/gfx.people.none/125_standing_critic_4.png"
+    }
+  ]
+}

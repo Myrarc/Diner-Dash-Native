@@ -1,0 +1,88 @@
+{
+  "version": "0.3.10",
+  "scope": "Correct standing customer satisfaction regression introduced in 0.3.9",
+  "apk_sha256": "df50fe6037f4ad0fc0fc70a19b9621697a12ad86ae05f63600c43a5ba440bb61",
+  "previous_apk_sha256": "5ce7776cbe848dc37cd32e0d91559568995b4fe355df87e752339c59d111b114",
+  "cause": "0.3.9 treated Lingo integer(float) as truncation and incorrectly changed tests to agree. Original Director semantics round positive satisfaction before selecting the pose.",
+  "fix": "Restore rounded standing pose selection: pose 1 at mood 1; pose 2 at moods 2\u20134; pose 3 at moods 5\u201310. Six-heart arrivals smile.",
+  "original_reference": "ParentScript 9 - stander_view.ls, update handler",
+  "runtime_semantics_reference": "https://github.com/scummvm/scummvm/blob/master/engines/director/lingo/lingo-builtins.cpp",
+  "standing_profiles": [
+    "default",
+    "old_male",
+    "business_female",
+    "boy",
+    "man",
+    "critic"
+  ],
+  "regression_expectations": "Explicit original pose IDs for all ten moods plus untouched constructor arrival mood; expected IDs do not compute the renderer formula.",
+  "baseline_regressions": {
+    "version": "0.3.9",
+    "checks": 148,
+    "failed_face_checks": 30,
+    "all_six_arrival_faces_failed": true
+  },
+  "installed_suites": {
+    "AndroidAnimationTest": 80,
+    "AndroidGuestTest": 226,
+    "AndroidSpriteAuditTest": 233,
+    "AndroidBugRegressionTest": 148
+  },
+  "installed_checks": 687,
+  "installed_suites_passed": 4,
+  "sprite_captures_inspected": [
+    "original-standing-poses.png",
+    "arrival-before-after.png",
+    "level-1-1-arrival.png"
+  ],
+  "ordinary_activity_qa": {
+    "adb_level_selector": 1,
+    "real_arrival_from_level_schedule": true,
+    "intro_ok_tapped": true,
+    "first_party_smiling": true,
+    "full_shift_playthrough": false
+  },
+  "package_integrity": {
+    "version": "0.3.10",
+    "version_code": 13,
+    "bytes": 34597962,
+    "apk_sha256": "df50fe6037f4ad0fc0fc70a19b9621697a12ad86ae05f63600c43a5ba440bb61",
+    "apk_asset_resource_entries_unchanged": 1993,
+    "source_asset_resource_files_unchanged": 1993,
+    "uncompressed_mp3": 62,
+    "uncompressed_derived_music_wav": 26,
+    "crc_verified": true,
+    "production_source_hashes_match_build": true,
+    "signature_verified": true,
+    "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf",
+    "installed_apk_bytes_match": true
+  },
+  "production_source_hashes": {
+    "src/local/dinerdash/prototype/AssetStore.java": "822d2446f94b76fc9b0a62194b967c36a09a084f7c2269e5b177d8b9109f54b7",
+    "src/local/dinerdash/prototype/GameAudio.java": "5c1ad05181f91f822a59d1ecc8399695a76fa571c823e2d42bf8a11c505cc488",
+    "src/local/dinerdash/prototype/GameEngine.java": "4f6957ea01014a782b52fd5cc7bef8dfaffed2793498bd9c3168c4d00912739d",
+    "src/local/dinerdash/prototype/GameView.java": "bd49cb49ec5596e3421b7d779e7c6b99314ed45d60cf057bf610de7cd246ce25",
+    "src/local/dinerdash/prototype/LevelData.java": "a03fe46f9e9675e60391cbb5dd67dffedabb651ae599b02aff86dbb4e298db56",
+    "src/local/dinerdash/prototype/MainActivity.java": "90083c4051c1c63f2fa19ce2b59ee6ade49c56a77eaabe1ea157ef49df0cae3e",
+    "src/local/dinerdash/prototype/MenuView.java": "16e6986cf7a3d1beceea292f3ccc99bfa1835a5bf28161d1f30e2101452e3de8",
+    "src/local/dinerdash/prototype/SpriteRenderer.java": "b31d909591473edae7a0e9c8b44e84693cbdede45a61cb18df69aedbb0158c10"
+  },
+  "only_changed_production_java": "SpriteRenderer.java",
+  "music_and_other_gameplay_sources_unchanged": true,
+  "emulator_preferences_byte_identical_after_qa": true,
+  "physical_device_tested": false,
+  "windows_runtime_executed": false,
+  "music_reference_comparison": "paused at user request",
+  "tests_skipped": [
+    {
+      "suites": [
+        "All six pure model suites",
+        "AndroidProgressTest",
+        "AndroidAudioTest"
+      ],
+      "reason": "Model, save/menu and audio sources are byte-identical to 0.3.9; targeted installed rendering/input suites rerun. Earlier unrelated checks are historical only."
+    }
+  ],
+  "historical_broad_verification": "verification/0.3.9-verification.json (standing-face expectations are incorrect; this claim is withdrawn)",
+  "evidence": "verification/0.3.10/"
+}

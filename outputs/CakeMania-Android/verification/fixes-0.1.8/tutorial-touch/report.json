@@ -1,0 +1,576 @@
+{
+  "passed": true,
+  "apk_sha256": "042f8a56b137d4c6c94e2a683c11194d10153d91db3de7a933eed25bbce9a43b",
+  "sequences": [
+    {
+      "sequence": 0,
+      "opening_flow_real_taps": [
+        "Main Menu",
+        "Play",
+        "Start New Game",
+        "Comic Continue 1",
+        "Comic Continue 2",
+        "Comic Continue 3"
+      ],
+      "real_taps": [
+        {
+          "event": 3,
+          "type": "WaitForClick",
+          "x": 475.0,
+          "y": 140.0,
+          "hand": []
+        },
+        {
+          "event": 11,
+          "type": "WaitForClick",
+          "x": 437.5,
+          "y": 225.0,
+          "hand": []
+        },
+        {
+          "event": 16,
+          "type": "WaitForCustomerClick",
+          "x": 172.0,
+          "y": 551.0,
+          "hand": [
+            {
+              "shape": 3,
+              "frost": -1,
+              "decor": -1,
+              "price": 15
+            }
+          ]
+        },
+        {
+          "event": 25,
+          "type": "WaitForClick",
+          "x": 632.0,
+          "y": 325.5,
+          "hand": [
+            {
+              "shape": 3,
+              "frost": -1,
+              "decor": -1,
+              "price": 15
+            }
+          ]
+        },
+        {
+          "event": 32,
+          "type": "WaitForClick",
+          "x": 390.0,
+          "y": 140.0,
+          "hand": []
+        },
+        {
+          "event": 40,
+          "type": "WaitForClick",
+          "x": 437.5,
+          "y": 225.0,
+          "hand": []
+        },
+        {
+          "event": 44,
+          "type": "WaitForClick",
+          "x": 471.0,
+          "y": 536.5,
+          "hand": [
+            {
+              "shape": 7,
+              "frost": -1,
+              "decor": -1,
+              "price": 15
+            }
+          ]
+        },
+        {
+          "event": 53,
+          "type": "WaitForClick",
+          "x": 515.0,
+          "y": 510.0,
+          "hand": []
+        },
+        {
+          "event": 58,
+          "type": "WaitForCustomerClick",
+          "x": 172.0,
+          "y": 551.0,
+          "hand": [
+            {
+              "shape": 7,
+              "frost": 2,
+              "decor": -1,
+              "price": 30
+            }
+          ]
+        },
+        {
+          "event": 66,
+          "type": "WaitForClick",
+          "x": 245.0,
+          "y": 490.0,
+          "hand": []
+        }
+      ],
+      "matching_delivery_observed": true,
+      "cash_collection_ready_observed": true,
+      "fresh_month": {
+        "screen": "intro",
+        "profileId": "player1",
+        "profileName": "Player 1",
+        "profilePrefs": "career_profile_player1",
+        "bank": 0,
+        "unlocked": 1,
+        "lives": 4,
+        "points": 0,
+        "tutorialComplete": true,
+        "complexTutorialComplete": false,
+        "tutorialSequenceId": -1,
+        "tutorialStep": 0,
+        "tutorialEvent": "",
+        "tutorialEventId": -1,
+        "music": true,
+        "sound": true,
+        "musicVolume": 1,
+        "soundVolume": 0.800000011920929,
+        "musicPlaying": true,
+        "musicTrack": "music/1.ogg",
+        "soundsLoaded": 46,
+        "level": 1,
+        "elapsed": 0,
+        "money": 0,
+        "served": 0,
+        "lost": 0,
+        "queue": 0,
+        "tvChannel": -1,
+        "tvNoise": false,
+        "moving": false,
+        "jillX": 365,
+        "jillY": 350,
+        "jillSpeed": 200,
+        "message": "Tap a customer to hand out a menu.",
+        "hand": [],
+        "customers": [],
+        "stations": [
+          {
+            "guid": "cakeoven2",
+            "kind": "CakeOven",
+            "enabled": false,
+            "x": 490,
+            "y": 80,
+            "w": 130,
+            "h": 225,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "cakeoven0",
+            "kind": "CakeOven",
+            "enabled": true,
+            "x": 365,
+            "y": 80,
+            "w": 130,
+            "h": 225,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "cakeoven1",
+            "kind": "CakeOven",
+            "enabled": false,
+            "x": 240,
+            "y": 80,
+            "w": 130,
+            "h": 225,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "froster0",
+            "kind": "Froster",
+            "enabled": false,
+            "x": 585,
+            "y": 480,
+            "w": 154,
+            "h": 79,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "froster1",
+            "kind": "Froster",
+            "enabled": true,
+            "x": 440,
+            "y": 480,
+            "w": 154,
+            "h": 79,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "froster2",
+            "kind": "Froster",
+            "enabled": false,
+            "x": 295,
+            "y": 480,
+            "w": 154,
+            "h": 79,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "decorator0",
+            "kind": "Decoration",
+            "enabled": false,
+            "x": 655,
+            "y": 290,
+            "w": 118,
+            "h": 86,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "decorator1",
+            "kind": "Decoration",
+            "enabled": false,
+            "x": 683,
+            "y": 370,
+            "w": 118,
+            "h": 86,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "trash",
+            "kind": "Trash",
+            "enabled": true,
+            "x": 606,
+            "y": 273,
+            "w": 52,
+            "h": 99,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "cupcake0",
+            "kind": "CookieOven",
+            "enabled": false,
+            "x": 624,
+            "y": 143,
+            "w": 100,
+            "h": 110,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "displaycase0",
+            "kind": "DisplayCase",
+            "enabled": false,
+            "x": 425,
+            "y": 315,
+            "w": 85,
+            "h": 70,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "tvset0",
+            "kind": "TVSet",
+            "enabled": false,
+            "x": 145,
+            "y": 25,
+            "w": 76,
+            "h": 125,
+            "cake": [],
+            "remaining": 0
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 10,
+      "opening_flow_real_taps": [],
+      "real_taps": [
+        {
+          "event": 4,
+          "type": "WaitForCustomerClick",
+          "x": 172.0,
+          "y": 551.0,
+          "hand": []
+        },
+        {
+          "event": 13,
+          "type": "WaitForClick",
+          "x": 451.0,
+          "y": 136.0,
+          "hand": []
+        },
+        {
+          "event": 21,
+          "type": "WaitForClick",
+          "x": 437.5,
+          "y": 225.0,
+          "hand": []
+        },
+        {
+          "event": 25,
+          "type": "WaitForClick",
+          "x": 563.5,
+          "y": 501.5,
+          "hand": [
+            {
+              "shape": 2,
+              "frost": -1,
+              "decor": -1,
+              "price": 15
+            }
+          ]
+        },
+        {
+          "event": 31,
+          "type": "WaitForClick",
+          "x": 479.0,
+          "y": 141.5,
+          "hand": []
+        },
+        {
+          "event": 39,
+          "type": "WaitForClick",
+          "x": 437.5,
+          "y": 225.0,
+          "hand": []
+        },
+        {
+          "event": 43,
+          "type": "WaitForClick",
+          "x": 515.0,
+          "y": 512.5,
+          "hand": [
+            {
+              "shape": 3,
+              "frost": -1,
+              "decor": -1,
+              "price": 15
+            }
+          ]
+        },
+        {
+          "event": 47,
+          "type": "WaitForClick",
+          "x": 471.0,
+          "y": 536.5,
+          "hand": []
+        },
+        {
+          "event": 55,
+          "type": "WaitForClick",
+          "x": 515.0,
+          "y": 510.0,
+          "hand": []
+        },
+        {
+          "event": 60,
+          "type": "WaitForCustomerClick",
+          "x": 172.0,
+          "y": 551.0,
+          "hand": [
+            {
+              "shape": 2,
+              "frost": 3,
+              "decor": -1,
+              "price": 30
+            },
+            {
+              "shape": 3,
+              "frost": 2,
+              "decor": -1,
+              "price": 30
+            }
+          ]
+        },
+        {
+          "event": 68,
+          "type": "WaitForClick",
+          "x": 245.0,
+          "y": 490.0,
+          "hand": []
+        }
+      ],
+      "matching_delivery_observed": true,
+      "cash_collection_ready_observed": true,
+      "fresh_month": {
+        "screen": "game",
+        "profileId": "player1",
+        "profileName": "Player 1",
+        "profilePrefs": "career_profile_player1",
+        "bank": 0,
+        "unlocked": 11,
+        "lives": 4,
+        "points": 0,
+        "tutorialComplete": true,
+        "complexTutorialComplete": true,
+        "tutorialSequenceId": -1,
+        "tutorialStep": 0,
+        "tutorialEvent": "",
+        "tutorialEventId": -1,
+        "music": true,
+        "sound": true,
+        "musicVolume": 1,
+        "soundVolume": 0.800000011920929,
+        "musicPlaying": true,
+        "musicTrack": "music/b.ogg",
+        "soundsLoaded": 46,
+        "level": 11,
+        "elapsed": 0.9999993443489075,
+        "money": 0,
+        "served": 0,
+        "lost": 0,
+        "queue": 0,
+        "tvChannel": -1,
+        "tvNoise": false,
+        "moving": false,
+        "jillX": 365,
+        "jillY": 350,
+        "jillSpeed": 200,
+        "message": "Tap a customer to hand out a menu.",
+        "hand": [],
+        "customers": [],
+        "stations": [
+          {
+            "guid": "cakeoven2",
+            "kind": "CakeOven",
+            "enabled": false,
+            "x": 490,
+            "y": 80,
+            "w": 130,
+            "h": 225,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "cakeoven0",
+            "kind": "CakeOven",
+            "enabled": true,
+            "x": 365,
+            "y": 80,
+            "w": 130,
+            "h": 225,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "cakeoven1",
+            "kind": "CakeOven",
+            "enabled": false,
+            "x": 240,
+            "y": 80,
+            "w": 130,
+            "h": 225,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "froster0",
+            "kind": "Froster",
+            "enabled": false,
+            "x": 585,
+            "y": 480,
+            "w": 154,
+            "h": 79,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "froster1",
+            "kind": "Froster",
+            "enabled": true,
+            "x": 440,
+            "y": 480,
+            "w": 154,
+            "h": 79,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "froster2",
+            "kind": "Froster",
+            "enabled": false,
+            "x": 295,
+            "y": 480,
+            "w": 154,
+            "h": 79,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "decorator0",
+            "kind": "Decoration",
+            "enabled": false,
+            "x": 655,
+            "y": 290,
+            "w": 118,
+            "h": 86,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "decorator1",
+            "kind": "Decoration",
+            "enabled": false,
+            "x": 683,
+            "y": 370,
+            "w": 118,
+            "h": 86,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "trash",
+            "kind": "Trash",
+            "enabled": true,
+            "x": 606,
+            "y": 273,
+            "w": 52,
+            "h": 99,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "cupcake0",
+            "kind": "CookieOven",
+            "enabled": false,
+            "x": 624,
+            "y": 143,
+            "w": 100,
+            "h": 110,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "displaycase0",
+            "kind": "DisplayCase",
+            "enabled": false,
+            "x": 425,
+            "y": 315,
+            "w": 85,
+            "h": 70,
+            "cake": [],
+            "remaining": 0
+          },
+          {
+            "guid": "tvset0",
+            "kind": "TVSet",
+            "enabled": false,
+            "x": 140,
+            "y": 25,
+            "w": 76,
+            "h": 125,
+            "cake": [],
+            "remaining": 0
+          }
+        ]
+      }
+    }
+  ],
+  "original_prefs_restored": true
+}

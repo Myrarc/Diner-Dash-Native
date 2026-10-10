@@ -1,0 +1,22 @@
+--- 0.1.6/src/local/cakemania/MainActivity.java
++++ 0.1.7/src/local/cakemania/MainActivity.java
+@@ -108,7 +108,9 @@
+         career.tutorialStep=0;career.save(saved);tutorial=null;
+         // Practice is outside the career ledger.  Begin January at elapsed zero
+         // without awarding tutorial money, points, lives or a result.
+-        startNormalMonth(tutorialSequenceId==10?11:1,false);
++        // 0041f740 -> 0041f290 -> 0041ba80 opens January's real StartScreen
++        // after practice, using the career narrative and goal.
++        startNormalMonth(tutorialSequenceId==10?11:1,tutorialSequenceId==0);
+     }
+     private TutorialController.Host tutorialHost(){return (id,orderText)->{
+         if(id!=5)throw new IllegalArgumentException("Unsupported tutorial customer id "+id);
+@@ -160,7 +162,7 @@
+         if(screen.equals("map")){if(key.equals("map:back")){menu();return;}if(key.startsWith("map:level:")){int n=Integer.parseInt(key.substring(10));if(n<=unlocked)start(n);return;}}
+         if(screen.equals("endless")){if(key.equals("endless:back")){menu();return;}if(key.startsWith("endless:bakery:")){chooseEndlessBakery(Integer.parseInt(key.substring(15)));return;}if(key.startsWith("endless:difficulty:")){chooseEndlessDifficulty(key.substring(19));return;}if(key.equals("endless:start")){startEndless();return;}}
+         if(screen.equals("playmenu")){switch(key){case "play0":if(unlocked>1)new AlertDialog.Builder(this).setTitle("Start a new career?").setMessage("This resets the saved career and upgrades on this device.").setPositiveButton("Start",(d,w)->newCareer()).setNegativeButton("Cancel",null).show();else newCareer();break;case "play1":start(Math.max(1,Math.min(48,saved.getInt("current",1))));break;case "play2":openMap();break;case "play3":menu();break;}return;}
+-        if(screen.equals("story")&&key.equals("next")){storyPage++;if(storyPage>=storyImages.size()){audio.music(game.level.music);show("intro");}else show("story");return;}
++        if(screen.equals("story")&&key.equals("next")){storyPage++;if(storyPage>=storyImages.size())openMap();else show("story");return;}
+         if(screen.equals("intro")&&key.equals("start")){show("game");return;}
+         if(screen.equals("game")){if(key.startsWith("tutorial:")){dispatchTutorialControl(key);return;}if(key.equals("pause")){show("pause");return;}if(key.equals("cancel")){game.clearQueue();return;}
+             if(key.startsWith("form:")){String[] target=key.split(":");Station s=game.station(target[1]);if(s!=null&&s.form(Integer.parseInt(target[2]))!=null)game.enqueue(s,Integer.parseInt(target[2]));return;}

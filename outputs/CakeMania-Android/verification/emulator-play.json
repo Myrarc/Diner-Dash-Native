@@ -1,0 +1,514 @@
+{
+  "passed": true,
+  "apk_sha256": "7c4595e352c5a4b29ed927b77942c9b9eba7d23162c1eba010eaf6ad6ee1dbf7",
+  "checks": [
+    "actual touch menu delivery",
+    "oven shape selection",
+    "baking and pickup",
+    "frosting selection and pickup",
+    "matching delivery and cash collection",
+    "first month goal",
+    "result to populated shop",
+    "display case purchase debits original $200 price",
+    "continue to February retains purchase",
+    "PCM music remains playing throughout January",
+    "all 46 sound IDs load"
+  ],
+  "month1": {
+    "screen": "result",
+    "bank": 272,
+    "unlocked": 2,
+    "music": true,
+    "musicPlaying": true,
+    "musicTrack": "music/1.ogg",
+    "soundsLoaded": 46,
+    "level": 1,
+    "elapsed": 181.4754180908203,
+    "money": 272,
+    "served": 8,
+    "lost": 0,
+    "queue": 0,
+    "moving": false,
+    "message": "Collected $34.",
+    "hand": [],
+    "customers": [],
+    "stations": [
+      {
+        "guid": "cakeoven2",
+        "kind": "CakeOven",
+        "enabled": false,
+        "x": 490,
+        "y": 80,
+        "w": 130,
+        "h": 225,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "cakeoven0",
+        "kind": "CakeOven",
+        "enabled": true,
+        "x": 365,
+        "y": 80,
+        "w": 130,
+        "h": 225,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "cakeoven1",
+        "kind": "CakeOven",
+        "enabled": false,
+        "x": 240,
+        "y": 80,
+        "w": 130,
+        "h": 225,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "froster0",
+        "kind": "Froster",
+        "enabled": false,
+        "x": 585,
+        "y": 480,
+        "w": 154,
+        "h": 79,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "froster1",
+        "kind": "Froster",
+        "enabled": true,
+        "x": 440,
+        "y": 480,
+        "w": 154,
+        "h": 79,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "froster2",
+        "kind": "Froster",
+        "enabled": false,
+        "x": 295,
+        "y": 480,
+        "w": 154,
+        "h": 79,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "decorator0",
+        "kind": "Decoration",
+        "enabled": false,
+        "x": 655,
+        "y": 290,
+        "w": 118,
+        "h": 86,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "decorator1",
+        "kind": "Decoration",
+        "enabled": false,
+        "x": 683,
+        "y": 370,
+        "w": 118,
+        "h": 86,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "trash",
+        "kind": "Trash",
+        "enabled": true,
+        "x": 606,
+        "y": 273,
+        "w": 52,
+        "h": 99,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "cupcake0",
+        "kind": "CookieOven",
+        "enabled": false,
+        "x": 624,
+        "y": 143,
+        "w": 100,
+        "h": 110,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "displaycase0",
+        "kind": "DisplayCase",
+        "enabled": false,
+        "x": 425,
+        "y": 315,
+        "w": 85,
+        "h": 70,
+        "cake": [],
+        "remaining": 0
+      },
+      {
+        "guid": "tvset0",
+        "kind": "TVSet",
+        "enabled": false,
+        "x": 145,
+        "y": 25,
+        "w": 76,
+        "h": 125,
+        "cake": [],
+        "remaining": 0
+      }
+    ]
+  },
+  "actions": [
+    {
+      "elapsed": 1.117201566696167,
+      "action": "Give menu 1",
+      "money": 0,
+      "queue": 0
+    },
+    {
+      "elapsed": 8.857342720031738,
+      "action": "Bake 1",
+      "money": 0,
+      "queue": 0
+    },
+    {
+      "elapsed": 13.11775016784668,
+      "action": "Give menu 2",
+      "money": 0,
+      "queue": 0
+    },
+    {
+      "elapsed": 15.345087051391602,
+      "action": "Pick up cakeoven0",
+      "money": 0,
+      "queue": 0
+    },
+    {
+      "elapsed": 18.219324111938477,
+      "action": "Frost 1",
+      "money": 0,
+      "queue": 0
+    },
+    {
+      "elapsed": 22.83481788635254,
+      "action": "Pick up froster1",
+      "money": 0,
+      "queue": 0
+    },
+    {
+      "elapsed": 27.130043029785156,
+      "action": "Deliver 1",
+      "money": 0,
+      "queue": 0
+    },
+    {
+      "elapsed": 30.694021224975586,
+      "action": "Collect cash 1",
+      "money": 0,
+      "queue": 0
+    },
+    {
+      "elapsed": 31.981843948364258,
+      "action": "Bake 2",
+      "money": 34,
+      "queue": 0
+    },
+    {
+      "elapsed": 36.1480712890625,
+      "action": "Pick up cakeoven0",
+      "money": 34,
+      "queue": 0
+    },
+    {
+      "elapsed": 40.89618682861328,
+      "action": "Frost 2",
+      "money": 34,
+      "queue": 0
+    },
+    {
+      "elapsed": 44.68152618408203,
+      "action": "Give menu 3",
+      "money": 34,
+      "queue": 0
+    },
+    {
+      "elapsed": 46.486785888671875,
+      "action": "Pick up froster1",
+      "money": 34,
+      "queue": 0
+    },
+    {
+      "elapsed": 49.82050704956055,
+      "action": "Deliver 2",
+      "money": 34,
+      "queue": 0
+    },
+    {
+      "elapsed": 51.75574493408203,
+      "action": "Bake 3",
+      "money": 34,
+      "queue": 0
+    },
+    {
+      "elapsed": 54.9640998840332,
+      "action": "Collect cash 2",
+      "money": 34,
+      "queue": 0
+    },
+    {
+      "elapsed": 57.53608703613281,
+      "action": "Give menu 4",
+      "money": 68,
+      "queue": 0
+    },
+    {
+      "elapsed": 58.734432220458984,
+      "action": "Pick up cakeoven0",
+      "money": 68,
+      "queue": 0
+    },
+    {
+      "elapsed": 61.03046417236328,
+      "action": "Frost 3",
+      "money": 68,
+      "queue": 0
+    },
+    {
+      "elapsed": 65.23336791992188,
+      "action": "Pick up froster1",
+      "money": 68,
+      "queue": 0
+    },
+    {
+      "elapsed": 70.2778091430664,
+      "action": "Deliver 3",
+      "money": 68,
+      "queue": 0
+    },
+    {
+      "elapsed": 71.59917449951172,
+      "action": "Bake 4",
+      "money": 68,
+      "queue": 0
+    },
+    {
+      "elapsed": 75.47258758544922,
+      "action": "Collect cash 3",
+      "money": 68,
+      "queue": 0
+    },
+    {
+      "elapsed": 78.74235534667969,
+      "action": "Pick up cakeoven0",
+      "money": 102,
+      "queue": 0
+    },
+    {
+      "elapsed": 81.5096206665039,
+      "action": "Give menu 5",
+      "money": 102,
+      "queue": 0
+    },
+    {
+      "elapsed": 84.40888214111328,
+      "action": "Frost 4",
+      "money": 102,
+      "queue": 0
+    },
+    {
+      "elapsed": 86.94666290283203,
+      "action": "Pick up froster1",
+      "money": 102,
+      "queue": 0
+    },
+    {
+      "elapsed": 91.79450225830078,
+      "action": "Deliver 4",
+      "money": 102,
+      "queue": 0
+    },
+    {
+      "elapsed": 93.86177825927734,
+      "action": "Bake 5",
+      "money": 102,
+      "queue": 0
+    },
+    {
+      "elapsed": 97.10482025146484,
+      "action": "Collect cash 4",
+      "money": 102,
+      "queue": 0
+    },
+    {
+      "elapsed": 99.4302978515625,
+      "action": "Give menu 6",
+      "money": 136,
+      "queue": 0
+    },
+    {
+      "elapsed": 100.66770935058594,
+      "action": "Pick up cakeoven0",
+      "money": 136,
+      "queue": 0
+    },
+    {
+      "elapsed": 102.59346771240234,
+      "action": "Frost 5",
+      "money": 136,
+      "queue": 0
+    },
+    {
+      "elapsed": 106.27112579345703,
+      "action": "Pick up froster1",
+      "money": 136,
+      "queue": 0
+    },
+    {
+      "elapsed": 111.36124420166016,
+      "action": "Deliver 5",
+      "money": 136,
+      "queue": 0
+    },
+    {
+      "elapsed": 112.96063232421875,
+      "action": "Bake 6",
+      "money": 136,
+      "queue": 0
+    },
+    {
+      "elapsed": 116.8147964477539,
+      "action": "Collect cash 5",
+      "money": 136,
+      "queue": 0
+    },
+    {
+      "elapsed": 119.81880950927734,
+      "action": "Pick up cakeoven0",
+      "money": 170,
+      "queue": 0
+    },
+    {
+      "elapsed": 122.53453063964844,
+      "action": "Give menu 7",
+      "money": 170,
+      "queue": 0
+    },
+    {
+      "elapsed": 125.53965759277344,
+      "action": "Frost 6",
+      "money": 170,
+      "queue": 0
+    },
+    {
+      "elapsed": 128.076416015625,
+      "action": "Pick up froster1",
+      "money": 170,
+      "queue": 0
+    },
+    {
+      "elapsed": 133.07810974121094,
+      "action": "Deliver 6",
+      "money": 170,
+      "queue": 0
+    },
+    {
+      "elapsed": 134.93670654296875,
+      "action": "Bake 7",
+      "money": 170,
+      "queue": 0
+    },
+    {
+      "elapsed": 137.2270965576172,
+      "action": "Collect cash 6",
+      "money": 170,
+      "queue": 0
+    },
+    {
+      "elapsed": 138.4344024658203,
+      "action": "Give menu 8",
+      "money": 204,
+      "queue": 0
+    },
+    {
+      "elapsed": 139.4332733154297,
+      "action": "Bake 7",
+      "money": 204,
+      "queue": 0
+    },
+    {
+      "elapsed": 142.60763549804688,
+      "action": "Pick up cakeoven0",
+      "money": 204,
+      "queue": 0
+    },
+    {
+      "elapsed": 147.95445251464844,
+      "action": "Frost 7",
+      "money": 204,
+      "queue": 0
+    },
+    {
+      "elapsed": 151.832275390625,
+      "action": "Pick up froster1",
+      "money": 204,
+      "queue": 0
+    },
+    {
+      "elapsed": 157.03709411621094,
+      "action": "Deliver 7",
+      "money": 204,
+      "queue": 0
+    },
+    {
+      "elapsed": 158.75074768066406,
+      "action": "Bake 8",
+      "money": 204,
+      "queue": 0
+    },
+    {
+      "elapsed": 162.558349609375,
+      "action": "Collect cash 7",
+      "money": 204,
+      "queue": 0
+    },
+    {
+      "elapsed": 165.50389099121094,
+      "action": "Pick up cakeoven0",
+      "money": 238,
+      "queue": 0
+    },
+    {
+      "elapsed": 168.41554260253906,
+      "action": "Frost 8",
+      "money": 238,
+      "queue": 0
+    },
+    {
+      "elapsed": 172.3031005859375,
+      "action": "Pick up froster1",
+      "money": 238,
+      "queue": 0
+    },
+    {
+      "elapsed": 177.3135528564453,
+      "action": "Deliver 8",
+      "money": 238,
+      "queue": 0
+    },
+    {
+      "elapsed": 180.54159545898438,
+      "action": "Collect cash 8",
+      "money": 238,
+      "queue": 0
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T16:14:55.262120+00:00",
+  "title": "Design System: Diner Dash Android Port",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink"
+      },
+      "waiting-selected": {
+        "role": "primary",
+        "displayName": "Selected waiting blue"
+      },
+      "mood-steady": {
+        "role": "secondary",
+        "displayName": "Steady mood green"
+      },
+      "mood-low": {
+        "role": "secondary",
+        "displayName": "Low mood red"
+      },
+      "shell-paper": {
+        "role": "neutral",
+        "displayName": "Shell paper"
+      },
+      "board-surround": {
+        "role": "neutral",
+        "displayName": "Board surround"
+      },
+      "waiting-card": {
+        "role": "neutral",
+        "displayName": "Waiting card"
+      },
+      "station-idle": {
+        "role": "neutral",
+        "displayName": "Idle station"
+      },
+      "station-ready": {
+        "role": "neutral",
+        "displayName": "Ready station"
+      },
+      "table-label": {
+        "role": "neutral",
+        "displayName": "Table label paper"
+      }
+    },
+    "typographyMeta": {
+      "native-score": {
+        "displayName": "Native score",
+        "purpose": "Two-line shift, stars and goal text; Android theme typeface."
+      },
+      "native-control": {
+        "displayName": "Native control",
+        "purpose": "Single-line Android action buttons."
+      },
+      "native-status": {
+        "displayName": "Native status",
+        "purpose": "Two-line hands, queue and service message."
+      },
+      "canvas-station": {
+        "displayName": "Canvas station",
+        "purpose": "Names above kitchen, dishes and drinks."
+      },
+      "canvas-label": {
+        "displayName": "Canvas label",
+        "purpose": "Table needs, waiting title and guest/mood caption."
+      },
+      "canvas-detail": {
+        "displayName": "Canvas detail",
+        "purpose": "Station detail and fitted snack captions."
+      },
+      "canvas-small": {
+        "displayName": "Canvas small",
+        "purpose": "Bar, multipliers, podium state and hands annotation."
+      }
+    },
+    "native": {
+      "platform": "Android Java/Canvas",
+      "sources": [
+        "src/local/dinerdash/prototype/MainActivity.java",
+        "src/local/dinerdash/prototype/GameView.java",
+        "src/local/dinerdash/prototype/AssetStore.java",
+        "src/local/dinerdash/prototype/SpriteRenderer.java"
+      ],
+      "unitSemantics": {
+        "dp": "Native geometry multiplies by display density and rounds to physical pixels.",
+        "sp": "Native setTextSize(float) follows Android scaled text units.",
+        "canvas units": "Logical coordinates before fit scale and zoom; label size also multiplies by system fontScale."
+      },
+      "layout": {
+        "board": "1000 × 600 logical units, centered at min(viewWidth/1000, viewHeight/600)",
+        "background": "800 × 600 bitmap translated by x=200",
+        "clip": "0,0–1000,600",
+        "waiting": "x=0–205, five cards, 102-unit pitch",
+        "floorBounds": "Nominal vertical step 37, reduced from table/podium footprints against lower limit 580",
+        "responsiveModel": "Continuous fitting; no named breakpoints or separate tablet composition."
+      },
+      "touch": {
+        "zoom": "1–2.5 around gesture focus; zoom 1 resets pan",
+        "pan": "Zoom above 1.05, floor drag, no selected party; offsets are not clamped",
+        "waiting": "Tap/select or drag to floor; vertical swipe above 35 logical units shifts one party",
+        "tables": "Nearest active non-bar table inside footprint, with tapped-chair alignment for selected party"
+      },
+      "spriteTransparency": "Matching mask_<member> at the bitmap dimensions multiplies alpha by (255−mask.red)/255; fallback removes exact white and magenta pixels.",
+      "rendering": "Recovered frame registration, rotation, scale, flips, blend and z order. Animations use explicit Android time/frame selection; the Director timeline is not executed.",
+      "previewPolicy": "Native components are recorded below. No synthesized HTML/CSS preview, tonal ramp, custom shadow or responsive breakpoint is represented as shipped implementation."
+    },
+    "nativeComponents": [
+      {
+        "name": "Native control",
+        "refersTo": "native-control",
+        "source": "src/local/dinerdash/prototype/MainActivity.java",
+        "evidence": "new Button(this); setTextSize(13); setSingleLine(true); setPadding(dp(4),0,dp(4),0); setMinHeight(dp(48));",
+        "states": "Rotate/Clear and Pause/Resume captions reflect game state; Android supplies theme focus/pressed styling."
+      },
+      {
+        "name": "Waiting card",
+        "refersTo": "waiting-card",
+        "source": "src/local/dinerdash/prototype/GameView.java",
+        "evidence": "y=69+(i-firstWaiting)*102; box(c,5,y,198,y+96,selected?0xffbfdfed:0xfffffbef);",
+        "states": "Selected fill, original party sprites, guest count and numeric mood plus mood line."
+      },
+      {
+        "name": "Station",
+        "refersTo": "station-idle",
+        "source": "src/local/dinerdash/prototype/GameView.java",
+        "evidence": "box(c,l,8,r,79,ready?0xeefbf4d6:0xddebede9);",
+        "states": "Warm ready fill; current destination has a 3-unit blue underline."
+      },
+      {
+        "name": "Table need label",
+        "refersTo": "table-label",
+        "source": "src/local/dinerdash/prototype/GameView.java",
+        "evidence": "width=Math.max(90,paint.measureText(caption)+14); box(c,x+2-width/2,y-70,x+2+width/2,y-36,0xddfff9e9);",
+        "states": "Number and current need, current-target outline, mood line and chair multiplier details."
+      },
+      {
+        "name": "Native dialog",
+        "source": "src/local/dinerdash/prototype/MainActivity.java",
+        "evidence": "new AlertDialog.Builder(this)",
+        "states": "Menu, instructions, shift introductions/results and upgrade choices pause the game; native platform styling."
+      }
+    ],
+    "notCanonized": [
+      "GameView.PAPER and GameView.COLORS are unused constants, not rendered palette authority.",
+      "Android theme button/dialog display details are platform defaults, not project-owned visual tokens.",
+      "Imported menu/cinematic art does not establish rendered native menu style."
+    ]
+  },
+  "components": [],
+  "narrative": {
+    "northStar": "The original Diner Dash restaurant world",
+    "overview": "The supplied game's painted bitmap restaurants, customer composites, colored chairs and Flo establish the identity. Android adds readable action labels and platform controls around that world. Dense floors remain recognizable across all five restaurant themes.\n\nThis records the implemented Java/Canvas presentation. Imported menu and cinematic art does not establish native menu styling: the port uses Android dialogs and does not execute the Director timeline. Visual recovery does not establish exact Windows runtime parity.",
+    "keyCharacteristics": [
+      "Original bitmap art and recovered registration points.",
+      "Cream information surfaces with dark teal text over a colorful floor.",
+      "Native score, actions and hands/status surrounding a scaled Canvas.",
+      "Explicit table needs, waiting mood and queued destinations."
+    ],
+    "rules": [
+      {
+        "name": "The Artwork Palette Rule",
+        "body": "Customer and chair colors come from recovered bitmap members selected by red, blue, green, yellow, purple and grey names. Do not substitute the unused Java color array for these assets.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Unit Systems Rule",
+        "body": "Keep native dimensions in dp and native text in sp. Keep floor coordinates in Canvas units and apply `fontScale` to its labels; do not treat a Canvas unit as a dp or a screen pixel.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do preserve recovered art, sprite masks, registration points and customer/chair color identity.",
+      "Do keep needs and readiness explicit in text alongside sprites and color.",
+      "Do preserve the distinction between native dp/sp and transformed Canvas units, including system fontScale.",
+      "Do check dense late-restaurant floors at phone size, larger text and tablet size when changing bounds or captions."
+    ],
+    "donts": [
+      "Don't infer custom Android button/dialog tokens from a particular emulator theme.",
+      "Don't describe recovered assets or Android layout adaptations as proof of exact PC runtime parity.",
+      "Don't promote unused constants or imported but undisplayed menu artwork into UI tokens.",
+      "Don't claim complete screen-reader navigation from the aggregate Canvas content description."
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "apk_sha256": "f595314aa625ca5af0c04e3dd1bda139ff608676a896d9b7a7d86848c0121e85",
+  "android_api": 30,
+  "qa_level_used": false,
+  "checks": [
+    "4:3 normal cold launch: targets match canvas, Play and Back work",
+    "Live display resize back to 2280x1080: targets realign, High Scores and return work",
+    "Normal-launch gameplay: real customer tap delivers menu; oven tap opens the selection palette"
+  ],
+  "runtime_errors": 0
+}

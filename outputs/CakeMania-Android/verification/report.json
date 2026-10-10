@@ -1,0 +1,127 @@
+{
+  "build": "0.1.2",
+  "version_code": 3,
+  "package": "local.cakemania",
+  "apk_sha256": "ebbe1484864a44a3387603fa687ab73d8d8296846959dd5e72df8db02a92b674",
+  "bytes": 27623593,
+  "signature_verified": true,
+  "source_hashes_match_build": true,
+  "apk_dex_matches_compiler_output": true,
+  "fixes": [
+    "Direct on-sprite machine controls and purchase gating",
+    "Body/Form distinction and tray-based tier assembly",
+    "Native patience reservoir, collection-time tips and loss penalties",
+    "Native TV noise/broadcast intervals and one-time preferred-channel gain",
+    "Native oven recycling phases, no guessed idle burn timer",
+    "Queued arrival attempts without invented automatic waiting",
+    "One trash frame instead of the complete three-frame sheet"
+  ],
+  "emulator": {
+    "android_api": 30,
+    "gameplay": {
+      "passed": true,
+      "actual_android_taps": true,
+      "qa_level_used": true,
+      "career_restored": true,
+      "trash_normal_frame_mean_rgb_error": 14.00743271593838,
+      "checks": [
+        "Fresh January: one oven, one froster, trash; eight targets match original sprite rectangles",
+        "Trash renders one original normal frame, not the three-frame atlas",
+        "An empty oven body tap opens no popup and starts no cake",
+        "Tray tap places raw cake; pictured color tap processes that cake without pickup or popup",
+        "All eight January orders served through original shape/color sprite taps; $200 goal reached",
+        "Purchased froster and decorator: thirteen original hit regions, selected machine receives frosting, edge brown-color and ship topper sprite taps work at 1440x1080"
+      ]
+    },
+    "january": {
+      "money": 272,
+      "served": 8,
+      "lost": 0,
+      "elapsed": 190.71914672851562
+    },
+    "normal_launcher": {
+      "passed": true,
+      "qa_level_used": false,
+      "checks": [
+        "Normal cold launch: five nonzero touch targets match the drawn menu",
+        "High Scores opens and returns through touch",
+        "Options opens; music and sound toggle both ways and retain original settings",
+        "Help opens, advances, and returns through touch",
+        "Play, Choose Month, Back, Continue Career, game start, Pause, Resume, and Main Menu respond",
+        "Menu touch targets survive background/foreground",
+        "Exit closes the activity",
+        "A second normal cold launch still accepts Play"
+      ],
+      "canvas": [
+        2280,
+        1080
+      ]
+    },
+    "runtime_log_scope": "App process PID22318 inspected for crash/load error patterns; not a whole-device assertion",
+    "runtime_crash_or_load_error_matches": 0
+  },
+  "host": {
+    "passed": true,
+    "monthly_goals_reached": 48,
+    "evidence": "engine-tests-0.1.2.log",
+    "limits": "Later-month fixtures use fully upgraded equipment, automated input and abandoned-target cleanup. Not affordable career progression, human difficulty or Windows parity."
+  },
+  "assets": {
+    "passed": true,
+    "imported_files_hashed": 838,
+    "resource_files_checked": 663,
+    "images_verified": 608,
+    "customer_animation_sequences_checked": 205,
+    "decoded_pcm_audio_matched_to_originals": 51,
+    "unresolved_references_in_unused_original_screens": {
+      "IMAGE_COMICS_2": [
+        "config/comicsscreen/comics_screen.xml"
+      ],
+      "IMAGE_COMICS_3": [
+        "config/comicsscreen/comics_screen.xml"
+      ],
+      "IMAGE_COMICS_4": [
+        "config/comicsscreen/comics_screen.xml"
+      ],
+      "IMAGE_CREDITS_SCREEN": [
+        "config/creditsscreen/credits_screen.xml"
+      ],
+      "IMAGE_MAPSCREEN_BUTTON_DIS": [
+        "config/mapscreen/map_env.xml"
+      ],
+      "IMAGE_NONE": [
+        "config/mainconfig/levels_text_eng_endless.xml"
+      ]
+    }
+  },
+  "update_integrity": {
+    "gameplay_fixture_career_restored": true,
+    "initial_0_1_2_install_career_xml_preserved": true,
+    "initial_install_evidence_scope": "Before final sprite-only crop; comparison preserved in work/cake-mania-android/native-trace"
+  },
+  "review": {
+    "disposition": "ship",
+    "scope": "Two finish-review findings only: one-frame trash rendering and Cake Mania product/evidence record",
+    "both_findings_resolved": true,
+    "role_substitution": "Supplied degraded finish-reviewer contract used by a fresh agent; shipped role unavailable",
+    "whole_game_parity_established": false
+  },
+  "remaining_work": "See FIDELITY.md",
+  "not_verified": [
+    "Original Windows runtime comparison",
+    "Physical Android hardware",
+    "Android API levels other than30",
+    "Audible sound quality and seamless loop boundaries",
+    "Whole-game 1:1 parity"
+  ],
+  "evidence": [
+    "direct-machines/gameplay/report.json",
+    "direct-machines/normal-launch/report.json",
+    "engine-tests-0.1.2.log",
+    "assets-0.1.2.json",
+    "native-evidence/",
+    "finish-review-0.1.2.json",
+    "report-0.1.0.json",
+    "report-0.1.1.json"
+  ]
+}

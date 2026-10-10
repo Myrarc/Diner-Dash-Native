@@ -1,0 +1,21 @@
+{
+  "package": "local.cakemania",
+  "version": "0.1.4",
+  "min_sdk": 23,
+  "target_sdk": 36,
+  "bytes": 27644073,
+  "apk_sha256": "621f2bc8a915f2932b8b7e893664a3ab06d0fbfb179f429470b6547c461434a1",
+  "signature_verified": true,
+  "signing": "local prototype key, not a Play release",
+  "source_sha256": {
+    "src/local/cakemania/AssetStore.java": "421878fff1cf16d3efd05c8694c446f8e0aa6a559de00d78608b3b6d8aa2277c",
+    "src/local/cakemania/CareerState.java": "c1b41ec80673c6e50e27b62ae977beed1649a2a1d4153ac5f6d51cf2eb206979",
+    "src/local/cakemania/GameAudio.java": "c459b6ca811c1bc270a62e55059786cef782d5b44115bc2fb699c5639a41261b",
+    "src/local/cakemania/GameData.java": "84a0371d4c6af9c04b24e6ddb0a41c655ead37a73f9ead7a0f115b043e786b96",
+    "src/local/cakemania/GameEngine.java": "5c98d3ae3a09ecd6e7f5ffdea043a3ebfea1e69eded4788296604b9e55f7a7d3",
+    "src/local/cakemania/GameView.java": "3f10800459c9f4f8d7dfe3b3faf8ea972cefc343c7afd9d533eb3ff8bc747aac",
+    "src/local/cakemania/MainActivity.java": "9c7ff569fd8be2829cb23cc5d0cccf92f4852a575344eb235ff9c3fd4c16d8c7",
+    "src/local/cakemania/SpriteRules.java": "f667ef2e0b02c7d3c9852b4f7f12342fad6cc7f8226cc69eaa6df6a82adaf707",
+    "src/local/cakemania/TutorialController.java": "7a72a193abb60150bfb57235e566fe450583d6204f6359230e4e725e5dcd2680"
+  }
+}

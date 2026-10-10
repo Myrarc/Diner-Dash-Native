@@ -1,0 +1,20 @@
+{
+  "package": "local.dinerdash.prototype",
+  "version": "0.3.12",
+  "min_sdk": 23,
+  "target_sdk": 36,
+  "bytes": 34704599,
+  "apk_sha256": "78bfef6348d2da35069fc0b2d55e4ea42684b1acbb390a7d1e001b7e8fe2c0c7",
+  "signature_verified": true,
+  "signing": "local prototype key, not a Play release",
+  "source_sha256": {
+    "src/local/dinerdash/prototype/AssetStore.java": "2c9f4d8a88331e6a5ccf1a830d5696b44d09f8ae4bfb699308ed4cd65e09f131",
+    "src/local/dinerdash/prototype/GameAudio.java": "5c1ad05181f91f822a59d1ecc8399695a76fa571c823e2d42bf8a11c505cc488",
+    "src/local/dinerdash/prototype/GameEngine.java": "afda8a75eb2bf5049871f7ba90f6162fd70bc08e47d16adad834abbc66cce77d",
+    "src/local/dinerdash/prototype/GameView.java": "a4f3368433c9a859270e9a8836ef87cf6406203535c7c35b05a8cef74392979a",
+    "src/local/dinerdash/prototype/LevelData.java": "a03fe46f9e9675e60391cbb5dd67dffedabb651ae599b02aff86dbb4e298db56",
+    "src/local/dinerdash/prototype/MainActivity.java": "30c723c7a1f9f0e7739152593f7eafa840f9b2ebf7d124cec78ac8dd94ea7d73",
+    "src/local/dinerdash/prototype/MenuView.java": "74f40f7005ad6121931561a3d089bd6a9f3bf19ca4ff6dd4b2a5f3be4b691894",
+    "src/local/dinerdash/prototype/SpriteRenderer.java": "b31d909591473edae7a0e9c8b44e84693cbdede45a61cb18df69aedbb0158c10"
+  }
+}

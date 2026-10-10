@@ -1,0 +1,11 @@
+# Diner Dash 0.3.10 standing-face correction
+
+0.3.9 introduced a regression in every waiting customer type. New parties start with six hearts, but the change selected standing pose 2 (worried) instead of pose 3 (smiling). The floor-threshold assertion in the 0.3.9 audit was wrong, and its tests were incorrectly changed to match that assumption.
+
+The recovered `stander_view.ls` computes `integer(m / 3.3) + 1`, clamped to poses 1–3. Director's `integer(float)` rounds; the [ScummVM Lingo implementation](https://github.com/scummvm/scummvm/blob/master/engines/director/lingo/lingo-builtins.cpp) confirms rounding. The Java renderer now rounds again. Mood 1 selects pose 1, moods 2–4 select pose 2, and moods 5–10 select pose 3. Hover pose 4 is unchanged. This correction applies to the waiting line and dragged guests.
+
+The corrected installed regression uses explicit pose IDs for all ten satisfaction levels and checks the untouched six-heart arrival constructor across all six customer graphics. 0.3.9 fails 30 of its 148 checks, including every arrival face; 0.3.10 passes all 148. The existing animation, guest and sprite suites also pass: **687 installed checks total**. All six before/after arrival renders and the naturally spawned red party in level 1-1 were inspected. The Activity was opened through the existing ADB level selector, and its intro OK button was tapped. This was an arrival check, not a shift playthrough.
+
+Only SpriteRenderer.java changed among production Java files. The APK's 1,993 asset/resource entries and the source assets/resources are byte-identical to 0.3.9. ZIP CRC, version 0.3.10/code 13, label Diner Dash, existing signer and installed APK byte identity passed. The 62 MP3 and 26 derived music WAV files remain uncompressed. All eleven emulator preference files are byte-identical after QA. Music comparison remains paused.
+
+Pure model, save/menu and audio suites were not rerun because their sources are unchanged; their previous results are historical. No physical Android or original Windows runtime test ran. The broader gaps in the historical 0.3.9 audit remain. Current logs, source diff, captures and package evidence are in `0.3.10/` and `../verification.json`.

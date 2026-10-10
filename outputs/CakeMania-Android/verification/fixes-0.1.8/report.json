@@ -1,0 +1,144 @@
+{
+  "version": "0.1.8",
+  "version_code": 9,
+  "created_at": "2026-10-10T08:53:57.658740+00:00",
+  "apk_sha256": "042f8a56b137d4c6c94e2a683c11194d10153d91db3de7a933eed25bbce9a43b",
+  "apk_bytes": 27648169,
+  "original_binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+  "causes": [
+    "Main buttons advanced 51 pixels against 47-pixel original yellow rows, Play buttons used another grid, and Profiles had no corresponding row",
+    "Opening story completion sent the prepared first lesson to the unfinished month map in 0.1.7"
+  ],
+  "fixed": [
+    "Both menu button artwork and Android targets use recovered bitmap dimensions and stay centered in each row; Profiles has its own row before the footer",
+    "New Game resumes the prepared lesson directly after all three comics; later bakery stories still return to the existing map",
+    "January original copy and $200 goal remain paused until Let's Play after the lesson"
+  ],
+  "verified_final_apk": {
+    "host_suites": [
+      "FlowRulesTest",
+      "CareerStateTest"
+    ],
+    "android_probes": [
+      "MenuLayoutProbe",
+      "MonthTextProbe",
+      "FlowAndroidProbe"
+    ],
+    "menu_layout_checks": 103,
+    "menu_render_sizes": [
+      [
+        800,
+        600
+      ],
+      [
+        1440,
+        1080
+      ],
+      [
+        2280,
+        1080
+      ]
+    ],
+    "month_text_screens": 144,
+    "activity_flow_checks": 49,
+    "normal_launch_menu_real_input": [
+      "Normal cold launch: six nonzero touch targets, including Profiles, match the menu controls",
+      "High Scores opens and returns through touch",
+      "Options SeekBars accept real swipes, toggles work, and volume values persist after leaving and reopening",
+      "Help opens, advances, and returns through touch",
+      "Profiles create/select through real input and keep tutorial completion isolated per profile",
+      "Choose Month opens the map with all 48 level targets and returns through Back",
+      "Continue Career, intro, game, bottom Menu, and Main Menu respond",
+      "Menu touch targets survive background/foreground",
+      "Exit closes the activity",
+      "A second normal cold launch still accepts Play"
+    ],
+    "full_real_input_tutorial_sequences": [
+      0,
+      10
+    ],
+    "opening_flow_real_taps": [
+      "Main Menu",
+      "Play",
+      "Start New Game",
+      "Comic Continue 1",
+      "Comic Continue 2",
+      "Comic Continue 3"
+    ],
+    "tutorial_matching_delivery_and_cash_ready": true,
+    "asset_entries_unchanged": 838,
+    "installed_apk_matches": true,
+    "source_matches": true,
+    "android_api": 30
+  },
+  "source_sha256": {
+    "src/local/cakemania/AssetStore.java": "10fb40a82fb297c243c375f05ae8ca1d33d851853f7fa4c2df9c3779d901ffe4",
+    "src/local/cakemania/CareerState.java": "c1b41ec80673c6e50e27b62ae977beed1649a2a1d4153ac5f6d51cf2eb206979",
+    "src/local/cakemania/GameAudio.java": "c459b6ca811c1bc270a62e55059786cef782d5b44115bc2fb699c5639a41261b",
+    "src/local/cakemania/GameData.java": "ef43599760f0202e36cd1cdba944205b1a92214e1375d3695d37be5b2d90b18f",
+    "src/local/cakemania/GameEngine.java": "14486f313ccf4202f519082308fa8922d870c61fb67931781f4f39ae694e9d1c",
+    "src/local/cakemania/GameView.java": "88626395666d85a165b0d01a2051a37501988a409ee8702a0f42e6de58e74555",
+    "src/local/cakemania/MainActivity.java": "be6be6efca7e80a3e82ba27349e64ce90dcff0487f6d69d6c6c3903295ecdb96",
+    "src/local/cakemania/SpriteRules.java": "f667ef2e0b02c7d3c9852b4f7f12342fad6cc7f8226cc69eaa6df6a82adaf707",
+    "src/local/cakemania/TutorialController.java": "7a72a193abb60150bfb57235e566fe450583d6204f6359230e4e725e5dcd2680"
+  },
+  "test_source_sha256": {
+    "FlowRulesTest": "aa44ab4a2a8bd2c929eb154f3a560176e386cd09257beabd4ac3c66cb8011f90",
+    "CareerStateTest": "fdd6e86cd3ea23fa3f7a6441573a45b36ff954f95b0069c7a37fed09bc4ef75f",
+    "MenuLayoutProbe": "b4461c130380f847ae5289d0474d32dc437feb6482ff27ab976547a41a721d06",
+    "MonthTextProbe": "421d79e6d21cc949281706e0e612936b14a856142389fccccf975e927b3b1d71",
+    "FlowAndroidProbe": "a43cde443ec752494430476e8998bbe3e98d089f87a19764924238a38c2320e9"
+  },
+  "touch_script_sha256": {
+    "menu_touch.py": "e1ec08437198a4cf50aff7dcdb7f338041fbfa8c8dbf0a9a498c61945ff4a160",
+    "tutorial_touch.py": "05b8b20a4dec0c9ca23eec63f526f0472c4bbb56a9f27c71a2fcf5caf31f18a7"
+  },
+  "personally_inspected_images": [
+    "android/menu-before-0.1.7.png",
+    "android/map-after-comics-0.1.7.png",
+    "android/menu-layout-menu-800.png",
+    "android/menu-layout-playmenu-800.png",
+    "android/menu-layout-menu-2280.png",
+    "android/menu-layout-playmenu-2280.png",
+    "android/cake-story-after-comics.png",
+    "android/cake-intro-after-tutorial.png",
+    "menu-touch/cold-launch-menu.png",
+    "tutorial-touch/opening-comics-to-practice.png",
+    "tutorial-touch/sequence0-complete.png"
+  ],
+  "image_sha256": {
+    "android/menu-before-0.1.7.png": "9e5102d249553ac9433657dfb0bdcf2c267b8ca733dae3955111c9fbad64f8c5",
+    "android/map-after-comics-0.1.7.png": "a603062fc7e6d44059fab813bfbebb7aaad9e8e4d6e77b7fc2753ad1711ce6ba",
+    "android/menu-layout-menu-800.png": "3c5054605caa3c5cf5336a219032ed084b0acf8b95df559d5c139b9067268408",
+    "android/menu-layout-playmenu-800.png": "494d4ab5da5d52c117d2f27da02a355fe494ff87cf2c5e2784814433989c5485",
+    "android/menu-layout-menu-2280.png": "2bd222b75c665705418439f7df2dd9ec07c670844022033ec809ef1d2722875a",
+    "android/menu-layout-playmenu-2280.png": "ded3f324d666f7eb7be4985e5c7f67785527ebea2fffa37a8abfe7a8ded8344c",
+    "android/cake-story-after-comics.png": "2a780bbb28d76564cc3e0805209f6bd1e3f46bb51fee473158f8c1de7d60de16",
+    "android/cake-intro-after-tutorial.png": "22fe0a1e5cb80952d550f05a1a6c42989b8f5383410b048b1cc813e61ddc1a44",
+    "menu-touch/cold-launch-menu.png": "550bc685b171f898fedfba9f3b5629a278bbf4dd6b5f0c977c195c50785b36d5",
+    "tutorial-touch/opening-comics-to-practice.png": "a32d0f8caf6bada21c5d8e3d71a2a137be0c83fc326d4be1bffebc8f16a1b5df",
+    "tutorial-touch/sequence0-complete.png": "6845bf04c2c22fe2a293ea9968e46254532749337226b7b4800ef8db69204c3e"
+  },
+  "cleanup": {
+    "preferences_restored": true,
+    "display_settings_restored": true,
+    "test_package_removed": true,
+    "generated_qa_files_removed": true,
+    "owned_emulator_stopped": true,
+    "owned_emulator_pid": 1590,
+    "notes": "Only task-owned emulator, instrumentation package and generated QA files were removed; development APK remains installed. Original preference bytes were restored exactly."
+  },
+  "not_repeated": [
+    "Full January service and full career/month host simulations",
+    "Customer, Jill and machine matrix probes; engine and assets unchanged",
+    "PCM redecoding and audible listening"
+  ],
+  "remaining": [
+    "Windows runtime, physical Android and audible comparisons",
+    "The month map center information/preview panel remains unfinished when Choose Month is used",
+    "Native menu structure differs: five primary rows and separately placed player selection; this port retains six main and four Play choices",
+    "Direct opening-lesson resume is the user-requested route, not proven Windows parity; native generic comics completion opens the map",
+    "Native intermediate shop after advanced tutorial and other recorded fidelity gaps"
+  ],
+  "notes": "Bounded menu and opening-route repair. Actual input follows menus, three comics and the full first lesson; an isolated Activity completion fixture independently checks January transition. Historical verification is retained for its own APKs."
+}

@@ -1,0 +1,369 @@
+{
+  "created_utc": "2026-10-10T00:38:41.597459+00:00",
+  "apk_binding": {
+    "apk_sha256": "ebbe1484864a44a3387603fa687ab73d8d8296846959dd5e72df8db02a92b674",
+    "version": "0.1.2",
+    "source_sha256": {
+      "src/local/cakemania/AssetStore.java": "70b61cd45eaee0cf5b98bc15547a098ca38af71e0a3d96e155567d0267345620",
+      "src/local/cakemania/GameAudio.java": "563a3f2b58aebdffb6b1ae0517790775ec1ef379996803959625d85faf9027a3",
+      "src/local/cakemania/GameData.java": "dc3ddacb0cffbf4359d228a5a546f19e97cfff82016462e30d572a6486ef51ef",
+      "src/local/cakemania/GameEngine.java": "ad43f53e78017916ecc9a6abdfa92cd39df6ba53181c553fef889c5b671db68e",
+      "src/local/cakemania/GameView.java": "3456b5a1176e78ebd7a7574dc5183d83ecd9cde97a9ae3bc653a01e44c81dab3",
+      "src/local/cakemania/MainActivity.java": "5dda9674c5331e0b651eedb75b2a9537a55740abedf9ec5b8a1cb3b326caecbe"
+    },
+    "classes_dex_sha256": "09c3f233c655b0d98eb2372c6c7da601ed0d96b3b41ca745738e06f40610d54b",
+    "compiler_dex_identical": true,
+    "all_local_assets_identical_to_apk": 838,
+    "signature_verified": true,
+    "original_binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+    "production_source_modified_by_audit": false
+  },
+  "coverage": {
+    "metadata_functions": 7470,
+    "review_status_counts": {
+      "not-reviewed": 7343,
+      "selected-path-static-review": 117,
+      "baseline-rule-evidence": 9,
+      "partial-assembly-binding": 1
+    },
+    "distinct_selected_native_addresses": 123,
+    "supplemental_addresses_outside_initial_metadata": [
+      "00434480",
+      "004348d0",
+      "00435820",
+      "0044ab40",
+      "0044e5d0"
+    ],
+    "decompilation_ok": 7468,
+    "decompilation_failed": 2,
+    "direct_call_edges": 15798,
+    "string_reference_rows": 3894,
+    "all_android_java_files_inspected": 6,
+    "all_native_functions_reviewed": false,
+    "all_branches_of_reviewed_functions_reviewed": false
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "priority": "P1",
+      "title": "Jill shoe overlay replaces her body",
+      "report": "avatar-input.md",
+      "native_addresses": [
+        "00402df0"
+      ],
+      "android_source": "src/local/cakemania/GameView.java:123",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F02",
+      "priority": "P1",
+      "title": "Lives and terminal game-over flow missing",
+      "report": "progression-orders.md",
+      "native_addresses": [
+        "00422b10",
+        "0041d890"
+      ],
+      "android_source": "src/local/cakemania/MainActivity.java:46",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F03",
+      "priority": "P1",
+      "title": "Display-case impulse order selection missing",
+      "report": "customer-events.md",
+      "native_addresses": [
+        "0040feb0"
+      ],
+      "android_source": "src/local/cakemania/GameEngine.java:143",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F04",
+      "priority": "P1",
+      "title": "Scripted tutorial flow missing",
+      "report": "flow-shop.md",
+      "native_addresses": [
+        "00451c50",
+        "00450f20"
+      ],
+      "android_source": "src/local/cakemania/GameView.java:86",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F05",
+      "priority": "P2",
+      "title": "Special-customer heart events ignored",
+      "report": "customer-events.md",
+      "native_addresses": [
+        "00414200",
+        "00412970",
+        "004121b0"
+      ],
+      "android_source": "src/local/cakemania/GameEngine.java:113",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F06",
+      "priority": "P2",
+      "title": "Order selection omits missing-candidate weights",
+      "report": "progression-orders.md",
+      "native_addresses": [
+        "0040f430"
+      ],
+      "android_source": "src/local/cakemania/GameEngine.java:138",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F07",
+      "priority": "P2",
+      "title": "Order generation happens before menu activation",
+      "report": "progression-orders.md",
+      "native_addresses": [
+        "004163a0"
+      ],
+      "android_source": "src/local/cakemania/GameEngine.java:132",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F08",
+      "priority": "P2",
+      "title": "Cupcake refill omits native transition phase",
+      "report": "machine-input.md",
+      "native_addresses": [
+        "004348d0"
+      ],
+      "android_source": "src/local/cakemania/GameEngine.java:102",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F09",
+      "priority": "P2",
+      "title": "Cookie-eating and positive TV visual states missing",
+      "report": "customer-events.md",
+      "native_addresses": [
+        "0040a190",
+        "004121b0"
+      ],
+      "android_source": "src/local/cakemania/GameView.java:116",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F10",
+      "priority": "P2",
+      "title": "Customer timing ranges and sequence endings ignored",
+      "report": "customer-events.md",
+      "native_addresses": [
+        "00410e80",
+        "0040b280",
+        "0040d370"
+      ],
+      "android_source": "src/local/cakemania/GameView.java:116",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F11",
+      "priority": "P2",
+      "title": "Jill idle/frame direction/rates differ",
+      "report": "avatar-input.md",
+      "native_addresses": [
+        "00403460",
+        "004040e0"
+      ],
+      "android_source": "src/local/cakemania/GameView.java:123",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F12",
+      "priority": "P2",
+      "title": "Jill perspective, carry anchors and render flags differ",
+      "report": "avatar-input.md",
+      "native_addresses": [
+        "00402df0"
+      ],
+      "android_source": "src/local/cakemania/GameView.java:126",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F13",
+      "priority": "P2",
+      "title": "Oven intermediate visual phases missing",
+      "report": "machine-input.md",
+      "native_addresses": [
+        "00434020",
+        "00434d30"
+      ],
+      "android_source": "src/local/cakemania/GameView.java:104",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F14",
+      "priority": "P2",
+      "title": "FormShelf hit routing and independent cookie slots missing",
+      "report": "machine-input.md",
+      "native_addresses": [
+        "00434480",
+        "00435820",
+        "0044ab40"
+      ],
+      "android_source": "src/local/cakemania/GameView.java:45",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F15",
+      "priority": "P2",
+      "title": "Named profiles and native save-slot flow missing",
+      "report": "flow-shop.md",
+      "native_addresses": [
+        "00422670",
+        "004655a0",
+        "00465f90"
+      ],
+      "android_source": "src/local/cakemania/MainActivity.java:32",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F16",
+      "priority": "P2",
+      "title": "Native map/comic/results/HUD flow simplified",
+      "report": "flow-shop.md",
+      "native_addresses": [
+        "0041c460",
+        "00456610",
+        "00454c50"
+      ],
+      "android_source": "src/local/cakemania/GameView.java:77",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F17",
+      "priority": "P2",
+      "title": "Endless mode and original volume controls missing",
+      "report": "flow-shop.md",
+      "native_addresses": [
+        "00465510",
+        "00460970"
+      ],
+      "android_source": "src/local/cakemania/GameView.java:56",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F18",
+      "priority": "P2",
+      "title": "Native machine and goal sound events missing",
+      "report": "audio-assets.md",
+      "native_addresses": [
+        "004348d0",
+        "00436d50",
+        "0044d8f0"
+      ],
+      "android_source": "src/local/cakemania/GameEngine.java:102",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F19",
+      "priority": "P3",
+      "title": "Purchased TV position retains stale base geometry",
+      "report": "audio-assets.md",
+      "native_addresses": [
+        "0043e7d0",
+        "00441840"
+      ],
+      "android_source": "src/local/cakemania/GameEngine.java:27",
+      "status": "confirmed-source-difference",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    },
+    {
+      "id": "F20",
+      "priority": "P3",
+      "title": "Equivalent repeated sprite frames use different cache keys",
+      "report": "audio-assets.md",
+      "native_addresses": [],
+      "android_source": "src/local/cakemania/AssetStore.java:23",
+      "status": "confirmed-local-implementation-issue",
+      "impact": "Current port fidelity; active schedule/runtime reachability is qualified in the linked report"
+    }
+  ],
+  "host_probes": [
+    {
+      "id": "deferred-order",
+      "native_expected": 0,
+      "apk_source_observed": 2,
+      "matches": false
+    },
+    {
+      "id": "cupcake-door-transition",
+      "native_expected": 0,
+      "apk_source_observed": 4,
+      "matches": false
+    },
+    {
+      "id": "missing-weight-candidates",
+      "native_expected": [
+        1,
+        2,
+        3,
+        7
+      ],
+      "apk_source_observed": [
+        1
+      ],
+      "matches": false
+    },
+    {
+      "id": "display-impulse-order",
+      "native_expected": [
+        7,
+        3
+      ],
+      "apk_source_observed": [
+        1,
+        0
+      ],
+      "matches": false
+    },
+    {
+      "id": "upgrade-geometry",
+      "native_expected": 140,
+      "apk_source_observed": 145,
+      "matches": false
+    }
+  ],
+  "parity_passed": false,
+  "withdrawn": [
+    "Jill action-queue guard inferred from active customer vector",
+    "Four-cake DisplayCase capacity",
+    "RNG consumption inferred from x87 conversion helper",
+    "Math.floorMod causes API23 APK failure"
+  ],
+  "unresolved": [
+    "Native movement update cadence and initial path node",
+    "Native initial cupcake stock and exact-zero transition edge",
+    "Failed-month durable save/button dispatch",
+    "Native final shop owned-item filter",
+    "Closing pending-event semantics",
+    "Month-specific cake XML dependency fallback",
+    "Active-schedule special event impact and selector ordering",
+    "Exact pixel/FPU rounding, sound mixing and audible loops",
+    "Windows and physical Android comparison"
+  ],
+  "production_changes_in_this_audit": [],
+  "verification_boundary": "Static source/binary/config and host probes only"
+}

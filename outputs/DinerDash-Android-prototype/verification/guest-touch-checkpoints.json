@@ -1,0 +1,22 @@
+[
+  {
+    "action": "phone select second party",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 3. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag 1 preview 0. Table 1: EMPTY. Table 2: EMPTY",
+    "read_while_paused": true
+  },
+  {
+    "action": "phone seat second party",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 2. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: DECIDING. Table 2: EMPTY",
+    "read_while_paused": true
+  },
+  {
+    "action": "tablet select second party",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 3. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag 1 preview 0. Table 1: EMPTY. Table 2: EMPTY",
+    "read_while_paused": true
+  },
+  {
+    "action": "tablet seat second party",
+    "state": "Restaurant. Shift 1. Score 0. Waiting parties: 2. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: DECIDING. Table 2: EMPTY",
+    "read_while_paused": true
+  }
+]

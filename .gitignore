@@ -1,0 +1,23 @@
+# Local build products, private signing material and caches.
+/work/
+**/__pycache__/
+*.pyc
+.DS_Store
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.idsig
+*.apk
+*.zip
+**/build.log
+**/.import-work/
+
+# Supplied Windows executables and generated Ghidra/recovery databases.
+*.exe
+*.dll
+*.gpr
+*.rep/
+/outputs/*-recovered/ghidra/
+/outputs/*-recovered/data/
+/outputs/*-recovered/decompiled/

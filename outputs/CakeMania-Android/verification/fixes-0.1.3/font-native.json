@@ -1,0 +1,48 @@
+{
+  "binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+  "startup_function": "0041d290",
+  "scales": {
+    "FONT_DEFAULT": {
+      "address": "00581df8",
+      "scale": 0.949999988079071
+    },
+    "FONT_DIALOG16": {
+      "address": "00581de0",
+      "scale": 0.6666667
+    }
+  },
+  "font_scale_setter": "00493810",
+  "scaled_atlas_and_metrics": "004ab650",
+  "character_width": "0049fc20",
+  "integer_conversion": "00560568",
+  "word_wrap": "004a7230",
+  "line_spacing_getter": "00493560",
+  "XML_text_font_and_size_ignored": true,
+  "rect_height_ignored_by_wrapper": true,
+  "pixel_sampling_equivalence_to_Windows_verified": false,
+  "native_line_metrics": {
+    "FONT_DEFAULT": {
+      "atlas_height": 24,
+      "scaled_height": 22
+    },
+    "FONT_DIALOG16": {
+      "atlas_height": 39,
+      "scaled_height": 26,
+      "success_spacing": 5,
+      "success_line_step": 31
+    }
+  },
+  "field_mapping": {
+    "layer_point_size": "0x12060",
+    "layer_atlas_height": "0x1206c",
+    "layer_glyph_height_fallback": "0x12070",
+    "font_scaled_height": "0x0c",
+    "font_spacing_offset": "0x10"
+  },
+  "metric_mapping_evidence": [
+    "004b71e0",
+    "004b93a0",
+    "004ab650",
+    "00493560"
+  ]
+}

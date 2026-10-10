@@ -1,0 +1,18 @@
+{
+  "apk_sha256": "ebbe1484864a44a3387603fa687ab73d8d8296846959dd5e72df8db02a92b674",
+  "version": "0.1.2",
+  "source_sha256": {
+    "src/local/cakemania/AssetStore.java": "70b61cd45eaee0cf5b98bc15547a098ca38af71e0a3d96e155567d0267345620",
+    "src/local/cakemania/GameAudio.java": "563a3f2b58aebdffb6b1ae0517790775ec1ef379996803959625d85faf9027a3",
+    "src/local/cakemania/GameData.java": "dc3ddacb0cffbf4359d228a5a546f19e97cfff82016462e30d572a6486ef51ef",
+    "src/local/cakemania/GameEngine.java": "ad43f53e78017916ecc9a6abdfa92cd39df6ba53181c553fef889c5b671db68e",
+    "src/local/cakemania/GameView.java": "3456b5a1176e78ebd7a7574dc5183d83ecd9cde97a9ae3bc653a01e44c81dab3",
+    "src/local/cakemania/MainActivity.java": "5dda9674c5331e0b651eedb75b2a9537a55740abedf9ec5b8a1cb3b326caecbe"
+  },
+  "classes_dex_sha256": "09c3f233c655b0d98eb2372c6c7da601ed0d96b3b41ca745738e06f40610d54b",
+  "compiler_dex_identical": true,
+  "all_local_assets_identical_to_apk": 838,
+  "signature_verified": true,
+  "original_binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+  "production_source_modified_by_audit": false
+}

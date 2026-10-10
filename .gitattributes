@@ -1,0 +1,2 @@
+# Recovered asset hashes depend on exact bytes, including text line endings.
+**/assets/** -text

@@ -1,0 +1,48 @@
+0049be70  PUSH EBP
+0049be71  MOV EBP,ESP
+0049be73  SUB ESP,0x14
+0049be76  MOV EAX,dword ptr [EBP + 0x14]
+0049be79  TEST EAX,EAX
+0049be7b  MOV dword ptr [EBP + -0x4],ECX
+0049be7e  JL 0x0049bed4
+0049be80  MOV ECX,dword ptr [EBP + 0x10]
+0049be83  TEST ECX,ECX
+0049be85  JL 0x0049bed4
+0049be87  PUSH EBX
+0049be88  PUSH ESI
+0049be89  MOV ESI,dword ptr [EBP + 0x8]
+0049be8c  MOV EBX,dword ptr [ESI + 0xc]
+0049be8f  CMP EAX,EBX
+0049be91  JGE 0x0049bed2
+0049be93  PUSH EDI
+0049be94  MOV EDI,dword ptr [ESI + 0x10]
+0049be97  CMP ECX,EDI
+0049be99  JGE 0x0049bed1
+0049be9b  MOV EAX,dword ptr [ESI + 0x4]
+0049be9e  CDQ
+0049be9f  IDIV EDI
+0049bea1  MOV EDI,EAX
+0049bea3  MOV EAX,dword ptr [ESI + 0x8]
+0049bea6  CDQ
+0049bea7  IDIV EBX
+0049bea9  MOV EDX,EDI
+0049beab  IMUL EDX,ECX
+0049beae  MOV dword ptr [EBP + -0x14],EDX
+0049beb1  LEA EDX,[EBP + -0x14]
+0049beb4  PUSH EDX
+0049beb5  MOV dword ptr [EBP + -0xc],EDI
+0049beb8  MOV ECX,EAX
+0049beba  IMUL ECX,dword ptr [EBP + 0x14]
+0049bebe  MOV dword ptr [EBP + -0x8],EAX
+0049bec1  MOV EAX,dword ptr [EBP + 0xc]
+0049bec4  PUSH EAX
+0049bec5  MOV dword ptr [EBP + -0x10],ECX
+0049bec8  MOV ECX,dword ptr [EBP + -0x4]
+0049becb  PUSH ESI
+0049becc  CALL 0x0049bc60
+0049bed1  POP EDI
+0049bed2  POP ESI
+0049bed3  POP EBX
+0049bed4  MOV ESP,EBP
+0049bed6  POP EBP
+0049bed7  RET 0x10

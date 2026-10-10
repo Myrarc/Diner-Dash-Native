@@ -1,0 +1,9 @@
+{
+  "preferences_restored": true,
+  "display_settings_restored": true,
+  "test_package_removed": true,
+  "generated_qa_files_removed": true,
+  "owned_emulator_stopped": true,
+  "owned_emulator_pid": 84832,
+  "notes": "Only task-owned emulator, instrumentation package and generated QA files were removed; development APK remains installed. Original preference bytes were restored exactly."
+}

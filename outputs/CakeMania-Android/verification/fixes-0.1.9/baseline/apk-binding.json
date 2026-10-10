@@ -1,0 +1,7 @@
+{
+  "installed_apk_sha256": "042f8a56b137d4c6c94e2a683c11194d10153d91db3de7a933eed25bbce9a43b",
+  "expected_alpha": 255,
+  "observed_alpha": 235,
+  "opacity_fraction": 0.9215686274509803,
+  "regression_reproduced": true
+}

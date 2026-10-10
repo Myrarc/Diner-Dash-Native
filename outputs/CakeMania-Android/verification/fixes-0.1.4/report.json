@@ -1,0 +1,118 @@
+{
+  "version": "0.1.4",
+  "version_code": 5,
+  "created_at": "2026-10-10T05:44:38.247631+00:00",
+  "apk_sha256": "792c3a14e68c7c24a34b423fecd29fe6e05daaea4cf540ba776f3eeeacb1169b",
+  "apk_bytes": 27644073,
+  "original_binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+  "fixed": [
+    "Oven interior overlays retain cabinet dimensions and fixed shape buttons",
+    "Frosting strips crop 33 horizontal frames",
+    "Customer torso/normal-rectangle targets and front-slot overlap priority",
+    "Gameplay taps use Canvas coordinates with Form/Shelf priority",
+    "Native 10 ms movement cadence and 200 ms backlog cap",
+    "Jill center-counter depth and final foreground occlusion",
+    "Authored station cake anchors and corrected cake perspective direction"
+  ],
+  "verified_final_apk": {
+    "host_suites": [
+      "GameEngineTest",
+      "NativeMechanicsTest",
+      "SpriteRulesTest",
+      "FlowRulesTest",
+      "CareerStateTest",
+      "ResultAccountingTest"
+    ],
+    "imported_assets_hashed": 838,
+    "decoded_pcm_matched": 51,
+    "oven_render_states": 8,
+    "actual_shape_and_color_taps": [
+      {
+        "shape": 7,
+        "color": 0,
+        "bake_pickup_frost_pickup_trash": true
+      },
+      {
+        "shape": 1,
+        "color": 3,
+        "bake_pickup_frost_pickup_trash": true
+      },
+      {
+        "shape": 2,
+        "color": 1,
+        "bake_pickup_frost_pickup_trash": true
+      },
+      {
+        "shape": 3,
+        "color": 2,
+        "bake_pickup_frost_pickup_trash": true
+      }
+    ],
+    "tutorial_sequences": [
+      0,
+      10
+    ],
+    "jill_render_cases": 64,
+    "customer_render_samples": 615,
+    "activity_career_result_checks": 22,
+    "installed_apk_matches": true,
+    "current_source_metadata_matches": true,
+    "android_api": 30
+  },
+  "additional_candidate_evidence": {
+    "apk_sha256": "621f2bc8a915f2932b8b7e893664a3ab06d0fbfb179f429470b6547c461434a1",
+    "path": "machine-touch-routing-candidate/report.json",
+    "served": 8,
+    "lost": 0,
+    "money": 272,
+    "checks": [
+      "Fresh January: one oven, one froster, trash; eight targets match original sprite rectangles",
+      "Trash renders one original normal frame, not the three-frame atlas",
+      "An empty oven body tap opens no popup and starts no cake",
+      "Tray tap places raw cake; pictured color tap processes that cake without pickup or popup",
+      "All eight January orders served through original shape/color sprite taps; $200 goal reached",
+      "January result Continue opens the shop; shop Continue opens fresh February with awarded bank/points and four lives",
+      "Purchased froster and decorator: thirteen original hit regions, selected machine receives frosting, edge brown-color and ship topper sprite taps work at 1440x1080",
+      "Cookie FormShelf taps select independent slots; tapping the emptied slot does not take another cookie",
+      "Display-case FormShelf edge outside the parent body accepts placement and pickup through real taps"
+    ],
+    "final_change": "Only the native final foreground redraw was added after this full January/purchased-machine run. candidate-to-final.patch records it; final render, all stock shape/color taps, both tutorials and Activity checks were rerun."
+  },
+  "personally_inspected_images": [
+    "visual-probe/oven-states.png",
+    "visual-probe/froster-states.png",
+    "visual-probe/stock-room.png",
+    "visual-probe/jill-behind-counter.png",
+    "visual-probe/jill-front-carry.png",
+    "visual-probe/jill-matrix.png",
+    "selection-touch/frost-0-working.png",
+    "tutorial-touch/live-frost-animation.png"
+  ],
+  "cleanup": {
+    "preferences_restored": true,
+    "preference_sha256": {
+      "career.xml": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "display_settings_restored": true,
+    "test_package_removed": true,
+    "qa_files_removed": true,
+    "emulator_owned_by_task": true,
+    "emulator_shutdown": true,
+    "runtime_error_log": "runtime-errors.log"
+  },
+  "remaining": [
+    "Full Windows runtime and physical Android comparison",
+    "Exact machine animation interpolation and carried cake child-layer composition",
+    "Initial path node, free-floor/corner routing and full queue/closing behavior",
+    "Native initial cupcake stock, display source consumption and mid-month save semantics",
+    "Other screen placement including HUD text overlap, clock/star fan and menu/result animation",
+    "Missing supplied endless/intermediate-comic resources; audible loop quality; affordable full-career and human-difficulty checks"
+  ],
+  "verification_repairs": [
+    "A customer alpha mask was replaced with the native stable rectangle.",
+    "Live input found arrival-order hit priority after a front slot was refilled; slot ordering now matches visible layering.",
+    "Old touch scripts used hidden rear-guest feet and stale viewport measurements; they now tap exposed guest areas and measure the current viewport.",
+    "The station perspective test uses a float tolerance for native hundredth storage."
+  ],
+  "notes": "This is a bounded correction pass, not a claim of whole-game 1:1 parity."
+}

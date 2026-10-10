@@ -1,0 +1,69 @@
+{
+  "build": "0.1.1",
+  "version_code": 2,
+  "package": "local.cakemania",
+  "apk_sha256": "f595314aa625ca5af0c04e3dd1bda139ff608676a896d9b7a7d86848c0121e85",
+  "bytes": 27623593,
+  "signature_verified": true,
+  "fix": "Defer native touch-overlay creation from GameView.onSizeChanged until after the current layout pass. Cold-launch buttons no longer have zero width and height.",
+  "reproduction": "menu-touch/baseline/baseline-report.json",
+  "emulator": {
+    "android_api": 30,
+    "normal_launcher_entry": true,
+    "qa_level_used": false,
+    "menu_checks": [
+      "Normal cold launch: five nonzero touch targets match the drawn menu",
+      "High Scores opens and returns through touch",
+      "Options opens; music and sound toggle both ways and retain original settings",
+      "Help opens, advances, and returns through touch",
+      "Play, Choose Month, Back, Continue Career, game start, Pause, Resume, and Main Menu respond",
+      "Menu touch targets survive background/foreground",
+      "Exit closes the activity",
+      "A second normal cold launch still accepts Play"
+    ],
+    "resize_and_gameplay_checks": [
+      "4:3 normal cold launch: targets match canvas, Play and Back work",
+      "Live display resize back to 2280x1080: targets realign, High Scores and return work",
+      "Normal-launch gameplay: real customer tap delivers menu; oven tap opens the selection palette"
+    ],
+    "runtime_errors": 0
+  },
+  "update_integrity": {
+    "assets_unchanged_from_0.1.0": 838,
+    "new_apk_sha256": "f595314aa625ca5af0c04e3dd1bda139ff608676a896d9b7a7d86848c0121e85",
+    "previous_apk_sha256": "7c4595e352c5a4b29ed927b77942c9b9eba7d23162c1eba010eaf6ad6ee1dbf7",
+    "career_unchanged_by_install": true
+  },
+  "previous_gameplay_evidence": {
+    "build": "0.1.0",
+    "report": "report-0.1.0.json",
+    "apk_sha256": "7c4595e352c5a4b29ed927b77942c9b9eba7d23162c1eba010eaf6ad6ee1dbf7",
+    "engine_and_data_java_unchanged": true,
+    "full_january_and_48_month_simulation_rerun_for_0.1.1": false
+  },
+  "not_verified": [
+    "Physical Android hardware",
+    "Android API levels other than 30 for this fix",
+    "Original Windows runtime comparison",
+    "Audible sound quality and seamless music loop boundaries"
+  ],
+  "known_fidelity_gaps": [
+    "Tip and penalty formulas, exact patience/TV/movement/burn timing",
+    "Santa and Dracula broadcasts",
+    "Display case impulse orders",
+    "Missing later bakery comic artwork in supplied archive",
+    "Some carried-cake layering and decorative animations",
+    "Endless mode and multiple player profiles"
+  ],
+  "evidence": [
+    "menu-touch/normal-launch/report.json",
+    "menu-touch/normal-launch/cold-launch-menu.png",
+    "menu-touch/normal-launch/view-hierarchy.txt",
+    "menu-touch/resize-game/report.json",
+    "menu-touch/resize-game/menu-4-3.png",
+    "menu-touch/resize-game/customer-served-menu.png",
+    "menu-touch/resize-game/runtime-errors.txt",
+    "menu-touch/update-integrity.json",
+    "report-0.1.0.json"
+  ]
+}

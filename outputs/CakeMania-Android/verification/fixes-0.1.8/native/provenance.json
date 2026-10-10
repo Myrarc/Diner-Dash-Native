@@ -1,0 +1,25 @@
+{
+  "original_binary": "/Users/myrarc/Documents/Projects/Games/Cake Mania/CakeMania_data.exe",
+  "original_binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+  "new_exports": "Read-only Ghidra project; no analysis or save; targeted RecoverCakeAudit.java exports",
+  "menu_geometry": "Loaded header 481x168, alternating rows 481x47 and buttons 318x39; native menu image stacking 00460970 and menu construction 00463550",
+  "opening_boundary": "Generic comics completion 00455fb0 opens map 0041c460. Direct opening-lesson resume is the user-requested route, not verified native Windows parity. Later comics retain map completion.",
+  "files": {
+    "00419b90.asm": "edaa96f966e93b837c7fcbd03332a6a19458c92b843b373d9227190b699026ad",
+    "00419b90.c": "40772e5d9dc3480ea783d3d4faa7c62e55e6e2b2351fc78d082b58cbcf072201",
+    "0041c100.asm": "940c59742267541bcb13cc04de36d2de959e0ac37068f8b34cd1f72ba624b4e3",
+    "0041c100.c": "45232873ba6363bdcd906dbb1055f9e5c49df2fb1f7f0ad59574d0a6c8fe8c05",
+    "0041c460.c": "62baabb07f1df762931df93d20728e29d5ff556a59fffc4c2b332c5546dcdceb",
+    "0041eb90.asm": "6ee7d34fc8c594137b8f1743320b7ee08bdf5f07e937b32a3ed7ddd8b54506b4",
+    "0041eb90.c": "c215be99e73111b5ea575f83d3b198b72f6cf17c6074e3feef07a47657162168",
+    "00455fb0.c": "3e03352f070a0892addf25b07d2bd1bdb7430eae7f77b7cc86728805756d51b7",
+    "00456070.asm": "492da985de4d126968da398fbb823574c39270575f006987d227e04b7d3e07c7",
+    "00456070.c": "5f4e71fa945b0ed15ba57d6252474628f5c874dda5ee2802a618cef174233349",
+    "00460970.asm": "b52136b3b72ae503a0f40097a384ed014847fd699342fb17d9b76d61e045365d",
+    "00460970.c": "c9468d946f3291c559c8959cdb32aa997745fe957032db88c154456e19cb649a",
+    "00463550.asm": "257cd2c8e84a2a70baad790fb4a8d870d3d6c82c078d1ca0e9007800097a1d43",
+    "00463550.c": "db27589df22a468913bb8016a68e251c756bbc7abdd3472ea5fc145eaddc2c8c",
+    "00469810.asm": "bf187922070287b5974e4a82d50d7c26d038fc365d2c7bd93a7e7b70e1930ad0",
+    "00469810.c": "21d84d350ab0ab26a7b8726549b4d1440e5bff36e6e69896a3978e24d4becd33"
+  }
+}

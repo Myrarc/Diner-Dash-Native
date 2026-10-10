@@ -1,0 +1,1214 @@
+--- 0.3.8/GameEngine.java
++++ 0.3.9/GameEngine.java
+@@ -22,6 +22,7 @@
+         public int stage=1,width=16,height=13,difficulty=1,stars=3,barX,barY,snackPercent;
+         public String name="Flo's Diner",stageId="diner",bgState="state_1",intro="",succeed="",fail="";
+         public int[] kitchen={5,3},bus={15,3},drinks, podium,barColors;
++        public int[] drinkPosition={14,3},podiumPosition={1,11};
+         public int[][] foodPositions={{7,3},{9,3},{11,3}},snackPositions={{16,6},{16,9}};
+         public String[] snacks={};
+         public long podiumCharge=6000,podiumActive=2000,podiumDelay=8000,rampMS=5500;
+@@ -97,6 +98,9 @@
+     private int pathIndex,partySequence;
+     private long movement;
+     private long cookingSequence;
++    public int busFull;
++    private int busDrops;
++    private long busResetAt=-1;
+     private ItemType chainType;
+     private final Set<Integer> chain=new HashSet<>();
+     private int[] barMultipliers;
+@@ -173,6 +177,7 @@
+             if(time>=nextRandomAt){Arrival a=randomArrival();addParty(a);nextRandomAt=time+Math.max(1,a.time);}
+         }else while(nextArrival<level.arrivals.size()&&level.arrivals.get(nextArrival).time<=time)addParty(level.arrivals.get(nextArrival++));
+         if(level.drinks!=null&&!drinkReady&&time>=drinkReadyAt)drinkReady=true;
++        if(busResetAt>=0&&time>=busResetAt){busResetAt=-1;updateBusFull();}
+         if(atPodium&&level.podium!=null){
+             if(time>=podiumUntil){if(podiumChargingAt<0)podiumChargingAt=time;if(time-podiumChargingAt>=level.podiumCharge){for(Party p:waiting())mood(p,level.podiumMood);podiumUntil=time+level.podiumActive+level.podiumDelay;podiumChargingAt=-1;sound("sfx_gain_heart_1");message="Podium: waiting guests gained hearts.";}}
+         }
+@@ -256,7 +261,7 @@
+         lastActivityAt=time;
+         if(target==KITCHEN)return kitchen();
+         if(target<=FOOD1&&target>FOOD1-foodSlots.length){int slot=FOOD1-target;Party p=foodAt(slot);if(p==null||!p.foodReady)return false;if(!pickup(ItemType.FOOD,p.id,0))return false;p.foodReady=false;p.foodPickedUp=true;p.foodSlot=-1;emptyFoodSpot(slot);sound("sfx_pickup_food_1_snd");message="Food collected for table "+tableLabel(p.table)+".";return true;}
+-        if(target==BUS){boolean done=false;for(Iterator<Item> i=hands.iterator();i.hasNext();){Item it=i.next();if(it.type==ItemType.TICKET||it.type==ItemType.CHECK)continue;if(it.type==ItemType.FOOD){Party p=party(it.party);if(p!=null){p.foodPickedUp=false;p.foodReady=false;if(p.table>=0&&level.tables.get(p.table).party==p)startCooking(p);}}i.remove();done=true;}if(done)sound("sfx_dish_dropoff_1_snd");message=done?"Items dropped off. Returned food will be cooked again.":"Nothing to drop off.";return done;}
++        if(target==BUS){boolean done=false;for(Iterator<Item> i=hands.iterator();i.hasNext();){Item it=i.next();if(it.type==ItemType.TICKET||it.type==ItemType.CHECK)continue;if(it.type==ItemType.FOOD){Party p=party(it.party);if(p!=null){p.foodPickedUp=false;p.foodReady=false;if(p.table>=0&&level.tables.get(p.table).party==p)startCooking(p);}}i.remove();done=true;}if(done){busDrops++;updateBusFull();sound("sfx_dish_dropoff_1_snd");}message=done?"Items dropped off. Returned food will be cooked again.":"Nothing to drop off.";return done;}
+         if(target==DRINKS){if(!drinkReady){message="Drinks are still preparing.";return false;}if(!pickup(ItemType.DRINK,-1,drinkMood))return false;drinkReady=false;drinkReadyAt=time+(long)(drinkMS*timeMultiplier);sound("sfx_get_drinks_2_snd");message="Drink collected. Tap a seated party for a mood boost.";return true;}
+         if(target==PODIUM){atPodium=true;chain.clear();chainType=null;podiumChargingAt=-1;message="Flo is chatting at the podium. Stay to charge hearts.";return true;}
+         if(target==SNACK1||target==SNACK2){String snack=level.snacks[target==SNACK1?0:1];boolean ok=pickup(ItemType.valueOf(snack.toUpperCase(Locale.ROOT)),-1,0);if(ok)message="Deliver "+snack+" to the party asking for it.";return ok;}
+@@ -272,6 +277,7 @@
+         if(p.state==State.DECIDING||p.state==State.EATING||p.state==State.ORDERED||p.state==State.SNACK){if(serveDrink(p))return true;}
+         message=p.state==State.ORDERED?"Bring this table's food or a drink.":p.state==State.SNACK?"This party wants "+p.wantedSnack+".":"The party is still choosing, eating, or leaving.";return false;
+     }
++    private void updateBusFull(){busFull=Math.min(2,busDrops);if(busDrops>=2){busDrops=0;busResetAt=time+1500;}}
+     private boolean kitchen(){
+         boolean done=false;for(Iterator<Item> i=hands.iterator();i.hasNext();){Item it=i.next();if(it.type==ItemType.TICKET){Party p=party(it.party);if(p!=null&&p.state==State.ORDERED)startCooking(p);i.remove();done=true;}}
+         if(done){ticketTurnAt=time;sound("sfx_deliver_order_1_snd");}message=done?"Orders dropped off. Collect the numbered ready food tray.":"Cooking takes "+cookMS/1000+" seconds. Return when food is ready.";return done;
+@@ -309,8 +315,8 @@
+     public void applyUpgrade(Upgrade u){if(availableUpgrades<=0)return;availableUpgrades--;double[] v=u.values;
+         if(u.type.equals("table")){Table source=level.tableUpgrades.get(tableUpgrade++);level.tables.add(new Table(source.x,source.y,source.colors));return;}
+         int next=upgrades.containsKey(u.type)?upgrades.get(u.type)+1:1;upgrades.put(u.type,next);
+-        switch(u.type){case "podium":level.podium=new int[]{4,12};level.podiumCharge=(long)v[0];level.podiumActive=(long)v[1];level.podiumDelay=(long)v[2];level.podiumMood=(int)v[3];break;
+-        case "drinks":level.drinks=new int[]{13,3};drinkMS=(long)v[4];drinkMood=(int)v[3];drinkReadyAt=time+(long)(drinkMS*timeMultiplier);break;
++        switch(u.type){case "podium":level.podium=level.podiumPosition.clone();level.podiumCharge=(long)v[0];level.podiumActive=(long)v[1];level.podiumDelay=(long)v[2];level.podiumMood=(int)v[3];break;
++        case "drinks":level.drinks=level.drinkPosition.clone();drinkMS=(long)v[4];drinkMood=(int)v[3];drinkReadyAt=time+(long)(drinkMS*timeMultiplier);break;
+         case "shoes":speed=(long)v[5];break;case "oven":cookMS=(long)v[6];break;case "maitred":waitingPatience=v[7];break;case "stereo":seatedPatience=v[7];break;}
+     }
+     private void sound(String s){if(sounds.size()<20)sounds.add(s);}
+--- 0.3.8/GameView.java
++++ 0.3.9/GameView.java
+@@ -17,7 +17,7 @@
+     private final Paint paint=new Paint(Paint.ANTI_ALIAS_FLAG);
+     private float scale=1,offsetX,offsetY,dragX,dragY;
+     private int dragging=-1,pickedGuest,previewTable=-1,previewChair,previewBar=-1;
+-    private boolean active,notified;
++    private boolean active,notified,touchCancelled;
+     private long lastTime;
+     private String accessibility="";
+     private static final String[] PREFIX={"d","t","s","c","g"};
+@@ -27,7 +27,7 @@
+     public void updateAccessibility(){StringBuilder s=new StringBuilder("Restaurant. Shift ").append(game.level.number).append(". Score ").append(game.score).append(". Waiting parties: ").append(game.waiting().size()).append(". Food ready: ").append(game.readyFoodCount()).append(". Coffee ").append(game.level.drinks==null?"unavailable":game.drinkReady?"ready":"preparing").append(". Order wheel ").append(game.time-game.ticketTurnAt<1200?"turning":"idle").append(". Flo destination: ").append(game.currentTarget).append(". ").append(game.handsText()).append(". Drag ").append(dragging).append(" preview ").append(previewTable);
+         for(int i=0;i<game.level.tables.size();i++){GameEngine.Table t=game.level.tables.get(i);if(t.active)s.append(". Table ").append(i+1).append(": ").append(t.party==null?t.dirty?"DIRTY":"EMPTY":t.party.state.name());}
+         String value=s.toString();if(!value.equals(accessibility)){accessibility=value;setContentDescription(value);}}
+-    private final Runnable frame=new Runnable(){public void run(){long now=SystemClock.uptimeMillis();if(active)game.tick(Math.min(100,Math.max(0,now-lastTime)));lastTime=now;while(!game.sounds.isEmpty())audio.play(game.sounds.remove());listener.update(game);if(game.ended&&!notified){notified=true;listener.finished(game);}invalidate();postOnAnimation(this);}};
++    private final Runnable frame=new Runnable(){public void run(){long now=SystemClock.uptimeMillis();if(active){long elapsed=Math.max(0,now-lastTime);while(elapsed>0&&!game.paused&&!game.ended){long step=Math.min(100,elapsed);game.tick(step);elapsed-=step;}}lastTime=now;while(!game.sounds.isEmpty())audio.play(game.sounds.remove());listener.update(game);if(game.ended&&!notified){notified=true;listener.finished(game);}invalidate();postOnAnimation(this);}};
+     @Override protected void onAttachedToWindow(){super.onAttachedToWindow();lastTime=SystemClock.uptimeMillis();postOnAnimation(frame);}
+     @Override protected void onDetachedFromWindow(){removeCallbacks(frame);super.onDetachedFromWindow();}
+     @Override protected void onSizeChanged(int w,int h,int oldw,int oldh){scale=Math.min(w/800f,h/600f);offsetX=(w-800*scale)/2;offsetY=(h-600*scale)/2;}
+@@ -40,7 +40,7 @@
+     private void station(Canvas c,String key,int target){String layout=stationLayout(key);c.save();c.translate(sprites.roomX(game,key),sprites.roomY(game,key));
+         GameEngine.Party food=target<=GameEngine.FOOD1?game.foodAt(GameEngine.FOOD1-target):null;
+         List<JSONObject> nodes=AssetStore.children(sprites.assets.layout(layout));Collections.sort(nodes,(a,b)->Float.compare(AssetStore.frame(a,null,0,1).optInt("z"),AssetStore.frame(b,null,0,1).optInt("z")));
+-        for(JSONObject n:nodes){String id=n.optString("nodeID");JSONObject f=AssetStore.frame(n,null,0,1);if(id.equals("mousetrap")||id.equals("poof"))continue;
++        for(JSONObject n:nodes){String id=n.optString("nodeID");JSONObject f=AssetStore.frame(n,key.equals("busspot")?"full_"+game.busFull:null,0,1);if(id.equals("mousetrap")||id.equals("poof"))continue;
+             if(id.startsWith("checkmark_")){if(sprites.selected(game,target)<Integer.parseInt(id.substring(10)))continue;}
+             else if(id.equals("hilite")){boolean hi=target==GameEngine.DRINKS?game.drinkReady:target==GameEngine.KITCHEN?carried(GameEngine.ItemType.TICKET):carried(GameEngine.ItemType.DISHES);if(!hi)continue;c.saveLayerAlpha(null,(int)(90+165*(1+Math.sin(game.time/180.0))/2));sprites.frame(c,f,null,null);c.restore();continue;}
+             else if(id.equals("drinks")&&!game.drinkReady)continue;
+@@ -77,10 +77,10 @@
+     private boolean stationHit(String key,float x,float y){RectF b=new RectF();boolean first=true;for(JSONObject n:AssetStore.children(sprites.assets.layout(stationLayout(key)))){String id=n.optString("nodeID");if(id.startsWith("checkmark")||id.equals("hilite")||id.equals("poof"))continue;RectF r=sprites.bounds(AssetStore.frame(n,null,0,1));if(r.isEmpty())continue;if(first){b.set(r);first=false;}else b.union(r);}b.offset(sprites.roomX(game,key),sprites.roomY(game,key));b.inset(-4,-4);return b.contains(x,y);}
+     private void preview(float x,float y){previewTable=-1;previewBar=-1;int[] hit=tableHit(x,y);if(hit!=null&&game.canSeat(dragging,hit[0])){previewTable=hit[0];previewChair=(hit[1]-pickedGuest+game.level.tables.get(hit[0]).colors.length)%game.level.tables.get(hit[0]).colors.length;}else{int slot=barHit(x,y);GameEngine.Party p=game.party(dragging);if(slot>=0&&p!=null){int start=Math.max(0,Math.min(game.level.barColors.length-p.colors.length,slot-pickedGuest));if(game.canSeatBar(dragging,start))previewBar=start;}}}
+     private void cancelDrag(){dragging=-1;previewTable=-1;previewBar=-1;game.selectedParty=-1;game.heldParty=-1;}
+-    @Override public boolean onTouchEvent(MotionEvent e){float x=(e.getX()-offsetX)/scale,y=(e.getY()-offsetY)/scale;int action=e.getActionMasked();if(action==MotionEvent.ACTION_CANCEL||e.getPointerCount()>1){cancelDrag();invalidate();return true;}if(game.paused||game.ended)return true;
+-        if(action==MotionEvent.ACTION_DOWN){dragX=x;dragY=y;List<GameEngine.Party> wait=game.waiting();for(int q=0;q<Math.min(8,wait.size())&&dragging<0;q++){GameEngine.Party p=wait.get(q);JSONObject group=AssetStore.frame(AssetStore.child(sprites.assets.layout("waitqueue"),"group_"+(q+1)),null,0,1);float ox=1+AssetStore.value(group,"loc",0,0)-AssetStore.value(group,"regPoint",0,0),oy=109+AssetStore.value(group,"loc",1,0)-AssetStore.value(group,"regPoint",1,0);for(int i=p.colors.length-1;i>=0;i--){JSONObject f=AssetStore.frame(AssetStore.child(sprites.assets.layout("waitgroup"),"body_"+(i+1)),null,0,1);RectF b=sprites.bounds(f);b.offset(ox,oy);b.inset(-3,-3);if(b.contains(x,y)){dragging=p.id;pickedGuest=i;game.selectedParty=p.id;game.heldParty=p.id;break;}}}updateAccessibility();return true;}
++    @Override public boolean onTouchEvent(MotionEvent e){float x=(e.getX()-offsetX)/scale,y=(e.getY()-offsetY)/scale;int action=e.getActionMasked();if(action==MotionEvent.ACTION_CANCEL||e.getPointerCount()>1){touchCancelled=true;cancelDrag();invalidate();return true;}if(game.paused||game.ended)return true;
++        if(action==MotionEvent.ACTION_DOWN){touchCancelled=false;dragX=x;dragY=y;List<GameEngine.Party> wait=game.waiting();for(int q=0;q<Math.min(8,wait.size())&&dragging<0;q++){GameEngine.Party p=wait.get(q);JSONObject group=AssetStore.frame(AssetStore.child(sprites.assets.layout("waitqueue"),"group_"+(q+1)),null,0,1);float ox=1+AssetStore.value(group,"loc",0,0)-AssetStore.value(group,"regPoint",0,0),oy=109+AssetStore.value(group,"loc",1,0)-AssetStore.value(group,"regPoint",1,0);for(int i=p.colors.length-1;i>=0;i--){JSONObject f=AssetStore.frame(AssetStore.child(sprites.assets.layout("waitgroup"),"body_"+(i+1)),null,0,1);RectF b=sprites.bounds(f);b.offset(ox,oy);b.inset(-3,-3);if(b.contains(x,y)){dragging=p.id;pickedGuest=i;game.selectedParty=p.id;game.heldParty=p.id;break;}}}updateAccessibility();return true;}
+         if(action==MotionEvent.ACTION_MOVE){if(dragging>=0){dragX=x;dragY=y;preview(x,y);updateAccessibility();invalidate();}return true;}
+-        if(action!=MotionEvent.ACTION_UP)return true;performClick();if(dragging>=0){preview(x,y);if(previewTable>=0)game.seat(dragging,previewTable,previewChair);else if(previewBar>=0)game.seatBar(dragging,previewBar);cancelDrag();invalidate();return true;}
++        if(action!=MotionEvent.ACTION_UP||touchCancelled)return true;performClick();if(dragging>=0){preview(x,y);if(previewTable>=0)game.seat(dragging,previewTable,previewChair);else if(previewBar>=0)game.seatBar(dragging,previewBar);cancelDrag();invalidate();return true;}
+         if(sprites.bounds(AssetStore.frame(AssetStore.child(sprites.assets.layout("game_interface"),"quitgame"),null,0,1)).contains(x,y)){listener.pauseGame();return true;}
+         if(game.level.endless&&game.availableUpgrades>0){RectF upgrade=sprites.bounds(AssetStore.frame(AssetStore.child(sprites.assets.layout("upgrade_interface"),"upgradebutton"),null,0,1));upgrade.offset(446,6);if(upgrade.contains(x,y)){listener.shop();return true;}}
+         if(game.level.podium!=null&&stationHit("podium",x,y)){game.queue(GameEngine.PODIUM);return true;}
+--- 0.3.8/SpriteRenderer.java
++++ 0.3.9/SpriteRenderer.java
+@@ -19,6 +19,7 @@
+     private float chefAlpha,chefFrom;
+     private String chefAnimation="chop";
+     private final Random animationRandom=new Random();
++    private final Map<GameEngine.Party,JSONObject[]> guestPoses=new WeakHashMap<>();
+     private static final String[] COLORS={"red","blue","green","yellow","purple"};
+     private static final String[] BG={"bg_diner","bg_tiki","bg_seafood","bg_chez","bg_goddess"};
+     public SpriteRenderer(AssetStore a){assets=a;}
+@@ -50,10 +51,10 @@
+     public void person(Canvas c,GameEngine.Party party,int customer,float x,float y,boolean flip,boolean legs,long time,String stage){String graphic=party.profile.graphic,color=colorName(party.colors[customer]);JSONObject layout=assets.layout(graphic.equals("critic")?graphic:graphic+"_"+color);if(layout==null)layout=assets.layout(graphic+"_blue");if(layout==null)return;
+         JSONObject points=assets.layouts.optJSONObject("sitter_regpoints");JSONObject rp=points==null?null:points.optJSONObject(graphic);float rx=rp==null?25:AssetStore.value(points,graphic,0,25),ry=rp==null?85:AssetStore.value(points,graphic,1,85);
+         c.save();c.translate(x,y);if(flip)c.scale(-1,1);
+-        boolean showLegs=!((party.state==GameEngine.State.LEAVING||party.state==GameEngine.State.DITCHING)&&party.age>=750);
++        boolean showLegs=!departed(party);
+         if(legs&&showLegs)image(c,"gfx.people."+color,graphic+"_legs",0,0,false);
+         c.translate(-rx,-ry);String animation;
+-        switch(party.state){case DECIDING:animation="deciding";break;case READY:case CHECK:case SNACK:animation="ready";break;case EATING:animation="eating";break;case LEAVING:animation=party.age<750?"leaving":"left";break;case DITCHING:animation=party.age<750?"ditching":"ditched";break;case SCORING:animation=party.mood>7?"happy":party.mood<4?"mad":"neutral";break;default:animation=party.foodPickedUp?"prefood":"neutral";}
++        switch(party.state){case DECIDING:animation="deciding";break;case READY:case CHECK:case SNACK:animation="ready";break;case EATING:animation="eating";break;case LEAVING:animation=departed(party)?"left":"leaving";break;case DITCHING:animation=departed(party)?"ditched":"ditching";break;case SCORING:animation=party.mood>7?"happy":party.mood<4?"mad":"neutral";break;default:animation=party.foodPickedUp?"prefood":"neutral";}
+         boolean reacting=party.moodChangedAt>=0&&time-party.moodChangedAt<(party.mood>party.moodBefore?400:500)&&party.state!=GameEngine.State.SCORING&&party.state!=GameEngine.State.LEAVING&&party.state!=GameEngine.State.DITCHING;
+         if(reacting)animation=party.mood>party.moodBefore?"happy":"mad";
+         if(party.drinkUntil>time)animation="drinking";
+@@ -61,9 +62,24 @@
+         if(animation.equals("deciding")||animation.equals("drinking"))frame(c,AssetStore.frame(AssetStore.child(layout,"held_object"),animation.equals("deciding")?"menu":"drink",0,1),animation.equals("drinking")?"gfx."+stage:null,null);
+         JSONObject body=AssetStore.child(layout,"body");
+         // sitter_view uses node_anim's default properties, which exclude scale.
+-        frame(c,AssetStore.frame(body,animation,party.age,animation.equals("eating")?400:2000),null,null,AssetStore.frame(body,null,0,1));
++        long animationAge=reacting?time-party.moodChangedAt:party.age;
++        boolean exit=party.state==GameEngine.State.LEAVING||party.state==GameEngine.State.DITCHING;
++        if(exit&&departed(party))animationAge-=departureDuration(party);
++        frame(c,guestFrame(party,customer,body,animation,animationAge,exit?750:animation.equals("eating")?400:2000),null,null,AssetStore.frame(body,null,0,1));
+         if(reacting){JSONObject face=AssetStore.frame(AssetStore.child(layout,"face"),null,0,1);c.save();c.translate(AssetStore.value(face,"loc",0,0)-AssetStore.value(face,"regPoint",0,0),AssetStore.value(face,"loc",1,0)-AssetStore.value(face,"regPoint",1,0));simple(c,"status_anim",party.mood>party.moodBefore?"better":"worse",time-party.moodChangedAt,100);c.restore();}
+         c.restore();
++    }
++    private List<JSONObject> guestFrames(JSONObject node,String animation){List<JSONObject> result=new ArrayList<>();JSONArray frames=node.optJSONArray("frames");for(int i=0;i<frames.length();i++){JSONObject f=frames.optJSONObject(i);if(animation.equals(f.optString("animID")))result.add(f);}return result;}
++    private long departureDuration(GameEngine.Party p){String graphic=p.profile.graphic;JSONObject layout=assets.layout(graphic.equals("critic")?graphic:graphic+"_blue");return Math.max(1,guestFrames(AssetStore.child(layout,"body"),p.state==GameEngine.State.DITCHING?"ditching":"leaving").size())*750L;}
++    private boolean departed(GameEngine.Party p){return (p.state==GameEngine.State.LEAVING||p.state==GameEngine.State.DITCHING)&&p.age>=departureDuration(p);}
++    private JSONObject guestFrame(GameEngine.Party p,int customer,JSONObject body,String animation,long age,long ms){
++        JSONObject[] previous=guestPoses.get(p);if(previous==null){previous=new JSONObject[p.colors.length];guestPoses.put(p,previous);}
++        List<JSONObject> frames=guestFrames(body,animation);JSONObject pose;
++        // node_anim stops on absent IDs, preserving the last visual properties.
++        if(frames.isEmpty()&&(animation.equals("left")||animation.equals("ditched"))){frames=guestFrames(body,animation.equals("left")?"leaving":"ditching");pose=frames.get(frames.size()-1);}
++        else if(frames.isEmpty())pose=previous[customer]==null?AssetStore.frame(body,null,0,1):previous[customer];
++        else {long index=Math.max(0,age)/ms;pose=frames.get(animation.equals("eating")?(int)(index%frames.size()):(int)Math.min(index,frames.size()-1));}
++        previous[customer]=pose;return pose;
+     }
+     public void table(Canvas c,GameEngine g,int id,float originX,float originY){table(c,g,id,originX,originY,null,0);}
+     public void table(Canvas c,GameEngine g,int id,float originX,float originY,GameEngine.Party preview,int previewOffset){GameEngine.Table t=g.level.tables.get(id);GameEngine.Party party=preview==null?t.party:preview;int offset=preview==null?(party==null?0:party.chairOffset):previewOffset;JSONObject layout=assets.layout(t.colors.length+"top");if(layout==null)return;JSONObject first=AssetStore.frame(AssetStore.child(layout,"chair_1"),null,0,1);float left=AssetStore.value(first,"loc",0,25),top=AssetStore.value(first,"loc",1,89);
+@@ -74,7 +90,7 @@
+             if(key.startsWith("chair_")&&key.length()==7){int chair=Character.digit(key.charAt(6),10)-1;if(chair>=0&&chair<t.colors.length)frame(c,f,"gfx."+g.level.stageId,"chair_"+colorName(t.colors[chair]));}
+             else if(key.equals("table_1"))frame(c,f,"gfx."+g.level.stageId,"table_"+t.colors.length+"top");
+             else if(key.startsWith("sitter_")){int chair=Integer.parseInt(key.substring(7))-1;GameEngine.Party p=party;if(p!=null){int index=(chair-offset+t.colors.length)%t.colors.length;JSONObject anchor=AssetStore.frame(AssetStore.child(layout,"chair_"+(chair+1)),null,0,1);if(index<p.colors.length)person(c,p,index,AssetStore.value(anchor,"loc",0,0),AssetStore.value(anchor,"loc",1,0),chair==0||t.colors.length==4&&chair==3||t.colors.length==6&&(chair==4||chair==5),false,g.time,g.level.stageId);}}
+-            else if(key.startsWith("leg_")){int chair=Integer.parseInt(key.substring(4))-1;GameEngine.Party p=party;if(p!=null&&!((p.state==GameEngine.State.LEAVING||p.state==GameEngine.State.DITCHING)&&p.age>=750)){int index=(chair-offset+t.colors.length)%t.colors.length;if(index<p.colors.length){JSONObject anchor=AssetStore.frame(AssetStore.child(layout,"chair_"+(chair+1)),null,0,1);c.save();c.translate(AssetStore.value(anchor,"loc",0,0)-AssetStore.value(f,"loc",0,0),AssetStore.value(anchor,"loc",1,0)-AssetStore.value(f,"loc",1,0));frame(c,f,"gfx.people."+colorName(p.colors[index]),p.profile.graphic+"_legs");c.restore();}}}
++            else if(key.startsWith("leg_")){int chair=Integer.parseInt(key.substring(4))-1;GameEngine.Party p=party;if(p!=null&&!departed(p)){int index=(chair-offset+t.colors.length)%t.colors.length;if(index<p.colors.length){JSONObject anchor=AssetStore.frame(AssetStore.child(layout,"chair_"+(chair+1)),null,0,1);c.save();c.translate(AssetStore.value(anchor,"loc",0,0)-AssetStore.value(f,"loc",0,0),AssetStore.value(anchor,"loc",1,0)-AssetStore.value(f,"loc",1,0));frame(c,f,"gfx.people."+colorName(p.colors[index]),p.profile.graphic+"_legs");c.restore();}}}
+             else if(key.startsWith("chairnum_")){int chair=Integer.parseInt(key.substring(9))-1;if(party==null&&t.multipliers[chair]>1){JSONObject seat=AssetStore.frame(AssetStore.child(layout,"chair_"+(chair+1)),null,0,1);frame(c,f,"gfx.room",colorName(t.colors[chair])+"_"+t.multipliers[chair]+(seat.optInt("xflip")==1?"_flip":""));}}
+             else if(key.equals("heartrow")&&party!=null)hearts(c,party.mood,AssetStore.value(f,"loc",0,0),AssetStore.value(f,"loc",1,0));
+             else if((key.equals("tablenum_bg")||key.equals("tablenum"))&&party!=null&&party.state==GameEngine.State.ORDERED)frame(c,f,null,key.equals("tablenum")?"big_tablenum_"+(id+1):null);
+@@ -99,7 +115,7 @@
+             int tid=g.barTableAt(slot);GameEngine.Table t=tid<0?null:g.level.tables.get(tid);GameEngine.Party party=t==null?null:t.party;int index=t==null?0:slot-t.barStart;if(party==null&&preview!=null&&slot>=previewStart&&slot<previewStart+preview.colors.length){party=preview;index=slot-previewStart;}
+             if(key.startsWith("stool_"))frame(c,f,"gfx.room","stool_"+colorName(g.level.barColors[slot]));
+             else if(key.startsWith("stoolnum_")&&party==null&&g.barMultiplier(slot)>1)frame(c,f,"gfx.room",colorName(g.level.barColors[slot])+"_"+g.barMultiplier(slot)+"_flip");
+-            else if(key.startsWith("legs_")&&party!=null&&!((party.state==GameEngine.State.LEAVING||party.state==GameEngine.State.DITCHING)&&party.age>=750)){JSONObject stool=AssetStore.frame(AssetStore.child(layout,"stool_"+(slot+1)),null,0,1);c.save();c.translate(AssetStore.value(stool,"loc",0,0)-AssetStore.value(f,"loc",0,0),AssetStore.value(stool,"loc",1,0)-AssetStore.value(f,"loc",1,0));frame(c,f,"gfx.people."+colorName(party.colors[index]),party.profile.graphic+"_legs");c.restore();}
++            else if(key.startsWith("legs_")&&party!=null&&!departed(party)){JSONObject stool=AssetStore.frame(AssetStore.child(layout,"stool_"+(slot+1)),null,0,1);c.save();c.translate(AssetStore.value(stool,"loc",0,0)-AssetStore.value(f,"loc",0,0),AssetStore.value(stool,"loc",1,0)-AssetStore.value(f,"loc",1,0));frame(c,f,"gfx.people."+colorName(party.colors[index]),party.profile.graphic+"_legs");c.restore();}
+             else if(key.startsWith("sitter_")&&party!=null)person(c,party,index,AssetStore.value(f,"loc",0,0),AssetStore.value(f,"loc",1,0),true,false,g.time,g.level.stageId);
+             else if(key.startsWith("setting_")&&party!=null)setting(c,f,true,g,party,index);
+             else if(key.startsWith("dirty_")&&t!=null&&t.dirty)frame(c,f,null,null);
+@@ -118,7 +134,7 @@
+     public int selected(GameEngine g,int target){int n=g.currentTarget==target?1:0;for(Integer t:g.destinations)if(t==target)n++;return Math.min(3,n);}
+     public boolean hasFood(GameEngine g,int id){for(GameEngine.Item i:g.hands)if(i.type==GameEngine.ItemType.FOOD&&i.party==id)return true;return false;}
+     public void hearts(Canvas c,int mood,float x,float y){for(int i=mood;i>=1;i--)image(c,"gfx.people","heart",x-26+52-i*5-2+3,y,false);}
+-    public void standing(Canvas c,GameEngine.Party p,float x,float y,int picked){JSONObject layout=assets.layout("waitgroup");c.save();c.translate(x,y);for(int i=0;i<p.colors.length;i++){JSONObject f=AssetStore.frame(AssetStore.child(layout,"body_"+(i+1)),null,0,1);String name="standing_"+p.profile.graphic+"_"+(i==picked?4:Math.max(1,Math.min(3,(int)Math.round(p.mood/3.3)+1)));frame(c,f,"gfx.people."+colorName(p.colors[i]),name);}JSONObject f=AssetStore.frame(AssetStore.child(layout,"heartrow"),null,0,1);hearts(c,p.mood,AssetStore.value(f,"loc",0,0),AssetStore.value(f,"loc",1,0));c.restore();}
++    public void standing(Canvas c,GameEngine.Party p,float x,float y,int picked){JSONObject layout=assets.layout("waitgroup");c.save();c.translate(x,y);for(int i=0;i<p.colors.length;i++){JSONObject f=AssetStore.frame(AssetStore.child(layout,"body_"+(i+1)),null,0,1);String name="standing_"+p.profile.graphic+"_"+(i==picked?4:Math.max(1,Math.min(3,(int)(p.mood/3.3)+1)));frame(c,f,"gfx.people."+colorName(p.colors[i]),name);}JSONObject f=AssetStore.frame(AssetStore.child(layout,"heartrow"),null,0,1);hearts(c,p.mood,AssetStore.value(f,"loc",0,0),AssetStore.value(f,"loc",1,0));c.restore();}
+     public void chef(Canvas c,GameEngine g){if(chefGame!=g){chefGame=g;chefCooking=false;chefAlpha=0;chefFrom=0;chefChanged=g.time;chefCycle=g.time;}boolean cooking=false;for(GameEngine.Party p:g.parties)if(p.cookingUntil>0&&g.time<p.cookingUntil)cooking=true;
+         if(chefCooking!=cooking){chefCooking=cooking;chefFrom=chefAlpha;chefChanged=g.time;if(cooking)startChef(g.time);}
+         float fraction=Math.min(1,(g.time-chefChanged)/(float)(cooking?400:750));chefAlpha=chefFrom+((cooking?1:0)-chefFrom)*fraction;if(chefAlpha<=0)return;
+@@ -145,7 +161,7 @@
+         else if(idleStarted>=0){frame(c,AssetStore.frame(body,"idle_"+idleType,g.time-idleStarted,idleType==1?150:100),null,null,base);}
+         else {frame(c,AssetStore.frame(AssetStore.child(layout,"legs"),legAnimation,phase,frameMS),null,null);frame(c,AssetStore.frame(body,bodyAnimation,phase,frameMS),null,null,base);}
+         for(int i=0;i<Math.min(g.capacity,g.hands.size());i++){GameEngine.Item item=g.hands.get(i);JSONObject n=AssetStore.child(layout,(item.type==GameEngine.ItemType.FOOD?"food_":"payload_")+(i+1));JSONObject f=AssetStore.frame(n,g.level.stage==5?null:direction+(moving?"":"_stop"),phase,frameMS);
+-            if(item.type==GameEngine.ItemType.FOOD){c.save();c.translate(AssetStore.value(f,"loc",0,0)-AssetStore.value(f,"regPoint",0,0),AssetStore.value(f,"loc",1,0)-AssetStore.value(f,"regPoint",1,0));for(String k:new String[]{"tray","","tablenum"}){JSONObject ff=AssetStore.frame(AssetStore.child(assets.layout("food_payload"),k),g.level.stageId,0,1);GameEngine.Party p=g.party(item.party);frame(c,ff,null,k.equals("tablenum")&&p!=null?"tablenum_"+g.tableLabel(p.table):null);}c.restore();}
++            if(item.type==GameEngine.ItemType.FOOD){c.save();c.translate(AssetStore.value(f,"loc",0,0)-AssetStore.value(f,"regPoint",0,0),AssetStore.value(f,"loc",1,0)-AssetStore.value(f,"regPoint",1,0));for(String k:new String[]{"tray","","tablenum"}){JSONObject ff=AssetStore.frame(AssetStore.child(assets.layout("food_payload"),k),g.level.stage==4&&!k.equals("tray")?"chez":g.level.stageId,0,1);GameEngine.Party p=g.party(item.party);frame(c,ff,null,k.equals("tablenum")&&p!=null?"tablenum_"+g.tableLabel(p.table):null);}c.restore();}
+             else {String mem=item.type==GameEngine.ItemType.TICKET?"ticket_payload":item.type==GameEngine.ItemType.DISHES?"dishes_payload":item.type==GameEngine.ItemType.DRINK?"drink_flo":item.type.name().toLowerCase(Locale.ROOT)+"_payload";frame(c,f,item.type==GameEngine.ItemType.DRINK?"gfx."+g.level.stageId:"gfx.room",mem);}
+         }c.restore();
+     }
+--- 0.3.8/MainActivity.java
++++ 0.3.9/MainActivity.java
+@@ -37,14 +37,15 @@
+     private void resumeGame(){menus.setVisibility(View.GONE);board.setVisibility(View.VISIBLE);game.paused=false;audio.resume();}
+     private void start(int n,boolean afterWin){game=new GameEngine(LevelData.get(n));game.stars=progress.getInt("lives",game.level.stars);game.totalStars=Math.max(game.stars,progress.getInt("totalStars",game.level.stars));menus.gameOver=false;board.setGame(game);board.setVisibility(View.VISIBLE);menus.game=game;menus.intro=game.level.intro;audio.startMusic(game.level.stage);show("startlevel");}
+     private void endless(int stage,int diff){game=new GameEngine(LevelData.endless(stage,diff));menus.gameOver=false;board.setGame(game);board.setVisibility(View.VISIBLE);menus.game=game;menus.intro="Welcome to the Endless Shift!\nKeep your customers happy and earn upgrades to improve your restaurant.";audio.startMusic(stage);show("startlevel");}
+-    private void profileEditor(int slot){finishProfileInput();menus.profileSlot=slot;if(!menus.profiles[slot].isEmpty()){menus.profile=menus.profiles[slot];menus.invalidate();return;}float scale=Math.min(menus.getWidth()/800f,menus.getHeight()/600f),ox=(menus.getWidth()-800*scale)/2,oy=(menus.getHeight()-600*scale)/2;profileInput=new EditText(this);profileInput.setSingleLine(true);profileInput.setTextSize(17);profileInput.setHint("New Player");profileInput.setTextColor(0xff222222);profileInput.setBackgroundColor(0xfff6f0e3);profileInput.setImeOptions(android.view.inputmethod.EditorInfo.IME_ACTION_DONE);FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(Math.round(268*scale),Math.round(40*scale));p.leftMargin=Math.round(ox+250*scale);p.topMargin=Math.round(oy+(105+slot*40)*scale);root.addView(profileInput,p);profileInput.setOnEditorActionListener((v,action,e)->{finishProfileInput();return true;});profileInput.requestFocus();((InputMethodManager)getSystemService(INPUT_METHOD_SERVICE)).showSoftInput(profileInput,InputMethodManager.SHOW_IMPLICIT);}
+-    private void finishProfileInput(){if(profileInput==null)return;String name=profileInput.getText().toString().trim();if(!name.isEmpty()){menus.profiles[menus.profileSlot]=name;menus.profile=name;saved.edit().putString("profile"+menus.profileSlot,name).putInt("profileSlot",menus.profileSlot).apply();}((InputMethodManager)getSystemService(INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(profileInput.getWindowToken(),0);root.removeView(profileInput);profileInput=null;menus.invalidate();}
++    private void profileEditor(int slot){if(!finishProfileInput())return;menus.profileSlot=slot;if(!menus.profiles[slot].isEmpty()){menus.invalidate();return;}float scale=Math.min(menus.getWidth()/800f,menus.getHeight()/600f),ox=(menus.getWidth()-800*scale)/2,oy=(menus.getHeight()-600*scale)/2;profileInput=new EditText(this);profileInput.setSingleLine(true);profileInput.setTextSize(17);profileInput.setHint("New Player");profileInput.setTextColor(0xff222222);profileInput.setBackgroundColor(0xfff6f0e3);profileInput.setImeOptions(android.view.inputmethod.EditorInfo.IME_ACTION_DONE);FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(Math.round(268*scale),Math.round(40*scale));p.leftMargin=Math.round(ox+250*scale);p.topMargin=Math.round(oy+(105+slot*40)*scale);root.addView(profileInput,p);profileInput.setOnEditorActionListener((v,action,e)->{finishProfileInput();return true;});profileInput.requestFocus();((InputMethodManager)getSystemService(INPUT_METHOD_SERVICE)).showSoftInput(profileInput,InputMethodManager.SHOW_IMPLICIT);}
++    private boolean finishProfileInput(){if(profileInput==null)return true;String name=profileInput.getText().toString().trim().replaceAll("\\s+"," ");if(name.isEmpty()){profileInput.setError("Please type in a name.");return false;}for(int i=0;i<menus.profiles.length;i++)if(i!=menus.profileSlot&&menus.profiles[i].trim().replaceAll("\\s+"," ").equalsIgnoreCase(name)){profileInput.setError("That name is already taken.");return false;}menus.profiles[menus.profileSlot]=name;saved.edit().putString("profile"+menus.profileSlot,name).apply();discardProfileInput();return true;}
++    private void discardProfileInput(){if(profileInput==null)return;((InputMethodManager)getSystemService(INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(profileInput.getWindowToken(),0);root.removeView(profileInput);profileInput=null;menus.invalidate();}
+     @Override public void menuAction(String key){String screen=menus.screen;if(screen.equals("title_screen")){switch(key){case "career_button":case "endless_button":afterLogin=key.equals("career_button")?"career_setup":"endless_setup";if(menus.profile.isEmpty())show("login");else {loadProfile();show(afterLogin);}break;case "login_button":afterLogin="title_screen";show("login");break;case "help_button":menus.page=1;show("help");break;case "hiscore_button":menus.hiscoreMode=0;loadScores();show("hiscore");break;case "options_button":menus.underlay="title_screen";show("options");break;case "quit_button":finish();break;}return;}
+         if(screen.equals("career_setup")){if(key.equals("menu_button")){title();return;}if(key.startsWith("lvlbutton_")){String[] a=key.split("_");menus.selected=(Integer.parseInt(a[1])-1)*10+Integer.parseInt(a[2]);menus.invalidate();return;}if(key.equals("play_button")||key.equals("newgame_button")){if(key.equals("newgame_button")){progress.edit().putInt("current",menus.selected).putInt("lives",LevelData.get(menus.selected).stars).putInt("totalStars",LevelData.get(menus.selected).stars).putInt("totalScore",0).apply();menus.gameOver=false;if(menus.selected==1){menus.page=1;show("comic");}else start(menus.selected,false);}else if(!menus.gameOver)start(menus.selected,false);}return;}
+         if(screen.equals("comic")){if(key.equals("arrow")){if(++menus.page>3)start(1,false);else menus.invalidate();}return;}
+         if(screen.equals("endless_setup")){if(key.equals("menu_button")){title();return;}if(key.startsWith("rest_")){menus.selected=Integer.parseInt(key.substring(5));menus.underlay="endless_setup";show("endless_difficulty");}return;}
+         if(screen.equals("endless_difficulty")){if(key.equals("closediff")){show("endless_setup");return;}if(key.startsWith("diff_"))endless(menus.selected,Integer.parseInt(key.substring(5)));return;}
+-        if(screen.equals("login")){if(key.startsWith("box_")){profileEditor(Integer.parseInt(key.substring(4))-1);return;}if(key.equals("cancel")){finishProfileInput();title();return;}if(key.equals("delete")){finishProfileInput();menus.profiles[menus.profileSlot]="";menus.profile="";saved.edit().remove("profile"+menus.profileSlot).apply();getSharedPreferences("career_profile_"+menus.profileSlot,MODE_PRIVATE).edit().clear().apply();menus.invalidate();return;}if(key.equals("play")){finishProfileInput();if(menus.profiles[menus.profileSlot].isEmpty()){profileEditor(menus.profileSlot);return;}menus.profile=menus.profiles[menus.profileSlot];saved.edit().putInt("profileSlot",menus.profileSlot).apply();loadProfile();show(afterLogin);}return;}
++        if(screen.equals("login")){if(key.startsWith("box_")){profileEditor(Integer.parseInt(key.substring(4))-1);return;}if(key.equals("cancel")){discardProfileInput();loadProfile();title();return;}if(key.equals("delete")){discardProfileInput();menus.profiles[menus.profileSlot]="";menus.profile="";saved.edit().remove("profile"+menus.profileSlot).apply();getSharedPreferences("career_profile_"+menus.profileSlot,MODE_PRIVATE).edit().clear().apply();menus.invalidate();return;}if(key.equals("play")){if(!finishProfileInput())return;if(menus.profiles[menus.profileSlot].isEmpty()){profileEditor(menus.profileSlot);return;}menus.profile=menus.profiles[menus.profileSlot];saved.edit().putInt("profileSlot",menus.profileSlot).apply();loadProfile();show(afterLogin);}return;}
+         if(screen.equals("options")){switch(key){case "music_on":case "music_off":audio.musicEnabled=menus.music=key.endsWith("on");saved.edit().putBoolean("music",menus.music).apply();if(menus.music)audio.menuMusic();else audio.stop();break;case "sfx_on":case "sfx_off":audio.enabled=menus.sfx=key.endsWith("on");saved.edit().putBoolean("sound",menus.sfx).apply();break;case "fs_on":case "fs_off":menus.fullscreen=key.endsWith("on");saved.edit().putBoolean("fullscreen",menus.fullscreen).apply();immersive();break;case "okbutton":show(menus.underlay);break;}menus.invalidate();return;}
+         if(screen.equals("help")){if(key.equals("menubutton")){title();return;}if(key.equals("next"))menus.page=Math.min(6,menus.page+1);if(key.equals("previous"))menus.page=Math.max(1,menus.page-1);if(key.equals("credits"))menus.page=6;if(key.equals("instructions"))menus.page=1;menus.invalidate();return;}
+         if(screen.equals("hiscore")){if(key.equals("menubutton"))title();else {if(key.equals("leftarrow"))menus.hiscoreMode=Math.max(0,menus.hiscoreMode-1);if(key.equals("rightarrow"))menus.hiscoreMode=Math.min(3,menus.hiscoreMode+1);menus.invalidate();}return;}
+@@ -57,8 +58,10 @@
+     @Override public void pauseGame(){game.paused=true;audio.pause();show("pause");}
+     @Override public void shop(){if(!game.level.endless||game.availableUpgrades<=0)return;menus.game=game;menus.upgradeChoices=game.upgradeChoices();show("endless_shop");}
+     @Override public void finished(GameEngine g){game.paused=true;menus.game=g;if(g.level.endless){menus.gameOver=true;menus.totalScore=g.score;menus.result="GAME OVER";submitScore(g.level.difficulty,g.score);}else{int lives=g.won?g.stars:Math.max(0,g.stars-1);int next=g.won?Math.min(50,g.level.number+1):g.level.number;if(g.won&&g.level.number<50&&g.level.number%10==0)lives=LevelData.get(next).stars;
+-            menus.gameOver=lives==0||g.won&&g.level.number==50;g.stars=lives;int total=progress.getInt("totalScore",0)+(g.won?g.score:0);SharedPreferences.Editor e=progress.edit().putInt("current",next).putInt("unlocked",Math.max(next,progress.getInt("unlocked",1))).putInt("lives",lives).putInt("totalStars",Math.max(lives,g.totalStars)).putInt("totalScore",total);if(g.won)e.putInt("best"+g.level.number,Math.max(g.score,progress.getInt("best"+g.level.number,0)));e.apply();menus.totalScore=total;menus.result=g.won?g.level.succeed:g.level.fail;if(menus.gameOver)submitScore(0,total);}show("endlevel");}
+-    @Override public void onBackPressed(){if(profileInput!=null){finishProfileInput();return;}if(menus.getVisibility()!=View.VISIBLE)pauseGame();else if(menus.screen.equals("pause"))resumeGame();else if(menus.screen.equals("title_screen"))finish();else title();}
++            menus.gameOver=lives==0||g.won&&g.level.number==50;g.stars=lives;int total=progress.getInt("totalScore",0)+(g.won?g.score:0);SharedPreferences.Editor e=progress.edit();
++            // The original final shift submits its score without advancing the resume checkpoint.
++            if(!(g.won&&g.level.number==50))e.putInt("current",next).putInt("unlocked",Math.max(next,progress.getInt("unlocked",1))).putInt("lives",lives).putInt("totalStars",Math.max(lives,g.totalStars)).putInt("totalScore",total);if(g.won)e.putInt("best"+g.level.number,Math.max(g.score,progress.getInt("best"+g.level.number,0)));e.apply();menus.totalScore=total;menus.result=g.won?g.level.succeed:g.level.fail;if(menus.gameOver)submitScore(0,total);}show("endlevel");}
++    @Override public void onBackPressed(){if(profileInput!=null){discardProfileInput();loadProfile();return;}if(menus.getVisibility()!=View.VISIBLE)pauseGame();else if(menus.screen.equals("pause"))resumeGame();else if(menus.screen.equals("title_screen"))finish();else {if(menus.screen.equals("login"))loadProfile();title();}}
+     @Override protected void onResume(){super.onResume();if(board!=null)board.setActive(true);if(audio!=null)audio.resume();}
+     @Override protected void onPause(){if(board!=null)board.setActive(false);if(audio!=null)audio.pause();super.onPause();}
+     @Override protected void onDestroy(){if(audio!=null)audio.close();super.onDestroy();}
+--- 0.3.8/MenuView.java
++++ 0.3.9/MenuView.java
+@@ -42,17 +42,17 @@
+         if(layout.equals("help")){if(id.equals("previous"))return page>1;if(id.equals("next"))return page<6;if(id.equals("version"))return false;if(id.equals("credits"))return page!=6;if(id.equals("instructions"))return page==6;}
+         if(layout.equals("login")&&id.equals("ok"))return false;
+         if(layout.equals("hiscore")){if(id.equals("leftarrow"))return hiscoreMode>0;if(id.equals("rightarrow"))return hiscoreMode<3;}
+-        if(layout.equals("endless_shop")){if(id.equals("check"))return false;if(id.equals("continue_button"))return game.availableUpgrades==0;if(id.startsWith("item_"))return Integer.parseInt(id.substring(5))<=upgradeChoices.size();}
++        if(layout.equals("endless_shop")){if(id.equals("check"))return false;if(id.equals("continue_button"))return upgradeChoices.isEmpty();if(id.matches("item_[1-3]"))return Integer.parseInt(id.substring(5))<=upgradeChoices.size();}
+         if(layout.equals("endlevel_window")){if(id.equals("flo_win"))return game.won;if(id.equals("flo_lose"))return !game.won;if(id.equals("continue_button"))return game.won&&!gameOver;if(id.equals("tryagain_button"))return !game.won&&!gameOver;if(id.equals("quit_button"))return gameOver;if(id.equals("expert_star"))return game.score>=game.level.expert&&game.won;}
+         return true;
+     }
+-    private String normalMember(String layout,String id,JSONObject f){if(layout.equals("endless_shop")&&id.startsWith("item_"))return "endshop_"+upgradeChoices.get(Integer.parseInt(id.substring(5))-1).type;if(layout.equals("career_setup")&&id.startsWith("lvlbutton_")){String[] a=id.split("_");int n=(Integer.parseInt(a[1])-1)*10+Integer.parseInt(a[2]);String type=n==current&&n!=1&&!gameOver?"lvlcontinue":experts[n-1]?"leveldot_star":"leveldot";return type+(n==selected?"_selected":"_normal");}
++    private String normalMember(String layout,String id,JSONObject f){if(layout.equals("endless_shop")&&id.matches("item_[1-3]"))return "endshop_"+upgradeChoices.get(Integer.parseInt(id.substring(5))-1).type;if(layout.equals("career_setup")&&id.startsWith("lvlbutton_")){String[] a=id.split("_");int n=(Integer.parseInt(a[1])-1)*10+Integer.parseInt(a[2]);String type=n==current&&n!=1&&!gameOver?"lvlcontinue":experts[n-1]?"leveldot_star":"leveldot";return type+(n==selected?"_selected":"_normal");}
+         if(layout.equals("career_setup")||layout.equals("endless_setup")){if(id.equals("menu_button"))return "button_back_to_menu";}
+         if(layout.equals("options")&&id.contains("_")){String[] parts=id.split("_");boolean on=parts[0].equals("music")?music:parts[0].equals("sfx")?sfx:fullscreen;if(parts[1].equals("on")||parts[1].equals("off"))return "opt_"+parts[1]+((on==parts[1].equals("on"))?"_hilite":"");}
+         if(layout.equals("login")&&id.equals("box_"+(profileSlot+1)))return "login_selected";
+         return f.optString("member");}
+     private String rollover(String member){if(member.equals("button_new_game"))return "button_new_game_up";if(member.equals("opt_ok"))return "opt_ok_rollover";if(member.startsWith("pause"))return member.replace("_off","_on");if(member.endsWith("_normal"))return member.replace("_normal","_rollover");if(member.startsWith("diff_"))return member.replace("_off","_on");if(member.startsWith("login_"))return member+"_up";String on=member+"_on";return sprites.assets.member("gfx.screens",on)==null?member:on;}
+-    private boolean control(String id){return id.startsWith("item_")||id.endsWith("button")||id.endsWith("_button")||id.startsWith("lvlbutton_")||id.startsWith("diff_")&&!id.equals("diff_dialog")||id.startsWith("box_")||Arrays.asList("cancel","delete","play","ok","closediff","instructions","credits","next","previous","rightarrow","leftarrow","arrow","music_on","music_off","sfx_on","sfx_off","fs_on","fs_off","rest_1","rest_2","rest_3","rest_4","rest_5").contains(id);}
++    private boolean control(String id){return id.matches("item_[1-3]")||id.endsWith("button")||id.endsWith("_button")||id.startsWith("lvlbutton_")||id.startsWith("diff_")&&!id.equals("diff_dialog")||id.startsWith("box_")||Arrays.asList("cancel","delete","play","ok","closediff","instructions","credits","next","previous","rightarrow","leftarrow","arrow","music_on","music_off","sfx_on","sfx_off","fs_on","fs_off","rest_1","rest_2","rest_3","rest_4","rest_5").contains(id);}
+     private void drawLayout(Canvas c,String name,float dx,float dy){JSONObject layout=sprites.assets.layout(name);List<JSONObject> nodes=AssetStore.children(layout);Collections.sort(nodes,(a,b)->Float.compare(z(a),z(b)));long t=SystemClock.uptimeMillis()-opened;c.save();c.translate(dx,dy);
+         for(JSONObject n:nodes){String id=n.optString("nodeID");if(!visible(name,id))continue;String animation=name.equals("help")?(page==6?"credits":String.valueOf(page)):name.equals("comic")?"page_"+page:name.equals("startlevel_window")?"level_"+game.level.stage+"_"+((game.level.number-1)%10+1):null;
+             long ms=150,time=t;if(name.equals("title_screen")){if(id.equals("eyes")){animation="blink";time=t%3600<280?t%3600:0;ms=40;}if(id.equals("hair")){animation="wave";time=t%2600<1400?t%2600:0;ms=200;}}
+--- 0.3.8/LevelData.java
++++ 0.3.9/LevelData.java
+@@ -96,6 +96,7 @@
+ l.width = 16; l.height = 16;
+ l.tables.add(new GameEngine.Table(5, 6, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(12, 6, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+@@ -116,6 +117,7 @@
+ l.tables.add(new GameEngine.Table(12, 6, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(5, 10, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 10, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+@@ -143,6 +145,7 @@
+ l.tables.add(new GameEngine.Table(12, 6, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(5, 10, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 10, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+@@ -170,6 +173,7 @@
+ l.tables.add(new GameEngine.Table(12, 6, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(5, 9, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(13, 9, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+@@ -202,9 +206,10 @@
+ l.tables.add(new GameEngine.Table(12, 6, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(5, 9, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(13, 9, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "Check out that brand new coffee machine. Give the customers coffee to give them a boost of happiness. But with our growing clientele, we'll need a couple more tables.";
+@@ -237,9 +242,10 @@
+ l.tables.add(new GameEngine.Table(3, 10, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 10, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(8, 10, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "The diner is going strong, but we must be losing customers with that shabby entrance. Maybe today's shift will give us enough for a nice exterior.";
+@@ -274,9 +280,10 @@
+ l.tables.add(new GameEngine.Table(3, 10, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 10, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(8, 10, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "Check out that new entrance. We're sure to get a whole new type of customers. Another good shift and we'll be able to really make this place shine.";
+@@ -311,9 +318,10 @@
+ l.tables.add(new GameEngine.Table(3, 10, new int[] {1, 1}));
+ l.tables.add(new GameEngine.Table(13, 10, new int[] {0, 0}));
+ l.tables.add(new GameEngine.Table(8, 10, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "This place looks terrific! Now, let's get some more tables so we can handle the new rush of customers.";
+@@ -350,9 +358,10 @@
+ l.tables.add(new GameEngine.Table(8, 9, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(3, 11, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 11, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "Wow...from two tables in a dingy shack to all of this. We better be careful though - there are a lot more customers to handle. Let's see if we can earn enough to get a few more red and blue seats for our customers.";
+@@ -392,9 +401,10 @@
+ l.tables.add(new GameEngine.Table(8, 9, new int[] {0, -1, 1, -1}));
+ l.tables.add(new GameEngine.Table(3, 11, new int[] {-1, 0}));
+ l.tables.add(new GameEngine.Table(13, 11, new int[] {1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "Great work! I think we're ready to expand. If we can make it though this shift, we'll have the cash to start a whole new restaurant. Let's do it!";
+@@ -442,6 +452,7 @@
+ l.tables.add(new GameEngine.Table(4, 7, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(12, 7, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(8, 10, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+@@ -466,7 +477,7 @@
+ return l;
+ }
+ private static GameEngine.Level career12() {
+-GameEngine.Level l = new GameEngine.Level(12, 4000, 800);
++GameEngine.Level l = new GameEngine.Level(12, 4000, 8000);
+ l.stage = 2; l.name = STAGE_NAMES[1]; l.stageId = "family"; l.bgState = "state_1";
+ l.width = 16; l.height = 16;
+ l.tables.add(new GameEngine.Table(8, 5, new int[] {1, 3, -1, -1}));
+@@ -474,6 +485,7 @@
+ l.tables.add(new GameEngine.Table(8, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(12, 8, new int[] {-1, 0, -1, -1}));
+ l.tables.add(new GameEngine.Table(8, 11, new int[] {3, 1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+@@ -506,9 +518,10 @@
+ l.tables.add(new GameEngine.Table(8, 8, new int[] {-1, 1, -1, 0}));
+ l.tables.add(new GameEngine.Table(12, 8, new int[] {0, 3, -1, -1}));
+ l.tables.add(new GameEngine.Table(8, 11, new int[] {1, 0, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -535,7 +548,7 @@
+ return l;
+ }
+ private static GameEngine.Level career14() {
+-GameEngine.Level l = new GameEngine.Level(14, 5000, 800);
++GameEngine.Level l = new GameEngine.Level(14, 5000, 10000);
+ l.stage = 2; l.name = STAGE_NAMES[1]; l.stageId = "family"; l.bgState = "state_1";
+ l.width = 16; l.height = 16;
+ l.tables.add(new GameEngine.Table(8, 5, new int[] {3, 1, -1, -1}));
+@@ -543,12 +556,13 @@
+ l.tables.add(new GameEngine.Table(8, 8, new int[] {-1, 1, -1, 0}));
+ l.tables.add(new GameEngine.Table(12, 8, new int[] {0, 3, -1, -1}));
+ l.tables.add(new GameEngine.Table(8, 11, new int[] {1, 0, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "The new podium is exactly what I needed. If I stand at it, I can talk to the customers in line and eventually make them happier. Hopefully, that will earn me enough to get a couple more tables.";
+ l.succeed = "Great work! Bring on the tables!";
+@@ -583,12 +597,13 @@
+ l.tables.add(new GameEngine.Table(3, 7, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(13, 7, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(8, 9, new int[] {-1, -1, -1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "The podium seems to be working great and the money is rolling in. I expect I'll see a whole new type of customer now. Well, let's see if I can tiki this palace up a bit with today's earnings";
+ l.succeed = "That should be enough to buy a new counter.";
+@@ -611,19 +626,20 @@
+ return l;
+ }
+ private static GameEngine.Level career16() {
+-GameEngine.Level l = new GameEngine.Level(16, 6000, 800);
++GameEngine.Level l = new GameEngine.Level(16, 6000, 12000);
+ l.stage = 2; l.name = STAGE_NAMES[1]; l.stageId = "family"; l.bgState = "state_2";
+ l.width = 16; l.height = 13;
+ l.tables.add(new GameEngine.Table(8, 5, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(3, 7, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(13, 7, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(8, 9, new int[] {-1, -1, -1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "Hmm..those business women tip well, but they're in such a rush to get out. Not like those old men, who don't tip as well but are very patient. I'll have to keep track of how customers act if I want to be successful.";
+ l.succeed = "New tables ...here we come!";
+@@ -654,12 +670,13 @@
+ l.tables.add(new GameEngine.Table(13, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(8, 8, new int[] {-1, -1, -1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(8, 12, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "These extra tables were just what I needed. That new table will seat up to six, so I guess I better expect some larger parties. Let's get to work!";
+ l.succeed = "Terrific! Now I can finally improve that doorway!";
+@@ -691,12 +708,13 @@
+ l.tables.add(new GameEngine.Table(13, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(8, 8, new int[] {-1, -1, -1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(8, 12, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "The tiki palace looks beautiful, and not a moment too soon. My old company's decided to have its annual company lunch here - all business types. I better get ready to do some quick service.";
+ l.succeed = "Great work! That should take care of the rest of the tiki decorations!";
+@@ -731,12 +749,13 @@
+ l.tables.add(new GameEngine.Table(8, 8, new int[] {-1, -1, -1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(3, 11, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 11, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "We made it through that shift, and got some new tables for our troubles. I still think this restaurant could use a little more flair, though. Let's see what we can earn this shift.";
+ l.succeed = "Great work! One step closer to a third restaurant...";
+@@ -776,12 +795,13 @@
+ l.tables.add(new GameEngine.Table(8, 8, new int[] {-1, -1, -1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(3, 11, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 11, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "Flo's Tiki Palace looks spectacular! And I have almost enough saved to open my third restaurant. If we can make it through this shift, I'll have enough for construction. Ready?";
+ l.succeed = "Great work!";
+@@ -821,6 +841,7 @@
+ l.tables.add(new GameEngine.Table(13, 7, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(6, 10, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(12, 10, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+@@ -856,12 +877,13 @@
+ l.tables.add(new GameEngine.Table(13, 7, new int[] {2, -1, -1, 0}));
+ l.tables.add(new GameEngine.Table(5, 10, new int[] {1, -1}));
+ l.tables.add(new GameEngine.Table(12, 10, new int[] {-1, 1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "Already the business is starting to pick up. It's about time I got some tiki drinks in here. Maybe we can earn enough this shift for that.";
+ l.succeed = "Terrific! New tables, here we come!";
+@@ -896,12 +918,13 @@
+ l.tables.add(new GameEngine.Table(9, 7, new int[] {3, 3, 3, 1, 1, 1}));
+ l.tables.add(new GameEngine.Table(6, 11, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(12, 11, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "Now this palace is cooking! I'm a little worried about the line though. People get frustrated too quickly. Maybe if I earn enough this shift, I can get something to solve that problem.";
+ l.succeed = "Great work! That should be enough for a fancy new counter!";
+@@ -938,12 +961,13 @@
+ l.tables.add(new GameEngine.Table(9, 7, new int[] {-1, -1, -1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(6, 11, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(12, 11, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "The new podium is exactly what I needed. If I stand at it, I can talk to the customers in line and eventually make them happier. Hopefully, that will earn me enough to get a couple more tables.";
+ l.succeed = "We did it! Now for our next restaurant innovation...";
+@@ -980,12 +1004,13 @@
+ l.tables.add(new GameEngine.Table(9, 7, new int[] {-1, -1, -1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(6, 11, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(12, 11, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"crab"}; l.snackPercent = 25;
+ l.intro = "The podium seems to be working great and the money is rolling in. I expect I'll see a whole new type of customer now. Well, let's see if I can tiki this palace up a bit with today's earnings";
+ l.succeed = "We did it! Next shift, we'll have even better seating.";
+@@ -1019,12 +1044,13 @@
+ l.tables.add(new GameEngine.Table(13, 7, new int[] {0, 0, 0, 0}));
+ l.tables.add(new GameEngine.Table(5, 10, new int[] {1, 1, 1, 1, 1, 1}));
+ l.tables.add(new GameEngine.Table(13, 10, new int[] {3, 3, 3, 3, 3, 3}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"crab"}; l.snackPercent = 25;
+ l.intro = "Hmm..those business women tip well, but they're in such a rush to get out. Not like those old men, who don't tip as well but are very patient. I'll have to keep track of how customers act if I want to be successful.";
+ l.succeed = "Great work! Let's get that new door and walkway!";
+@@ -1058,12 +1084,13 @@
+ l.tables.add(new GameEngine.Table(13, 7, new int[] {1, -1, 2, -1}));
+ l.tables.add(new GameEngine.Table(5, 10, new int[] {2, 3, -1, 2, 3, -1}));
+ l.tables.add(new GameEngine.Table(13, 10, new int[] {0, 1, -1, 0, 1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"crab"}; l.snackPercent = 25;
+ l.intro = "These extra tables were just what I needed. That new table will seat up to six, so I guess I better expect some larger parties. Let's get to work!";
+ l.succeed = "Great job! Let's get those new tables in here!";
+@@ -1098,12 +1125,13 @@
+ l.tables.add(new GameEngine.Table(9, 12, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(4, 11, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"crab"}; l.snackPercent = 30;
+ l.intro = "The tiki palace looks beautiful, and not a moment too soon. My old company's decided to have its annual company lunch here - all business types. I better get ready to do some quick service.";
+ l.succeed = "Good work! That should be enough for a bunch of new decorations.";
+@@ -1142,12 +1170,13 @@
+ l.tables.add(new GameEngine.Table(9, 12, new int[] {0, 3}));
+ l.tables.add(new GameEngine.Table(4, 11, new int[] {-1, 1, 1, -1}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {2, -1, -1, 2}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"crab"}; l.snackPercent = 100;
+ l.intro = "We made it through that shift, and got some new tables for our troubles. I still think this restaurant could use a little more flair, though. Let's see what we can earn this shift.";
+ l.succeed = "Nice job. We're one step closer...";
+@@ -1185,12 +1214,13 @@
+ l.tables.add(new GameEngine.Table(9, 12, new int[] {0, 3}));
+ l.tables.add(new GameEngine.Table(4, 11, new int[] {-1, 1, 1, -1}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {2, -1, -1, 2}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"crab"}; l.snackPercent = 50;
+ l.intro = "Flo's Tiki Palace looks spectacular! And I have almost enough saved to open my third restaurant. If we can make it through this shift, I'll have enough for construction. Ready?";
+ l.succeed = "We did it! Get ready for the best restaurant yet!";
+@@ -1230,6 +1260,7 @@
+ l.tables.add(new GameEngine.Table(9, 7, new int[] {-1, -1, -1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(4, 11, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {17, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+@@ -1269,12 +1300,13 @@
+ l.tables.add(new GameEngine.Table(9, 7, new int[] {-1, -1, -1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(4, 11, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {-1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "Already the business is starting to pick up. It's about time I got some tiki drinks in here. Maybe we can earn enough this shift for that.";
+ l.succeed = "Great! Now we can afford a new treat for our customers.";
+@@ -1313,12 +1345,13 @@
+ l.tables.add(new GameEngine.Table(9, 7, new int[] {3, 3, -1, 1, 1, -1}));
+ l.tables.add(new GameEngine.Table(4, 11, new int[] {-1, 0}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {4, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"bread"}; l.snackPercent = 40;
+ l.intro = "Now this palace is cooking! I'm a little worried about the line though. People get frustrated too quickly. Maybe if I earn enough this shift, I can get something to solve that problem.";
+ l.succeed = "Terrific! That's more than enough to get us some new seating.";
+@@ -1351,13 +1384,14 @@
+ l.tables.add(new GameEngine.Table(12, 5, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(9, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(12, 12, new int[] {-1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+ l.barX = 3; l.barY = 5; l.barColors = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"bread"}; l.snackPercent = 45;
+ l.intro = "The new podium is exactly what I needed. If I stand at it, I can talk to the customers in line and eventually make them happier. Hopefully, that will earn me enough to get a couple more tables.";
+ l.succeed = "Great work! That's enough for a new counter and more!";
+@@ -1388,13 +1422,14 @@
+ l.tables.add(new GameEngine.Table(12, 5, new int[] {-1, 2}));
+ l.tables.add(new GameEngine.Table(9, 8, new int[] {4, -1, 4, -1}));
+ l.tables.add(new GameEngine.Table(12, 12, new int[] {3, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+ l.barX = 3; l.barY = 5; l.barColors = new int[] {-1, 0, 0, -1, 2, -1, 2, 1};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"bread"}; l.snackPercent = 35;
+ l.intro = "The podium seems to be working great and the money is rolling in. I expect I'll see a whole new type of customer now. Well, let's see if I can tiki this palace up a bit with today's earnings";
+ l.succeed = "Good! A few more tables will fill the restaurant up nicely.";
+@@ -1422,7 +1457,7 @@
+ return l;
+ }
+ private static GameEngine.Level career36() {
+-GameEngine.Level l = new GameEngine.Level(36, 7000, 800);
++GameEngine.Level l = new GameEngine.Level(36, 7000, 14000);
+ l.stage = 4; l.name = STAGE_NAMES[3]; l.stageId = "chezflos"; l.bgState = "state_2";
+ l.width = 16; l.height = 15;
+ l.tables.add(new GameEngine.Table(11, 6, new int[] {1, 1}));
+@@ -1430,13 +1465,14 @@
+ l.tables.add(new GameEngine.Table(14, 8, new int[] {2, -1, -1, 2}));
+ l.tables.add(new GameEngine.Table(8, 11, new int[] {4, -1}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {-1, 4}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+ l.barX = 3; l.barY = 5; l.barColors = new int[] {-1, -1, 4, 3, 2, 0, -1, -1};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"bread"}; l.snackPercent = 50;
+ l.intro = "Hmm..those business women tip well, but they're in such a rush to get out. Not like those old men, who don't tip as well but are very patient. I'll have to keep track of how customers act if I want to be successful.";
+ l.succeed = "Well done! Let's see what we can do to jazz the place up.";
+@@ -1475,13 +1511,14 @@
+ l.tables.add(new GameEngine.Table(14, 8, new int[] {2, -1, -1, 2}));
+ l.tables.add(new GameEngine.Table(8, 11, new int[] {4, -1}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {-1, 4}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+ l.barX = 3; l.barY = 5; l.barColors = new int[] {-1, -1, 4, 3, 2, 0, -1, -1};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"bread"}; l.snackPercent = 35;
+ l.intro = "These extra tables were just what I needed. That new table will seat up to six, so I guess I better expect some larger parties. Let's get to work!";
+ l.succeed = "Great work! That's just enough to get all the tables we wanted!";
+@@ -1520,13 +1557,14 @@
+ l.tables.add(new GameEngine.Table(14, 7, new int[] {-1, 2, -1, 0, -1, 3}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {4, -1}));
+ l.tables.add(new GameEngine.Table(8, 10, new int[] {-1, -1, 0, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+ l.barX = 3; l.barY = 5; l.barColors = new int[] {-1, 4, 4, 4, -1, 1, 1, 1};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"bread"}; l.snackPercent = 40;
+ l.intro = "The tiki palace looks beautiful, and not a moment too soon. My old company's decided to have its annual company lunch here - all business types. I better get ready to do some quick service.";
+ l.succeed = "Terrific! That should be enough to give Chez Flo's that final touch.";
+@@ -1566,13 +1604,14 @@
+ l.tables.add(new GameEngine.Table(13, 7, new int[] {1, -1, 4, -1, 0, -1}));
+ l.tables.add(new GameEngine.Table(13, 11, new int[] {1, 4}));
+ l.tables.add(new GameEngine.Table(8, 10, new int[] {-1, 2, -1, 3}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+ l.barX = 3; l.barY = 5; l.barColors = new int[] {3, 1, 0, 2, 2, 0, 1, 3};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"bread"}; l.snackPercent = 50;
+ l.intro = "We made it through that shift, and got some new tables for our troubles. I still think this restaurant could use a little more flair, though. Let's see what we can earn this shift.";
+ l.succeed = "That was great! We're the best in the business!";
+@@ -1608,13 +1647,14 @@
+ l.tables.add(new GameEngine.Table(13, 7, new int[] {1, -1, 4, -1, 0, -1}));
+ l.tables.add(new GameEngine.Table(13, 11, new int[] {1, 4}));
+ l.tables.add(new GameEngine.Table(8, 10, new int[] {-1, 2, -1, 3}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+ l.barX = 3; l.barY = 5; l.barColors = new int[] {3, 1, 0, 2, 2, 0, 1, 3};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"bread"}; l.snackPercent = 75;
+ l.intro = "Flo's Tiki Palace looks spectacular! And I have almost enough saved to open my third restaurant. If we can make it through this shift, I'll have enough for construction. Ready?";
+ l.succeed = "We did it! We made it! So what's next?";
+@@ -1654,6 +1694,7 @@
+ l.tables.add(new GameEngine.Table(3, 12, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 12, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(8, 11, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {17, 3};
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+@@ -1697,12 +1738,13 @@
+ l.tables.add(new GameEngine.Table(3, 12, new int[] {2, 2}));
+ l.tables.add(new GameEngine.Table(13, 12, new int[] {3, 3}));
+ l.tables.add(new GameEngine.Table(8, 11, new int[] {-1, -1, 0, 0}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.intro = "Already the business is starting to pick up. It's about time I got some tiki drinks in here. Maybe we can earn enough this shift for that.";
+ l.succeed = "Good job! We passed that shift with flying colors.";
+@@ -1744,12 +1786,13 @@
+ l.tables.add(new GameEngine.Table(3, 12, new int[] {4, 1}));
+ l.tables.add(new GameEngine.Table(13, 12, new int[] {1, 2}));
+ l.tables.add(new GameEngine.Table(8, 11, new int[] {0, 1, 2, 4}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"papadom"}; l.snackPercent = 40;
+ l.intro = "Now this palace is cooking! I'm a little worried about the line though. People get frustrated too quickly. Maybe if I earn enough this shift, I can get something to solve that problem.";
+ l.succeed = "Terrific! Now let's get some more seating in here.";
+@@ -1793,13 +1836,14 @@
+ l.tables.add(new GameEngine.Table(7, 9, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(7, 12, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 12, new int[] {-1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+ l.barX = 2; l.barY = 5; l.barColors = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"papadom"}; l.snackPercent = 60;
+ l.intro = "The new podium is exactly what I needed. If I stand at it, I can talk to the customers in line and eventually make them happier. Hopefully, that will earn me enough to get a couple more tables.";
+ l.succeed = "Great work! Nothing can stop us!";
+@@ -1845,13 +1889,14 @@
+ l.tables.add(new GameEngine.Table(7, 9, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(7, 12, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 12, new int[] {-1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+ l.barX = 2; l.barY = 5; l.barColors = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"papadom", "somosa"}; l.snackPercent = 50;
+ l.intro = "The podium seems to be working great and the money is rolling in. I expect I'll see a whole new type of customer now. Well, let's see if I can tiki this palace up a bit with today's earnings";
+ l.succeed = "Good work. Let's see what's coming up next.";
+@@ -1888,7 +1933,7 @@
+ return l;
+ }
+ private static GameEngine.Level career46() {
+-GameEngine.Level l = new GameEngine.Level(46, 10000, 800);
++GameEngine.Level l = new GameEngine.Level(46, 10000, 20000);
+ l.stage = 5; l.name = STAGE_NAMES[4]; l.stageId = "goddess"; l.bgState = "state_1";
+ l.width = 16; l.height = 14;
+ l.tables.add(new GameEngine.Table(6, 6, new int[] {-1, -1}));
+@@ -1899,13 +1944,14 @@
+ l.tables.add(new GameEngine.Table(6, 11, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(10, 10, new int[] {-1, -1, -1, -1, -1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+ l.barX = 2; l.barY = 5; l.barColors = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"papadom", "somosa"}; l.snackPercent = 80;
+ l.intro = "Hmm..those business women tip well, but they're in such a rush to get out. Not like those old men, who don't tip as well but are very patient. I'll have to keep track of how customers act if I want to be successful.";
+ l.succeed = "Great work! Only four more shifts to go!";
+@@ -1956,13 +2002,14 @@
+ l.tables.add(new GameEngine.Table(6, 10, new int[] {1, 1}));
+ l.tables.add(new GameEngine.Table(14, 10, new int[] {4, 4}));
+ l.tables.add(new GameEngine.Table(10, 9, new int[] {0, 0, -1, 2, 3, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+ l.barX = 2; l.barY = 5; l.barColors = new int[] {-1, 0, -1, 1, 2, -1, 0, -1};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"papadom", "somosa"}; l.snackPercent = 35;
+ l.intro = "These extra tables were just what I needed. That new table will seat up to six, so I guess I better expect some larger parties. Let's get to work!";
+ l.succeed = "Great work! Three shifts left...";
+@@ -2012,13 +2059,14 @@
+ l.tables.add(new GameEngine.Table(10, 9, new int[] {-1, -1, -1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(6, 12, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(14, 12, new int[] {-1, -1, -1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+ l.barX = 2; l.barY = 5; l.barColors = new int[] {-1, -1, -1, -1, -1, -1, -1, -1};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"papadom", "somosa"}; l.snackPercent = 50;
+ l.intro = "The tiki palace looks beautiful, and not a moment too soon. My old company's decided to have its annual company lunch here - all business types. I better get ready to do some quick service.";
+ l.succeed = "Terrific job! There's only two shift left.";
+@@ -2079,13 +2127,14 @@
+ l.tables.add(new GameEngine.Table(10, 9, new int[] {-2, -2, -2, -2, -2, -2}));
+ l.tables.add(new GameEngine.Table(6, 12, new int[] {-2, -2, -2, -2}));
+ l.tables.add(new GameEngine.Table(14, 12, new int[] {-2, -2, -2, -2}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+ l.barX = 2; l.barY = 5; l.barColors = new int[] {-2, -2, -2, -2, -2, -2, -2, -2};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"papadom", "somosa"}; l.snackPercent = 50;
+ l.intro = "We made it through that shift, and got some new tables for our troubles. I still think this restaurant could use a little more flair, though. Let's see what we can earn this shift.";
+ l.succeed = "Amazing! The next shift is the final test.";
+@@ -2148,13 +2197,14 @@
+ l.tables.add(new GameEngine.Table(10, 9, new int[] {4, 3, 2, -1, 0, -1}));
+ l.tables.add(new GameEngine.Table(6, 12, new int[] {-1, 4, 4, -1}));
+ l.tables.add(new GameEngine.Table(14, 12, new int[] {3, -1, -1, 3}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
++l.drinks = l.drinkPosition;
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+ l.barX = 2; l.barY = 5; l.barColors = new int[] {1, 0, 3, 4, 2, 4, 3, 0};
+-l.podium = new int[] {1, 11}; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
++l.podium = l.podiumPosition; l.podiumCharge = 6000; l.podiumActive = 2000; l.podiumDelay = 8000; l.podiumMood = 3;
+ l.snacks = new String[] {"papadom", "somosa"}; l.snackPercent = 75;
+ l.intro = "Flo's Tiki Palace looks spectacular! And I have almost enough saved to open my third restaurant. If we can make it through this shift, I'll have enough for construction. Ready?";
+ l.succeed = "We did it!!! Congratulations! We are the greatest ever!!!";
+@@ -2272,9 +2322,9 @@
+ l.tables.add(new GameEngine.Table(13, 5, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(5, 11, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(13, 11, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.endless = true; l.difficulty = 1; l.stars = 5; l.startMultiplier = 1.0; l.minMultiplier = 0.1; l.decrease = 0.0015; l.rampMS = 5500;
+@@ -2345,9 +2395,9 @@
+ l.tables.add(new GameEngine.Table(4, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(14, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(9, 11, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.endless = true; l.difficulty = 2; l.stars = 4; l.startMultiplier = 0.6; l.minMultiplier = 0.09; l.decrease = 0.0025; l.rampMS = 4000;
+@@ -2427,9 +2477,9 @@
+ l.tables.add(new GameEngine.Table(5, 5, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(9, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(13, 11, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
+ l.foodPositions = new int[][] {new int[] {7, 3}, new int[] {9, 3}, new int[] {11, 3}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+ l.endless = true; l.difficulty = 3; l.stars = 4; l.startMultiplier = 0.5; l.minMultiplier = 0.01; l.decrease = 0.004; l.rampMS = 4000;
+@@ -2508,9 +2558,9 @@
+ l.tables.add(new GameEngine.Table(9, 5, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(4, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(14, 8, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -2582,9 +2632,9 @@
+ l.tables.add(new GameEngine.Table(4, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(14, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(9, 9, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -2665,9 +2715,9 @@
+ l.tables.add(new GameEngine.Table(9, 5, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(9, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {5, 3};
+ l.bus = new int[] {15, 3};
+-l.drinks = new int[] {14, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 7}, new int[] {16, 10}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -2758,9 +2808,9 @@
+ l.tables.add(new GameEngine.Table(14, 9, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(4, 11, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(14, 11, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -2839,9 +2889,9 @@
+ l.tables.add(new GameEngine.Table(4, 5, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(14, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(4, 11, new int[] {-1, -1, -1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -2931,9 +2981,9 @@
+ l.tables.add(new GameEngine.Table(4, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(14, 8, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(14, 12, new int[] {-1, -1}));
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
+ l.kitchen = new int[] {6, 3};
+ l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -3022,9 +3072,9 @@
+ l.tables.add(new GameEngine.Table(13, 5, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(5, 11, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(13, 11, new int[] {-1, -1, -1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -3095,9 +3145,9 @@
+ l.tables.add(new GameEngine.Table(9, 5, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(5, 10, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(13, 10, new int[] {-1, -1, -1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -3179,9 +3229,9 @@
+ l.tables.add(new GameEngine.Table(13, 5, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(9, 6, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(9, 11, new int[] {-1, -1, -1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
+ l.foodPositions = new int[][] {new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {16, 3}, new int[] {17, 7}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -3263,9 +3313,9 @@
+ l.tables.add(new GameEngine.Table(5, 8, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(13, 8, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(9, 11, new int[] {-1, -1, -1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -3337,9 +3387,9 @@
+ l.tables.add(new GameEngine.Table(4, 9, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(14, 9, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(9, 11, new int[] {-1, -1, -1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+ l.snacks = new String[] {}; l.snackPercent = 0;
+@@ -3420,9 +3470,9 @@
+ l.tables.add(new GameEngine.Table(4, 5, new int[] {-1, -1, -1, -1}));
+ l.tables.add(new GameEngine.Table(5, 8, new int[] {-1, -1}));
+ l.tables.add(new GameEngine.Table(4, 11, new int[] {-1, -1, -1, -1}));
+-l.kitchen = new int[] {5, 3};
+-l.bus = new int[] {17, 3};
+-l.drinks = new int[] {14, 3};
++l.drinkPosition = new int[] {14, 3}; l.podiumPosition = new int[] {1, 11};
++l.kitchen = new int[] {5, 3};
++l.bus = new int[] {17, 3};
+ l.foodPositions = new int[][] {new int[] {6, 3}, new int[] {8, 3}, new int[] {10, 3}, new int[] {12, 3}};
+ l.snackPositions = new int[][] {new int[] {15, 4}, new int[] {3, 4}};
+ l.snacks = new String[] {}; l.snackPercent = 0;

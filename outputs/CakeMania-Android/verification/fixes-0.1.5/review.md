@@ -1,0 +1,5 @@
+Read-only independent review checked GameView.java and MainActivity.java against the original C/assembly for customer cash geometry, departure puffs, native Menu/HUD/clock, arrows, wheel and shop purchase routing. No material new regression was found in the bounded release scope. Shop windows remain in screen coordinates while equipment uses the authored kitchen transform. Full Windows runtime parity was not tested.
+
+A later native trace corrects tutorial customer anchors: 0041c210 edits a temporary level copy and destroys it, then retrieves a new career-level copy for 00410a20. The tutorial room/walking graph remain separate. FlowRulesTest now asserts both final lesson gates intersect the money target; the real Activity probe requires actual queued collection/payment. All seven host suites were compiled in a clean test directory and run against the production classes from the final APK build.
+
+Independent read-only review also verified this discarded-copy interpretation and found no material concern for tutorial starts in the first bakery.

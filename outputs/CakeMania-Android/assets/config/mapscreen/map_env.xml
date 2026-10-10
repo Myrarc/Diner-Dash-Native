@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+<Points>
+	<Point id="0" x="91" y="159" />
+	<Point id="1" x="126" y="168" />
+	<Point id="2" x="160" y="149" />
+	<Point id="3" x="196" y="117" />
+	<Point id="4" x="246" y="93" />
+	<Point id="5" x="301" y="104" />
+	<Point id="6" x="356" y="111" />
+	<Point id="7" x="396" y="117" />
+	<Point id="8" x="444" y="119" />
+	<Point id="9" x="489" y="108" />
+	<Point id="10" x="521" y="87" />
+	<Point id="11" x="562" y="86" />
+		<Point id="12" x="670" y="113" />
+	<Point id="13" x="724" y="165" />
+	<Point id="14" x="687" y="186" />
+	<Point id="15" x="646" y="193" />
+	<Point id="16" x="652" y="230" />
+	<Point id="17" x="622" y="253" />
+	<Point id="18" x="618" y="290" />
+	<Point id="19" x="631" y="324" />
+	<Point id="20" x="668" y="337" />
+	<Point id="21" x="702" y="351" />
+	<Point id="22" x="701" y="382" />
+	<Point id="23" x="667" y="396" />
+	<Point id="24" x="626" y="409" />
+		<Point id="25" x="694" y="475" />
+	<Point id="26" x="664" y="541" />
+	<Point id="27" x="628" y="559" />
+	<Point id="28" x="591" y="565" />
+	<Point id="29" x="555" y="552" />
+	<Point id="30" x="520" y="533" />
+	<Point id="31" x="480" y="535" />
+	<Point id="32" x="444" y="554" />
+	<Point id="33" x="395" y="543" />
+	<Point id="34" x="349" y="540" />
+	<Point id="35" x="295" y="550" />
+	<Point id="36" x="244" y="560" />
+	<Point id="37" x="201" y="556" />
+		<Point id="38" x="140" y="490" />
+	<Point id="39" x="32" y="522" />
+	<Point id="40" x="26" y="485" />
+	<Point id="41" x="26" y="449" />
+	<Point id="42" x="27" y="410" />
+	<Point id="43" x="19" y="376" />
+	<Point id="44" x="41" y="351" />
+	<Point id="45" x="68" y="338" />
+	<Point id="46" x="103" y="322" />
+	<Point id="47" x="139" y="335" />
+	<Point id="48" x="176" y="343" />
+	<Point id="49" x="213" y="333" />
+	<Point id="50" x="247" y="325" />
+		<Point id="51" x="205" y="269" />
+</Points>
+<Levels>
+	<Level id="0" name="Home Kitchen" img="IMAGE_MAPSCREEN_BK_LEVEL1" x="0" y="0" img_candle="IMAGE_MAPSCREEN_RING_L1" img_hl_candle="IMAGE_MAPSCREEN_RING_HL_L1" img_button="IMAGE_MAPSCREEN_BUTTON" img_over_button="IMAGE_MAPSCREEN_BUTTON_OVER" img_dis_button="IMAGE_MAPSCREEN_BUTTON_DIS" music="music/mapscreen.ogg">
+	  <Candle id="0" point="0" />
+	  <Candle id="1" point="1" />
+	  <Candle id="2" point="2" />
+	  <Candle id="3" point="3" />
+	  <Candle id="4" point="4" />
+	  <Candle id="5" point="5" />
+	  <Candle id="6" point="6" />
+	  <Candle id="7" point="7" />
+	  <Candle id="8" point="8" />
+	  <Candle id="9" point="9" />
+	  <Candle id="10" point="10" />
+	  <Candle id="11" point="11" />
+	</Level>
+	<Level id="1" name="Baker Factory" img="IMAGE_MAPSCREEN_BK_LEVEL2" x="587" y="74" img_candle="IMAGE_MAPSCREEN_RING_L2" img_hl_candle="IMAGE_MAPSCREEN_RING_HL_L2" img_button="IMAGE_MAPSCREEN_BUTTON" img_over_button="IMAGE_MAPSCREEN_BUTTON_OVER" img_dis_button="IMAGE_MAPSCREEN_BUTTON_DIS" music="music/mapscreen.ogg">
+	  <Candle id="0" point="13" />
+	  <Candle id="1" point="14" />
+	  <Candle id="2" point="15" />
+	  <Candle id="3" point="16" />
+	  <Candle id="4" point="17" />
+	  <Candle id="5" point="18" />
+	  <Candle id="6" point="19" />
+	  <Candle id="7" point="20" />
+	  <Candle id="8" point="21" />
+	  <Candle id="9" point="22" />
+	  <Candle id="10" point="23" />
+	  <Candle id="11" point="24" />
+	</Level>
+	<Level id="2" name="Grocery Baker Factory" img="IMAGE_MAPSCREEN_BK_LEVEL3" x="542" y="384" img_candle="IMAGE_MAPSCREEN_RING_L3" img_hl_candle="IMAGE_MAPSCREEN_RING_HL_L3" img_button="IMAGE_MAPSCREEN_BUTTON" img_over_button="IMAGE_MAPSCREEN_BUTTON_OVER" img_dis_button="IMAGE_MAPSCREEN_BUTTON_DIS" music="music/mapscreen.ogg">
+	  <Candle id="0" point="26" />
+	  <Candle id="1" point="27" />
+	  <Candle id="2" point="28" />
+	  <Candle id="3" point="29" />
+	  <Candle id="4" point="30" />
+	  <Candle id="5" point="31" />
+	  <Candle id="6" point="32" />
+	  <Candle id="7" point="33" />
+	  <Candle id="8" point="34" />
+	  <Candle id="9" point="35" />
+	  <Candle id="10" point="36" />
+	  <Candle id="11" point="37" />
+	</Level>
+	<Level id="3" name="Five stars bakery" img="IMAGE_MAPSCREEN_BK_LEVEL4" x="40" y="335" img_candle="IMAGE_MAPSCREEN_RING_L4" img_hl_candle="IMAGE_MAPSCREEN_RING_HL_L4" img_button="IMAGE_MAPSCREEN_BUTTON" img_over_button="IMAGE_MAPSCREEN_BUTTON_OVER" img_dis_button="IMAGE_MAPSCREEN_BUTTON_DIS" music="music/mapscreen.ogg">
+	  <Candle id="0" point="39" />
+	  <Candle id="1" point="40" />
+	  <Candle id="2" point="41" />
+	  <Candle id="3" point="42" />
+	  <Candle id="4" point="43" />
+	  <Candle id="5" point="44" />
+	  <Candle id="6" point="45" />
+	  <Candle id="7" point="46" />
+	  <Candle id="8" point="47" />
+	  <Candle id="9" point="48" />
+	  <Candle id="10" point="49" />
+	  <Candle id="11" point="50" />
+	</Level>
+</Levels></root>

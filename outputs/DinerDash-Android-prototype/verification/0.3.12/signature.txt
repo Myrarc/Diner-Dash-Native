@@ -1,0 +1,4 @@
+Signer #1 certificate DN: CN=Diner Dash Prototype
+Signer #1 certificate SHA-256 digest: fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf
+Signer #1 certificate SHA-1 digest: b13ef1d9f7f1bcc04a512938ef6c06a27957fd90
+Signer #1 certificate MD5 digest: 50ada1132cf2e0f96678743be3a2c296

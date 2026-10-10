@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Sequence music="music/c.ogg">
+	<Event type="DrawRectText" id="0" x="140" y="56" w="220" h="100" text="Let's learn how to make more complex cakes!" />
+	<Event type="Timer" float="3" />
+	<Event type="AddCustomer" id="5" text="2,1,3,3," />
+	<Event type="DrawRectText" id="4" x="35" y="315" w="215" h="100" text="Click on the Delivery Man to hand him a Menu!" />
+
+	<Event type="WaitForCustomerClick" id="5" />
+	<Event type="RemoveRectText" id="0" />
+	<Event type="RemoveRectText" id="4" />
+	<Event type="DrawRectText" id="5" x="35" y="315" w="200" h="100" text="Now let's wait a moment, while he reads the menu." />
+	<Event type="Timer" float="3" />
+	<Event type="RemoveRectText" id="5" />
+	<Event type="DrawRectText" id="7" x="177" y="0" w="260" h="100" text="It's a 2 layer cake! Let's make the bottom Star layer first!" />
+	<Event type="DrawArrow" id="1" x="410" y="70" w="50" h="20" float="1.57" />	
+	<Event type="Timer" float="2" />
+	<Event type="WaitForClick" x="440" y="125" w="22" h="22" />
+	<Event type="RemoveArrow" id="1" />
+	<Event type="RemoveRectText" id="6" />
+	<Event type="RemoveRectText" id="7" />
+	<Event type="DrawRectText" id="8" x="350" y="10" w="160" h="100" text="Let's wait for the cake to bake." />
+	<Event type="Timer" float="6" />
+	<Event type="RemoveRectText" id="8" />
+	<Event type="DrawRectText" id="9" x="345" y="10" w="170" h="100" text="Great! Now click on the cake to pick it up!" />
+	<Event type="WaitForClick" x="415" y="200" w="45" h="50" />
+	<Event type="RemoveRectText" id="9" />
+	
+	<Event type="DrawRectText" id="107" x="645" y="450" w="150" h="120" text="Click on the white frosting button to frost this cake." />
+	<Event type="DrawArrow" id="108" x="582" y="475" w="50" h="20" float="0" />
+	<Event type="WaitForClick" x="546" y="484" w="35" h="35" />
+	<Event type="RemoveRectText" id="107" />
+	<Event type="RemoveArrow" id="108" />
+
+	<Event type="DrawRectText" id="77" x="159" y="0" w="300" h="100" text="Let's get started on the next layer. Click the Circle button to bake the top layer!" />
+	<Event type="DrawArrow" id="17" x="440" y="70" w="250" h="20" float="1.57" />	
+	<Event type="Timer" float="1" />
+	<Event type="WaitForClick" x="468" y="129" w="22" h="25" />
+	<Event type="RemoveArrow" id="17" />
+	<Event type="RemoveRectText" id="67" />
+	<Event type="RemoveRectText" id="77" />
+	<Event type="DrawRectText" id="87" x="350" y="10" w="160" h="100" text="Let's wait for the cake to bake." />
+	<Event type="Timer" float="6" />
+	<Event type="RemoveRectText" id="87" />
+	<Event type="DrawRectText" id="97" x="345" y="10" w="170" h="100" text="Great! Now click on the cake to pick it up!" />
+	<Event type="WaitForClick" x="415" y="200" w="45" h="50" />
+	<Event type="RemoveRectText" id="97" />
+	<Event type="DrawRectText" id="98" x="590" y="400" w="200" h="130" text="Let's place the Circle cake on top of the frosted Star cake." />
+	<Event type="Timer" float="1" />
+	<Event type="WaitForClick" x="490" y="485" w="50" h="55" />
+	<Event type="RemoveRectText" id="98" />
+
+	
+	<Event type="DrawRectText" id="10" x="280" y="440" w="150" h="100" text="Now click the red frosting button." />
+	<Event type="DrawArrow" id="0" x="384" y="515" w="50" h="20" float="-3.14" />
+	<Event type="WaitForClick" x="456" y="519" w="30" h="35" />
+	<Event type="RemoveRectText" id="10" />
+	<Event type="RemoveArrow" id="0" />
+	<Event type="DrawRectText" id="107" x="485" y="555" w="80" h="40" text="Wait!" />
+	<Event type="Timer" float="6" />
+	<Event type="RemoveRectText" id="107" />
+	
+	<Event type="DrawRectText" id="11" x="600" y="475" w="180" h="90" text="Great! Let's pick up the finished cake!" />
+	<Event type="DrawArrow" id="0" x="410" y="500" w="50" h="20" float="-3.14" />	
+	<Event type="WaitForClick" x="490" y="480" w="50" h="60" />
+	<Event type="RemoveRectText" id="11" />
+	<Event type="RemoveArrow" id="0" />	
+	<Event type="DrawRectText" id="111" x="35" y="275" w="180" h="100" text="Now let's hand the cake to the customer!" />
+	<Event type="DrawArrow" id="1" x="145" y="370" w="50" h="20" float="0.78" />	
+	<Event type="WaitForCustomerClick" id="5" />
+	<Event type="RemoveArrow" id="1" />	
+	<Event type="RemoveRectText" id="111" />
+	<Event type="DrawRectText" id="12" x="10" y="275" w="200" h="100" text="Good job!  Now wait for the customer to leave." />
+	<Event type="Timer" float="3" />
+	<Event type="RemoveRectText" id="12" />
+	<Event type="DrawRectText" id="13" x="0" y="325" w="200" h="100" text="Pick up the cash and you're done.  Good job!" />
+	<Event type="DrawArrow" id="0" x="150" y="480" w="50" h="20" float="-3.14" />
+	<Event type="WaitForClick" x="230" y="475" w="30" h="30" />
+	<Event type="RemoveRectText" id="13" />
+	<Event type="RemoveArrow" id="1" />	
+</Sequence>
+</root>

@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "level": 41,
+      "state": "Restaurant. Shift 41. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (4 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY. Table 5: EMPTY. Table 6: EMPTY. Table 7: EMPTY",
+      "interaction": "Ordinary Activity launch and intro tap; Goddess Flo visible in the playable room"
+    },
+    {
+      "level": 34,
+      "before": "Restaurant. Shift 34. Score 0. Waiting parties: 1. Food ready: 0. Coffee preparing. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY",
+      "after": "Restaurant. Shift 34. Score 0. Waiting parties: 0. Food ready: 0. Coffee preparing. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: DECIDING",
+      "interaction": "Ordinary ADB gesture seats the first naturally arrived party at the bar",
+      "bar_drop": [
+        256,
+        291
+      ]
+    }
+  ],
+  "complete_shift_playthrough": false,
+  "physical_device": false
+}

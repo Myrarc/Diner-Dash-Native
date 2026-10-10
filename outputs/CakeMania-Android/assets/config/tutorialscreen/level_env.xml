@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<RenderBackground>
+	<Image id="0" img="IMAGE_LEVEL1_BG1" x="0" y="0" />	
+	<Image id="1" img="IMAGE_LEVEL1_BG2" x="396" y="319" />	
+	<Image id="2" img="IMAGE_LEVEL1_BG3" x="180" y="479" />
+	<Image id="3" img="IMAGE_LEVEL1_BG6" x="0" y="491" />
+</RenderBackground>
+<Frosters>
+	<Froster name="Fast Frost 100" x="0" y="0" height="79" width="154" x_global="440" y_global="480" height_global="79" width_global="154" main_img="IMAGE_FROSTER_LEVEL1" cake_pt="0,23" upgr_step="1" guid="froster1" render_after="2" associate_point="1" time="5">
+         	<Form id="0" name="Violet" x="2" y="3" image="IMAGE_FORM_2" image_hl="IMAGE_FORM_HL_2" image_anim="IMAGE_FROSTER_ANIM_2" pt_anim="5,-118" count_anim_vert="33" height="35" width="35" />
+        	<Form id="3" name="Cream" x="102" y="4" image="IMAGE_FORM_3" image_hl="IMAGE_FORM_HL_3" image_anim="IMAGE_FROSTER_ANIM_3" pt_anim="25,-119" count_anim_vert="33" height="35" width="35" />
+         	<Form id="1" name="Brown" x="115" y="39" image="IMAGE_FORM_1" image_hl="IMAGE_FORM_HL_1" image_anim="IMAGE_FROSTER_ANIM_1" pt_anim="26,-82" count_anim_vert="33" height="35" width="35" />
+         	<Form id="2" name="Red" x="13" y="39" image="IMAGE_FORM_0" image_hl="IMAGE_FORM_HL_0" image_anim="IMAGE_FROSTER_ANIM_0" pt_anim="15,-82" count_anim_vert="33" height="35" width="35" />
+	</Froster>
+</Frosters>
+<Decorations>
+</Decorations>
+<CakeOvens>
+	<CakeOven name="CakeOven0" x="0" y="0" x_global="365" y_global="80" upgr_step="1" guid="cakeoven0" level="0" height="225" width="130" height_global="225" width_global="130" main_img="IMAGE_CAKEOVEN_LEVEL1" render_after="0" associate_point="8" cake_pt="8,57" time="5" main_sec_img="IMAGE_CAKEOVEN_LEVEL1_WORK" main_thrd_img="IMAGE_CAKEOVEN_LEVEL1_OPEN" main_door_img="IMAGE_CAKEOVEN_LEVEL1_DOOR" main_trash_img="IMAGE_CAKEOVEN_LEVEL1_TRASH">
+         	<Form id="7" name="Name0" x="14" y="49" image="IMAGE_BUTTON_TRIA" image_hl="IMAGE_BUTTON_TRIA_HL" height="22" width="22" price="15" />
+         	<Form id="1" name="Name1" x="43" y="44" image="IMAGE_BUTTON_SQUARE" image_hl="IMAGE_BUTTON_SQUARE_HL" height="22" width="22" price="15" />
+         	<Form id="2" name="Name3" x="71" y="44" image="IMAGE_BUTTON_STAR" image_hl="IMAGE_BUTTON_STAR_HL" height="22" width="22" price="15" />
+         	<Form id="3" name="Name4" x="99" y="49" image="IMAGE_BUTTON_CIRCLE" image_hl="IMAGE_BUTTON_CIRCLE_HL" height="22" width="22" price="15" />
+	</CakeOven>
+</CakeOvens>
+<Shelfs>
+</Shelfs>
+<OtherStuff>
+ 	<Trash name="Trash can" x_global="606" y_global="273" upgr_step="1" guid="trash" wc="1" hc="3" time="0.2" level="0" height_global="99" width_global="52" main_img="IMAGE_TRASH" render_after="0" associate_point="16" />
+</OtherStuff>
+</root>

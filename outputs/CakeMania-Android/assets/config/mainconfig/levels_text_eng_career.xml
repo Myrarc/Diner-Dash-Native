@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Levels>
+	<Level id="0" xml="Level1/level_screens.xml" />
+	<Level id="1" xml="Level2/level_screens.xml" />
+	<Level id="2" xml="Level3/level_screens.xml" />
+	<Level id="3" xml="Level4/level_screens.xml" />
+</Levels>
+	</root>

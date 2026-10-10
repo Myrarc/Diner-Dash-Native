@@ -1,0 +1,42 @@
+{
+  "0x5813fc": {
+    "type": "f",
+    "value": -0.0016666667070239782,
+    "meaning": "perspective normalization"
+  },
+  "0x581420": {
+    "type": "f",
+    "value": 0.5,
+    "meaning": "half-machine anchor factor"
+  },
+  "0x585fc0": {
+    "type": "d",
+    "value": 0.2,
+    "meaning": "trash-panel height factor"
+  },
+  "0x581628": {
+    "type": "d",
+    "value": 0.8,
+    "meaning": "trash-panel y factor"
+  },
+  "0x586b90": {
+    "type": "f",
+    "value": 420.0,
+    "meaning": "Jill background depth boundary"
+  },
+  "0x585fd0": {
+    "type": "f",
+    "value": 5.0,
+    "meaning": "new cake emergence x distance"
+  },
+  "0x58187c": {
+    "type": "f",
+    "value": 25.0,
+    "meaning": "new cake emergence y distance"
+  },
+  "0x588308": {
+    "type": "d",
+    "value": 200.0,
+    "meaning": "simulation backlog cap in milliseconds"
+  }
+}

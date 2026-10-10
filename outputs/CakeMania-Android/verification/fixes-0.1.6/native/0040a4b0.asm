@@ -1,0 +1,19 @@
+0040a4b0  FLD float ptr [ECX + 0x4]
+0040a4b3  SUB ESP,0x8
+0040a4b6  FLD float ptr [ECX + 0x264]
+0040a4bc  FLD float ptr [ECX + 0x268]
+0040a4c2  FSUB ST0,ST1
+0040a4c4  FMUL float ptr [0x005813fc]
+0040a4ca  FXCH ST2
+0040a4cc  FSUB float ptr [0x005813f8]
+0040a4d2  FMULP ST2
+0040a4d4  FXCH
+0040a4d6  FADD ST0,ST1
+0040a4d8  FMUL double ptr [0x005813f0]
+0040a4de  FADD double ptr [0x005813e8]
+0040a4e4  FSTP double ptr [ESP]
+0040a4e7  FSTP ST0
+0040a4e9  CALL 0x0055ff20
+0040a4ee  FMUL double ptr [0x005813e0]
+0040a4f4  ADD ESP,0x8
+0040a4f7  RET

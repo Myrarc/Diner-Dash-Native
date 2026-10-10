@@ -1,0 +1,18 @@
+{
+  "normalized_configs_available": 96,
+  "xml_parse_failures": 0,
+  "month_environments_inspected": 48,
+  "upgrade_catalogs_inspected": 4,
+  "display_case_shelves_per_catalog": {
+    "shopcareerscreen/upgrades_env_level1.xml": 1,
+    "shopcareerscreen/upgrades_env_level2.xml": 1,
+    "shopcareerscreen/upgrades_env_level3.xml": 1,
+    "shopcareerscreen/upgrades_env_level4.xml": 1
+  },
+  "cookie_shelves_per_catalog": {
+    "shopcareerscreen/upgrades_env_level1.xml": 4,
+    "shopcareerscreen/upgrades_env_level2.xml": 4,
+    "shopcareerscreen/upgrades_env_level3.xml": 4,
+    "shopcareerscreen/upgrades_env_level4.xml": 4
+  }
+}

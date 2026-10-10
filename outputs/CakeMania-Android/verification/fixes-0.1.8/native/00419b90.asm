@@ -1,0 +1,5 @@
+00419b90  MOV EDX,dword ptr [ESP + 0x4]
+00419b94  MOV EAX,dword ptr [ECX]
+00419b96  PUSH EDX
+00419b97  CALL dword ptr [EAX + 0x10]
+00419b9a  RET 0x8

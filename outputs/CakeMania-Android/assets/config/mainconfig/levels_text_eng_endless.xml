@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Levels>
+   <Level id="0">
+     <SubLevel id="0">
+	<StartScreen>
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Image img="IMAGE_NONE" x="400" y="250" w="40" h="40" />
+		<Text x="350" y="50" w="250" h="200" font="FONT_DEFAULT" size="1" text="Welcome Endless mode play" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess>
+		<Image img="IMAGE_ENDSCREEN" x="100" y="30" w="600" h="540" />
+		<Image img="IMAGE_NONE" x="200" y="50" w="40" h="40" />
+		<Text x="250" y="50" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Level Completed! Congratulations! " />
+		<Text x="250" y="100" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: [%CUSTOMERS_LOST_MONEY] $" />
+		<Text x="250" y="130" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: [%CAKES_SERVED] $" />
+		<Text x="250" y="160" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: [%CAKES_LOST] $" />
+		<Text x="250" y="190" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: [%CUSTOMER_TIP] $" />
+		<Text x="250" y="220" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total level money: [%TOTAL_LEVEL_MONEY] $" />
+		<Text x="250" y="250" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: [%TOTAL_MONEY] $" />
+		<Button text="Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed>
+		<Image img="IMAGE_ENDSCREEN" x="100" y="30" w="600" h="540" />
+		<Image img="IMAGE_NONE" x="200" y="50" w="40" h="40" />
+		<Text x="250" y="50" w="250" h="200" font="FONT_DEFAULT" size="1" text=" You are not achieved Baker goal! " />
+		<Button text="Try again!" />
+	</EndScreenFailed>
+     </SubLevel>
+   </Level>
+</Levels></root>

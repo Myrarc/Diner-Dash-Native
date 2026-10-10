@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "apk_sha256": "792c3a14e68c7c24a34b423fecd29fe6e05daaea4cf540ba776f3eeeacb1169b",
+  "actual_android_taps": true,
+  "all_four_shapes_and_colors": [
+    {
+      "shape": 7,
+      "color": 0,
+      "bake_pickup_frost_pickup_trash": true
+    },
+    {
+      "shape": 1,
+      "color": 3,
+      "bake_pickup_frost_pickup_trash": true
+    },
+    {
+      "shape": 2,
+      "color": 1,
+      "bake_pickup_frost_pickup_trash": true
+    },
+    {
+      "shape": 3,
+      "color": 2,
+      "bake_pickup_frost_pickup_trash": true
+    }
+  ],
+  "career_restored": true
+}

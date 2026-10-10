@@ -1,0 +1,100 @@
+{
+  "version": "0.1.5",
+  "version_code": 6,
+  "created_at": "2026-10-10T06:46:31.713138+00:00",
+  "apk_sha256": "3a3a48b5086b4f6bf9cc406bd68ebb6ac6f7fffe66f9ecfab59a9b5e67b41ae7",
+  "apk_bytes": 27644073,
+  "original_binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+  "fixed": [
+    "Original bottom Menu, native HUD text spacing, hanging clock and life-star fan",
+    "Served customers disappear after native happy interval; finite happy/angry departure effects",
+    "Cash artwork and hit bounds use native geometry; payment is awarded once",
+    "Queue advances only after departure removal; uncollected cash blocks the line; queued customer destinations retarget",
+    "Original reverse-frame processing wheel replaces bars and ready badges",
+    "Tutorial arrows use intrinsic size and native rotation sign; native customer points align coins with the final cash gate",
+    "Bakery shop uses equipment selection in the kitchen, original backgrounds, preview, Buy and Finish"
+  ],
+  "verified_final_apk": {
+    "host_suites": [
+      "CustomerLifecycleTest",
+      "GameEngineTest",
+      "NativeMechanicsTest",
+      "SpriteRulesTest",
+      "FlowRulesTest",
+      "CareerStateTest",
+      "ResultAccountingTest"
+    ],
+    "android_probes": [
+      "VisualGeometryProbe",
+      "AndroidAssetProbe",
+      "FlowAndroidProbe",
+      "ParityUiProbe"
+    ],
+    "imported_assets_hashed": 838,
+    "decoded_pcm_matched": 51,
+    "oven_render_states": 8,
+    "jill_render_cases": 64,
+    "customer_render_samples": 615,
+    "activity_career_result_shop_checks": 31,
+    "native_ui_pixel_geometry_checks": 3948,
+    "full_january": {
+      "served": 8,
+      "lost": 0,
+      "money": 273
+    },
+    "real_input_checks": [
+      "Original bottom-left Menu responds to real input; pause freezes time and Resume returns to the shift",
+      "Fresh January: one oven, one froster, trash; eight targets match original sprite rectangles",
+      "Trash renders one original normal frame, not the three-frame atlas",
+      "An empty oven body tap opens no popup and starts no cake",
+      "Tray tap places raw cake; pictured color tap processes that cake without pickup or popup",
+      "Served body disappears; uncollected cash still blocks the line after its puff",
+      "Real cash collection releases position one and moves the next customer forward",
+      "All eight January orders served through original shape/color sprite taps; $200 goal reached",
+      "January result Continue opens the shop; shop Continue opens fresh February with awarded bank/points and four lives",
+      "Purchased froster and decorator: thirteen original hit regions, selected machine receives frosting, edge brown-color and ship topper sprite taps work at 1440x1080",
+      "Cookie FormShelf taps select independent slots; tapping the emptied slot does not take another cookie",
+      "Display-case FormShelf edge outside the parent body accepts placement and pickup through real taps"
+    ],
+    "tutorial_sequences": [
+      0,
+      10
+    ],
+    "installed_apk_matches": true,
+    "source_metadata_matches": true,
+    "android_api": 30
+  },
+  "personally_inspected_images": [
+    "visual-probe/parity-room.png",
+    "visual-probe/parity-arrow.png",
+    "machine-touch/cash-blocks-line.png",
+    "machine-touch/queue-advanced.png",
+    "machine-touch/january-shop-selection.png",
+    "tutorial-touch/sequence0-step3.png",
+    "tutorial-touch/sequence0-step66.png"
+  ],
+  "cleanup": {
+    "preferences_restored": true,
+    "display_settings_restored": true,
+    "test_package_removed": true,
+    "generated_qa_files_removed": true,
+    "owned_emulator_stopped": true,
+    "owned_emulator_pid": 84832,
+    "notes": "Only task-owned emulator, instrumentation package and generated QA files were removed; development APK remains installed. Original preference bytes were restored exactly."
+  },
+  "remaining": [
+    "Whole-game Windows runtime and physical Android comparison",
+    "Native clock closing slide, exact money blink phase, customer puff pixel/FPU rounding and order-bubble artwork",
+    "Exact shop Jill/shoe preview motion and menu/result/game-over animation",
+    "Initial path node, free-floor/corner routing, carry child anchors and complete queue/closing behavior",
+    "Native initial cupcake stock, display source consumption and mid-month save semantics",
+    "Missing supplied endless/intermediate-comic resources; audible loop quality; affordable full-career and human-difficulty checks"
+  ],
+  "verification_repairs": [
+    "Oven-wheel pixel expectation now uses the renderer filtering flags.",
+    "Legacy immediate customer-removal assertions now wait for the native departure effect.",
+    "Tutorial customer-path expectations were corrected after tracing the discarded career-level copy; cash completion requires an actual payment.",
+    "Host fixtures are compiled cleanly and run against the final production build classes."
+  ],
+  "notes": "This is a bounded correction pass in an unfinished translation, not a claim of whole-game 1:1 parity."
+}

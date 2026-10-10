@@ -1,0 +1,17 @@
+{
+  "version": "0.3.7",
+  "version_code": 10,
+  "application_label": "Diner Dash",
+  "apk": "DinerDash-Android-0.3.7.apk",
+  "apk_bytes": 29758740,
+  "apk_sha256": "59bd66135e823e09664c856612b19f9702672db0269413628e56493fa4ba99f4",
+  "previous_apk": "DinerDash-Android-0.3.6.apk",
+  "source_archive": "DinerDash-Android-source.zip",
+  "source_archive_bytes": 129866897,
+  "source_archive_sha256": "bdab45621f41421c283af7832bf241d7e8523fa14ddb99584ad11da64c4cf714",
+  "source_files": 2296,
+  "zip_crc": "pass",
+  "source_hashes_match_built_apk": true,
+  "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf",
+  "verification": "DinerDash-Android-prototype/verification.json"
+}

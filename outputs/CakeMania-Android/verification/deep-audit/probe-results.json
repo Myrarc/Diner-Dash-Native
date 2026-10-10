@@ -1,0 +1,51 @@
+{
+  "baseline_apk_sha256": "ebbe1484864a44a3387603fa687ab73d8d8296846959dd5e72df8db02a92b674",
+  "method": "Host execution of APK-bound Java, not direct Android DEX or Windows execution",
+  "native_expectations": "Static binary/config traces; synthetic fixtures are labeled in reports",
+  "parity_passed": false,
+  "observations": [
+    {
+      "id": "deferred-order",
+      "native_expected": 0,
+      "apk_source_observed": 2,
+      "matches": false
+    },
+    {
+      "id": "cupcake-door-transition",
+      "native_expected": 0,
+      "apk_source_observed": 4,
+      "matches": false
+    },
+    {
+      "id": "missing-weight-candidates",
+      "native_expected": [
+        1,
+        2,
+        3,
+        7
+      ],
+      "apk_source_observed": [
+        1
+      ],
+      "matches": false
+    },
+    {
+      "id": "display-impulse-order",
+      "native_expected": [
+        7,
+        3
+      ],
+      "apk_source_observed": [
+        1,
+        0
+      ],
+      "matches": false
+    },
+    {
+      "id": "upgrade-geometry",
+      "native_expected": 140,
+      "apk_source_observed": 145,
+      "matches": false
+    }
+  ]
+}

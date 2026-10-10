@@ -1,0 +1,31 @@
+{
+  "version": "0.3.4",
+  "scope": "App name and original Diner Dash wordmark launcher icon",
+  "apk_sha256": "01602648234d8cedf3c39948a7f57f787741ef0b2ce8fc1e2d0b9b7fbc8394c1",
+  "application_label": "Diner Dash",
+  "original_wordmark_source": "assets/images/gfx.screens/6426_Final_Title_Screen.png",
+  "legacy_and_adaptive_icon_packaged": true,
+  "packaged_icon_pixels_match": true,
+  "installed_android_launcher_label_verified": true,
+  "launcher_icon_capture_inspected": true,
+  "current_evidence": "verification/0.3.4/",
+  "package_integrity": {
+    "media_hashes_verified": 1960,
+    "uncompressed_mp3_verified": 62,
+    "signature_verified": true,
+    "crc_verified": true,
+    "version_code": 7,
+    "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf"
+  },
+  "all_java_source_hashes_unchanged_from_0.3.3": true,
+  "gameplay_and_animation_tests_rerun": false,
+  "prior_gameplay_verification": "verification/0.3.3-verification.json",
+  "physical_device_tested": false,
+  "queue_stall": "Unresolved; precise failed target unknown",
+  "notes": [
+    "Original recovered wordmark is cropped and padded for the icon; no new logo artwork is generated.",
+    "Adaptive icon uses Android masking with matching round-icon support; legacy icon is supplied for Android 6 and 7.",
+    "App package and signer retain compatibility with the previous install and saves.",
+    "Branding was checked in the installed emulator launcher; gameplay code is unchanged, so prior gameplay tests were not rerun."
+  ]
+}

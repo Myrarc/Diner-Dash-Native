@@ -1,0 +1,11 @@
+# Opacity repair review
+
+The only gameplay production change restores the shared Paint color after drawing a UI panel. Color includes alpha. The customer order bubble previously left alpha 235, so its own cake and the next frame's oven/cabinet/Jill shared-paint sprites were faded. This also covers pause/help/profile/option panels without changing their intended opacity or flattening imported sprite edges.
+
+The installed 0.1.8 baseline fails CakeOpacityProbe on an authored alpha-255 cake texel, returning alpha 235. On 0.1.9, 28,154 assertions pass: four even-width base assets have exact alpha checks on every fully opaque texel at 1:1 scale; all eight shapes have identical ready-oven rendering before and after order panels; repeated frames, Jill/carry sprites and panel alpha are checked. Odd-width assets use the oven comparison because their centered 1:1 bounds start at a half pixel. This is a native Android rendering test using the installed production code and original assets.
+
+VisualGeometryProbe also passes the existing oven phases, four native shape targets, froster-strip cropping, customer targets and counter occlusion. A real-input January walkthrough gives a menu before baking, then bakes, picks up, frosts, picks up and discards all four initial shapes/colors. A local wrapper adds that menu step to machine_selection_touch.py; no QA production-state mutations were added. The wrapper is preserved with its checksum for repeatability.
+
+The first new probe compilation incorrectly reassigned a final customer order; its fixture now modifies the existing layer list. An inherited runner wrote two new logs into the historical 0.1.8 folder; they were moved to the current folder, the baseline was rerun with correct paths, and all 684 previously archived verification files were checked unchanged. A screenshot export failed due to that same output-directory mismatch and was repeated successfully. Neither harness correction changed production code.
+
+Native 00434d30/00406570 and original PNG alpha support removing the unintended global opacity multiplier. This does not prove all native cake-child/shadow composition, oven-layer order or animation curves. Windows runtime, physical Android, full January/career service, tutorials, menus and audio were not revalidated in this bounded release.

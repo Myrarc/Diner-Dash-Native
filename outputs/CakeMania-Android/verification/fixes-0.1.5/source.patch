@@ -1,0 +1,461 @@
+--- work/cake-mania-android/fix-0.1.5/baseline/src/local/cakemania/AssetStore.java
++++ outputs/CakeMania-Android/src/local/cakemania/AssetStore.java
+@@ -41,6 +41,7 @@
+         }
+         public void center(Canvas c,String text,float x,float y,float size,int color){draw(c,text,x-width(text,size)/2,y,size,color);}
+         public void baseline(Canvas c,String text,float x,float y,int color){draw(c,text,x,y-ascent,height,color);}
++        public void baselineScreen(Canvas c,String text,float x,float y,double scale,int color){drawScreen(c,text,x,y-(int)(ascent*scale),scale,color);}
+         public float wrap(Canvas c,String text,float x,float top,float width,float size,int color){float y=top;for(String para:text.split("\n",-1)){String line="";for(String word:para.split(" ")){if(!line.isEmpty()&&width(line+" "+word,size)>width){draw(c,line,x,y,size,color);y+=size+5;line=word;}else line+=line.isEmpty()?word:" "+word;}draw(c,line,x,y,size,color);y+=size+5;}return y;}
+         // Native ImageFont scales into an integer atlas (004ab650) and converts
+         // each advance/kerning separately (0049fc20), using truncation. Keeping
+--- work/cake-mania-android/fix-0.1.5/baseline/src/local/cakemania/GameData.java
++++ outputs/CakeMania-Android/src/local/cakemania/GameData.java
+@@ -90,12 +90,15 @@
+     public Level level(int number){if(number<1||number>levels.size())throw new IllegalArgumentException("Invalid month");return levels.get(number-1);}
+     /**
+      * The native tutorial is a separate room.  It uses its own environment,
+-     * navigation graph and Jill avatar; it must never borrow January's room or
+-     * customer schedule because the authored click coordinates depend on them.
++     * navigation graph and Jill avatar. Native 0041c210 loads the customer
++     * positions from a fresh career-level copy (00421d30); its earlier edit
++     * of the copied path filename is discarded. Customer schedules stay separate.
+      */
+     public Level tutorialLevel() throws Exception {
+         Node environment=readConfig("tutorialscreen/level_env.xml").copy();
+         Node paths=readConfig("tutorialscreen/pathes.xml").copy();
++        Node customerPath=paths.first("CustomerPath");customerPath.children.clear();
++        for(Node point:level(1).paths.first("CustomerPath").children)customerPath.children.add(point.copy());
+         Node avatar=readConfig("tutorialscreen/avatar.xml").copy();
+         Node lineup=new Node("Level");lineup.attrs.put("max_on_level","0");
+         Node shop=level(1).shop.copy();
+--- work/cake-mania-android/fix-0.1.5/baseline/src/local/cakemania/GameEngine.java
++++ outputs/CakeMania-Android/src/local/cakemania/GameEngine.java
+@@ -4,7 +4,7 @@
+ import static local.cakemania.GameData.*;
+ 
+ public final class GameEngine {
+-    public enum CustomerState { WAIT_MENU, READING, ORDER, HAPPY, CASH }
++    public enum CustomerState { WAIT_MENU, READING, ORDER, HAPPY, CASH, LEAVING }
+     public static final class Layer {
+         public int shape,frost=-1,decor=-1,price;
+         Layer(int shape,int price){this.shape=shape;this.price=price;}
+@@ -40,7 +40,9 @@
+         public Node form(int id){for(Node f:def.children)if(f.tag.equals("Form")&&f.i("id",-2)==id)return f;return null;}
+     }
+     public static final class Customer {
+-        public final int serial,slot;
++        public final int serial;
++        /** Queue position. The native customer vector compacts this after a real removal. */
++        public int slot;
+         public final Node profile,arrival;
+         public final Cake order=new Cake();
+         public CustomerState state=CustomerState.WAIT_MENU;
+@@ -50,9 +52,17 @@
+         /** Native visual state is independent from the logical service state. */
+         public int visualState,visualFrame;
+         public float visualElapsed;
++        /** Remaining frame in the native five-frame happy/angry puff, or -1 when idle. */
++        public int departureFrame=-1;
++        /** Queue position captured when the body disappears; the puff does not follow compaction. */
++        public int departureSlot=-1;
++        /** Cash is awarded once, while the money puff still owns this queue slot. */
++        public boolean cashCollected;
++        private float departureElapsed;
+         private boolean startEventFired,servedEventFired;
+         private float timedEventElapsed;
+         private boolean angryThreshold;
++        private boolean lostPenaltyCharged;
+         Customer(int serial,int slot,Node profile,Node arrival){this.serial=serial;this.slot=slot;this.profile=profile;this.arrival=arrival;
+             // 0x00414d80 / 0x00412970: retain the partial heart interval in seconds.
+             int patience=profile.i("patience",20);remainingPatience=(profile.i("start_hearts",3)+1)*(patience==0?100:patience)-.01f;updateHearts();}
+@@ -69,11 +79,24 @@
+         private boolean fireStartEvent(){if(startEventFired)return false;startEventFired=true;return true;}
+         private boolean fireServedEvent(){if(servedEventFired)return false;servedEventFired=true;return true;}
+         private boolean timedEventDue(float dt,float period){if(period<=0)return false;timedEventElapsed+=dt;if(period<timedEventElapsed){timedEventElapsed=0;return true;}return false;}
++        /** The customer body disappears when the native money/angry puff starts. */
++        public boolean spriteVisible(){return state!=CustomerState.CASH&&state!=CustomerState.LEAVING;}
++        /** The native puff is rendered independently of the customer body. */
++        public boolean effectActive(){return (state==CustomerState.CASH||state==CustomerState.LEAVING)&&departureFrame>=0;}
++        private void startDeparturePuff(){departureFrame=4;departureSlot=slot;departureElapsed=0;}
++        private void advanceDeparturePuff(float dt){
++            if(departureFrame<0||dt<=0)return;
++            departureElapsed+=dt;
++            if(departureElapsed>.1f){departureElapsed=0;departureFrame--;}
++        }
++        private boolean readyForRemoval(){return departureFrame<0&&(state==CustomerState.LEAVING||(state==CustomerState.CASH&&cashCollected));}
+     }
+     public static final class Action {
+         public final Station station;
+         public final Customer customer;
+-        public final int form,node;
++        public final int form;
++        /** Destination node is mutable because customer queue positions compact. */
++        public int node;
+         private boolean begun;
+         Action(Station s,Customer c,int form,int node){station=s;customer=c;this.form=form;this.node=node;}
+     }
+@@ -127,7 +150,10 @@
+         // associate point; the shelf index selects the product at execution.
+         int target=station.def.i("associate_point",nearest(station.x+station.w/2,station.y+station.h));
+         queue.add(new Action(station,null,form,target));}
+-    public void enqueue(Customer customer){if(finished||paused||!customers.contains(customer))return;Node p=customerPoints.get(customer.slot);queue.add(new Action(null,customer,-1,nearest(p.f("x_money",230)+85,p.f("y_money",400)+20)));}
++    public void enqueue(Customer customer){
++        if(finished||paused||!customers.contains(customer)||customer.state==CustomerState.LEAVING||customer.cashCollected)return;
++        Node p=customerPoints.get(customer.slot);queue.add(new Action(null,customer,-1,nearest(p.f("x_money",230)+85,p.f("y_money",400)+20)));
++    }
+     public void clearQueue(){queue.clear();route=new int[0];routeIndex=0;message="Queued actions cancelled.";}
+     public void tick(float dt){
+         if(paused||finished||dt<=0)return;elapsed+=dt;idleTime+=dt;
+@@ -151,14 +177,25 @@
+         Station tv=station("tvset0");if(tv!=null&&tv.enabled()&&tv.remaining>0){tv.remaining-=dt;if(tv.remaining<=0){if(tvNoise){tvNoise=false;tv.remaining=tv.total=tv.def.f("time",5);Node program=tv.form(channel+1);sounds.add(program.s("sfx"));for(Customer c:customers)for(String entry:c.profile.s("tv").split(";")){String[] value=entry.split(",");if(value.length==2&&value[0].equals(program.s("guid"))){int count=Integer.parseInt(value[1]);c.addHearts(count,false);if(count>0)c.setVisual(2);}}}else{tv.remaining=0;channel=-1;}}}
+         spawn();
+         for(Customer c:new ArrayList<>(customers)){
++            boolean wasDeparting=c.state==CustomerState.CASH||c.state==CustomerState.LEAVING;
+             c.stateTime+=dt;
+             c.arrivalAge+=dt;
+             dispatchSpecialEvents(c,dt);
+             if(c.state==CustomerState.READING&&c.order.layers.isEmpty())generateOrder(c);
+             if(c.state==CustomerState.READING&&c.stateTime>=c.profile.f("menu",5)){c.state=CustomerState.ORDER;c.stateTime=0;c.setVisual(0);message="An order is ready. Match the cake in the bubble.";}
+-            if(c.state==CustomerState.HAPPY&&c.stateTime>2){c.state=CustomerState.CASH;c.stateTime=0;c.setVisual(2);}
+-            if(c.state==CustomerState.READING)c.setVisual(1);else if(c.state==CustomerState.HAPPY||c.state==CustomerState.CASH)c.setVisual(2);
++            if(c.state==CustomerState.HAPPY&&c.stateTime>2){
++                // The original keeps the happy customer visible for a strict
++                // two-second interval, then hides the body and starts the
++                // five-frame money puff at frame 4.
++                c.state=CustomerState.CASH;c.stateTime=0;c.setVisual(2);c.startDeparturePuff();
++            }
++            if(c.state==CustomerState.READING)c.setVisual(1);else if(c.state==CustomerState.HAPPY)c.setVisual(2);else if(c.state==CustomerState.LEAVING)c.setVisual(3);
+             c.advanceVisual(dt);
++            if(c.state==CustomerState.CASH||c.state==CustomerState.LEAVING){
++                if(wasDeparting)c.advanceDeparturePuff(dt);
++                if(c.readyForRemoval())removeCustomer(c);
++                continue;
++            }
+             if(c.state==CustomerState.WAIT_MENU||c.state==CustomerState.READING||c.state==CustomerState.ORDER){
+                 int patience=c.profile.i("patience",20),previousHearts=c.hearts;if(patience!=0)c.remainingPatience-=dt;c.updateHearts();
+                 // Native 0x00412970 emits the angry cue only on the downward
+@@ -167,7 +204,11 @@
+                 if(c.hearts>1)c.angryThreshold=false;
+                 if(c.hearts<previousHearts&&c.hearts==1&&!c.angryThreshold){c.angryThreshold=true;c.setVisual(3);String angrySound=c.profile.s("sound_angry");if(!angrySound.isEmpty())sounds.add(angrySound);}
+                 else if(c.visualState==0&&c.hearts==1)c.setVisual(3);else if(c.visualState==3&&c.hearts>1)c.setVisual(0);
+-                if(patience!=0&&c.remainingPatience<patience){customers.remove(c);lost++;int penalty=c.state==CustomerState.WAIT_MENU?50:c.order.components()*25;customerLostMoney+=penalty;money=Math.max(0,money-penalty);sound("CUSTOMER_LOST");message="A customer left unhappy.";}
++                if(patience!=0&&c.remainingPatience<patience&&!c.lostPenaltyCharged){
++                    c.lostPenaltyCharged=true;
++                    lost++;int penalty=c.state==CustomerState.WAIT_MENU?50:c.order.components()*25;customerLostMoney+=penalty;money=Math.max(0,money-penalty);
++                    c.state=CustomerState.LEAVING;c.stateTime=0;c.setVisual(3);c.startDeparturePuff();sound("CUSTOMER_LOST");message="A customer left unhappy.";
++                }
+             }
+         }
+         move(dt);
+@@ -181,17 +222,36 @@
+         int capacity=Math.min(customerPoints.size(),level.lineup.i("max_on_level",4));
+         while(arrivalIndex<arrivals.size()&&elapsed>=nextArrival&&customers.size()<capacity){
+             Node a=arrivals.get(arrivalIndex);Node p=data.profiles.get(a.s("guid"));if(p==null)throw new IllegalStateException("Unknown customer "+a.s("guid"));
+-            int slot=0;while(occupied(slot))slot++;
+-            Customer c=new Customer(++nextCustomer,slot,p,a);c.arrivalAge=0;customers.add(c);dispatchSpecialEvents(c,0);sound("CUSTOMER_ARRIVES");
++            Customer c=new Customer(++nextCustomer,customers.size(),p,a);c.arrivalAge=0;customers.add(c);dispatchSpecialEvents(c,0);sound("CUSTOMER_ARRIVES");
+             arrivalIndex++;nextArrival+=arrivalIndex<arrivals.size()?arrivals.get(arrivalIndex).f("time",10):Float.POSITIVE_INFINITY;
+         }
+     }
+     /** Adds a configured customer immediately for the native scripted tutorial/endless dispatcher. */
+     public Customer addCustomer(Node arrival){
+         if(arrival==null)throw new IllegalArgumentException("arrival");Node p=data.profiles.get(arrival.s("guid"));if(p==null)throw new IllegalArgumentException("Unknown customer "+arrival.s("guid"));
+-        int slot=0;while(occupied(slot))slot++;Customer c=new Customer(++nextCustomer,slot,p,arrival);customers.add(c);dispatchSpecialEvents(c,0);return c;
+-    }
+-    private boolean occupied(int slot){for(Customer c:customers)if(c.slot==slot)return true;return false;}
++        Customer c=new Customer(++nextCustomer,customers.size(),p,arrival);customers.add(c);dispatchSpecialEvents(c,0);return c;
++    }
++    /**
++     * Native customer storage is an ordered vector. Removing a customer shifts
++     * every later customer into the freed queue position; a cash customer is
++     * therefore left in the vector until its money is collected and its puff
++     * completes.
++     */
++    private void removeCustomer(Customer departing){
++        if(!customers.remove(departing))return;
++        for(int i=0;i<customers.size();i++)customers.get(i).slot=i;
++        updateQueuedCustomerTargets();
++    }
++    private void updateQueuedCustomerTargets(){
++        boolean activeChanged=false;
++        for(int i=0;i<queue.size();i++){
++            Action action=queue.get(i);if(action.customer==null)continue;
++            Node point=customerPoints.get(action.customer.slot);
++            int target=nearest(point.f("x_money",230)+85,point.f("y_money",400)+20);
++            if(action.node!=target){action.node=target;if(i==0)activeChanged=true;}
++        }
++        if(activeChanged){route=new int[0];routeIndex=0;dx=dy=0;}
++    }
+     private void dispatchSpecialEvents(Customer c,float dt){
+         Node messageNode=c.profile.first("Message");if(messageNode==null)return;String xtime=messageNode.s("xtime");
+         if("atstart".equalsIgnoreCase(xtime)&&c.fireStartEvent()){broadcastHeartEvent(c.profile.s("guid"));message=c.profile.s("message",c.profile.s("name","Customer")+" has arrived.");}
+@@ -299,7 +359,14 @@
+         return true;
+     }
+     private boolean service(Customer c){
+-        if(c.state==CustomerState.CASH){int payment=c.payment();cakeRevenue+=c.cakePrice;tips+=payment-c.cakePrice;money+=payment;customers.remove(c);sound("CASH");message="Collected $"+payment+".";return true;}
++        if(c.state==CustomerState.CASH){
++            if(c.cashCollected)return false;
++            int payment=c.payment();cakeRevenue+=c.cakePrice;tips+=payment-c.cakePrice;money+=payment;c.cashCollected=true;sound("CASH");message="Collected $"+payment+".";
++            // Keep the customer in the vector until the independent money puff
++            // completes; the next tick removes it and compacts the line.
++            return true;
++        }
++        if(c.state==CustomerState.LEAVING){message="This customer has left.";return false;}
+         if(hand!=null&&hand.layers.get(0).shape==8){c.addHearts(c.profile.i("cookie",1),true);c.setVisual(4);c.visualElapsed=0;c.visualFrame=0;hand=null;sound("CUSTOMER_EAT");return true;}
+         if(c.state==CustomerState.WAIT_MENU){c.state=CustomerState.READING;c.stateTime=0;c.setVisual(1);c.addHearts(c.profile.i("menu_hearts",1),false);sound("PAPER");message="Customer is choosing a cake.";return true;}
+         if(c.state==CustomerState.READING)return false;
+--- work/cake-mania-android/fix-0.1.5/baseline/src/local/cakemania/GameView.java
++++ outputs/CakeMania-Android/src/local/cakemania/GameView.java
+@@ -23,9 +23,10 @@
+     private final AssetStore assets;
+     private final Paint paint=new Paint(Paint.ANTI_ALIAS_FLAG|Paint.FILTER_BITMAP_FLAG);
+     private final List<Node> mapPoints=new ArrayList<>();
++    private final Node shopLayout;
+     public float scale=1,ox,oy,clock;
+     public final List<Control> controls=new ArrayList<>();
+-    public GameView(Context context,MainActivity activity,AssetStore assets){super(context);this.activity=activity;this.assets=assets;try{Node points=activity.data.readConfig("mapscreen/pathes.xml").first("Nodes");if(points!=null)mapPoints.addAll(points.children);}catch(Exception ignored){}setBackgroundColor(Color.BLACK);setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_NO);}
++    public GameView(Context context,MainActivity activity,AssetStore assets){super(context);this.activity=activity;this.assets=assets;try{Node points=activity.data.readConfig("mapscreen/pathes.xml").first("Nodes");if(points!=null)mapPoints.addAll(points.children);shopLayout=activity.data.readConfig("shopcareerscreen/shop_env.xml").first("RenderBackground");}catch(Exception error){throw new IllegalStateException("Missing authored screen layout",error);}setBackgroundColor(Color.BLACK);setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_NO);}
+     @Override protected void onSizeChanged(int w,int h,int oldw,int oldh){scale=Math.min(w/800f,h/600f);ox=(w-800*scale)/2;oy=(h-600*scale)/2;
+         // Adding overlay buttons during the parent's layout leaves them unmeasured on cold launch.
+         post(activity::syncControls);
+@@ -46,7 +47,7 @@
+         else if(screen.equals("intro")){control("start","Let's Play!",318,473,300,48);control("menu","Main Menu",30,536,200,44);}
+         else if(screen.equals("game")&&g!=null){
+             boolean tutorial=activity.tutorialWaiting();
+-            if(!tutorial){control("pause","Pause",697,8,94,40);control("cancel","Clear queue",574,8,112,40);
++            if(!tutorial){control("pause","Menu",6,556,122,34);
+             for(Station s:g.stations)if(s.enabled())control("station:"+s.guid,s.def.s("name",s.kind),s.x,s.y,s.w,s.h);
+             // Native 0x00434480 / 0x00435820 hit the Form rectangles on each machine.
+             // Add these above the body targets so color/shape taps cannot become pickups.
+@@ -62,7 +63,11 @@
+         else if(screen.equals("pause")){control("resume","Resume",250,250,300,50);control("restart","Restart Month",250,320,300,50);control("menu","Main Menu",250,390,300,50);}
+         else if(screen.equals("gameover")){control("restart","Restart Career",250,330,300,48);control("menu","Main Menu",250,400,300,48);}
+         else if(screen.equals("result")){control("next",g.won?(g.level.number==48?"Finish Career":"Continue"):"Try Again",318,500,300,48);control("menu","Main Menu",30,536,200,44);}
+-        else if(screen.equals("shop")){int i=0;for(Node u:activity.shopChoices()){if(i/6==activity.shopPage){int j=i%6;control("buy:"+i,u.s("name")+" $"+u.i("purchase_points",0),50+(j%2)*365,150+(j/2)*112,340,100);}i++;}control("prev","Previous",30,536,200,44);control("shoppage","Next Page",270,536,200,44);control("continue","Continue",530,536,240,44);}
++        else if(screen.equals("shop")){
++            float x=shopLayout.f("x",163),y=shopLayout.f("y",20),sx=shopLayout.f("scale_x",.75f),sy=shopLayout.f("scale_y",.75f);
++            for(Node u:activity.shopChoices()){Station station=g.station(u.s("guid"));if(station!=null)control("shop:select:"+station.guid,u.s("name"),x+sx*station.x,y+sy*station.y,sx*station.w,sy*station.h);else if(u.s("guid").equals("jill")){RectF body=shopJillBounds();control("shop:select:jill",u.s("name"),body.left,body.top,body.width(),body.height());}}
++            for(Node b:shopLayout.children)if(b.tag.equals("Button"))control(b.s("guid").equals("finish")?"continue":"shop:buy",b.s("text"),b.f("x",0),b.f("y",0),b.f("w",0),b.f("h",0));
++        }
+         else if(screen.equals("career")){int bakery=activity.careerBakery;for(int i=0;i<12;i++){int n=bakery*12+i+1;control("level:"+n,activity.data.level(n).name+(n>activity.unlocked?" (locked)":""),60+i%3*235,130+i/3*91,210, 70);}control("bakeryprev","Previous Bakery",30,536,240,44);control("bakerynext","Next Bakery",310,536,230,44);control("menu","Main Menu",570,536,200,44);}
+         else if(screen.equals("options")){control("music","Music: "+(activity.audio.musicEnabled?"On":"Off"),310,180,318,39);control("musicSlider","Music Volume",410,240,220,30);control("sound","Sounds: "+(activity.audio.enabled?"On":"Off"),310,325,318,39);control("soundSlider","Sfx Volume",410,385,220,30);control("menu","Main Menu",310,475,318,39);}
+         else if(screen.equals("help")){control("helpnext","Next",550,536,210,44);control("menu","Main Menu",30,536,210,44);}
+@@ -79,7 +84,8 @@
+         else if(screen.equals("help"))drawHelp(c);
+         else if(screen.equals("gameover"))drawGameOver(c);
+         else if(screen.equals("complete"))assets.draw(c,"IMAGE_COMICS_FINAL",0,0,800,600);
+-        else {assets.draw(c,"IMAGE_BGR0",0,0,800,600);panel(c,20,60,760,525,0xedfff0cf);if(screen.equals("shop"))drawShop(c);else if(screen.equals("career"))drawCareer(c);else if(screen.equals("profiles"))drawProfiles(c);else if(screen.equals("endless"))drawEndless(c);else if(screen.equals("options"))drawOptions(c);else if(screen.equals("scores"))drawScores(c);else if(screen.equals("complete")){center(c,"The Evans Bakery is saved!",400,130,34,0xff712f37);wrap(c,"You have finished all four bakeries and all 48 career months. Your best earnings are saved on this device.",140,245,520,24,0xff4c2635);}}
++        else if(screen.equals("shop"))drawShop(c);
++        else {assets.draw(c,"IMAGE_BGR0",0,0,800,600);panel(c,20,60,760,525,0xedfff0cf);if(screen.equals("career"))drawCareer(c);else if(screen.equals("profiles"))drawProfiles(c);else if(screen.equals("endless"))drawEndless(c);else if(screen.equals("options"))drawOptions(c);else if(screen.equals("scores"))drawScores(c);else if(screen.equals("complete")){center(c,"The Evans Bakery is saved!",400,130,34,0xff712f37);wrap(c,"You have finished all four bakeries and all 48 career months. Your best earnings are saved on this device.",140,245,520,24,0xff4c2635);}}
+         if(screen.equals("pause")){panel(c,120,120,560,405,0xe8fff0cf);center(c,"Paused",400,160,38,0xff712f37);}
+         for(Control b:controls)if(!screen.equals("game")&&!screen.equals("shop")&&!screen.equals("map")&&!((screen.equals("options"))&&(b.key.equals("musicSlider")||b.key.equals("soundSlider"))))button(c,b);
+         c.restore();
+@@ -117,8 +123,10 @@
+                 assets.draw(c,"IMAGE_RECTANGLE",overlay.x,overlay.y,overlay.w,overlay.h);
+                 assets.font("EclatICG16").wrap(c,overlay.text,overlay.x+10,overlay.y+10,Math.max(1,overlay.w-20),16,0xff512432);
+             }else if(overlay.type.equals("DrawArrow")){
+-                c.save();c.rotate((float)Math.toDegrees(overlay.angle),overlay.x+overlay.w/2f,overlay.y+overlay.h/2f);
+-                assets.draw(c,"IMAGE_ARROW",overlay.x,overlay.y,overlay.w,overlay.h);c.restore();
++                // 0044e130 ignores w/h for arrows; 0049c2f0 rotates with
++                // x'=x*cos+y*sin, y'=y*cos-x*sin (opposite Canvas's angle).
++                Bitmap arrow=assets.image("IMAGE_ARROW");c.save();c.rotate(-(float)Math.toDegrees(overlay.angle),overlay.x+arrow.getWidth()/2,overlay.y+arrow.getHeight()/2);
++                c.drawBitmap(arrow,overlay.x,overlay.y,paint);c.restore();
+             }
+         }
+     }
+@@ -143,12 +151,38 @@
+         }
+         else if(result){wrap(c,g.won?g.level.success:g.level.failure,310,155,310,16,0xff512432);}
+     }
+-    private void drawShop(Canvas c){center(c,"Bakery Upgrades",400,76,34,0xff712f37);center(c,"Savings: $"+activity.bank,400,117,24,0xff512432);for(Control b:controls){if(!b.key.startsWith("buy:")){button(c,b);continue;}Node u=activity.shopChoices().get(Integer.parseInt(b.key.substring(4)));panel(c,b.x,b.y,b.w,b.h,activity.bank>=u.i("purchase_points",0)?0xffe6cda0:0xffd2c9b9);String image=u.s("icon",u.s("main_img"));if(!image.isEmpty())assets.draw(c,image,b.x+8,b.y+8,76, 70);wrap(c,u.s("name"),b.x+95,b.y+11,230,22,0xff512432);text(c,"$"+u.i("purchase_points",0),b.x+95,b.y+69,24,0xff512432);}
+-        if(activity.shopChoices().isEmpty())center(c,"All equipment is upgraded.",400,300,25,0xff512432);
+-    }
++    private void drawShop(Canvas c){
++        GameEngine g=activity.game;Node selected=activity.selectedShopChoice();
++        c.save();c.translate(shopLayout.f("x",163),shopLayout.f("y",20));c.scale(shopLayout.f("scale_x",.75f),shopLayout.f("scale_y",.75f));
++        for(Node bg:g.level.environment.first("RenderBackground").children){assets.draw(c,bg.s("img"),bg.f("x",0),bg.f("y",0));for(Station s:g.stations)if(s.def.i("render_after",0)==bg.i("id",0)){
++            // 0046fa80 marks unowned equipment; 00434d30 draws it as a dark
++            // translucent silhouette. Shop objects have no in-progress cakes.
++            if(s.enabled())drawStation(c,new Station(s.def.copy()));
++            else if(!s.s("main_img","").isEmpty()){paint.setColorFilter(new PorterDuffColorFilter(0xff000000,PorterDuff.Mode.SRC_IN));paint.setAlpha(122);c.drawBitmap(assets.frame(s.s("main_img",""),s.def.i("wc",1),s.def.i("hc",1),0),null,new RectF(s.x,s.y,s.x+s.w,s.y+s.h),paint);paint.setAlpha(255);paint.setColorFilter(null);}
++        }}
++        if(selected!=null){Station current=g.station(selected.s("guid"));if(current!=null){Node preview=current.def.copy();preview.merge(selected);c.saveLayerAlpha(null,150);drawStation(c,new Station(preview));c.restore();}}
++        c.restore();
++        for(Node image:shopLayout.children)if(image.tag.equals("Image")&&!image.s("img").isEmpty())assets.draw(c,image.s("img"),image.f("x",0),image.f("y",0));
++        drawShopJill(c);
++        if(selected!=null&&!selected.s("icon").isEmpty())assets.draw(c,selected.s("icon"),50,275,150,150);
++        for(Node window:shopLayout.children)if(window.tag.equals("Window")){
++            String guid=window.s("guid"),value="";
++            if(guid.equals("name")&&selected!=null)value=selected.s("name");
++            else if(guid.equals("description")&&selected!=null)value=selected.s("description");
++            else if(guid.equals("price")&&selected!=null)value=window.s("text")+selected.i("purchase_points",0);
++            else if(guid.equals("lives"))value=window.s("text")+activity.lives;
++            else if(guid.equals("count"))value=window.s("text")+activity.points;
++            else if(guid.equals("money"))value=window.s("text")+activity.bank;
++            assets.font("EclatICG16").wrapScreen(c,value,window.f("x",0),window.f("y",0),window.f("w",174),.95,window.i("spacing",0),0xffffffff);
++        }
++        for(Node b:shopLayout.children)if(b.tag.equals("Button")){boolean enabled=b.s("guid").equals("finish")||(selected!=null&&activity.bank>=selected.i("purchase_points",0));assets.draw(c,b.s(enabled?"img":"img_dis"),b.f("x",0),b.f("y",0),b.f("w",0),b.f("h",0));center(c,b.s("text"),b.f("x",0)+b.f("w",0)/2,b.f("y",0)+8,24,enabled?0xfffeffff:0xffa59da2);}
++    }
++    private Node shopJillAnimation(){for(Node n:activity.game.level.avatar.first("Avatar").children)if(n.tag.equals("Animation")&&n.i("id",-1)==8)return n;throw new IllegalStateException("Missing shop Jill animation");}
++    private RectF shopJillBounds(){Node a=shopJillAnimation();Bitmap frame=assets.frame(a.s("image"),1,a.i("count",1),a.i("count",1)-1);float scale=.75f*SpriteRules.gameplayProjection(440)*a.f("scale",1);return new RectF(430-frame.getWidth()*scale/2,350-frame.getHeight()*scale,430+frame.getWidth()*scale/2,350);}
++    private void drawShopJill(Canvas c){Node a=shopJillAnimation();int frame=a.i("count",1)-1;RectF r=shopJillBounds();c.drawBitmap(assets.frame(a.s("image"),1,a.i("count",1),frame),null,r,paint);for(Node u:activity.game.level.avatar.first("Avatar").children)if(u.tag.equals("Upgrade")&&u.i("id",-1)==8&&u.i("idupg",0)==activity.game.shoeStep&&!u.s("image").isEmpty()){Bitmap shoe=assets.frame(u.s("image"),1,u.i("count",a.i("count",1)),frame);float projection=.75f*SpriteRules.gameplayProjection(440)*a.f("scale",1),s=projection*u.f("scale",1),x=r.left+projection*u.f("x_dec",0),y=r.top+projection*u.f("y_dec",0);c.drawBitmap(shoe,null,new RectF(x,y,x+shoe.getWidth()*s,y+shoe.getHeight()*s),paint);}}
+     private void drawCareer(Canvas c){center(c,activity.data.level(activity.careerBakery*12+1).bakeryName,400,80,36,0xff712f37);}
+     private void drawScores(Canvas c){center(c,"Best Month Earnings",400,100,36,0xff712f37);List<Integer> months=new ArrayList<>();for(int n=1;n<=48;n++)if(activity.saved.getInt("best"+n,0)>0)months.add(n);Collections.sort(months,(a,b)->Integer.compare(activity.saved.getInt("best"+b,0),activity.saved.getInt("best"+a,0)));if(months.isEmpty())center(c,"Finish a month to record your score.",400,240,24,0xff512432);for(int i=0;i<Math.min(8,months.size());i++){int n=months.get(i);Level l=activity.data.level(n);text(c,l.bakeryName+" / "+l.name,90,190+i*37,23,0xff512432);text(c,"$"+activity.saved.getInt("best"+n,0),625,190+i*37,23,0xff512432);}}
+-    private void drawHelp(Canvas c){assets.draw(c,"IMAGE_BGR0",0,0,800,600);panel(c,35,60,730,460,0xf4fff0cf);center(c,"How to Play",400,82,36,0xff712f37);String[] pages={"Tap a customer to hand out a menu. Once they have read it, their order appears beside the counter.\n\nTap the matching shape button on an oven, then tap its body to pick up the cake when ready. Baking continues while Jill does other jobs.","Tap the matching color on a froster to place and frost a carried cake. Tap its tray to pick it up. A tray tap with a cake in hand only places it. Tap a pictured topper on a decorator when needed.\n\nFor two tiers, leave the first frosted layer on a tray. Bring the second baked layer and tap its frosting color on that machine.","Tap the customer to deliver a matching cake, then tap again to collect the cash.\n\nYou can queue several actions. Clear queue cancels them. Customers lose hearts while waiting. Cookies and the television can help once purchased.","Reach the Baker Goal before closing. Serve the remaining customers and collect their payments to finish the month.\n\nBuy equipment between months, then continue your career. Progress, purchases, and best scores are saved on this device."};wrap(c,pages[activity.helpPage%pages.length],85,157,630,28,0xff512432);}
++    private void drawHelp(Canvas c){assets.draw(c,"IMAGE_BGR0",0,0,800,600);panel(c,35,60,730,460,0xf4fff0cf);center(c,"How to Play",400,82,36,0xff712f37);String[] pages={"Tap a customer to hand out a menu. Once they have read it, their order appears beside the counter.\n\nTap the matching shape button on an oven, then tap its body to pick up the cake when ready. Baking continues while Jill does other jobs.","Tap the matching color on a froster to place and frost a carried cake. Tap its tray to pick it up. A tray tap with a cake in hand only places it. Tap a pictured topper on a decorator when needed.\n\nFor two tiers, leave the first frosted layer on a tray. Bring the second baked layer and tap its frosting color on that machine.","Tap the customer to deliver a matching cake, then tap again to collect the cash.\n\nYou can queue several actions. Customers lose hearts while waiting. Cookies and the television can help once purchased.","Reach the Baker Goal before closing. Serve the remaining customers and collect their payments to finish the month.\n\nBuy equipment between months, then continue your career. Progress, purchases, and best scores are saved on this device."};wrap(c,pages[activity.helpPage%pages.length],85,157,630,28,0xff512432);}
+     private void drawGame(Canvas c){GameEngine g=activity.game;if(g==null)return;
+         List<Node> bg=g.level.environment.first("RenderBackground").children;
+         // 00437d20 draws each background and its render_after equipment, then
+@@ -162,24 +196,29 @@
+         Node foreground=bg.get(bg.size()-1);assets.draw(c,foreground.s("img"),foreground.f("x",0),foreground.f("y",0));
+         for(Customer customer:sorted)drawOrder(c,customer);
+         for(int i=0;i<g.queue.size();i++){Action a=g.queue.get(i);float xx,yy;if(a.station!=null){Node f=a.station.form(a.form);xx=a.station.x+(f==null?a.station.w/2:f.f("x",0)+f.f("width",0)/2);yy=a.station.y+(f==null?18:f.f("y",0)+f.f("height",0)/2);}else{Node p=g.customerPoints.get(a.customer.slot);xx=p.f("x_money",230)+60;yy=p.f("y_money",500)-20;}panel(c,xx-13,yy-13,28,28,0xffa62039);center(c,""+(i+1),xx,yy-11,22,Color.WHITE);}
+-        if(g.level.number>0){float left=Math.max(0,g.level.duration-g.elapsed);text(c,""+(int)left+"s",457,13,25,0xff572a31);}
+-        for(Control b:controls)if(b.key.equals("pause")||b.key.equals("cancel"))button(c,b);
+-        if(g.level.number>0)drawHud(c,g);
++        if(g.level.number>0){drawHud(c,g);drawClock(c,g);}
+         if(activity.tutorialWaiting())drawTutorialOverlays(c);
+     }
+     private void drawHud(Canvas c,GameEngine g){
+         // The supplied HUD is an authored 800x49 strip at the bottom of the room.
+         // Native text is baseline-aligned at y=590; the second draw is its shadow.
+         assets.draw(c,"IMAGE_HUD",0,551);
+-        String month=g.level.name.toUpperCase(Locale.US);
++        // 0044c950 centers the 122x34 native Menu image at (67,573).
++        assets.draw(c,"IMAGE_BUTTON_MENU",6,556);
++        String month=g.level.name;
+         hudText(c,month,150,590,0xffffffff);
+         hudText(c,"Cash $"+g.money,285,590,0xffffffff);
+         hudText(c,g.goalReached?"Baker Goal Complete!":"Baker Goal $"+g.level.goal,430,590,0xffffffff);
+         hudText(c,"LIVES",694,590,0xffffffff);
+         int lives=optionalInt(activity,"lives",4);
+-        for(int i=0;i<Math.max(0,Math.min(6,lives));i++)assets.draw(c,"IMAGE_HUD_STAR",720+i*11,550,11,11);
+-    }
+-    private void hudText(Canvas c,String value,float x,float y,int color){assets.font("EclatICG16").baseline(c,value,x+1,y+1,0x99000000);assets.font("EclatICG16").baseline(c,value,x,y,color);}
++        for(int i=0;i<Math.max(0,Math.min(6,lives));i++){c.save();c.rotate(-(float)Math.toDegrees(i*.349-(lives-1)*.1745),737,650);assets.draw(c,"IMAGE_HUD_STAR",720,550);c.restore();}
++    }
++    private void drawClock(Canvas c,GameEngine g){
++        // 00409ab0 places the original face at (665,-17). 0041ba80 supplies
++        // the month duration; 00409c00 pivots the 10x40 hand at (5,35).
++        assets.draw(c,"IMAGE_CLOCK",665,-17);float phase=Math.max(0,Math.min(1,g.elapsed/g.level.duration));c.save();c.rotate((float)Math.toDegrees(phase*6.283199787f),725,74);assets.draw(c,"IMAGE_CLOCK_RULER",720,39);c.restore();
++    }
++    private void hudText(Canvas c,String value,float x,float y,int color){assets.font("EclatICG16").baselineScreen(c,value,x+1,y+1,(double).95f,0xff000000);assets.font("EclatICG16").baselineScreen(c,value,x,y,(double).95f,color);}
+     private void drawEnvironmentAnimations(Canvas c,Node parent,float time){for(Node a:parent.children)if(a.tag.equals("ImageAnimation")&&!a.s("curve").isEmpty()){String[] pts=a.s("curve").split(";");if(pts.length<2)continue;int[] from=ints(pts[0]),to=ints(pts[1]);float delay=a.f("starttime",0),duration=Math.max(1,a.f("time",30));if(time<delay)continue;float phase=(time-delay)%duration/duration;Bitmap b=assets.frame(a.s("img"),1,a.i("count",1),(int)((time-delay)/Math.max(.01f,a.f("timing",.1f))));c.drawBitmap(b,from[0]+(to[0]-from[0])*phase,from[1]+(to[1]-from[1])*phase,paint);}}
+     private void drawStation(Canvas c,Station s){
+         if(!s.enabled())return;
+@@ -199,13 +238,18 @@
+             if(s.kind.equals("DisplayCase")){Node shelf=s.def.first("FormShelf");if(shelf!=null)cake(c,s.cake,s.x+shelf.f("x",0)+shelf.f("width",85)/2,s.y+shelf.f("y",-8)+shelf.f("height",50),.55f);else cake(c,s.cake,s.x+s.w/2,s.y+50,.65f);}
+             else {int[] pt=ints(s.def.s("cake_pt","0,0"));float x=s.x+s.w/2+pt[0],y=s.y+s.h/2+pt[1];cake(c,s.cake,x,y,SpriteRules.stationCakeProjection(y));}
+         }
+-        if(s.remaining>0){panel(c,s.x+5,s.y+s.h-16,s.w-10,9,0xff68424c);panel(c,s.x+5,s.y+s.h-16,(s.w-10)*(1-s.remaining/Math.max(.01f,s.total)),9,0xff9cdf52);Node f=s.form(s.workingForm);if(f!=null&&!f.s("image_anim").isEmpty()&&!f.s("pt_anim").isEmpty()){int[] pt=ints(f.s("pt_anim"));int cols=Math.max(1,f.i("count_anim_vert",1)),rows=Math.max(1,f.i("count_anim",1)),count=cols*rows;Bitmap frame=assets.frame(f.s("image_anim"),cols,rows,(int)((s.total-s.remaining)/Math.max(.01f,s.total)*count));c.drawBitmap(frame,s.x+pt[0],s.y+pt[1],paint);}}
+-        else if(s.cake!=null&&(!s.kind.equals("CakeOven")||!s.burnt)){panel(c,s.x+s.w-34,s.y+s.h-32,28,28,0xff3c7c35);center(c,"!",s.x+s.w-20,s.y+s.h-30,24,Color.WHITE);}
++        if(s.remaining>0){Node f=s.form(s.workingForm);if(f!=null&&!f.s("image_anim").isEmpty()&&!f.s("pt_anim").isEmpty()){int[] pt=ints(f.s("pt_anim"));int cols=Math.max(1,f.i("count_anim_vert",1)),rows=Math.max(1,f.i("count_anim",1)),count=cols*rows;Bitmap frame=assets.frame(f.s("image_anim"),cols,rows,(int)((s.total-s.remaining)/Math.max(.01f,s.total)*count));c.drawBitmap(frame,s.x+pt[0],s.y+pt[1],paint);}}
++        drawProcessingWheel(c,s);
++    }
++    private void drawProcessingWheel(Canvas c,Station s){if(s.remaining<=0||s.remaining>=s.total||s.total==0)return;
++        // 00434d30 uses DAT_005b9f40 (IMAGE_READYCIRCLE), 16 vertical
++        // frames counted backwards as the remaining fraction approaches zero.
++        int frame=(int)(15f-15f/s.total*(s.total-s.remaining));c.drawBitmap(assets.frame("IMAGE_READYCIRCLE",1,16,Math.max(0,Math.min(15,frame))),null,new RectF((int)(s.x+s.w/2-15),(int)(s.y+s.h/2-15),(int)(s.x+s.w/2-15)+30,(int)(s.y+s.h/2-15)+30),paint);
+     }
+ 
+     private void drawCookieShelves(Canvas c,Station s){
+         int index=0;for(Node shelf:s.def.children)if(shelf.tag.equals("FormShelf")){int id=shelf.i("id",index);if(cookieShelfHasStock(s,id))assets.draw(c,"IMAGE_COOKIE",s.x+shelf.f("x",0),s.y+shelf.f("y",0),shelf.f("width",29),shelf.f("height",29));index++;}
+-        if(s.remaining>0){panel(c,s.x+5,s.y+s.h-12,s.w-10,8,0xff68424c);panel(c,s.x+5,s.y+s.h-12,(s.w-10)*(1-s.remaining/Math.max(.01f,s.total)),8,0xff9cdf52);}
++        drawProcessingWheel(c,s);
+     }
+ 
+     private void drawOvenPhases(Canvas c,Station s){
+@@ -237,11 +281,14 @@
+     private static int optionalInt(Object target,String name,int fallback){try{java.lang.reflect.Field f=target.getClass().getField(name);Object value=f.get(target);return value instanceof Number?((Number)value).intValue():fallback;}catch(Exception ignored){return fallback;}}
+     private Node customerImage(Customer customer){String state=customer.visualState==1?"ID_MENU":customer.visualState==2?"ID_HAPPY":customer.visualState==3?"ID_BORED":customer.visualState==4?"ID_EATING":customer.state==CustomerState.READING?"ID_MENU":customer.state==CustomerState.HAPPY||customer.state==CustomerState.CASH?"ID_HAPPY":customer.hearts==1?"ID_BORED":"ID_NORMAL";for(Node n:customer.profile.children)if(n.s("id").equals(state))return n;throw new IllegalStateException("Missing customer animation "+state);}
+     private Bitmap customerFrame(Customer customer,Node image){int[] order=ints(image.first("Sequence").s("frames"));return assets.frame(image.s("img"),image.i("cols",1),image.i("rows",1),order[Math.floorMod(customer.visualFrame,Math.max(1,order.length))]);}
+-    private RectF customerSpriteBounds(Customer customer,Node image,Bitmap frame){Node point=activity.game.customerPoints.get(customer.slot);float projection=image.f("scale",1),x=point.f("x",130)-frame.getWidth()*projection/2+image.f("xdec",0),y=point.f("y",500)-frame.getHeight()*projection+image.f("ydec",0);return new RectF(x,y,x+frame.getWidth()*projection,y+frame.getHeight()*projection);}
+-    private RectF customerOrderBounds(Customer customer){Node p=activity.game.customerPoints.get(customer.slot);float x=p.f("x_money",230),y=p.f("y_money",500);return customer.state==CustomerState.CASH?new RectF(x-10,y-27,x+80,y+15):new RectF(x-23,y-83,x+71,y);}
+-    private void addCustomerControl(Customer customer){Node image=customerImage(customer);RectF r=customerSpriteBounds(customer,image,customerFrame(customer,image));r.union(customerOrderBounds(customer));control("customer:"+customer.serial,customer.profile.s("name")+", "+customer.state+", "+customer.hearts+" hearts",r.left,r.top,r.width(),r.height());}
++    private RectF customerSpriteBounds(Customer customer,Node image,Bitmap frame){return customerSpriteBounds(customer,image,frame,customer.slot);}
++    private RectF customerSpriteBounds(Customer customer,Node image,Bitmap frame,int slot){Node point=activity.game.customerPoints.get(slot);float projection=image.f("scale",1),x=point.f("x",130)-frame.getWidth()*projection/2+image.f("xdec",0),y=point.f("y",500)-frame.getHeight()*projection+image.f("ydec",0);return new RectF(x,y,x+frame.getWidth()*projection,y+frame.getHeight()*projection);}
++    private RectF customerOrderBounds(Customer customer){Node p=activity.game.customerPoints.get(customer.slot);float x=p.f("x_money",230),y=p.f("y_money",500);return customer.state==CustomerState.CASH?new RectF(x-4,y-25,x+46,y+25):new RectF(x-23,y-83,x+71,y);}
++    private void addCustomerControl(Customer customer){if(customer.state==CustomerState.LEAVING||customer.cashCollected)return;Node image=customerImage(customer);RectF r=customer.state==CustomerState.CASH?customerOrderBounds(customer):customerSpriteBounds(customer,image,customerFrame(customer,image));if(customer.spriteVisible())r.union(customerOrderBounds(customer));control("customer:"+customer.serial,customer.profile.s("name")+", "+customer.state+", "+customer.hearts+" hearts",r.left,r.top,r.width(),r.height());}
+     public boolean hitsCustomer(Customer customer,float x,float y){
++        if(customer.state==CustomerState.LEAVING||customer.cashCollected)return false;
+         if(customerOrderBounds(customer).contains(x,y))return true;
++        if(!customer.spriteVisible())return false;
+         // 0040b2e0 uses the normal sprite rectangle, including transparent
+         // pixels. Keep the target stable when a temporary animation changes.
+         for(Node image:customer.profile.children)if(image.s("id").equals("ID_NORMAL"))return customerSpriteBounds(customer,image,assets.frame(image.s("img"),image.i("cols",1),image.i("rows",1),0)).contains(x,y);
+@@ -250,14 +297,24 @@
+     /** Match the artwork in game coordinates, including overlapping customer sprites. */
+     public String gameControlAt(float x,float y){
+         for(Control c:controls)if((c.key.equals("pause")||c.key.equals("cancel"))&&new RectF(c.x,c.y,c.x+c.w,c.y+c.h).contains(x,y))return c.key;
+-        List<Customer> front=new ArrayList<>(activity.game.customers);Collections.sort(front,(a,b)->Integer.compare(a.slot,b.slot));
+-        for(Customer customer:front)if(hitsCustomer(customer,x,y))for(Control c:controls)if(c.key.equals("customer:"+customer.serial))return c.key;
++        if(activity.screen.equals("game")){List<Customer> front=new ArrayList<>(activity.game.customers);Collections.sort(front,(a,b)->Integer.compare(a.slot,b.slot));
++        for(Customer customer:front)if(customer.state==CustomerState.CASH&&hitsCustomer(customer,x,y))for(Control c:controls)if(c.key.equals("customer:"+customer.serial))return c.key;
++        for(Customer customer:front)if(customer.state!=CustomerState.CASH&&hitsCustomer(customer,x,y))for(Control c:controls)if(c.key.equals("customer:"+customer.serial))return c.key;}
+         for(int i=controls.size()-1;i>=0;i--){Control c=controls.get(i);if(!c.key.startsWith("customer:")&&new RectF(c.x,c.y,c.x+c.w,c.y+c.h).contains(x,y))return c.key;}
+         return null;
+     }
+-    private void drawCustomer(Canvas c,Customer customer){Node image=customerImage(customer);Bitmap frame=customerFrame(customer,image);c.drawBitmap(frame,null,customerSpriteBounds(customer,image,frame),paint);}
++    private void drawCustomer(Canvas c,Customer customer){Node image=customerImage(customer);Bitmap frame=customerFrame(customer,image);
++        if(customer.spriteVisible())c.drawBitmap(frame,null,customerSpriteBounds(customer,image,frame),paint);
++        else if(customer.effectActive()){
++            // 004163a0 captures the last body center; 0040d370 draws a five-row
++            // puff at its intrinsic size and alpha 200, including after line movement.
++            RectF body=customerSpriteBounds(customer,image,frame,customer.departureSlot);Bitmap puff=assets.frame(customer.state==CustomerState.LEAVING?"IMAGE_CUST_PUFF_ANGRY":"IMAGE_CUST_PUFF_HAPPY",1,5,customer.departureFrame);
++            paint.setAlpha(200);c.drawBitmap(puff,(int)(body.centerX()-puff.getWidth()/2f),(int)(body.centerY()-puff.getHeight()/2f),paint);paint.setAlpha(255);
++        }
++    }
+     private void drawOrder(Canvas c,Customer customer){GameEngine g=activity.game;Node p=g.customerPoints.get(customer.slot);float x=p.f("x_money",230),y=p.f("y_money",500);
+-        if(customer.state==CustomerState.CASH){assets.draw(c,"IMAGE_MONEY",x-10,y-27);text(c,"$"+customer.payment(),x+30,y-12,22,0xff195727);return;}
++        if(customer.state==CustomerState.CASH){if(!customer.cashCollected)assets.draw(c,(int)(g.elapsed/.35f)%2==0?"IMAGE_MONEY":"IMAGE_MONEY_FL",(int)(x-4),(int)(y-25),40,40);return;}
++        if(customer.state==CustomerState.LEAVING||customer.state==CustomerState.HAPPY)return;
+         for(int i=0;i<customer.profile.i("max_hearts",5);i++){paint.setAlpha(customer.hearts>=i+1?255:65);c.drawBitmap(assets.image("IMAGE_HEART"),null,new RectF(x-20+i*15,y-83,x-5+i*15,y-70),paint);}paint.setAlpha(255);
+         if(customer.state==CustomerState.ORDER){panel(c,x-23,y-66,94,65,0xebffffef);cake(c,customer.order,x+24,y-13,.43f);}
+         else if(customer.state==CustomerState.WAIT_MENU){panel(c,x-20,y-55,80,40,0xd8ffffef);text(c,"Menu?",x-12,y-47,21,0xff5c2b35);}
+--- work/cake-mania-android/fix-0.1.5/baseline/src/local/cakemania/MainActivity.java
++++ outputs/CakeMania-Android/src/local/cakemania/MainActivity.java
+@@ -18,7 +18,8 @@
+     public GameAudio audio;
+     public SharedPreferences saved;
+     public String screen="menu";
+-    public int bank,unlocked=1,careerBakery,shopPage,storyPage,helpPage;
++    public int bank,unlocked=1,careerBakery,storyPage,helpPage;
++    public String shopSelection="";
+     public int lives=4,points;
+     public boolean gameOver;
+     public String activeProfileId="player1";
+@@ -141,6 +142,7 @@
+         for(String guid:base.keySet()){int min=Integer.MAX_VALUE;Node choice=null;for(Node n:game.level.shop.children)if(n.s("guid").equals(guid)&&n.i("upgr_step",0)>base.get(guid)&&n.i("upgr_step",0)<min){min=n.i("upgr_step",0);choice=n;}if(choice!=null)result.add(choice);}
+         Collections.sort(result,(a,b)->{int d=Integer.compare(a.i("purchase_points",0),b.i("purchase_points",0));return d!=0?d:a.s("guid").compareTo(b.s("guid"));});return result;
+     }
++    public Node selectedShopChoice(){for(Node choice:shopChoices())if(choice.s("guid").equals(shopSelection))return choice;return null;}
+     public void syncControls(){if(view==null||buttons==null||view.getWidth()==0)return;view.rebuildControls();StringBuilder signature=new StringBuilder(screen+":"+view.getWidth()+":"+view.getHeight());for(GameView.Control c:view.controls)signature.append('|').append(c.key).append(':').append(c.label).append(':').append(c.x).append(':').append(c.y).append(':').append(c.w).append(':').append(c.h);if(signature.toString().equals(controlsSignature))return;controlsSignature=signature.toString();buttons.removeAllViews();
+         for(GameView.Control c:view.controls){
+             FrameLayout.LayoutParams p=new FrameLayout.LayoutParams(Math.round(c.w*view.scale),Math.round(c.h*view.scale));p.leftMargin=Math.round(view.ox+c.x*view.scale);p.topMargin=Math.round(view.oy+c.y*view.scale);
+@@ -167,9 +169,10 @@
+             if(key.startsWith("customer:")){int serial=Integer.parseInt(key.substring(9));for(Customer c:game.customers)if(c.serial==serial){if(tutorial!=null&&tutorial.isWaitingForCustomer()&&"tutor".equals(c.profile.s("guid")))tutorial.customerClick(tutorial.waitingCustomerId());game.enqueue(c);break;}return;}}
+         if(screen.equals("pause")){if(key.equals("resume"))show("game");else if(key.equals("restart"))start(game.level.number);return;}
+         if(screen.equals("gameover")){if(key.equals("restart")){career.lives=4;lives=4;gameOver=false;career.save(saved);start(1);}else if(key.equals("menu"))menu();return;}
+-        if(screen.equals("result")&&key.equals("next")){if(!game.won)start(game.level.number);else if(game.level.number==48)show("complete");else{shopPage=0;show("shop");}return;}
++        if(screen.equals("result")&&key.equals("next")){if(!game.won)start(game.level.number);else if(game.level.number==48)show("complete");else{shopSelection="";audio.music("music/mapscreen.ogg");show("shop");}return;}
+         if(screen.equals("shop")){if(key.equals("continue")){start(game.level.number+1);return;}
+-            if(key.equals("prev"))shopPage=Math.max(0,shopPage-1);else if(key.equals("shoppage"))shopPage=Math.min(Math.max(0,(shopChoices().size()-1)/6),shopPage+1);else if(key.startsWith("buy:")){List<Node> choices=shopChoices();int index=Integer.parseInt(key.substring(4));if(index<choices.size()){Node u=choices.get(index);int price=u.i("purchase_points",0);if(bank>=price){bank-=price;saved.edit().putInt("bank",bank).putInt("upgrade"+game.level.bakery+":"+u.s("guid"),u.i("upgr_step",0)).apply();game.upgrades.put(u.s("guid"),u.i("upgr_step",0));if(u.s("guid").equals("jill"))game.shoeStep=u.i("upgr_step",0);else{Station station=game.station(u.s("guid"));if(station!=null){station.def.merge(u);station.refreshGeometry();}}saveCareer();audio.play("SOUND_LEVEL_BUY");shopPage=Math.min(shopPage,Math.max(0,(shopChoices().size()-1)/6));}else Toast.makeText(this,"Not enough savings for this upgrade.",Toast.LENGTH_SHORT).show();}}controlsSignature="";return;}
++            if(key.startsWith("shop:select:")){shopSelection=key.substring(12);audio.play("SOUND_SELECT");}
++            else if(key.equals("shop:buy")){Node u=selectedShopChoice();if(u!=null){int price=u.i("purchase_points",0);if(bank>=price){bank-=price;saved.edit().putInt("bank",bank).putInt("upgrade"+game.level.bakery+":"+u.s("guid"),u.i("upgr_step",0)).apply();game.upgrades.put(u.s("guid"),u.i("upgr_step",0));if(u.s("guid").equals("jill"))game.shoeStep=u.i("upgr_step",0);else{Station station=game.station(u.s("guid"));if(station!=null){station.def.merge(u);station.refreshGeometry();}}saveCareer();audio.play("SOUND_LEVEL_BUY");shopSelection="";}}}controlsSignature="";return;}
+         if(screen.equals("career")){if(key.equals("bakeryprev"))careerBakery=Math.max(0,careerBakery-1);else if(key.equals("bakerynext"))careerBakery=Math.min(3,careerBakery+1);else if(key.startsWith("level:")){int n=Integer.parseInt(key.substring(6));if(n<=unlocked)start(n);else Toast.makeText(this,"Complete earlier months to unlock this one.",Toast.LENGTH_SHORT).show();}controlsSignature="";return;}
+         if(screen.equals("options")){if(key.equals("music")){audio.musicEnabled=!audio.musicEnabled;audio.resume();}if(key.equals("sound")){audio.enabled=!audio.enabled;}if(key.equals("musicVolumeUp"))audio.setVolumes(audio.musicVolume+.1f,audio.soundVolume);if(key.equals("musicVolumeDown"))audio.setVolumes(audio.musicVolume-.1f,audio.soundVolume);if(key.equals("soundVolumeUp"))audio.setVolumes(audio.musicVolume,audio.soundVolume+.1f);if(key.equals("soundVolumeDown"))audio.setVolumes(audio.musicVolume,audio.soundVolume-.1f);saveSettings();controlsSignature="";return;}
+         if(screen.equals("help")&&key.equals("helpnext")){helpPage=(helpPage+1)%4;view.invalidate();}
+@@ -227,10 +230,10 @@
+     public void openMap(){show("map");audio.music("music/mapscreen.ogg");}
+     public void openTransitionComics(int bakery,AssetStore assets){storyImages.clear();storyImages.addAll(availableComicImages(assets,bakery));storyPage=0;if(storyImages.isEmpty()){openMap();return;}audio.music("music/mapscreen.ogg");show("story");}
+     static int optionalInt(MainActivity activity,String key,int fallback){if(activity==null)return fallback;if(key.equals("lives"))return activity.lives;return fallback;}
+-    private void writeQa(){try{JSONObject o=new JSONObject();o.put("screen",screen);o.put("profileId",activeProfileId);o.put("profileName",career==null?"":career.name);o.put("profilePrefs","career_profile_"+activeProfileId);o.put("bank",bank);o.put("unlocked",unlocked);o.put("lives",lives);o.put("points",points);o.put("tutorialComplete",career!=null&&career.tutorialComplete);o.put("complexTutorialComplete",career!=null&&career.complexTutorialComplete);o.put("tutorialSequenceId",tutorialSequenceId);o.put("tutorialStep",tutorial==null?0:tutorial.eventIndex());o.put("tutorialEvent",tutorial==null||tutorial.currentEvent()==null?"":tutorial.currentEvent().s("type"));o.put("tutorialEventId",tutorial==null||tutorial.currentEvent()==null?-1:tutorial.currentEvent().i("id",-1));o.put("music",audio.musicEnabled);o.put("sound",audio.enabled);o.put("musicVolume",audio.musicVolume);o.put("soundVolume",audio.soundVolume);o.put("musicPlaying",audio.musicPlaying());o.put("musicTrack",audio.musicTrack());o.put("soundsLoaded",audio.soundsReady());if(game!=null){o.put("level",game.level.number);o.put("elapsed",game.elapsed);o.put("money",game.money);o.put("served",game.served);o.put("lost",game.lost);o.put("queue",game.queue.size());o.put("tvChannel",game.channel);o.put("tvNoise",game.tvNoise);o.put("moving",game.moving());o.put("jillX",game.x);o.put("jillY",game.y);o.put("jillSpeed",game.speed());o.put("message",game.message);o.put("hand",cakeJson(game.hand));JSONArray c=new JSONArray();for(Customer u:game.customers){JSONObject a=new JSONObject();a.put("serial",u.serial);a.put("slot",u.slot);a.put("state",u.state.toString());a.put("hearts",u.hearts);a.put("remainingPatience",u.remainingPatience);a.put("order",cakeJson(u.order));c.put(a);}o.put("customers",c);JSONArray stations=new JSONArray();for(Station s:game.stations){JSONObject a=new JSONObject();a.put("guid",s.guid);a.put("kind",s.kind);a.put("enabled",s.enabled());a.put("x",s.x);a.put("y",s.y);a.put("w",s.w);a.put("h",s.h);a.put("cake",cakeJson(s.cake));a.put("remaining",s.remaining);stations.put(a);}o.put("stations",stations);}try(FileOutputStream out=new FileOutputStream(new File(getFilesDir(),"qa-state.json"))){out.write(o.toString().getBytes("UTF-8"));}}catch(Exception e){throw new IllegalStateException("QA state failed",e);}}
++    private void writeQa(){try{JSONObject o=new JSONObject();o.put("screen",screen);o.put("profileId",activeProfileId);o.put("profileName",career==null?"":career.name);o.put("profilePrefs","career_profile_"+activeProfileId);o.put("bank",bank);o.put("unlocked",unlocked);o.put("lives",lives);o.put("points",points);o.put("tutorialComplete",career!=null&&career.tutorialComplete);o.put("complexTutorialComplete",career!=null&&career.complexTutorialComplete);o.put("tutorialSequenceId",tutorialSequenceId);o.put("tutorialStep",tutorial==null?0:tutorial.eventIndex());o.put("tutorialEvent",tutorial==null||tutorial.currentEvent()==null?"":tutorial.currentEvent().s("type"));o.put("tutorialEventId",tutorial==null||tutorial.currentEvent()==null?-1:tutorial.currentEvent().i("id",-1));o.put("music",audio.musicEnabled);o.put("sound",audio.enabled);o.put("musicVolume",audio.musicVolume);o.put("soundVolume",audio.soundVolume);o.put("musicPlaying",audio.musicPlaying());o.put("musicTrack",audio.musicTrack());o.put("soundsLoaded",audio.soundsReady());if(game!=null){o.put("level",game.level.number);o.put("elapsed",game.elapsed);o.put("money",game.money);o.put("served",game.served);o.put("lost",game.lost);o.put("queue",game.queue.size());o.put("tvChannel",game.channel);o.put("tvNoise",game.tvNoise);o.put("moving",game.moving());o.put("jillX",game.x);o.put("jillY",game.y);o.put("jillSpeed",game.speed());o.put("message",game.message);o.put("hand",cakeJson(game.hand));JSONArray c=new JSONArray();for(Customer u:game.customers){JSONObject a=new JSONObject();a.put("serial",u.serial);a.put("slot",u.slot);a.put("state",u.state.toString());a.put("cashCollected",u.cashCollected);a.put("departureFrame",u.departureFrame);a.put("bodyVisible",u.spriteVisible());a.put("hearts",u.hearts);a.put("remainingPatience",u.remainingPatience);a.put("order",cakeJson(u.order));c.put(a);}o.put("customers",c);JSONArray stations=new JSONArray();for(Station s:game.stations){JSONObject a=new JSONObject();a.put("guid",s.guid);a.put("kind",s.kind);a.put("enabled",s.enabled());a.put("x",s.x);a.put("y",s.y);a.put("w",s.w);a.put("h",s.h);a.put("cake",cakeJson(s.cake));a.put("remaining",s.remaining);stations.put(a);}o.put("stations",stations);}try(FileOutputStream out=new FileOutputStream(new File(getFilesDir(),"qa-state.json"))){out.write(o.toString().getBytes("UTF-8"));}}catch(Exception e){throw new IllegalStateException("QA state failed",e);}}
+     private JSONArray cakeJson(Cake cake)throws Exception{JSONArray a=new JSONArray();if(cake!=null)for(Layer l:cake.layers){JSONObject n=new JSONObject();n.put("shape",l.shape);n.put("frost",l.frost);n.put("decor",l.decor);n.put("price",l.price);a.put(n);}return a;}
+     @Override public boolean dispatchTouchEvent(MotionEvent event){
+-        if(view!=null&&game!=null&&screen.equals("game")){
++        if(view!=null&&game!=null&&(screen.equals("game")||screen.equals("shop"))){
+             int[] origin=new int[2];view.getLocationInWindow(origin);
+             float x=(event.getX()-origin[0]-view.ox)/view.scale,y=(event.getY()-origin[1]-view.oy)/view.scale;
+             // Resolve physical taps in the same coordinates used to draw the art.

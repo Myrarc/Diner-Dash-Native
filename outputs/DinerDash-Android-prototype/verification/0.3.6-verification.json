@@ -1,0 +1,143 @@
+{
+  "version": "0.3.6",
+  "scope": "Recovered-controller sprite and animation audit",
+  "apk_sha256": "4ac8e63d4bded41789f24b926e8fa55081d09ab941f8a28ac038b55502b3d192",
+  "previous_apk_sha256": "3f52908db75819dc7c395ee0329a351eab486db34b7ec4a9cd3211ca6ad724f2",
+  "findings": [
+    {
+      "id": "flo-body-scale",
+      "cause": "Per-frame authored scale applied despite default node_anim property filter excluding scale",
+      "fix": "Preserve initial body scale across walking, carrying, idle and podium poses",
+      "source": "ParentScript 67 - waiter_view.ls and ParentScript 1 - node_anim.ls",
+      "checks": 72
+    },
+    {
+      "id": "goddess-flo-anchor",
+      "cause": "Root registration misses body.loc + point(0,30); shadow omitted; head/body order and body clock differ",
+      "fix": "Derive floor anchor from body loc; restore shadow and original layer order; use 100 ms body timeline",
+      "source": "waiter_view.setupFlo and flo_goddess_layout",
+      "checks": 12
+    },
+    {
+      "id": "bar-depth-and-separators",
+      "cause": "Legs painted in the body pass after the counter; all unoccupied separators shown",
+      "fix": "Draw independent legs behind counter, snap them to stools, and show separators only between distinct full/empty groups",
+      "source": "sitter_view.snapTo and bar_manager.makeEmptyTable",
+      "checks": 96
+    },
+    {
+      "id": "matching-color-flags",
+      "cause": "Empty stools never draw their earned multipliers; left-facing chair flags use unflipped member",
+      "fix": "Expose existing multiplier read-only and restore correct flag images for empty stools/chairs",
+      "source": "chair_view.update and chair_view.new",
+      "checks": 4
+    },
+    {
+      "id": "snack-bubbles",
+      "cause": "Whole composite receives snack animation ID, freezing bubble; authored placeholders kept; bar bubble omitted",
+      "fix": "Animate bubble and snack separately on the request clock, snap normal bubbles to chair 2, and display bar bubbles at the middle stool",
+      "source": "table_view.showBubble, table_view.update and bar table_view.new",
+      "checks": 28
+    },
+    {
+      "id": "snack-demand-highlight",
+      "cause": "Only plain snack image rendered regardless of request/carried counts",
+      "fix": "Use recovered hilite image while requesting groups exceed carried snacks",
+      "source": "snackspot.updateHilite",
+      "checks": 8
+    },
+    {
+      "id": "order-wheel-clock",
+      "cause": "50 ms frame time and 650 ms cutoff instead of original default 100 ms for 12 frames",
+      "fix": "Keep wheel turning for the complete 1200 ms timeline",
+      "source": "ticketspot.doFloAction and node_anim.new",
+      "checks": 13
+    }
+  ],
+  "baseline_failure": {
+    "apk": "0.3.5",
+    "audit_checks": 217,
+    "failures": 163,
+    "log": "verification/0.3.6/baseline-0.3.5-tests.log"
+  },
+  "wheel_failure": {
+    "apk_sha256": "e1f0ebb52c0cb950510683a6512f0bc085e38603b3517cd19935599eb3fe04fb",
+    "installed_apk_hash_verified": true,
+    "audit_checks": 233,
+    "failures": 9,
+    "log": "verification/0.3.6/pre-wheel-tests.log"
+  },
+  "installed_sprite_audit_checks": 233,
+  "installed_guest_checks": 226,
+  "installed_animation_checks": 80,
+  "installed_activity_checks": 36,
+  "total_installed_checks": 575,
+  "model_checks": {
+    "game_engine": 35,
+    "mechanics": 53,
+    "fidelity": 332,
+    "full_game": 2989
+  },
+  "gameplay_rules_unchanged": true,
+  "engine_api_change": "Read-only barMultiplier accessor exposes existing earned bonus to the renderer",
+  "assets_layouts_configuration_and_branding_unchanged": true,
+  "captures_inspected": [
+    "before-contact.png",
+    "after-contact.png",
+    "snack-contact.png",
+    "live-goddess-room.png",
+    "live-bar-seated.png",
+    "after/audit-order-wheel.png"
+  ],
+  "current_evidence": "verification/0.3.6/",
+  "package_integrity": {
+    "media_hashes_verified": 1960,
+    "uncompressed_mp3_verified": 62,
+    "signature_verified": true,
+    "crc_verified": true,
+    "version_code": 9,
+    "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf"
+  },
+  "windows_runtime_executed": false,
+  "physical_device_tested": false,
+  "queue_stall": "Unresolved; precise failed action target unknown",
+  "fonts": "Legacy payload conversion remains unresolved",
+  "cinematic_transitions": "Restaurant unlock, transformation and ending remain unconnected",
+  "additional_investigation": [
+    {
+      "area": "Chez Flo carried tray labels",
+      "finding": "Stage uses chezflos but flag/number children are authored as chez. Original node_anim also rejects missing names; runtime visual comparison needed before choosing correction."
+    },
+    {
+      "area": "Critical seated mood indicators",
+      "finding": "Original worse animation can loop at one heart; port reaction stops after 500 ms. State-change interaction and exact display lifetime still need a targeted runtime comparison."
+    }
+  ],
+  "notes": [
+    "Pixel references follow recovered Lingo transforms, property filters and draw order on Android Canvas; they are not screenshots from the Windows runtime.",
+    "The baseline has 217 checks; three chair-flag checks and thirteen wheel-timing checks were added later. Final suite totals 233.",
+    "All 50 schedules close in the zero-travel model bot, which reaches 43 goals; this does not certify pacing or device playability.",
+    "Activity/save tests use synthetic fixtures and restore saved progress."
+  ],
+  "live_emulator_checks": {
+    "checks": [
+      {
+        "level": 41,
+        "state": "Restaurant. Shift 41. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (4 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY. Table 5: EMPTY. Table 6: EMPTY. Table 7: EMPTY",
+        "interaction": "Ordinary Activity launch and intro tap; Goddess Flo visible in the playable room"
+      },
+      {
+        "level": 34,
+        "before": "Restaurant. Shift 34. Score 0. Waiting parties: 1. Food ready: 0. Coffee preparing. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY",
+        "after": "Restaurant. Shift 34. Score 0. Waiting parties: 0. Food ready: 0. Coffee preparing. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: DECIDING",
+        "interaction": "Ordinary ADB gesture seats the first naturally arrived party at the bar",
+        "bar_drop": [
+          256,
+          291
+        ]
+      }
+    ],
+    "complete_shift_playthrough": false,
+    "physical_device": false
+  }
+}

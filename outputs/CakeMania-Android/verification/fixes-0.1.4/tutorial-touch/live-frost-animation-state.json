@@ -1,0 +1,102 @@
+{
+  "screen": "game",
+  "profileId": "player1",
+  "profileName": "Player 1",
+  "profilePrefs": "career_profile_player1",
+  "bank": 0,
+  "unlocked": 11,
+  "lives": 4,
+  "points": 0,
+  "tutorialComplete": true,
+  "complexTutorialComplete": false,
+  "tutorialSequenceId": 10,
+  "tutorialStep": 36,
+  "tutorialEvent": "Timer",
+  "tutorialEventId": -1,
+  "music": true,
+  "sound": true,
+  "musicVolume": 1,
+  "soundVolume": 0.800000011920929,
+  "musicPlaying": true,
+  "musicTrack": "music/c.ogg",
+  "soundsLoaded": 46,
+  "level": 0,
+  "elapsed": 20.90038299560547,
+  "money": 0,
+  "served": 0,
+  "lost": 0,
+  "queue": 1,
+  "tvChannel": -1,
+  "tvNoise": false,
+  "moving": true,
+  "jillX": 381.201171875,
+  "jillY": 421.5517272949219,
+  "jillSpeed": 200,
+  "message": "Carry the cake to a frosting machine.",
+  "hand": [],
+  "customers": [
+    {
+      "serial": 1,
+      "slot": 0,
+      "state": "ORDER",
+      "hearts": 2,
+      "remainingPatience": 299.989990234375,
+      "order": [
+        {
+          "shape": 2,
+          "frost": 3,
+          "decor": -1,
+          "price": 15
+        },
+        {
+          "shape": 3,
+          "frost": 2,
+          "decor": -1,
+          "price": 15
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "guid": "cakeoven0",
+      "kind": "CakeOven",
+      "enabled": true,
+      "x": 365,
+      "y": 80,
+      "w": 130,
+      "h": 225,
+      "cake": [],
+      "remaining": 0
+    },
+    {
+      "guid": "froster1",
+      "kind": "Froster",
+      "enabled": true,
+      "x": 440,
+      "y": 480,
+      "w": 154,
+      "h": 79,
+      "cake": [
+        {
+          "shape": 2,
+          "frost": 3,
+          "decor": -1,
+          "price": 30
+        }
+      ],
+      "remaining": 3.409977912902832
+    },
+    {
+      "guid": "trash",
+      "kind": "Trash",
+      "enabled": true,
+      "x": 606,
+      "y": 273,
+      "w": 52,
+      "h": 99,
+      "cake": [],
+      "remaining": 0
+    }
+  ]
+}

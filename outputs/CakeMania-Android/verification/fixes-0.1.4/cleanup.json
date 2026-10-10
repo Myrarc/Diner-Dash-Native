@@ -1,0 +1,12 @@
+{
+  "preferences_restored": true,
+  "preference_sha256": {
+    "career.xml": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "display_settings_restored": true,
+  "test_package_removed": true,
+  "qa_files_removed": true,
+  "emulator_owned_by_task": true,
+  "emulator_shutdown": true,
+  "runtime_error_log": "runtime-errors.log"
+}

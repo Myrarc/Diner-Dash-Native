@@ -1,0 +1,74 @@
+{
+  "build": "0.1.0",
+  "package": "local.cakemania",
+  "apk_sha256": "7c4595e352c5a4b29ed927b77942c9b9eba7d23162c1eba010eaf6ad6ee1dbf7",
+  "bytes": 27623593,
+  "signature_verified": true,
+  "bundled_assets_match_import_manifest": 838,
+  "host_regressions": "passed",
+  "simulation": {
+    "months_reached_goal": 48,
+    "months": 48,
+    "conditions": "January stock equipment; later months fully upgraded; TV changed instantly by bot; no affordable-progress or human-difficulty assertion"
+  },
+  "emulator": {
+    "android_api": 30,
+    "full_january_touch_play": {
+      "served": 8,
+      "lost": 0,
+      "earned": 272,
+      "goal": 200
+    },
+    "shop_purchase_and_february_continue": "passed",
+    "lifecycle_save_and_layout_smoke": "passed",
+    "music_playback_active": "passed",
+    "sound_ids_loaded": 46,
+    "runtime_errors_final_run": 0
+  },
+  "not_verified": [
+    "Physical Android hardware",
+    "Original Windows runtime comparison",
+    "Human difficulty and upgrade affordability across all 48 months",
+    "Audible sound quality and seamless music loop boundaries"
+  ],
+  "known_fidelity_gaps": [
+    "Tip and penalty formulas, exact patience/TV/movement/burn timing",
+    "Santa and Dracula broadcasts",
+    "Display case impulse orders",
+    "Missing later bakery comic artwork in supplied archive",
+    "Some carried-cake layering and decorative animations",
+    "Endless mode and multiple player profiles"
+  ],
+  "evidence": [
+    "assets.json",
+    "original-files.json",
+    "engine-tests.log",
+    "emulator-play.json",
+    "emulator-play.log",
+    "emulator-smoke.json",
+    "emulator-smoke.log",
+    "final-logcat-errors.txt",
+    "saved-career-reload.png",
+    "month1-result.png",
+    "shop-after-month1.png",
+    "bakery-month-48.png",
+    "main-menu-final.png",
+    "new-career-intro.png",
+    "bakery-month-13.png",
+    "month2-intro.png",
+    "bakery-month-16.png",
+    "bakery-month-15.png",
+    "bakery-month-14.png",
+    "bakery-month-25.png",
+    "help.png",
+    "pause.png",
+    "bakery-month-37.png",
+    "shop-purchased-display.png",
+    "month1-carrying-cake.png",
+    "opening-comic-2.png",
+    "opening-comic-3.png",
+    "opening-comic-1.png",
+    "month1-production.png",
+    "month2-gameplay.png"
+  ]
+}

@@ -1,0 +1,437 @@
+[
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-title.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-title",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-title.png",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "surface": "tablet-title",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-play.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-play",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-play.png",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "surface": "tablet-play",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-intro.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-intro",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-intro.png",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "surface": "tablet-intro",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-drag-preview.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-drag-preview",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-drag-preview.png",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "surface": "tablet-drag-preview",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-wheel-turn.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-wheel-turn",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-wheel-turn.png",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "surface": "tablet-wheel-turn",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-chef-a.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-chef-a",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-chef-b.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-chef-b",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-food-ready.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-food-ready",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-food-carry.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-food-carry",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-food-carry.png",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "surface": "tablet-food-carry",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-coffee-preparing.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-coffee-preparing",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-coffee-ready.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-coffee-ready",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-coffee-collected.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-coffee-collected",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-coffee-refreshed.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-coffee-refreshed",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-coffee-preparing.png",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "surface": "tablet-coffee-preparing",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-coffee-ready.png",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "surface": "tablet-coffee-ready",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-coffee-collected.png",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "surface": "tablet-coffee-collected",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-coffee-refreshed.png",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "surface": "tablet-coffee-refreshed",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-career.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-career",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-options.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-options",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-help.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-help",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-pause.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-pause",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-restaurant-2.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-restaurant-2",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-restaurant-3.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-restaurant-3",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-restaurant-4.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-restaurant-4",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-restaurant-5-last.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-restaurant-5-last",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "installed emulator capture from real touch walkthrough"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-career-highscores.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-career-highscores",
+    "synthetic_save_result_fixture": true,
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "synthetic Activity save/result"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-career-normal-expert.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-career-normal-expert",
+    "synthetic_save_result_fixture": true,
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "synthetic Activity save/result"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-endless-medium-highscores.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-endless-medium-highscores",
+    "synthetic_save_result_fixture": true,
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "synthetic Activity save/result"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-final-life-result.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-final-life-result",
+    "synthetic_save_result_fixture": true,
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "synthetic Activity save/result"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-profile-independent.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "surface": "phone-profile-independent",
+    "synthetic_save_result_fixture": true,
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "fixture": "synthetic Activity save/result"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-options-off.png",
+    "surface": "phone-options-off",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "fixture": "synthetic installed Activity menu interaction"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-waiting-satisfied.png",
+    "surface": "phone-waiting-satisfied",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "fixture": "real emulator second-party selection gesture"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-waiting-satisfied.png",
+    "surface": "tablet-waiting-satisfied",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "fixture": "real emulator second-party selection gesture"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-second-party-preview.png",
+    "surface": "phone-second-party-preview",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "fixture": "real emulator second-party selection gesture"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-second-party-preview.png",
+    "surface": "tablet-second-party-preview",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "fixture": "real emulator second-party selection gesture"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/phone-second-party-seated.png",
+    "surface": "phone-second-party-seated",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "fixture": "real emulator second-party selection gesture"
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/.impeccable/review/tablet-second-party-seated.png",
+    "surface": "tablet-second-party-seated",
+    "apk_sha256": "4c9402a421fe9402dad15218a47b6ec65b235560909ced3570ad1a5227678236",
+    "dimensions": [
+      2160,
+      1600
+    ],
+    "fixture": "real emulator second-party selection gesture"
+  }
+]

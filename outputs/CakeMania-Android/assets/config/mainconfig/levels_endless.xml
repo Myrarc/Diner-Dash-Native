@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Levels>
+   <Level id="0" name="Home Kitchen" name_xml_bkgrd="level1/background.xml" name_xml_pathes="level1/pathes.xml" name_xml_avatar="level1/avatar.xml" name_xml_text="MainConfig/levels_text_eng_endless.xml" name_xml_customers_easy="level1/endless/customers_easy.xml" name_xml_customers_normal="level1/endless/customers_normal.xml" name_xml_customers_hard="level1/endless/customers_hard.xml">
+
+     	<SubLevel id="0" name="StartLevel" name_xml_stuff="level1/Endless/level_env.xml" name_xml_cakes="level1/january_cakes.xml" end_time="120" music="music/1.ogg" />
+   </Level>
+   <Level id="1" name="Baker Factory" name_xml_bkgrd="level2/background.xml" name_xml_pathes="level2/pathes.xml" name_xml_avatar="level2/avatar.xml" name_xml_text="MainConfig/levels_text_eng_endless.xml" name_xml_customers_easy="level2/endless/customers_easy.xml" name_xml_customers_normal="level2/endless/customers_normal.xml" name_xml_customers_hard="level2/endless/customers_hard.xml">
+
+     	<SubLevel id="0" name="StartLevel" name_xml_stuff="level2/Endless/level_env.xml" name_xml_cakes="level2/january_cakes.xml" end_time="120" music="music/2.ogg" />
+   </Level>
+   <Level id="2" name="Grocery Baker Factory" name_xml_bkgrd="level3/background.xml" name_xml_pathes="level3/pathes.xml" name_xml_avatar="level3/avatar.xml" name_xml_text="MainConfig/levels_text_eng_endless.xml" name_xml_customers_easy="level3/endless/customers_easy.xml" name_xml_customers_normal="level3/endless/customers_normal.xml" name_xml_customers_hard="level3/endless/customers_hard.xml">
+
+     	<SubLevel id="0" name="StartLevel" name_xml_stuff="level3/Endless/level_env.xml" name_xml_cakes="level3/january_cakes.xml" end_time="120" music="music/b.ogg" />
+   </Level>
+   <Level id="3" name="Five Stars Bakery" name_xml_bkgrd="level4/background.xml" name_xml_pathes="level4/pathes.xml" name_xml_avatar="level4/avatar.xml" name_xml_text="MainConfig/levels_text_eng_endless.xml" name_xml_customers_easy="level4/endless/customers_easy.xml" name_xml_customers_normal="level4/endless/customers_normal.xml" name_xml_customers_hard="level4/endless/customers_hard.xml">
+
+     	<SubLevel id="0" name="StartLevel" name_xml_stuff="level4/Endless/level_env.xml" name_xml_cakes="level4/january_cakes.xml" end_time="120" music="music/c.ogg" />
+   </Level>
+</Levels></root>

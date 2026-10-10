@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Screens>
+	<Screen>
+		<Image img="IMAGE_SHOP_TUTORIAL_BG" x="0" y="0" w="800" h="600" />
+		<Text x="300" y="65" w="150" h="50" font="FONT_DEFAULT" size="2" text="SHOP TUTORIAL" />
+		<Text x="90" y="86" w="620" h="45" font="FONT_DEFAULT" size="2" text="It's time to Shop! Click on the silhouettes to purchase new items for your Bakery! You can also click on most existing items to upgrade them!" />
+		<Text x="40" y="175" w="145" h="50" font="FONT_DEFAULT" size="2" text="Amount of money you have" />
+		<Text x="30" y="300" w="145" h="50" font="FONT_DEFAULT" size="2" text="Selected item" />
+		<Text x="30" y="360" w="145" h="50" font="FONT_DEFAULT" size="2" text="Cost of item" />
+		<Text x="50" y="460" w="145" h="50" font="FONT_DEFAULT" size="2" text="Purchase the selected item" />
+		<Text x="200" y="500" w="175" h="50" font="FONT_DEFAULT" size="2" text="End Shopping and start next level" />
+		<Text x="410" y="500" w="145" h="50" font="FONT_DEFAULT" size="2" text="Item Description" />
+	</Screen>
+</Screens></root>

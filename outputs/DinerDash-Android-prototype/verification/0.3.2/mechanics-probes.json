@@ -1,0 +1,144 @@
+{
+  "version": "0.3.2",
+  "windows_runtime_executed": false,
+  "rows": [
+    {
+      "contract": "bus_discards_all_supported_payloads",
+      "expected": "0",
+      "actual": "0",
+      "comparison": "match"
+    },
+    {
+      "contract": "bus_returns_food_for_recooking",
+      "expected": "5000",
+      "actual": "5000",
+      "comparison": "match"
+    },
+    {
+      "contract": "ready_full_hands_coffee",
+      "expected": "true",
+      "actual": "true",
+      "comparison": "match"
+    },
+    {
+      "contract": "ready_full_hands_coffee_mood",
+      "expected": "7",
+      "actual": "7",
+      "comparison": "match"
+    },
+    {
+      "contract": "occupied_dish_clear_points",
+      "expected": "0",
+      "actual": "0",
+      "comparison": "match"
+    },
+    {
+      "contract": "held_waiting_party_survives",
+      "expected": "WAITING",
+      "actual": "WAITING",
+      "comparison": "match"
+    },
+    {
+      "contract": "ready_food_completion_fifo",
+      "expected": "4",
+      "actual": "4",
+      "comparison": "match"
+    },
+    {
+      "contract": "seated_patience_frozen_across_ramp",
+      "expected": "6",
+      "actual": "5",
+      "comparison": "different"
+    },
+    {
+      "contract": "coffee_refresh_frozen_at_station_creation",
+      "expected": "10000",
+      "actual": "5000",
+      "comparison": "different"
+    },
+    {
+      "contract": "tip_alone_defers_endless_upgrade",
+      "expected": "0",
+      "actual": "0",
+      "comparison": "match"
+    },
+    {
+      "contract": "unmatched_quick_seat_mood",
+      "expected": "6",
+      "actual": "9",
+      "comparison": "different"
+    },
+    {
+      "contract": "original_eighteen_column_grid",
+      "expected": "false",
+      "actual": "false",
+      "comparison": "match"
+    },
+    {
+      "contract": "seafood_left_aisle_blocked",
+      "expected": "true",
+      "actual": "true",
+      "comparison": "match"
+    },
+    {
+      "contract": "bar_third_occupied_column",
+      "expected": "true",
+      "actual": "true",
+      "comparison": "match"
+    },
+    {
+      "contract": "bar_two_guest_service_midpoint",
+      "expected": "6",
+      "actual": "6",
+      "comparison": "match"
+    },
+    {
+      "contract": "tip_formula",
+      "expected": "120",
+      "actual": "120",
+      "comparison": "match"
+    },
+    {
+      "contract": "two_distinct_order_chain_points",
+      "expected": "60",
+      "actual": "60",
+      "comparison": "match"
+    },
+    {
+      "contract": "coffee_unlock_1_5",
+      "expected": "true",
+      "actual": "true",
+      "comparison": "match"
+    },
+    {
+      "contract": "goddess_four_hand_capacity",
+      "expected": "4",
+      "actual": "4",
+      "comparison": "match"
+    },
+    {
+      "contract": "stopped_facing_up",
+      "expected": "down",
+      "actual": "down",
+      "comparison": "match"
+    },
+    {
+      "contract": "stopped_facing_down",
+      "expected": "down",
+      "actual": "down",
+      "comparison": "match"
+    },
+    {
+      "contract": "stopped_facing_left",
+      "expected": "down",
+      "actual": "down",
+      "comparison": "match"
+    },
+    {
+      "contract": "stopped_facing_right",
+      "expected": "down",
+      "actual": "down",
+      "comparison": "match"
+    }
+  ]
+}

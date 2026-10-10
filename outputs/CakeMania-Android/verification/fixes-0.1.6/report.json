@@ -1,0 +1,118 @@
+{
+  "version": "0.1.6",
+  "version_code": 7,
+  "created_at": "2026-10-10T07:28:02.641065+00:00",
+  "apk_sha256": "5041cca6eb7b61b0e9d44ad646c624f3e5341c0dfd55f18cf8434d7b0aa68dc0",
+  "apk_bytes": 27648169,
+  "original_binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+  "fixed": [
+    "Customer animation uses native bottom-first physical sheet rows while retaining authored sequence order and timing",
+    "Cupid variants use the original three-second 40\u201350 pixel hover curve; drawing and body input share the motion",
+    "Waiting customers have no synthetic Menu? bubble or invisible order-area target; orders and cash retain their targets",
+    "Original 23x19 hearts overlap on each customer\u2019s left at native queue-depth and money-y anchors; only active hearts are shown"
+  ],
+  "verified_final_apk": {
+    "host_suites": [
+      "CustomerLifecycleTest",
+      "GameEngineTest",
+      "NativeMechanicsTest",
+      "SpriteRulesTest",
+      "FlowRulesTest",
+      "CareerStateTest",
+      "ResultAccountingTest"
+    ],
+    "android_probes": [
+      "CustomerSpriteProbe",
+      "VisualGeometryProbe",
+      "AndroidAssetProbe",
+      "FlowAndroidProbe",
+      "ParityUiProbe"
+    ],
+    "customer_profiles": 41,
+    "customer_states": 5,
+    "idle_cycles_per_profile": 2,
+    "customer_sprite_checks": 27086,
+    "heart_bakeries": 4,
+    "heart_queue_positions": 20,
+    "heart_counts_tested": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "customer_render_samples": 615,
+    "jill_render_cases": 64,
+    "activity_flow_checks": 35,
+    "native_ui_geometry_checks": 3948,
+    "imported_assets_hashed": 838,
+    "apk_assets_unchanged_from_0_1_5": 838,
+    "installed_apk_matches": true,
+    "source_matches": true,
+    "android_api": 30
+  },
+  "source_sha256": {
+    "src/local/cakemania/AssetStore.java": "10fb40a82fb297c243c375f05ae8ca1d33d851853f7fa4c2df9c3779d901ffe4",
+    "src/local/cakemania/CareerState.java": "c1b41ec80673c6e50e27b62ae977beed1649a2a1d4153ac5f6d51cf2eb206979",
+    "src/local/cakemania/GameAudio.java": "c459b6ca811c1bc270a62e55059786cef782d5b44115bc2fb699c5639a41261b",
+    "src/local/cakemania/GameData.java": "ef43599760f0202e36cd1cdba944205b1a92214e1375d3695d37be5b2d90b18f",
+    "src/local/cakemania/GameEngine.java": "14486f313ccf4202f519082308fa8922d870c61fb67931781f4f39ae694e9d1c",
+    "src/local/cakemania/GameView.java": "e474bb8388a58dc2febf36f874c5a859a52f1761d35fc4125566ae96cbac03d7",
+    "src/local/cakemania/MainActivity.java": "c3a8bbd25c3af6f501ffb89c4101d939c8eac3054b25c52c5b890ff3580d5a7e",
+    "src/local/cakemania/SpriteRules.java": "f667ef2e0b02c7d3c9852b4f7f12342fad6cc7f8226cc69eaa6df6a82adaf707",
+    "src/local/cakemania/TutorialController.java": "7a72a193abb60150bfb57235e566fe450583d6204f6359230e4e725e5dcd2680"
+  },
+  "test_source_sha256": {
+    "CustomerLifecycleTest": "b4d6c11fa5af05efbb35184b0e363a7971ac2bb74e1174bb710ed83fc8a44418",
+    "GameEngineTest": "8d0749cbba02ad37b7a1397fe5ca62caf5d47a2d4bdd2d0b933efde8537e5c08",
+    "NativeMechanicsTest": "80ba173e557c3f10b1b843cadd3c84efe472a41d41c886f58ed456548558ebc9",
+    "SpriteRulesTest": "b4da4acb898a0c0841751ad8f6264b1e25ea816a182d65e0fd9a66cd77a56bd1",
+    "FlowRulesTest": "aa44ab4a2a8bd2c929eb154f3a560176e386cd09257beabd4ac3c66cb8011f90",
+    "CareerStateTest": "fdd6e86cd3ea23fa3f7a6441573a45b36ff954f95b0069c7a37fed09bc4ef75f",
+    "ResultAccountingTest": "7069920b5aa85832a24bbaf2f82e326a4e004ef89d9aa1722f56960272725af9",
+    "CustomerSpriteProbe": "9c544a753e6c8c48852a44b00c527f892140bf42779ce8016fab2ae4067e566a",
+    "VisualGeometryProbe": "06c374d9d8202ddefabf69fa77c985f403ae364db8117c569632b492089654e7",
+    "AndroidAssetProbe": "798fc2598a22cd566e5bc184a7eb749406e6d0014b3ccb4dcb3d189bebadf323",
+    "FlowAndroidProbe": "c1ac1ca2e5033eb844c872073210bf693e525b56396f36552d870096bb8d1ef4",
+    "ParityUiProbe": "a9902b6eadeaaa2937df6dac12c8e29a569196261b615efad97e4db12f6677c1"
+  },
+  "personally_inspected_final_images": [
+    "android/customers-mixed-queue-final.png",
+    "android/customers-mixed-queue-high.png",
+    "android/customers-activity.png"
+  ],
+  "image_sha256": {
+    "android/customers-mixed-queue-final.png": "9ef06103ce0e5200360ceea30e6953ef0b089385b1e7d92931b42065bc7f8974",
+    "android/customers-mixed-queue-high.png": "2f8463050017f0b95c3363409355d1f240accc3bcf257f3fd7815c9cd4464d7f",
+    "android/customers-activity.png": "e81b24d29336c95a840f90bcee7636b06ef2b811f933af6cf7ff838e1511929e"
+  },
+  "cleanup": {
+    "preferences_restored": true,
+    "display_settings_restored": true,
+    "test_package_removed": true,
+    "generated_qa_files_removed": true,
+    "owned_emulator_stopped": true,
+    "owned_emulator_pid": 93988,
+    "notes": "Only task-owned emulator, instrumentation package and generated QA files were removed; development APK remains installed. Original preference bytes were restored exactly."
+  },
+  "not_repeated_this_release": [
+    "Full January real-input service and both full tutorial touch scripts; their 0.1.5 evidence remains historical",
+    "PCM redecoding; all audio bytes are unchanged from the verified 0.1.5 APK"
+  ],
+  "remaining": [
+    "Whole-game Windows runtime, physical Android and audible comparison",
+    "Native heart-gain/loss effect trajectories and exact order-bubble artwork",
+    "Native clock closing slide, exact money blink phase and customer puff pixel/FPU rounding",
+    "Exact shop preview and menu/result/game-over animation",
+    "Free-floor/corner routing, carry child anchors, complete queue/closing behavior, initial cupcake stock, display source consumption and mid-month save semantics",
+    "Missing supplied endless/intermediate-comic resources, affordable progression and human difficulty"
+  ],
+  "verification_repairs": [
+    "Activity fixture now uses show() and window-relative input, retaining the production pause transition",
+    "Host runner includes android.jar in runtime classpath",
+    "Heart fixture truncates the whole expression at the negative bakery-four back-slot anchor",
+    "Historical 0.1.5 cleanup report restored from its immutable source archive after a copied runner used the old output path; current cleanup writes the 0.1.6 folder"
+  ],
+  "notes": "Bounded corrections in an unfinished native-code translation; passing Android and host probes do not establish whole-game 1:1 Windows parity."
+}

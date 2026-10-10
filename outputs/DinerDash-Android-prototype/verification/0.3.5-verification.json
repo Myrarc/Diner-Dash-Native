@@ -1,0 +1,60 @@
+{
+  "version": "0.3.5",
+  "scope": "Food critic queue sprites and seated guest placement/layering",
+  "apk_sha256": "3f52908db75819dc7c395ee0329a351eab486db34b7ec4a9cd3211ca6ad724f2",
+  "previous_apk_sha256": "01602648234d8cedf3c39948a7f57f787741ef0b2ce8fc1e2d0b9b7fbc8394c1",
+  "original_failures_reproduced": {
+    "apk": "0.3.4",
+    "guest_checks": 221,
+    "failed_checks": 208,
+    "evidence": "verification/0.3.5/baseline-0.3.4-tests.log"
+  },
+  "installed_guest_checks": 226,
+  "guest_profiles": 6,
+  "table_capacities": [
+    2,
+    4,
+    6
+  ],
+  "all_seating_offsets_tested": true,
+  "critic_queue_poses_tested": 4,
+  "installed_animation_checks": 80,
+  "installed_activity_checks": 36,
+  "standing_asset_variants_present": 104,
+  "sitter_layout_frame_references_present": 441,
+  "level_1_6_View_drag_checks": 5,
+  "captures_inspected": [
+    "before-contact.png",
+    "after-contact.png",
+    "after/guest-critic-queue.png",
+    "after/guest-level-1-6-queue.png",
+    "after/guest-level-1-6-critic-drag.png",
+    "after/guest-level-1-6-critic-preview.png",
+    "after/guest-level-1-6-default-preview.png",
+    "after/guest-level-1-6-seated.png"
+  ],
+  "current_evidence": "verification/0.3.5/",
+  "gameplay_model_tests_rerun": false,
+  "gameplay_model_source_changed": false,
+  "branding_resources_unchanged": true,
+  "package_integrity": {
+    "media_hashes_verified": 1960,
+    "uncompressed_mp3_verified": 62,
+    "signature_verified": true,
+    "crc_verified": true,
+    "version_code": 8,
+    "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf"
+  },
+  "windows_runtime_executed": false,
+  "physical_device_tested": false,
+  "queue_stall": "Unresolved; precise failed action target unknown",
+  "fonts": "Embedded legacy payload conversion remains unresolved",
+  "cinematic_transitions": "Restaurant unlock, transformation and ending remain unconnected",
+  "notes": [
+    "Reference Canvas follows recovered sitter_view, table_view and node_anim rules; it is not a Windows runtime screenshot.",
+    "Default guest body and leg nodes snap to the same chair. Held menus and cups precede the body layer. Departure hides the separate seated legs after 750 ms.",
+    "Critic standing lookup uses gfx.people.none. Body animations retain initial scale because original node_anim does not animate scale.",
+    "Level 1-6 drag checks use synthetic guest timing with the real recovered room/profile and actual GameView touch events.",
+    "Existing Continue/save tests use synthetic Activity fixtures and restore prior saves."
+  ]
+}

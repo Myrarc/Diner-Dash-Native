@@ -1,0 +1,3 @@
+00493560  MOV EAX,dword ptr [ECX + 0x10]
+00493563  ADD EAX,dword ptr [ECX + 0xc]
+00493566  RET

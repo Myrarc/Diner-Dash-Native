@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Screens button_text_back="Back" music="music/mainmenu.ogg">
+	<Screen>
+		<Image img="IMAGE_CREDITS_SCREEN" x="0" y="0" w="800" h="600" />
+	</Screen>
+</Screens></root>

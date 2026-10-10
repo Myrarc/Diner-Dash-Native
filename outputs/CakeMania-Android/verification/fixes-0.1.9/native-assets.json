@@ -1,0 +1,114 @@
+{
+  "original_binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+  "reviewed_native_functions": {
+    "00406570": "38432c8b426117ad2bd4759f73d65e9fffa61868111eda56ef131228eacc79cb",
+    "00434d30": "326d2fd2b55a762a55a52a889268cc285648ac8e1eb5e5def71f74ae81d44876"
+  },
+  "cake_assets": [
+    {
+      "id": "IMAGE_CAKE_BASE_EGG_1",
+      "path": "original/images/cakes/egg/egg_1.png",
+      "size": [
+        92,
+        111
+      ],
+      "opaque_pixels": 7348,
+      "transparent_pixels": 2123,
+      "partially_transparent_pixels": 741,
+      "sha256": "d9cbccecaee186ab3ae86f79d397eaf813b6d9f7378199c3a76cf3764c2ce542",
+      "identical_to_recovered_png": true
+    },
+    {
+      "id": "IMAGE_CAKE_BASE_TREE_1",
+      "path": "original/images/cakes/tree/tree_1.png",
+      "size": [
+        98,
+        115
+      ],
+      "opaque_pixels": 6718,
+      "transparent_pixels": 3529,
+      "partially_transparent_pixels": 1023,
+      "sha256": "b0682542db647cd2bdd9fb2772ccaf410f0cd73b24592341f809e1020d12bbe8",
+      "identical_to_recovered_png": true
+    },
+    {
+      "id": "IMAGE_CAKE_BASE_CIRCLE_1",
+      "path": "original/images/cakes/circle/circle_1.png",
+      "size": [
+        94,
+        103
+      ],
+      "opaque_pixels": 7027,
+      "transparent_pixels": 1425,
+      "partially_transparent_pixels": 1230,
+      "sha256": "1cfa154d2694328f002e9ca60ceefc8e5d10a11fe2d2b190a82b252da4017441",
+      "identical_to_recovered_png": true
+    },
+    {
+      "id": "IMAGE_CAKE_BASE_RECT_1",
+      "path": "original/images/cakes/rect/rect_1.png",
+      "size": [
+        92,
+        92
+      ],
+      "opaque_pixels": 7043,
+      "transparent_pixels": 1243,
+      "partially_transparent_pixels": 178,
+      "sha256": "7cf75d70f54333b99d21d38e502b44a8dfdf25940aab8a99a1da1d433df62d77",
+      "identical_to_recovered_png": true
+    },
+    {
+      "id": "IMAGE_CAKE_BASE_STAR_1",
+      "path": "original/images/cakes/star/star_1.png",
+      "size": [
+        95,
+        107
+      ],
+      "opaque_pixels": 6377,
+      "transparent_pixels": 2667,
+      "partially_transparent_pixels": 1121,
+      "sha256": "3d965e8b6c0de35c72ec0e4620e8aa20788b8558b24a2e592a36bcaded3c1b25",
+      "identical_to_recovered_png": true
+    },
+    {
+      "id": "IMAGE_CAKE_BASE_PUMPKIN_1",
+      "path": "original/images/cakes/pumpkin/pumpkin_1.png",
+      "size": [
+        109,
+        113
+      ],
+      "opaque_pixels": 10002,
+      "transparent_pixels": 2007,
+      "partially_transparent_pixels": 308,
+      "sha256": "a2baf538c2a7ce660f60bd694b4309e9e5963c0888f992268f64321e3d4f21d8",
+      "identical_to_recovered_png": true
+    },
+    {
+      "id": "IMAGE_CAKE_BASE_TRIA_1",
+      "path": "original/images/cakes/tria/tria_1.png",
+      "size": [
+        103,
+        94
+      ],
+      "opaque_pixels": 6255,
+      "transparent_pixels": 2529,
+      "partially_transparent_pixels": 898,
+      "sha256": "9dbfbeeeefc692734379f1f5900829c97e6b4f01924ddc6751936e57a8a3f77a",
+      "identical_to_recovered_png": true
+    },
+    {
+      "id": "IMAGE_CAKE_BASE_HEART_1",
+      "path": "original/images/cakes/heart/heart_1.png",
+      "size": [
+        103,
+        102
+      ],
+      "opaque_pixels": 7316,
+      "transparent_pixels": 2320,
+      "partially_transparent_pixels": 870,
+      "sha256": "67ed98eb845f58440cc4bb25bc52650ed756da97dd31f6bb1c6185ea5d381989",
+      "identical_to_recovered_png": true
+    }
+  ],
+  "finding": "Original cake base interiors include thousands of fully opaque pixels. Native oven render 00434d30 invokes the cake renderer without a ready-cake opacity multiplier. Native cake renderer 00406570 treats child/shadow compositing separately; no exact child-layer or Windows runtime parity is claimed."
+}

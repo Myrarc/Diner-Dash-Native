@@ -1,0 +1,28 @@
+{
+  "source": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/outputs/DinerDash-Android-prototype/assets/images/gfx.screens/6426_Final_Title_Screen.png",
+  "source_sha256": "67bb1529e5b839567eb2c0958ae90134a7b6611499dca907b62d033961a9856c",
+  "crop": [
+    16,
+    0,
+    428,
+    117
+  ],
+  "purpose": "Original Diner Dash wordmark from recovered title artwork",
+  "canvas": [
+    512,
+    512
+  ],
+  "art_size": [
+    412,
+    117
+  ],
+  "art_alignment": "center",
+  "background": "#245E53",
+  "resource": "res/drawable-nodpi/icon.png",
+  "android_packaging": {
+    "legacy": "mipmap-anydpi/ic_launcher.xml",
+    "adaptive_api_26_plus": "mipmap-anydpi-v26/ic_launcher.xml",
+    "foreground_inset_dp": 18,
+    "round_icon": "same adaptive icon"
+  }
+}

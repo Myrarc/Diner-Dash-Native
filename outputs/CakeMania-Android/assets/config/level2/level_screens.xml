@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Levels>
+   <Level id="1" x_save="320" y_save="470" x_play="335" y_play="402" x_continue="320" y_continue="520">
+     <SubLevel id="0">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="JANUARY. Snapped up a beachfront cabana for my new bakery! The crowds of vacationers should give business a boost, but I'm not sure if they'll be more or less patient than usual..." />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="Amazing: put a businessman in a Hawaiian shirt and his Type A personality turns to Type Zzzz. Must be the sea air." />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="Who knew sand could make a floor so darn slick? I was too busy sliding around to finish my orders on time! Better work shoes might help with the slip 'n slide problem." />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+     </SubLevel>
+     <SubLevel id="1">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="FEBRUARY. The sun, the sand, the sparkling water - not to mention the skimpy swimsuits - make the beach a perfect place to fall in love. No rest for the Cupid!" />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="We did so well, I even got some valentines! Funny, I have the same number of Secret Admirers as deliveryman customers..." />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="It's hardly fair of the cherubs to leave in a huff when they're the ones holding up my work, shooting those little arrows at me every time my back's turned! At least they only did it when there were deliverymen in the shop, for some reason." />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+     </SubLevel>
+     <SubLevel id="2">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="MARCH. Grannies are turning up for their warm winter getaways, and I must be on my toes. They want fancier cakes, but fast enough to get back to the resort in time for the limbo contest!" />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="The beach bakery is coming along swimmingly! Profits are up, and so is progress towards buying back the family shop." />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="I could have dealt with the chorus of complaining customes, but when the grannies' dogs started howling along it was more than I could take! I need either faster equipment or a good pair of earplugs." />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+     </SubLevel>
+     <SubLevel id="3">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="APRIL. This month brings in showers of Easter Bunnies again. If we keep them moving, our spring profits are sure to bloom." />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="I swear those bunnies are multiplying. I had to jump through hoops to keep them satisfied, but we did it!" />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="I suppose if I had to work wearing a big, furry, pink suit in this heat, I'd be testy too. Next time, I'll give the bunnies top priority so they can get their cakes and go someplace air-conditioned!" />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+	</SubLevel>
+     <SubLevel id="4">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="MAY. It's the traditional season for brides, and I'm taking the plunge. Into the wedding cake market, that is! With the right decorations, we could make some serious dough." />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="Great! We managed to make sure just about everyone left with a cake and a smile (...even the Bridezillas)!" />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="The sight of those white dresses sends a chill down my spine. Eleventh-hour wedding schedules don't leave any room for mistakes. You'd think these brides could call in their orders a bit in advance!" />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+     </SubLevel>
+     <SubLevel id="5">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="JUNE. So THIS is where all the holiday workers go to relax in the off-season! Bunnies, Cupids, Santas, and - Dracula? He must use a doozy of an SPF!" />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="It was touch and go when Dracula and Cupid began arguing over the best use for a heart, but we survived the holiday invasion!" />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="Being off-duty doesn't make these guys any less impatient! The only way to keep them from bickering about whose holiday is the most popular is to stuff them with cupcakes and shoo them out the door!" />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+     </SubLevel>
+     <SubLevel id="6">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="JULY. It's time once again for the traditional mid-summer festival: Christmas in July! ...What? They don't do that where you come from?" />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="And to all a good night! Our profits were festive, even after the cost of repairing reindeer damage to the thatch roof." />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="Santa's sweltering in that red velvet suit. We'd better be merciful and let him get back to the North Pole before he ends up with holiday heatstroke!" />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+        </SubLevel>
+     <SubLevel id="7">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="AUGUST. The boys are back in town! With the end of summer vacation in sight, schoolkids are determined to live fast and play hard. They won't wait around!" />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="Phew! Culinary schools ought to use those kids as testers. They're more challenging than any exam I ever took!" />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="Good gravy, these kids must be future businessmen! I blink, and they're already out the door. When a whole pack of them show up at once, the TV is the quickest way to prevent a mass exodus." />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+     </SubLevel>
+     <SubLevel id="8">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="SEPTEMBER. Magazines are sending out their food critics already to prepare for their Fall issues. If they like us, it's free advertising and more customers!" />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+  </StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="Is there anything more beautiful than a happy critic? Maybe a review that says 'delicious', 'decadent', or 'downright divine'!" />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="When those critics turn their cold, merciless eyes on you, it's like being a deer caught in headlights. Gran's advice: breathe deeply and repeat the mantra, 'What Would Martha Do?'" />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+     </SubLevel>
+     <SubLevel id="9">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="OCTOBER. Considering his tastes, I can't help but wonder if Dracula is here for the cakes or the other customers. They look whiter and woozier every time he shows up!" />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="Despite my refusal to add blood pudding to the menu, we managed to satisfy Dracula and meet our monthly goal!" />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="If I don't do something about those vampires, they're going to suck my business dry! I'll have to ask Gran if she's ever come across any recipes for garlic cake." />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+     </SubLevel>
+     <SubLevel id="10">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="NOVEMBER. It's the time to reflect on what we're thankful for. For me, it's my grandparents. After all they've done for me, I won't rest until they're home in their old bakery." />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="Another good month, but as the year wraps up, I'm checking into new locations. I'm sick of sand getting into everything!" />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="My dogs are barkin', and I still didn't make enough this month. Another thing I'm really thankful for is second chances!" />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+     </SubLevel>
+     <SubLevel id="11">
+	<StartScreen spacing="1">
+		<Text x="290" y="170" w="288" h="230" font="FONT_DEFAULT" size="2" text="DECEMBER. Yule logs, party snacks, fruitcakes - the holidays really test a baker's chops! When Santa stops by, I'll drop some hints about that new oven I've been wanting..." />
+		<Text x="290" y="378" w="288" h="50" font="FONT_DEFAULT" size="1" text="Baker Goal: $[%BAKER_GOAL]" />
+		<Button id="0" text="Let's Play!" text_save="Save and Continue" />
+	</StartScreen>
+	<EndScreenSuccess spacing="5">
+		<Image img="IMAGE_BEGINSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="300" y="90" w="340" h="200" font="FONT_DEFAULT" size="2" text="This clown who came into the shop (no, really - an actual clown) mentioned that the circus is a great place to find hungry crowds. It's a risk, but..." />
+		<Text x="350" y="312" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers Lost: $[%CUSTOMERS_LOST_MONEY]" />
+		<Text x="350" y="344" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Served: $[%CAKES_SERVED]" />
+		<Text x="350" y="376" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Cakes Lost: $[%CAKES_LOST]" />
+		<Text x="350" y="408" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Customers tips: $[%CUSTOMER_TIP]" />
+		<Text x="350" y="440" w="250" h="200" font="FONT_DEFAULT" size="1" text=" Total money: $[%TOTAL_MONEY]" />
+		<Button text="Continue" text_save="Save and Continue" />
+	</EndScreenSuccess>
+	<EndScreenFailed spacing="5">
+		<Image img="IMAGE_ENDSCREEN" x="113" y="4" w="573" h="592" />
+		<Text x="350" y="95" w="275" h="400" font="FONT_DEFAULT" size="2" text="Aaah! I've got visions of sugarplums dancing in my head after that month of merry mayhem. Pre-baking cakes for the display stand might be a way to get a jump on the line." />
+		<Button text="Try again!" text_save="Save and Continue" />
+	</EndScreenFailed>
+     </SubLevel>
+   </Level>
+</Levels></root>

@@ -1,0 +1,123 @@
+{
+  "version": "0.3.8",
+  "scope": "Remove menu and gameplay music loop cutoffs",
+  "apk_sha256": "de2b98781ef15be1bd1dd4287b19cb3f6eea2a607bc30c20a77f7a2afb6d6c67",
+  "previous_apk_sha256": "59bd66135e823e09664c856612b19f9702672db0269413628e56493fa4ba99f4",
+  "causes": [
+    "Exported MP3s omit original ediM timing information (1393 skipped samples plus exact source sample count), leaving codec padding in each played clip",
+    "Completion callbacks restart or create/prepare players only after the previous clip finishes"
+  ],
+  "fix": [
+    "Add 26 PCM WAV playback copies, decoded from the unchanged original MP3s and cut to the source ediM boundaries",
+    "Prepare the next clip in advance, share its audio session, and use native MediaPlayer.setNextMediaPlayer handoffs",
+    "Keep menu random-two-play behavior and existing gameplay sequence/wrap; release both players on stop"
+  ],
+  "production_java_changed": [
+    "src/local/dinerdash/prototype/GameAudio.java"
+  ],
+  "gameplay_and_rendering_java_unchanged": true,
+  "original_resources_and_media_unchanged": true,
+  "derived_wav_assets": 26,
+  "asset_validation": "All 26 WAV payloads byte-match decoded original PCM slices with exact header sample counts",
+  "baseline": "0.3.7 fails recovered-duration assertion and contains measured output pauses",
+  "installed_audio_checks": 94,
+  "installed_activity_save_checks": 36,
+  "total_checks_this_release": 130,
+  "audio_verified": [
+    "Prepared successors auto-start even with the main thread blocked for 900ms at the boundary",
+    "Menu same-clip repeat then random next choice",
+    "Every restaurant playback bank",
+    "Gameplay c1 through c8 sequence and short c8-to-c1 wrap",
+    "Music OFF/ON, paused/background/resume, SFX independence, cold muted launch and menu/game transitions"
+  ],
+  "recorded_output": {
+    "before": {
+      "menu": {
+        "duration_s": 18.007074829931973,
+        "near_silence_threshold": 1,
+        "interior_spans_over_20ms": [
+          {
+            "start_s": 5.317891,
+            "duration_ms": 608.163,
+            "initial_silence": false
+          },
+          {
+            "start_s": 11.182676,
+            "duration_ms": 696.825,
+            "initial_silence": false
+          },
+          {
+            "start_s": 17.158254,
+            "duration_ms": 630.363,
+            "initial_silence": false
+          }
+        ],
+        "max_interior_near_silence_ms": 696.825,
+        "peak_pcm16": 1010
+      },
+      "game": {
+        "duration_s": 18.007074829931973,
+        "near_silence_threshold": 1,
+        "interior_spans_over_20ms": [
+          {
+            "start_s": 6.507868,
+            "duration_ms": 648.685,
+            "initial_silence": false
+          },
+          {
+            "start_s": 12.779637,
+            "duration_ms": 646.213,
+            "initial_silence": false
+          }
+        ],
+        "max_interior_near_silence_ms": 648.685,
+        "peak_pcm16": 1418
+      }
+    },
+    "after": {
+      "menu": {
+        "duration_s": 18.007074829931973,
+        "near_silence_threshold": 1,
+        "interior_spans_over_20ms": [],
+        "max_interior_near_silence_ms": 0,
+        "peak_pcm16": 783
+      },
+      "game": {
+        "duration_s": 18.007074829931973,
+        "near_silence_threshold": 1,
+        "interior_spans_over_20ms": [],
+        "max_interior_near_silence_ms": 0,
+        "peak_pcm16": 1418
+      }
+    }
+  },
+  "recording_method": "Android emulator gRPC streamAudio, 44100Hz stereo signed PCM16; ordinary menu and qa_level=1 intro launches; 18.007s per recording",
+  "recording_notes": [
+    "Near-silence means absolute PCM amplitude at most 1 in both channels, sustained at least 20ms.",
+    "Initial startup silence and trailing silence are excluded; the recordings cover several interior clip boundaries.",
+    "The gameplay intro holds the simulation paused so BGM is isolated from gameplay sound effects."
+  ],
+  "installed_apk_hash_verified": true,
+  "current_evidence": "verification/0.3.8/",
+  "package_integrity": {
+    "original_media_hashes_verified": 1960,
+    "uncompressed_mp3_verified": 62,
+    "uncompressed_wav_verified": 26,
+    "crc_verified": true,
+    "signature_verified": true,
+    "version_code": 11,
+    "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf"
+  },
+  "test_fixture_saves_restored": true,
+  "physical_device_tested": false,
+  "audio_output_recorded": true,
+  "audio_listened_to": false,
+  "windows_runtime_executed": false,
+  "tests_not_rerun": [
+    "Pure gameplay model suites",
+    "Guest, sprite and animation suites"
+  ],
+  "previous_gameplay_and_rendering_evidence": "verification/0.3.6-verification.json",
+  "sdk_reference": "https://developer.android.com/reference/android/media/MediaPlayer#setNextMediaPlayer(android.media.MediaPlayer)",
+  "qa_installation": "Incremental ADB install was unreliable on this emulator; the runner now uses --no-incremental -r. Final installed APK hash matches the signed build."
+}

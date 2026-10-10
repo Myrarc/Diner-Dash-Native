@@ -1,0 +1,24 @@
+{
+  "metadata_functions": 7470,
+  "review_status_counts": {
+    "not-reviewed": 7343,
+    "selected-path-static-review": 117,
+    "baseline-rule-evidence": 9,
+    "partial-assembly-binding": 1
+  },
+  "distinct_selected_native_addresses": 123,
+  "supplemental_addresses_outside_initial_metadata": [
+    "00434480",
+    "004348d0",
+    "00435820",
+    "0044ab40",
+    "0044e5d0"
+  ],
+  "decompilation_ok": 7468,
+  "decompilation_failed": 2,
+  "direct_call_edges": 15798,
+  "string_reference_rows": 3894,
+  "all_android_java_files_inspected": 6,
+  "all_native_functions_reviewed": false,
+  "all_branches_of_reviewed_functions_reviewed": false
+}

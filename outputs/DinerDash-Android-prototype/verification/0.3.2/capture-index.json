@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/outputs/DinerDash-Android-prototype/verification/0.3.2/mechanics-bar-carry.png",
+    "dimensions": [
+      800,
+      600
+    ],
+    "apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+    "kind": "Synthetic installed Canvas fixture",
+    "inspected": true
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/outputs/DinerDash-Android-prototype/verification/0.3.2/mechanics-bar-trays.png",
+    "dimensions": [
+      800,
+      600
+    ],
+    "apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+    "kind": "Synthetic installed Canvas fixture",
+    "inspected": true
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/outputs/DinerDash-Android-prototype/verification/0.3.2/phone-level-1-1-result.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+    "kind": "Real emulator touch walkthrough",
+    "inspected": true
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/outputs/DinerDash-Android-prototype/verification/0.3.2/phone-level-1-2-intro.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+    "kind": "Real emulator touch walkthrough",
+    "inspected": true
+  },
+  {
+    "path": "/Users/myrarc/Documents/Codex/2026-10-07/https-github-com-nationalsecurityagency-ghidra-https/outputs/DinerDash-Android-prototype/verification/0.3.2/phone-level-1-2-play.png",
+    "dimensions": [
+      2160,
+      1080
+    ],
+    "apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+    "kind": "Real emulator touch walkthrough",
+    "inspected": true
+  }
+]

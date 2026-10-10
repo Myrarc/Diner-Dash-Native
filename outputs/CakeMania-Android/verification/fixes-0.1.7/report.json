@@ -1,0 +1,91 @@
+{
+  "version": "0.1.7",
+  "version_code": 8,
+  "created_at": "2026-10-10T08:29:02.419662+00:00",
+  "apk_sha256": "cd998f0e9251a13639204b997bd189663e97703c3667bc9780964bf35bb04dc5",
+  "apk_bytes": 27648169,
+  "original_binary_sha256": "a15104d786ac7a5ceca59df527e9d298ee7629d6ae4766a406ce75bc2d1dd852",
+  "cause": "Opening comics forced an intro while the prepared engine was a tutorial level without StartScreen, producing an empty notebook. Fonts and career copy were already present.",
+  "fixed": [
+    "Opening comic Continue opens the original month map; selecting January starts the practice lesson",
+    "Completing the first practice lesson opens the real January intro with original narrative and $200 goal; clock remains paused until Let's Play"
+  ],
+  "verified_final_apk": {
+    "host_suites": [
+      "FlowRulesTest",
+      "CareerStateTest"
+    ],
+    "android_probes": [
+      "MonthTextProbe",
+      "FlowAndroidProbe"
+    ],
+    "month_text_screens": 144,
+    "activity_flow_checks": 48,
+    "real_comic_continue_taps": 3,
+    "real_month_map_and_lets_play_taps": true,
+    "full_real_input_tutorial_sequences": [
+      0,
+      10
+    ],
+    "tutorial_matching_delivery_and_cash_ready": true,
+    "asset_entries_unchanged": 838,
+    "installed_apk_matches": true,
+    "source_matches": true,
+    "android_api": 30
+  },
+  "source_sha256": {
+    "src/local/cakemania/AssetStore.java": "10fb40a82fb297c243c375f05ae8ca1d33d851853f7fa4c2df9c3779d901ffe4",
+    "src/local/cakemania/CareerState.java": "c1b41ec80673c6e50e27b62ae977beed1649a2a1d4153ac5f6d51cf2eb206979",
+    "src/local/cakemania/GameAudio.java": "c459b6ca811c1bc270a62e55059786cef782d5b44115bc2fb699c5639a41261b",
+    "src/local/cakemania/GameData.java": "ef43599760f0202e36cd1cdba944205b1a92214e1375d3695d37be5b2d90b18f",
+    "src/local/cakemania/GameEngine.java": "14486f313ccf4202f519082308fa8922d870c61fb67931781f4f39ae694e9d1c",
+    "src/local/cakemania/GameView.java": "e474bb8388a58dc2febf36f874c5a859a52f1761d35fc4125566ae96cbac03d7",
+    "src/local/cakemania/MainActivity.java": "7e997f7f116eae886bbf54435ecf308e0d41441b19b0b9e86ba35010c3a98191",
+    "src/local/cakemania/SpriteRules.java": "f667ef2e0b02c7d3c9852b4f7f12342fad6cc7f8226cc69eaa6df6a82adaf707",
+    "src/local/cakemania/TutorialController.java": "7a72a193abb60150bfb57235e566fe450583d6204f6359230e4e725e5dcd2680"
+  },
+  "test_source_sha256": {
+    "FlowRulesTest": "aa44ab4a2a8bd2c929eb154f3a560176e386cd09257beabd4ac3c66cb8011f90",
+    "CareerStateTest": "fdd6e86cd3ea23fa3f7a6441573a45b36ff954f95b0069c7a37fed09bc4ef75f",
+    "MonthTextProbe": "421d79e6d21cc949281706e0e612936b14a856142389fccccf975e927b3b1d71",
+    "FlowAndroidProbe": "6a64cdb6f96b32fbfc7ba8ec37159778352a299d8422f727fa71b41b74e3b8f6"
+  },
+  "tutorial_script_sha256": "b914eb62e18f102b141b39955ced34bb3181be3dfae5942467ad66c170f3dd5b",
+  "personally_inspected_images": [
+    "android/blank-after-comics-0.1.6.png",
+    "android/cake-story-after-comics.png",
+    "android/cake-intro-after-tutorial.png",
+    "android/cake-month-1.png",
+    "android/cake-month-2.png",
+    "tutorial-touch/sequence0-complete.png"
+  ],
+  "image_sha256": {
+    "android/blank-after-comics-0.1.6.png": "e5800d36209c30aebd8d753de56c415a966ad3f583cd75f487747c7d93c76c95",
+    "android/cake-story-after-comics.png": "a603062fc7e6d44059fab813bfbebb7aaad9e8e4d6e77b7fc2753ad1711ce6ba",
+    "android/cake-intro-after-tutorial.png": "22fe0a1e5cb80952d550f05a1a6c42989b8f5383410b048b1cc813e61ddc1a44",
+    "android/cake-month-1.png": "ae66b54cf40650851b725cb366e219071f272dbe8fdc3360be78f4e3abc57857",
+    "android/cake-month-2.png": "0959cd6b6a3be43725d0bf5b4603d842f759a66f4c581046bd948da119682872",
+    "tutorial-touch/sequence0-complete.png": "6845bf04c2c22fe2a293ea9968e46254532749337226b7b4800ef8db69204c3e"
+  },
+  "cleanup": {
+    "preferences_restored": true,
+    "display_settings_restored": true,
+    "test_package_removed": true,
+    "generated_qa_files_removed": true,
+    "owned_emulator_stopped": true,
+    "owned_emulator_pid": 97696,
+    "notes": "Only task-owned emulator, instrumentation package and generated QA files were removed; development APK remains installed. Original preference bytes were restored exactly."
+  },
+  "not_repeated": [
+    "Full January service and full career/month host simulations",
+    "Customer and machine matrix probes; renderer/engine/assets are unchanged from 0.1.6",
+    "PCM redecoding; all asset bytes are unchanged from 0.1.6"
+  ],
+  "remaining": [
+    "Whole-game Windows runtime, physical Android and audible comparison",
+    "Map center information/preview panel is still unfinished; the highlighted January star is selectable",
+    "Native intermediate shop after the advanced tutorial (existing port transition unchanged)",
+    "Native heart gain/loss effects, exact order bubble and other previously recorded fidelity gaps"
+  ],
+  "notes": "Bounded opening-flow correction. The real-input tutorials complete through gameplay; the Activity probe also uses an isolated completed-lesson fixture to verify the intro transition. Successful checks do not establish whole-game Windows parity."
+}

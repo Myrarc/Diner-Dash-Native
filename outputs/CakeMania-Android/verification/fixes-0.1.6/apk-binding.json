@@ -1,0 +1,18 @@
+{
+  "apk_sha256": "5041cca6eb7b61b0e9d44ad646c624f3e5341c0dfd55f18cf8434d7b0aa68dc0",
+  "source_sha256": {
+    "src/local/cakemania/AssetStore.java": "10fb40a82fb297c243c375f05ae8ca1d33d851853f7fa4c2df9c3779d901ffe4",
+    "src/local/cakemania/CareerState.java": "c1b41ec80673c6e50e27b62ae977beed1649a2a1d4153ac5f6d51cf2eb206979",
+    "src/local/cakemania/GameAudio.java": "c459b6ca811c1bc270a62e55059786cef782d5b44115bc2fb699c5639a41261b",
+    "src/local/cakemania/GameData.java": "ef43599760f0202e36cd1cdba944205b1a92214e1375d3695d37be5b2d90b18f",
+    "src/local/cakemania/GameEngine.java": "14486f313ccf4202f519082308fa8922d870c61fb67931781f4f39ae694e9d1c",
+    "src/local/cakemania/GameView.java": "e474bb8388a58dc2febf36f874c5a859a52f1761d35fc4125566ae96cbac03d7",
+    "src/local/cakemania/MainActivity.java": "c3a8bbd25c3af6f501ffb89c4101d939c8eac3054b25c52c5b890ff3580d5a7e",
+    "src/local/cakemania/SpriteRules.java": "f667ef2e0b02c7d3c9852b4f7f12342fad6cc7f8226cc69eaa6df6a82adaf707",
+    "src/local/cakemania/TutorialController.java": "7a72a193abb60150bfb57235e566fe450583d6204f6359230e4e725e5dcd2680"
+  },
+  "android_api": "30",
+  "version": "0.1.6",
+  "installed_apk_matches": true,
+  "source_matches": true
+}

@@ -1,0 +1,75 @@
+{
+  "version": "0.3.2",
+  "scope": "Source-derived service, kitchen, scoring, navigation occupancy, bar identities and career capacity repairs",
+  "apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+  "model_tests": {
+    "mechanics": 53,
+    "engine": 35,
+    "fidelity": 332,
+    "full_game": 2989,
+    "career_shifts": 50,
+    "career_parties": 1067,
+    "table_to_wheel_routes": 308,
+    "zero_travel_bot_goals": 43
+  },
+  "installed_canvas_checks": 35,
+  "installed_activity_checks": 36,
+  "real_emulator_touch": {
+    "apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+    "checkpoints": [
+      {
+        "action": "Naturally complete 1-1",
+        "screen": "endlevel"
+      },
+      {
+        "action": "Real tap Continue",
+        "screen": "startlevel"
+      },
+      {
+        "action": "Next shift playable",
+        "state": "Restaurant. Shift 2. Score 0. Waiting parties: 1. Food ready: 0. Coffee unavailable. Order wheel idle. Flo destination: -99. Hands free (2 slots). Drag -1 preview -1. Table 1: EMPTY. Table 2: EMPTY. Table 3: EMPTY. Table 4: EMPTY"
+      }
+    ],
+    "crash_buffer": "no fatal exceptions"
+  },
+  "captures_inspected": 5,
+  "capture_index": "verification/0.3.2/capture-index.json",
+  "mechanics_probe": {
+    "source_contracts_now_matched": 20,
+    "remaining_differences": 3,
+    "originally_different_now_matched": 12,
+    "windows_runtime_executed": false
+  },
+  "package_integrity": {
+    "version": "0.3.2",
+    "version_code": 5,
+    "apk_sha256": "1dd006488e8ba75d3e0ad436ef0f709d57256c8042e7b0240b4a5a9373306eb9",
+    "packaged_media_verified": 1960,
+    "sounds_stored_uncompressed": 62,
+    "zip_crc": "pass",
+    "signature_verified": true,
+    "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf"
+  },
+  "physical_device": false,
+  "audible_playback_verified": false,
+  "full_campaign_human_playthrough": false,
+  "independent_visual_review_repeated": false,
+  "current_evidence": "verification/0.3.2/",
+  "previous_release_evidence": "verification/0.3.1-verification.json",
+  "remaining": [
+    "timer ownership",
+    "quick-seating mood source ambiguity",
+    "weighted A* and original route choices",
+    "tutorial progression",
+    "long-frame delta handling",
+    "original runtime ambiguities",
+    "presentation/cinematic/audio sequencing parity"
+  ],
+  "notes": [
+    "Continue was tested through naturally played 1-1 and real taps on the final APK.",
+    "Additional transition/capacity checks use synthetic installed Activity fixtures; saves restored.",
+    "Bar screenshots are synthetic installed Canvas renders, not a naturally played later shift.",
+    "Source-derived probe comparisons do not execute Windows.",
+    "The zero-travel bot does not certify difficulty or full campaign human play."
+  ]
+}

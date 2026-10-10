@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Screens button_text_back="Back" button_text_all="All" button_text_day="Daily" button_text_month="Monthly" button_text_week="Weekly" button_text_next="Next" button_text_prev="Previous" button_text_local="Local" button_text_send="Post" button_text_server="Server" x="205" y="145" width="305" height="408" spacing="32" music="music/mainmenu.ogg">
+ <Screen>
+  <Image img="IMAGE_HS_BGR" x="0" y="0" w="800" h="600" />
+  <Text x="205" y="474" w="310" h="15" font="FONT_DEFAULT" size="1" text="Local Scores" />
+ </Screen>
+ <Screen>
+  <Image img="IMAGE_HS_BGR" x="0" y="0" w="800" h="600" />
+  <Text x="205" y="474" w="310" h="15" font="FONT_DEFAULT" size="1" text="Daily Scores" />
+ </Screen>
+ <Screen>
+  <Image img="IMAGE_HS_BGR" x="0" y="0" w="800" h="600" />
+  <Text x="205" y="474" w="310" h="15" font="FONT_DEFAULT" size="1" text="Weekly Scores" />
+ </Screen>
+ <Screen>
+  <Image img="IMAGE_HS_BGR" x="0" y="0" w="800" h="600" />
+  <Text x="205" y="474" w="310" h="15" font="FONT_DEFAULT" size="1" text="Monthly Scores" />
+ </Screen>
+ <Screen>
+  <Image img="IMAGE_HS_BGR" x="0" y="0" w="800" h="600" />
+  <Text x="205" y="474" w="310" h="15" font="FONT_DEFAULT" size="1" text="All Scores" />
+ </Screen>
+</Screens></root>

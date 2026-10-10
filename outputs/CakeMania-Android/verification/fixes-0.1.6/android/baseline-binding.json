@@ -1,0 +1,9 @@
+{
+  "version": "0.1.5",
+  "apk_sha256": "3a3a48b5086b4f6bf9cc406bd68ebb6ac6f7fffe66f9ecfab59a9b5e67b41ae7",
+  "evidence": [
+    "mixed-queue-before.png",
+    "CustomerSpriteProbe-baseline-failure.log"
+  ],
+  "note": "Historical before-state and failure of the new native row expectation. CustomerSpriteProbe-hearts-before-failure.log applies to the intermediate candidate recorded under pre-hearts-candidate."
+}

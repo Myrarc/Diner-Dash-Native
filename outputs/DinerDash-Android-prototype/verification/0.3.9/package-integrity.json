@@ -1,0 +1,14 @@
+{
+  "apk_sha256": "5ce7776cbe848dc37cd32e0d91559568995b4fe355df87e752339c59d111b114",
+  "bytes": 34597962,
+  "version": "0.3.9",
+  "version_code": 12,
+  "original_media_hashes_verified": 1960,
+  "original_assets_resources_unchanged": true,
+  "uncompressed_mp3": 62,
+  "uncompressed_derived_music_wav": 26,
+  "crc_verified": true,
+  "signature_verified": true,
+  "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf",
+  "installed_apk_bytes_match": true
+}

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<RenderBackground>
+	<Image id="0" img="IMAGE_LEVEL1_BG1" x="0" y="0" />	
+	<Image id="1" img="IMAGE_LEVEL1_BG2" x="396" y="319" />	
+	<Image id="2" img="IMAGE_LEVEL1_BG3" x="180" y="479" />
+	<Image id="3" img="IMAGE_LEVEL1_BG6" x="0" y="491" />
+</RenderBackground>
+<Frosters>
+	<Froster name="Featured froster" x_global="585" y_global="480" height_global="79" width_global="154" x="0" y="0" height="79" width="154" main_img="IMAGE_FROSTER_LEVEL0" upgr_step="0" guid="froster0" render_after="2">
+	</Froster>
+	<Froster name="Fast Frost 100" x="0" y="0" height="79" width="154" x_global="440" y_global="480" height_global="79" width_global="154" main_img="IMAGE_FROSTER_LEVEL1" cake_pt="0,23" upgr_step="1" guid="froster1" render_after="2" associate_point="1" time="5">
+	         	<Form id="0" name="Violet" x="3" y="3" image="IMAGE_FORM_2" image_hl="IMAGE_FORM_HL_2" image_anim="IMAGE_FROSTER_ANIM_2" pt_anim="5,-118" count_anim_vert="33" height="35" width="35" price="15" />
+	         	<Form id="3" name="Cream" x="102" y="3" image="IMAGE_FORM_3" image_hl="IMAGE_FORM_HL_3" image_anim="IMAGE_FROSTER_ANIM_3" pt_anim="25,-119" count_anim_vert="33" height="35" width="35" price="15" />
+	         	<Form id="1" name="Brown" x="115" y="39" image="IMAGE_FORM_1" image_hl="IMAGE_FORM_HL_1" image_anim="IMAGE_FROSTER_ANIM_1" pt_anim="26,-82" count_anim_vert="33" height="35" width="35" price="15" />
+	         	<Form id="2" name="Red" x="14" y="39" image="IMAGE_FORM_0" image_hl="IMAGE_FORM_HL_0" image_anim="IMAGE_FROSTER_ANIM_0" pt_anim="15,-82" count_anim_vert="33" height="35" width="35" price="15" />
+	</Froster>
+        <Froster name="Featured froster" x_global="295" y_global="480" height_global="79" width_global="154" x="0" y="0" height="79" width="154" main_img="IMAGE_FROSTER_LEVEL0" upgr_step="0" guid="froster2" render_after="2">
+	</Froster>
+</Frosters>
+<Decorations>
+	<Decoration name="Futured Decorator" upgr_step="0" guid="decorator0" x="0" y="0" height="86" width="118" x_global="655" y_global="290" height_global="86" width_global="118" main_img="IMAGE_DECORATION_LEVEL0" render_after="0">
+	</Decoration>
+	<Decoration name="Futured Decorator" upgr_step="0" guid="decorator1" x="0" y="0" height="86" width="118" x_global="683" y_global="370" height_global="86" width_global="118" main_img="IMAGE_DECORATION_LEVEL0" render_after="0">
+	</Decoration>
+</Decorations>
+<CakeOvens>
+	<CakeOven name="CakeOven2" x="0" y="0" x_global="490" y_global="80" upgr_step="0" guid="cakeoven2" render_after="0" height="225" width="130" height_global="225" width_global="130" main_img="IMAGE_CAKEOVEN_LEVEL1" main_sec_img="IMAGE_CAKEOVEN_WORK" main_thrd_img="IMAGE_CAKEOVEN_OPEN">
+         	<Form id="6" name="Name0" x="14" y="49" image="IMAGE_BUTTON_PUMPKIN" image_hl="IMAGE_BUTTON_PUMPKIN_HL" height="22" width="22" price="15" />
+         	<Form id="1" name="Name1" x="43" y="44" image="IMAGE_BUTTON_SQUARE" image_hl="IMAGE_BUTTON_SQUARE_HL" height="22" width="22" price="15" />
+         	<Form id="2" name="Name3" x="71" y="44" image="IMAGE_BUTTON_STAR" image_hl="IMAGE_BUTTON_STAR_HL" height="22" width="22" price="15" />
+         	<Form id="3" name="Name4" x="99" y="49" image="IMAGE_BUTTON_CIRCLE" image_hl="IMAGE_BUTTON_CIRCLE_HL" height="22" width="22" price="15" />
+	</CakeOven>
+	<CakeOven name="CakeOven0" x="0" y="0" x_global="365" y_global="80" upgr_step="1" guid="cakeoven0" level="0" height="225" width="130" height_global="225" width_global="130" main_img="IMAGE_CAKEOVEN_LEVEL1" render_after="0" associate_point="8" cake_pt="8,57" time="5" main_sec_img="IMAGE_CAKEOVEN_LEVEL1_WORK" main_thrd_img="IMAGE_CAKEOVEN_LEVEL1_OPEN" main_door_img="IMAGE_CAKEOVEN_LEVEL1_DOOR" main_trash_img="IMAGE_CAKEOVEN_LEVEL1_TRASH">
+         	<Form id="6" name="Name0" x="14" y="49" image="IMAGE_BUTTON_PUMPKIN" image_hl="IMAGE_BUTTON_PUMPKIN_HL" height="22" width="22" price="15" />
+         	<Form id="1" name="Name1" x="43" y="44" image="IMAGE_BUTTON_SQUARE" image_hl="IMAGE_BUTTON_SQUARE_HL" height="22" width="22" price="15" />
+         	<Form id="2" name="Name3" x="71" y="44" image="IMAGE_BUTTON_STAR" image_hl="IMAGE_BUTTON_STAR_HL" height="22" width="22" price="15" />
+         	<Form id="3" name="Name4" x="99" y="49" image="IMAGE_BUTTON_CIRCLE" image_hl="IMAGE_BUTTON_CIRCLE_HL" height="22" width="22" price="15" />
+	</CakeOven>
+	<CakeOven name="CakeOven1" x="0" y="0" x_global="240" y_global="80" upgr_step="0" guid="cakeoven1" render_after="0" height="225" width="130" height_global="225" width_global="130" main_img="IMAGE_CAKEOVEN_LEVEL1" main_sec_img="IMAGE_CAKEOVEN_WORK" main_thrd_img="IMAGE_CAKEOVEN_OPEN">
+         	<Form id="6" name="Name0" x="14" y="49" image="IMAGE_BUTTON_PUMPKIN" image_hl="IMAGE_BUTTON_PUMPKIN_HL" height="22" width="22" price="15" />
+         	<Form id="1" name="Name1" x="43" y="44" image="IMAGE_BUTTON_SQUARE" image_hl="IMAGE_BUTTON_SQUARE_HL" height="22" width="22" price="15" />
+         	<Form id="2" name="Name3" x="71" y="44" image="IMAGE_BUTTON_STAR" image_hl="IMAGE_BUTTON_STAR_HL" height="22" width="22" price="15" />
+         	<Form id="3" name="Name4" x="99" y="49" image="IMAGE_BUTTON_CIRCLE" image_hl="IMAGE_BUTTON_CIRCLE_HL" height="22" width="22" price="15" />
+	</CakeOven>
+</CakeOvens>
+<Shelfs>
+</Shelfs>
+<OtherStuff>
+ 	<Trash name="Trash can" x_global="606" y_global="273" upgr_step="1" guid="trash" wc="1" hc="3" time="0.2" level="0" height_global="99" width_global="52" main_img="IMAGE_TRASH" render_after="0" associate_point="16" />
+	<CookieOven name="CookieOven" x_global="624" y_global="143" guid="cupcake0" level="0" height_global="110" width_global="100" x_main="0" y_main="0" width_main="76" height_main="64" main_img="IMAGE_COOKIEOVEN" upgr_step="0" render_after="0" />
+	<DisplayCase name="DisplayCase" x_global="425" y_global="315" upgr_step="0" guid="displaycase0" height_global="70" width_global="85" x_main="0" y_main="0" width_main="85" height_main="90" main_img="IMAGE_DISPLAYCASE1" render_after="1">
+	</DisplayCase>
+	<TVSet name="TV Set" x_global="140" y_global="25" upgr_step="0" guid="tvset0" time="5" height_global="125" width_global="76" associate_point="9" x_main="19" y_main="34" width_main="49" height_main="40" main_img="IMAGE_TVSET" noise_img="IMAGE_TV_NOISE" noise_anim_count="4" sfx_noise="SOUND_TV_NOISE" render_after="0">
+         	<Form id="1" guid="cartoon" x="27" y="94" height="24" width="29" image_anim="IMAGE_TV_CARTOON" count_anim="13" image="IMAGE_TVBUTTON_DOWN" image_hl="IMAGE_TVBUTTON_OVER" sfx="SOUND_TV_CARTOON" />
+         	<Form id="2" guid="news" x="27" y="94" height="24" width="29" image_anim="IMAGE_TV_NEWS" count_anim="14" image="IMAGE_TVBUTTON_DOWN" image_hl="IMAGE_TVBUTTON_OVER" sfx="SOUND_TV_NEWS" />
+         	<Form id="3" guid="food" x="27" y="94" height="24" width="29" image_anim="IMAGE_TV_FOOD" count_anim="5" image="IMAGE_TVBUTTON_DOWN" image_hl="IMAGE_TVBUTTON_OVER" sfx="SOUND_TV_FOOD" />
+	</TVSet>
+</OtherStuff>
+</root>

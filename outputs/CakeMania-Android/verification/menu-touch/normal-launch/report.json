@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "apk_sha256": "f595314aa625ca5af0c04e3dd1bda139ff608676a896d9b7a7d86848c0121e85",
+  "android_api": "30",
+  "display": "Physical size: 1080x2280",
+  "canvas": [
+    2280,
+    1080
+  ],
+  "qa_level_used": false,
+  "checks": [
+    "Normal cold launch: five nonzero touch targets match the drawn menu",
+    "High Scores opens and returns through touch",
+    "Options opens; music and sound toggle both ways and retain original settings",
+    "Help opens, advances, and returns through touch",
+    "Play, Choose Month, Back, Continue Career, game start, Pause, Resume, and Main Menu respond",
+    "Menu touch targets survive background/foreground",
+    "Exit closes the activity",
+    "A second normal cold launch still accepts Play"
+  ]
+}

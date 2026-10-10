@@ -1,0 +1,14 @@
+{
+  "preference_files_restored_byte_identical": 11,
+  "preference_files_unchanged_before_external_restore": 10,
+  "post_fixture_changes": [
+    {
+      "file": "shared_prefs/career.xml",
+      "semantic_changed_keys": []
+    }
+  ],
+  "installed_apk_bytes_match": true,
+  "installed_apk_sha256": "78bfef6348d2da35069fc0b2d55e4ea42684b1acbb390a7d1e001b7e8fe2c0c7",
+  "screen_size_restored": true,
+  "screen_density_restored": true
+}

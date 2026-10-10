@@ -1,0 +1,1241 @@
+[
+  {
+    "address": "00401010",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00401010.c",
+    "sha256": "1054cea4cf30abb30a5afcc95057956eb4c53760500412de1d03a11c6ad7d20e"
+  },
+  {
+    "address": "004010d0",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004010d0.c",
+    "sha256": "9b987bbc5c3d649c57056e83719944c4af4f2a4a6f2c3b7a09f2f2a544c3645a"
+  },
+  {
+    "address": "00401130",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/00401130.c",
+    "sha256": "3d33fb1d5fd16039e2b890cdcaaa9a709b3ec686d4b0c9de814d73848e4b1200"
+  },
+  {
+    "address": "00401680",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00401680.c",
+    "sha256": "30aafd92f5a8e62bd0f12c4090d8b6b37f9854b1d8967acfb30593b0b30d5202"
+  },
+  {
+    "address": "00402df0",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/00402df0.c",
+    "sha256": "8955bf7fa739285e1ded9ee59f9f98c1f4c14e4a2b37ce2ddb4cef6eb5f67353"
+  },
+  {
+    "address": "00403460",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/00403460.c",
+    "sha256": "9ac154828e15b44ee2cd7b793dc936041fa9921cd7c01b0a1ddf3dc5a7757239"
+  },
+  {
+    "address": "004040e0",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/004040e0.c",
+    "sha256": "9014b7c9ca3be71fc80990a8dab8ee61579636f49f8478c0ef5aa9bc6a0a6b68"
+  },
+  {
+    "address": "00404800",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00404800.c",
+    "sha256": "889d429d48ceb0cd25c13a71b2cc1c54f05482cfaca299b55ef78081f28e8a1d"
+  },
+  {
+    "address": "00404c10",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00404c10.c",
+    "sha256": "ce73af5920718349a0d55be4a9e9c394794767e79a37d95f7238fcad616ef94c"
+  },
+  {
+    "address": "004059f0",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/004059f0.c",
+    "sha256": "bbf4e03292998b7f84f1bff7f3df467dda781019a2a5e996022b4c4b077204f0"
+  },
+  {
+    "address": "00406d40",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00406d40.c",
+    "sha256": "7c554971ea9d976d4839dc6e7e640ce23f62fa6fcae580fc7197f21556843a2e"
+  },
+  {
+    "address": "00407530",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00407530.c",
+    "sha256": "58b1fa84f5ac20011b3fcf6f0f676a83b13af455422567871acdc20f970c90a9"
+  },
+  {
+    "address": "00407870",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00407870.c",
+    "sha256": "03316cd9e25a59c4ae6e0165eb3c8eb07f80329ea64f4da9883dec95a1da7b9d"
+  },
+  {
+    "address": "00407930",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00407930.c",
+    "sha256": "055e4cd3541b5f3f6a8493a11f28c082e3c22b631ffdf32c8f0e10c74618657d"
+  },
+  {
+    "address": "00409b10",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00409b10.c",
+    "sha256": "dcd9ce6dc79e79ba0edb785394de1dd2740691e9a291027c1a07c0dc0b02f209"
+  },
+  {
+    "address": "0040a120",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0040a120.c",
+    "sha256": "30e78136e07244a93473c6cfdd40318272320838b170fe7f99c70f1ccd178e7f"
+  },
+  {
+    "address": "0040a190",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0040a190.c",
+    "sha256": "3a3802b22a8e37c74599f17af707d0a6bc917cde8902adb9a948f628ef53555d"
+  },
+  {
+    "address": "0040b280",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0040b280.c",
+    "sha256": "232830668ce7a420d3c26a9281c23e21706454e52f6a635302a59453908454da"
+  },
+  {
+    "address": "0040d370",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0040d370.c",
+    "sha256": "dd46505e27f72778738856ebbbbb3ea8282f506964ffeffda0804e337f07492a"
+  },
+  {
+    "address": "0040e020",
+    "lanes": [
+      "parent-validation"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0040e020.c",
+    "sha256": "4f7e6e42ac189ccf6181fbbdde5bb3411f73ada2af1a7da180df475fe3f2bb61"
+  },
+  {
+    "address": "0040f430",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/0040f430.c",
+    "sha256": "464110617f9bcad88c4364ab2763e4dbe6af68e8af6fdabf83f61cf796413b0d"
+  },
+  {
+    "address": "0040feb0",
+    "lanes": [
+      "avatar-input",
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0040feb0.c",
+    "sha256": "26a747baa245c2379c6c696ec7572378f7a60dcc70ed4bd783f5478404f71640"
+  },
+  {
+    "address": "00410e80",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00410e80.c",
+    "sha256": "5f5c2616823fc96750dd04ed79337eea136f13a24321f77bb0819626bae2eac4"
+  },
+  {
+    "address": "004121b0",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004121b0.c",
+    "sha256": "719af96d816e06a0feeec395988d27a1e6acaa94ba30dfedcedaff03555b797a"
+  },
+  {
+    "address": "00412970",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00412970.c",
+    "sha256": "3dbf0fbb2b3127be70494865eac0ab0f434905e144d7e446c1c9c2ff77f335d2"
+  },
+  {
+    "address": "00413b50",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00413b50.c",
+    "sha256": "25189f74cda837e629031546f1bd65620017478d6fc5df9c5ff79667b22eda62"
+  },
+  {
+    "address": "00413c90",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00413c90.c",
+    "sha256": "fb6d15014e8f0fd814089cd70eda97b372993cfc1c1af4bea2acb49af37f8ed1"
+  },
+  {
+    "address": "00414050",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00414050.c",
+    "sha256": "2bb8b026e747929d0b21a5e68389ce27e296f5ed06fba9f7ad913d6f4a9e658f"
+  },
+  {
+    "address": "00414200",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00414200.c",
+    "sha256": "d59f0b5845312c674dcc429e522ac2076a0024317d033dbbf09adf53e2cecea3"
+  },
+  {
+    "address": "00414d80",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00414d80.c",
+    "sha256": "2d71e39860f194a8b7bd2a4f3912ae2fcb1f458e81872d1def582e657aa70cb8"
+  },
+  {
+    "address": "004163a0",
+    "lanes": [
+      "avatar-input",
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004163a0.c",
+    "sha256": "5798321319731f7fd160a2d04cc93cf4e3d7d60331210e5d61990d24b7c93da7"
+  },
+  {
+    "address": "004170d0",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004170d0.c",
+    "sha256": "2886cf79b5c4a63563ad472929c033f134ec6933e711b95197629a8c32f38abe"
+  },
+  {
+    "address": "00417240",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00417240.c",
+    "sha256": "ac4021af8a42f5f7598fec6ace00eec79d30e2fe4732f2ead61c74cdac30ea47"
+  },
+  {
+    "address": "004182d0",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004182d0.c",
+    "sha256": "4ae7c7997014c5874980dfceaf7914202c68cdce90cf46801d795288fcd24c08"
+  },
+  {
+    "address": "00419460",
+    "lanes": [
+      "parent-validation"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00419460.c",
+    "sha256": "95c79c7bd15b8df9f68c5fca0d49f239c368a1f92c24a255b41b42e2d1ffe061"
+  },
+  {
+    "address": "00419510",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00419510.c",
+    "sha256": "b21aa93876574e64dac00c37d35360addffb67f8455e81029c3318c204fd327b"
+  },
+  {
+    "address": "00419b40",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00419b40.c",
+    "sha256": "da432082709495cc7d5767ab1fdd730e39adc8e4ff0654f4b1a0566e498001c3"
+  },
+  {
+    "address": "0041ba80",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041ba80.c",
+    "sha256": "b60fc1d7a174ec845486ed83f052509714fdd8e0e5e952177bcbf389c90dd3e1"
+  },
+  {
+    "address": "0041c100",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041c100.c",
+    "sha256": "4931a5c747b14cf5a5a873bb38df877a29ce80ae5accf0dcd6c6f0cc85bb5bdf"
+  },
+  {
+    "address": "0041c210",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041c210.c",
+    "sha256": "0e39a8aed6a5db2d382f5d42e3e3419244ce7727bb713af944dd0867a79b6fac"
+  },
+  {
+    "address": "0041c460",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041c460.c",
+    "sha256": "62baabb07f1df762931df93d20728e29d5ff556a59fffc4c2b332c5546dcdceb"
+  },
+  {
+    "address": "0041cd30",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041cd30.c",
+    "sha256": "1ffd17b7254fbd1f65d94ba71c61f6c0d25ca474079d9b30c4b572e0fcf2a581"
+  },
+  {
+    "address": "0041d890",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041d890.c",
+    "sha256": "b20ab1c2296176445475ea072d66f45198df1a93b1767440870079e0c2b61df4"
+  },
+  {
+    "address": "0041e160",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041e160.c",
+    "sha256": "f47877583911a1851b337da9772d30a5ff2d57042bb63f86843fa12afee83e43"
+  },
+  {
+    "address": "0041e560",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041e560.c",
+    "sha256": "9e53363a5366a78d6d6aa9e28c0559a6096ffb2832d24be2f317db3ce3bbc913"
+  },
+  {
+    "address": "0041f290",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041f290.c",
+    "sha256": "6c70cdb12d4f761c2018cc51c64c1a9924972fd31a00a5efd68a541fcd8d5d2b"
+  },
+  {
+    "address": "0041f580",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041f580.c",
+    "sha256": "f4faf5f8b09e03e633a250758a66266f574e9319a329709b16304d916639eb74"
+  },
+  {
+    "address": "0041f8a0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0041f8a0.c",
+    "sha256": "4966e4b608083a37a0fd356bf79ea2eea6f2ee379efdc9d46ec23b7a84e2f5c8"
+  },
+  {
+    "address": "00422200",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00422200.c",
+    "sha256": "25d57a4ece8cc62813104fc2cab647e6685f3c9f16f131277cc49acc8f857729"
+  },
+  {
+    "address": "00422670",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00422670.c",
+    "sha256": "d57328dc3e816962bec6a85dc6022a3a6aae2344b0c84de6c5d7f678db75b7f6"
+  },
+  {
+    "address": "00422b10",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00422b10.c",
+    "sha256": "33441f9c6c0d9ab9f4469b97f70af4e9b9160415976f70ed933432feca9f4672"
+  },
+  {
+    "address": "004230d0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004230d0.c",
+    "sha256": "564b01c44c1039955a35b7e2f1b480cfa3b50b55770aa0b62d9f12ffcbba6f16"
+  },
+  {
+    "address": "004293b0",
+    "lanes": [
+      "parent-validation"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "partial-assembly-binding",
+    "evidence": "outputs/CakeMania-recovered/decompiled/assembly-fallback/004293b0.asm",
+    "sha256": "2c3755288b7a532e7f16d4b240a79cc3f28ec4cf98f444b272594c5cc31f3769"
+  },
+  {
+    "address": "00434020",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00434020.c",
+    "sha256": "624c254e937bb834f75d9a18523a7fd31c6cc54e2828412c975eecdf125d9364"
+  },
+  {
+    "address": "00434480",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": false,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/00434480.c",
+    "sha256": "8d71b1b21caa26b7225f4a43fecdd7016765af0984f2acd38c2999b68e89ec53"
+  },
+  {
+    "address": "004348d0",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": false,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/004348d0.c",
+    "sha256": "094205f416c6d540547b6de33ab79345f8582f7c5c9d283d323233a94ebaff5b"
+  },
+  {
+    "address": "00434d30",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00434d30.c",
+    "sha256": "326d2fd2b55a762a55a52a889268cc285648ac8e1eb5e5def71f74ae81d44876"
+  },
+  {
+    "address": "00435820",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": false,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-Android/verification/native-evidence/00435820.c",
+    "sha256": "24ca4431f9377a7594d0b41c0b519145f12fd789a0e45b9e3b1cfbe616a4b672"
+  },
+  {
+    "address": "00436730",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00436730.c",
+    "sha256": "8b32e28c1f6798c53835929073dbffbeeca378d0288939541b44d44cf2deb84b"
+  },
+  {
+    "address": "00436d50",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00436d50.c",
+    "sha256": "5e9e9443e80f601f0a44f1d63072ec56b40adc9ce32950339b709db9ec741977"
+  },
+  {
+    "address": "00438390",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00438390.c",
+    "sha256": "687b4c5c8ed8ad0852bace623920bccd5c50e85e8242aa7d3fabcf8419d6f34f"
+  },
+  {
+    "address": "004392a0",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004392a0.c",
+    "sha256": "6eb0d44770511600a820245c64aeea9bebe1f74f7c1921f85bf29a4ccebff18e"
+  },
+  {
+    "address": "0043b1f0",
+    "lanes": [
+      "avatar-input",
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0043b1f0.c",
+    "sha256": "4ac8b3321c71f70e048754f9aace270db250406e7bcc1d2d361d056687769ced"
+  },
+  {
+    "address": "0043e7d0",
+    "lanes": [
+      "customer-cookie",
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0043e7d0.c",
+    "sha256": "3f42346906d16e5f14096fc4498a46818de9b799c4e7a4dda5c76db2f5f88b20"
+  },
+  {
+    "address": "0043f780",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0043f780.c",
+    "sha256": "70fa002bad820a9c2f4838b77b655400ac80135868fd1aefa880ed90d1843551"
+  },
+  {
+    "address": "0043f820",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0043f820.c",
+    "sha256": "ac2af5d3429d5544ee0ade7107a78bdce530928efe4f3820df342e44e513d2c0"
+  },
+  {
+    "address": "00440730",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00440730.c",
+    "sha256": "13f9ba5852c42810f3f41dba5de300a489b2b85874fab71fcc91848520d5fcd1"
+  },
+  {
+    "address": "004407c0",
+    "lanes": [
+      "avatar-input",
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004407c0.c",
+    "sha256": "502bef423547cfddfcff2136fa2c9eb982916deb8a4339063ee70bdf3cb30a96"
+  },
+  {
+    "address": "00441840",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00441840.c",
+    "sha256": "2c540cb5cffea10d378c701bfadfbf7edb93f35ab0382327775be24083f3cb17"
+  },
+  {
+    "address": "00442980",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00442980.c",
+    "sha256": "875108f0a6b038f5fcc52dadd165774571b792c0f5859b4a5e630f6f70361889"
+  },
+  {
+    "address": "00443740",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00443740.c",
+    "sha256": "c0a277a96b3d49e1ff7e46e069301b3f90d41c5a45898d25a0bb88d833ca45af"
+  },
+  {
+    "address": "004440a0",
+    "lanes": [
+      "avatar-input",
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004440a0.c",
+    "sha256": "354f038f565ba1aca37a75af76f8565e46ea6d4212d5c6a71ee90f735074532f"
+  },
+  {
+    "address": "00444a00",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00444a00.c",
+    "sha256": "2f7e9d2930a7eebe9f4689598b6622989a87c77c231d3d7537efc07925d8a4ed"
+  },
+  {
+    "address": "00446d50",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00446d50.c",
+    "sha256": "467147ca5ddf01a6727ac6af5adc40dd84e804a68217ed40e8dcbab434028c63"
+  },
+  {
+    "address": "00447c00",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00447c00.c",
+    "sha256": "464deeb280bde3486214ee5faa7a813a452f0e4ff336f35fc4a092b011bb4428"
+  },
+  {
+    "address": "00447f20",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00447f20.c",
+    "sha256": "eaaa3917c752ea4178f5bac248e06c259f8e590d4df47a7ac163950e01b60293"
+  },
+  {
+    "address": "00448ed0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00448ed0.c",
+    "sha256": "96fd62c7e96a163bdf92c25765a6673b3ec26b359da5e941e8e96f1a3356fbb5"
+  },
+  {
+    "address": "00449790",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00449790.c",
+    "sha256": "e123c24352d1d3c2202254e711cbaf2ce27194369016f0e1a58927309bfff7d0"
+  },
+  {
+    "address": "0044a6a0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0044a6a0.c",
+    "sha256": "b8531b094b7637bbfd64f18a6166cf1c55ebfdc3a717a4ee3f2dcbce04cf37b4"
+  },
+  {
+    "address": "0044a8e0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0044a8e0.c",
+    "sha256": "67bc4bf2e7822b73b4d47df836080ad555031f36292d3637dbf95590fb9363e0"
+  },
+  {
+    "address": "0044aa10",
+    "lanes": [
+      "customer-cookie"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0044aa10.c",
+    "sha256": "a87f49ff6c499e09e374e1b876ae88ac1373240b1c0be6540b411b7675e90efc"
+  },
+  {
+    "address": "0044ab40",
+    "lanes": [
+      "avatar-input",
+      "customer-cookie"
+    ],
+    "in_initial_metadata": false,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-Android/verification/native-evidence/0044ab40.c",
+    "sha256": "67104c6b2339a108d63d9e0971806a48ed5608bb41629decf6f3a43c5ba3a5e3"
+  },
+  {
+    "address": "0044bbe0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0044bbe0.c",
+    "sha256": "64d0187e5737973cac71d52f5611091d464bef3ab579174eabb3e9f9f0c55c67"
+  },
+  {
+    "address": "0044bf00",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0044bf00.c",
+    "sha256": "067be010e76b1cba9d38e854fe5826b19d27774393371d2f6e9da502761d729f"
+  },
+  {
+    "address": "0044c650",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0044c650.c",
+    "sha256": "0df00cc565dc8f6e9aaed0e8d3a63af0bf46f4a60f0c10ad3072efa1218686d3"
+  },
+  {
+    "address": "0044d0d0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0044d0d0.c",
+    "sha256": "0b2cbc3ce471894c1f557830a7068c67e383f4f7a890bc5bd2d3c1b61ce55b4a"
+  },
+  {
+    "address": "0044d570",
+    "lanes": [
+      "customer-cookie",
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0044d570.c",
+    "sha256": "c8a54617752f2b05548a49b35ac2518bd1d3ea22f3252abbe4c1da93347b2ac0"
+  },
+  {
+    "address": "0044d8f0",
+    "lanes": [
+      "avatar-input",
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/0044d8f0.c",
+    "sha256": "2be171065f5582abc17eb6d2bb8c02e63be51cc61cf9e7821e7bd5883c48d85d"
+  },
+  {
+    "address": "0044e5d0",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": false,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-Android/verification/native-evidence/0044e5d0.c",
+    "sha256": "59343f154e2cde297a2783d20260705f047ddccf0788913d9e47faf8e9ec8bed"
+  },
+  {
+    "address": "00450740",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00450740.c",
+    "sha256": "1a876dcf4dd7fd597edb09b4761544ecb7754cc3597674fc68dc511f9516f12c"
+  },
+  {
+    "address": "00450f20",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00450f20.c",
+    "sha256": "1426462e4e581c9314438c663c582dd4af7f3acbf3118c0f425a6ada5ad9b643"
+  },
+  {
+    "address": "00451c50",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00451c50.c",
+    "sha256": "4266d039ed07ccdfa738af77ae8ea89f6e6a056d49e2891478ff6fc9d8a13c53"
+  },
+  {
+    "address": "00453a50",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00453a50.c",
+    "sha256": "6d4730919da38a654143358686d9f281c861a335d07b5714f7ae8f22bf039ab9"
+  },
+  {
+    "address": "00454c50",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00454c50.c",
+    "sha256": "5d6252efcda9b6b62242e33dc2eea3b5f59eaa8bf609f2204c65423df2cd56f9"
+  },
+  {
+    "address": "00456610",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00456610.c",
+    "sha256": "c0a7d9d48c453f16a9a412eb10edd2b9b3b9bd991ba48e5cca47115b00935c7a"
+  },
+  {
+    "address": "00459280",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00459280.c",
+    "sha256": "d7d512c85d7d997895dc431568288e067c8b82b50b74e4cfade5c124b1ca784c"
+  },
+  {
+    "address": "0045a0e0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0045a0e0.c",
+    "sha256": "dcfbd4bcb20e9f406d38ff2325e73bbacc0a174892fda1b9a6dffff6b58f1455"
+  },
+  {
+    "address": "00460970",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00460970.c",
+    "sha256": "dac5d1672c3f69b858be736a07c8173704db29a76f8ed45c4c469c410aa97035"
+  },
+  {
+    "address": "00465510",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00465510.c",
+    "sha256": "fd24e9d104c040ee84fefb8a46453f1fcd0838b8f26607d32ec519d9d5350df0"
+  },
+  {
+    "address": "004655a0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004655a0.c",
+    "sha256": "121bffc9beb0e7b9bcb24405a5848dd1161fd800c2038fac86ddf7a9c37e705b"
+  },
+  {
+    "address": "00465790",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00465790.c",
+    "sha256": "26593e843a22115dbf5289b656da8ad88a555773d5e4d3b85436ca8f83537a11"
+  },
+  {
+    "address": "004657e0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004657e0.c",
+    "sha256": "4451bbf952023b1bbf4cc439d5dc18dd9a3dd1cff304104a84cff88ddc83bbac"
+  },
+  {
+    "address": "00465840",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00465840.c",
+    "sha256": "ba7013aaca0507f246b0d5808b578dacedb9c0c95f0bec0b956746a2c754461a"
+  },
+  {
+    "address": "004658e0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/004658e0.c",
+    "sha256": "2b7617272360188afef12bc8866900f19002ebbad6723123283f512969515c8e"
+  },
+  {
+    "address": "00465980",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00465980.c",
+    "sha256": "3faadb5006c5f87c5fccf6aa9332632a6df29dbec7fc1739bb6d9b67d56a5767"
+  },
+  {
+    "address": "00465a60",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00465a60.c",
+    "sha256": "1ddc217027c7bec70d989158c035afc9ae878cd3685a61965e5e640ba336e97c"
+  },
+  {
+    "address": "00465b40",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00465b40.c",
+    "sha256": "342d490e13f3f3986f00c513c357c47fd8a561b564eecfe873312a0b0a05fbfc"
+  },
+  {
+    "address": "00465c30",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00465c30.c",
+    "sha256": "af2846664d2452638896b8bafe117a4a540e6619802e4e5a959a55d277fef07a"
+  },
+  {
+    "address": "00465cf0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00465cf0.c",
+    "sha256": "33b1446490380122740409c964e8f1560e9bd8a228892b17bfbd7dd532db98e0"
+  },
+  {
+    "address": "00465e40",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00465e40.c",
+    "sha256": "20ea3d9cecedaac4d0a438b04a776a41b9be10a7031b6b1cf014eab91ab3938d"
+  },
+  {
+    "address": "00465f90",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00465f90.c",
+    "sha256": "e9ac76e8006c6909738a056643e0073a5728c61861c52c967c339116d3299dd0"
+  },
+  {
+    "address": "00468060",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00468060.c",
+    "sha256": "201ebca5ba0bdc1bbc2654e1e5236e4c90433b016f78343463e948db1c034e3c"
+  },
+  {
+    "address": "0046b420",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0046b420.c",
+    "sha256": "85454945a45d966a9b2a9251421ad15190a86086683923ca730e08f74ad7e63f"
+  },
+  {
+    "address": "0046de00",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0046de00.c",
+    "sha256": "f135667ff25d3fe2d03f8181d04e897375561b773546ffa99c400869e856fac8"
+  },
+  {
+    "address": "0046eed0",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0046eed0.c",
+    "sha256": "dcbaaaace9af172223ebc6adf3a273b2d5a6da99b6079f15dcc80c0853657da1"
+  },
+  {
+    "address": "0046fa80",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0046fa80.c",
+    "sha256": "51cb8dad5208bdc92068a1eb904606306b590eef1a76adf9e964e232e6e286c0"
+  },
+  {
+    "address": "0046fd50",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0046fd50.c",
+    "sha256": "0584611cd95400cf132e2247e732c27085fdd777ba3194aa5fd6b6148519717e"
+  },
+  {
+    "address": "00470e60",
+    "lanes": [
+      "progression-shop-flow"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00470e60.c",
+    "sha256": "6697196c32ef33d03b96338df31d7ec0d9e127968aa474c818031a554da5927f"
+  },
+  {
+    "address": "00481840",
+    "lanes": [
+      "parent-validation"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00481840.c",
+    "sha256": "c6264e2c7410199bd8c48eb10d55e02f933d4e65caf4baabc44621bb2f19b573"
+  },
+  {
+    "address": "00482170",
+    "lanes": [
+      "parent-validation"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/00482170.c",
+    "sha256": "2c50d54debbd90d2af77c7e8846aa3fb2f64abad5a6927aaa989507968f5a1d6"
+  },
+  {
+    "address": "0049eff0",
+    "lanes": [
+      "avatar-input"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "outputs/CakeMania-recovered/decompiled/functions/0049eff0.c",
+    "sha256": "60c5974050ed1f0f06e4c584b53ca683d92c7861ac90a1cb6c7fcb852e1c67fa"
+  },
+  {
+    "address": "0055ff20",
+    "lanes": [
+      "parent-validation"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/0055ff20.c",
+    "sha256": "5f50898d75c8b6bfc3bd7dd38ff9c9f94e380f389ff9246eae0cdbebae372400"
+  },
+  {
+    "address": "00560568",
+    "lanes": [
+      "parent-validation"
+    ],
+    "in_initial_metadata": true,
+    "review_scope": "selected-path-static-review",
+    "evidence": "work/cake-mania-android/deep-audit/native/00560568.c",
+    "sha256": "e52a25cdcae460bdda6c261eb48f3fb98ec12d7678c0d6e2582e7d36de748526"
+  }
+]

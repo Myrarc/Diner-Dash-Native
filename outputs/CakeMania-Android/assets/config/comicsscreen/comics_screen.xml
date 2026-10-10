@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Screens button_text_back="" button_text_next="" button_text_prev="">
+	<Screen idlevel="0" img="IMAGE_COMICS_TUTORIAL_1" />
+	<Screen idlevel="0" img="IMAGE_COMICS_TUTORIAL_2" />
+	<Screen idlevel="0" img="IMAGE_COMICS_TUTORIAL_3" />
+	<Screen idlevel="1" img="IMAGE_COMICS_TUTORIAL_3" />
+	<Screen idlevel="2" img="IMAGE_COMICS_2" />
+	<Screen idlevel="3" img="IMAGE_COMICS_3" />
+	<Screen idlevel="4" img="IMAGE_COMICS_4" />
+	<Music idlevel="0" music="music/mapscreen.ogg" />
+	<Music idlevel="1" music="music/mapscreen.ogg" />
+	<Music idlevel="2" music="music/mapscreen.ogg" />
+	<Music idlevel="3" music="music/mapscreen.ogg" />
+	<Music idlevel="4" music="music/mapscreen.ogg" />
+</Screens></root>

@@ -1,0 +1,147 @@
+{
+  "version": "0.3.1",
+  "windows_runtime_executed": false,
+  "expectations": "Recovered source contracts; synthetic Java fixtures",
+  "differences": 15,
+  "matching_controls": 8,
+  "observations": [
+    {
+      "id": "bus_discards_all_supported_payloads",
+      "source_contract": "0",
+      "android_observed": "3",
+      "comparison": "different"
+    },
+    {
+      "id": "bus_returns_food_for_recooking",
+      "source_contract": "5000",
+      "android_observed": "0",
+      "comparison": "different"
+    },
+    {
+      "id": "ready_full_hands_coffee",
+      "source_contract": "true",
+      "android_observed": "false",
+      "comparison": "different"
+    },
+    {
+      "id": "ready_full_hands_coffee_mood",
+      "source_contract": "7",
+      "android_observed": "4",
+      "comparison": "different"
+    },
+    {
+      "id": "occupied_dish_clear_points",
+      "source_contract": "0",
+      "android_observed": "40",
+      "comparison": "different"
+    },
+    {
+      "id": "held_waiting_party_survives",
+      "source_contract": "WAITING",
+      "android_observed": "GONE",
+      "comparison": "different"
+    },
+    {
+      "id": "ready_food_completion_fifo",
+      "source_contract": "4",
+      "android_observed": "3",
+      "comparison": "different"
+    },
+    {
+      "id": "seated_patience_frozen_across_ramp",
+      "source_contract": "6",
+      "android_observed": "5",
+      "comparison": "different"
+    },
+    {
+      "id": "coffee_refresh_frozen_at_station_creation",
+      "source_contract": "10000",
+      "android_observed": "5000",
+      "comparison": "different"
+    },
+    {
+      "id": "tip_alone_defers_endless_upgrade",
+      "source_contract": "0",
+      "android_observed": "1",
+      "comparison": "different"
+    },
+    {
+      "id": "unmatched_quick_seat_mood",
+      "source_contract": "6",
+      "android_observed": "9",
+      "comparison": "different"
+    },
+    {
+      "id": "original_eighteen_column_grid",
+      "source_contract": "false",
+      "android_observed": "true",
+      "comparison": "different"
+    },
+    {
+      "id": "seafood_left_aisle_blocked",
+      "source_contract": "true",
+      "android_observed": "false",
+      "comparison": "different"
+    },
+    {
+      "id": "bar_third_occupied_column",
+      "source_contract": "true",
+      "android_observed": "false",
+      "comparison": "different"
+    },
+    {
+      "id": "bar_two_guest_service_midpoint",
+      "source_contract": "6",
+      "android_observed": "5",
+      "comparison": "different"
+    },
+    {
+      "id": "tip_formula",
+      "source_contract": "120",
+      "android_observed": "120",
+      "comparison": "match"
+    },
+    {
+      "id": "two_distinct_order_chain_points",
+      "source_contract": "60",
+      "android_observed": "60",
+      "comparison": "match"
+    },
+    {
+      "id": "coffee_unlock_1_5",
+      "source_contract": "true",
+      "android_observed": "true",
+      "comparison": "match"
+    },
+    {
+      "id": "goddess_four_hand_capacity",
+      "source_contract": "4",
+      "android_observed": "4",
+      "comparison": "match"
+    },
+    {
+      "id": "stopped_facing_up",
+      "source_contract": "down",
+      "android_observed": "down",
+      "comparison": "match"
+    },
+    {
+      "id": "stopped_facing_down",
+      "source_contract": "down",
+      "android_observed": "down",
+      "comparison": "match"
+    },
+    {
+      "id": "stopped_facing_left",
+      "source_contract": "down",
+      "android_observed": "down",
+      "comparison": "match"
+    },
+    {
+      "id": "stopped_facing_right",
+      "source_contract": "down",
+      "android_observed": "down",
+      "comparison": "match"
+    }
+  ]
+}

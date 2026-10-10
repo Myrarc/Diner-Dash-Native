@@ -1,0 +1,11 @@
+--- GameView.java routing candidate
++++ GameView.java final
+@@ -158,6 +158,8 @@
+             if(layer==SpriteRules.avatarRenderAfter(g.y))drawJill(c);
+         }
+         List<Customer> sorted=new ArrayList<>(g.customers);Collections.sort(sorted,(a,b)->Integer.compare(b.slot,a.slot));for(Customer customer:sorted)drawCustomer(c,customer);
++        // 0044bbe0 calls 004366b0 after customers to restore the last foreground.
++        Node foreground=bg.get(bg.size()-1);assets.draw(c,foreground.s("img"),foreground.f("x",0),foreground.f("y",0));
+         for(Customer customer:sorted)drawOrder(c,customer);
+         for(int i=0;i<g.queue.size();i++){Action a=g.queue.get(i);float xx,yy;if(a.station!=null){Node f=a.station.form(a.form);xx=a.station.x+(f==null?a.station.w/2:f.f("x",0)+f.f("width",0)/2);yy=a.station.y+(f==null?18:f.f("y",0)+f.f("height",0)/2);}else{Node p=g.customerPoints.get(a.customer.slot);xx=p.f("x_money",230)+60;yy=p.f("y_money",500)-20;}panel(c,xx-13,yy-13,28,28,0xffa62039);center(c,""+(i+1),xx,yy-11,22,Color.WHITE);}
+         if(g.level.number>0){float left=Math.max(0,g.level.duration-g.elapsed);text(c,""+(int)left+"s",457,13,25,0xff572a31);}

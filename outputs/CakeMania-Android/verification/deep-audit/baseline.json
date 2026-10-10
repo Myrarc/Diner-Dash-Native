@@ -1,0 +1,16 @@
+{
+  "baseline_apk_sha256": "ebbe1484864a44a3387603fa687ab73d8d8296846959dd5e72df8db02a92b674",
+  "functions_in_metadata": 7470,
+  "decompilation_status_counts": {
+    "ok": 7468,
+    "failed": 2
+  },
+  "direct_call_edges": 15798,
+  "string_reference_rows": 3894,
+  "baseline_native_evidence_files": 33,
+  "limitations": [
+    "Metadata completeness is not full function discovery: virtual callbacks missed by initial analysis have been recovered separately.",
+    "An evidence routine is not proof every branch is implemented.",
+    "Unreviewed rows remain visible; runtime/library routines and game routines are not silently treated as equivalent."
+  ]
+}

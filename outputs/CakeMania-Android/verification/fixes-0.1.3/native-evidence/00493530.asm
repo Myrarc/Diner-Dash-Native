@@ -1,0 +1,3 @@
+00493530  MOV EAX,dword ptr [ECX + 0xc]
+00493533  SUB EAX,dword ptr [ECX + 0x4]
+00493536  RET

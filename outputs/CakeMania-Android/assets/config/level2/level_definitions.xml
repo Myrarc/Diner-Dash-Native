@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+
+<Levels>
+   <Level id="1" name="Beach" name_xml_pathes="level2/pathes.xml" name_xml_text="MainConfig/levels_text_eng_career.xml" name_xml_avatar="level2/avatar.xml" name_xml_customers="level2/career/customers.xml" name_xml_upgrades="ShopCareerScreen/upgrades_env_level2.xml">
+     <SubLevel id="0" name="January" name_xml_stuff="level2/Career/january_env.xml" name_xml_cakes="level2/january_cakes.xml" end_time="130" bk_goal="400" music="music/1.ogg" />
+     <SubLevel id="1" name="February" name_xml_stuff="level2/Career/february_env.xml" name_xml_cakes="level2/february_cakes.xml" end_time="180" bk_goal="500" music="music/2.ogg" />
+     <SubLevel id="2" name="March" name_xml_stuff="level2/Career/march_env.xml" name_xml_cakes="level2/march_cakes.xml" end_time="200" bk_goal="600" music="music/b.ogg" />
+     <SubLevel id="3" name="April" name_xml_stuff="level2/Career/april_env.xml" name_xml_cakes="level2/april_cakes.xml" end_time="225" bk_goal="700" music="music/c.ogg" />
+     <SubLevel id="4" name="May" name_xml_stuff="level2/Career/may_env.xml" name_xml_cakes="level2/may_cakes.xml" end_time="270" bk_goal="800" music="music/1.ogg" />
+     <SubLevel id="5" name="June" name_xml_stuff="level2/Career/june_env.xml" name_xml_cakes="level2/june_cakes.xml" end_time="300" bk_goal="1000" music="music/2.ogg" />
+     <SubLevel id="6" name="July" name_xml_stuff="level2/Career/july_env.xml" name_xml_cakes="level2/july_cakes.xml" end_time="320" bk_goal="1000" music="music/b.ogg" />
+     <SubLevel id="7" name="August" name_xml_stuff="level2/Career/august_env.xml" name_xml_cakes="level2/august_cakes.xml" end_time="330" bk_goal="950" music="music/c.ogg" />
+     <SubLevel id="8" name="September" name_xml_stuff="level2/Career/september_env.xml" name_xml_cakes="level2/september_cakes.xml" end_time="340" bk_goal="950" music="music/1.ogg" />
+     <SubLevel id="9" name="October" name_xml_stuff="level2/Career/october_env.xml" name_xml_cakes="level2/october_cakes.xml" end_time="340" bk_goal="1000" music="music/2.ogg" />
+     <SubLevel id="10" name="November" name_xml_stuff="level2/Career/november_env.xml" name_xml_cakes="level2/november_cakes.xml" end_time="340" bk_goal="1000" music="music/b.ogg" />
+     <SubLevel id="11" name="December" name_xml_stuff="level2/Career/december_env.xml" name_xml_cakes="level2/december_cakes.xml" end_time="340" bk_goal="1200" music="music/c.ogg" />
+   </Level>
+</Levels></root>

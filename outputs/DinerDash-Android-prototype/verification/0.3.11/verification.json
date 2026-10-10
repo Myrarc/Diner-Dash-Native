@@ -1,0 +1,89 @@
+{
+  "version": "0.3.11",
+  "scope": "Correct Endless party multiplier ownership and active mood-timer thresholds; audit Career patience and scoring",
+  "apk_sha256": "56a6a4bffdb2f8238e289ce0cb096f07f3ad500f9a97ff1d184a36a508fd036b",
+  "previous_apk_sha256": "df50fe6037f4ad0fc0fc70a19b9621697a12ad86ae05f63600c43a5ba440bb61",
+  "fix": "Snapshot active happy/mad intervals at state entry, update queued parties on ramps, retain seated multipliers and fast-service windows.",
+  "career_base_patience_unchanged": true,
+  "scoring_formulas_unchanged": true,
+  "model_suites": {
+    "GameEngineTest": 35,
+    "FullGameTest": 2989,
+    "FidelityTest": 332,
+    "MechanicsTest": 53,
+    "MovementRegressionTest": 37436,
+    "DataRegressionTest": 65,
+    "PatienceTest": 36
+  },
+  "model_checks": 40946,
+  "installed_suites": {
+    "AndroidPatienceTest": 36,
+    "AndroidAnimationTest": 80,
+    "AndroidGuestTest": 226,
+    "AndroidSpriteAuditTest": 233,
+    "AndroidBugRegressionTest": 148
+  },
+  "installed_checks": 723,
+  "baseline_regression": "0.3.10 model fails active waiting timer preservation during an Endless ramp",
+  "package_integrity": {
+    "version": "0.3.11",
+    "version_code": 14,
+    "bytes": 34597962,
+    "apk_sha256": "56a6a4bffdb2f8238e289ce0cb096f07f3ad500f9a97ff1d184a36a508fd036b",
+    "installed_apk_bytes_match": true,
+    "asset_resource_entries_unchanged": 1993,
+    "only_changed_production_java": [
+      "src/local/dinerdash/prototype/GameEngine.java"
+    ],
+    "signature_verified": true,
+    "signer_sha256": "fe67995f98ed81a452c63e991df2cb99d3a8e243d7836a01f67a2340fca379bf",
+    "crc_verified": true,
+    "preference_files_byte_identical": 11
+  },
+  "production_source_hashes": {
+    "src/local/dinerdash/prototype/AssetStore.java": "822d2446f94b76fc9b0a62194b967c36a09a084f7c2269e5b177d8b9109f54b7",
+    "src/local/dinerdash/prototype/GameAudio.java": "5c1ad05181f91f822a59d1ecc8399695a76fa571c823e2d42bf8a11c505cc488",
+    "src/local/dinerdash/prototype/GameEngine.java": "afda8a75eb2bf5049871f7ba90f6162fd70bc08e47d16adad834abbc66cce77d",
+    "src/local/dinerdash/prototype/GameView.java": "bd49cb49ec5596e3421b7d779e7c6b99314ed45d60cf057bf610de7cd246ce25",
+    "src/local/dinerdash/prototype/LevelData.java": "a03fe46f9e9675e60391cbb5dd67dffedabb651ae599b02aff86dbb4e298db56",
+    "src/local/dinerdash/prototype/MainActivity.java": "90083c4051c1c63f2fa19ce2b59ee6ade49c56a77eaabe1ea157ef49df0cae3e",
+    "src/local/dinerdash/prototype/MenuView.java": "16e6986cf7a3d1beceea292f3ccc99bfa1835a5bf28161d1f30e2101452e3de8",
+    "src/local/dinerdash/prototype/SpriteRenderer.java": "b31d909591473edae7a0e9c8b44e84693cbdede45a61cb18df69aedbb0158c10"
+  },
+  "physical_device_tested": false,
+  "windows_runtime_executed": false,
+  "full_natural_shift_tested": false,
+  "fonts": {
+    "families_decoded": [
+      "Daniel",
+      "Daniel Black",
+      "Komika Axis",
+      "Mr.B"
+    ],
+    "source_records_verified": 778,
+    "comparison_bundle": "../DinerDash-recovered-fonts/",
+    "android_integrated": false,
+    "windows_comparison": "pending user comparison"
+  },
+  "music_reference_comparison": "paused at user request",
+  "remaining_gaps": [
+    "extra quick-seat happiness bonus",
+    "maitre d advertised versus implemented patience effect",
+    "overflow NEW/admission timing",
+    "critic missing heartsRequired and star bookkeeping",
+    "coffee multiplier ownership",
+    "original weighted routing/tutorial/cinematics and music sequencing"
+  ],
+  "tests_skipped": [
+    {
+      "suites": [
+        "AndroidProgressTest",
+        "AndroidAudioTest"
+      ],
+      "reason": "Save/menu and audio sources unchanged; relevant timing/render/input suites rerun. Historical results remain separate."
+    }
+  ],
+  "emulator_preferences_before_after_byte_identical": true,
+  "evidence": "verification/0.3.11/",
+  "audit": "verification/patience-scoring-0.3.11.md"
+}
